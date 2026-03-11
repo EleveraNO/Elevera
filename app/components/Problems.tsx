@@ -41,7 +41,7 @@ export default function Problems() {
         <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {problems.map((problem, index) => (
             <StaggerItem key={index}>
-              <div className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition-all hover:border-[#7c3aed]/40 hover:bg-white/8">
+              <div className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-6 transition-all hover:border-[#7c3aed]/40 hover:bg-white/8">
                 <div className="mb-4 text-3xl">{problem.icon}</div>
                 <h3 className="mb-2 font-semibold text-white">{problem.title}</h3>
                 <p className="text-sm leading-relaxed text-white/50">{problem.description}</p>
