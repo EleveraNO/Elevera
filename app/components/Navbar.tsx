@@ -29,33 +29,31 @@ export default function Navbar() {
           </a>
 
           {/* Tjenester dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex items-center gap-1 text-sm text-white/70 transition-colors hover:text-white"
-            >
+          <div
+            className="relative"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <button className="flex items-center gap-1 text-sm text-white/70 transition-colors hover:text-white">
               Tjenester
               <svg className={`h-3.5 w-3.5 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {dropdownOpen && (
-              <>
-                {/* Lukk ved klikk utenfor */}
-                <div className="fixed inset-0 z-10" onClick={() => setDropdownOpen(false)} />
-                <div className="absolute left-1/2 top-full z-20 mt-2 w-52 -translate-x-1/2 rounded-xl border border-white/10 bg-[#111] py-2 shadow-xl">
+              <div className="absolute left-1/2 top-full w-52 -translate-x-1/2 pt-2">
+                <div className="rounded-xl border border-white/10 bg-[#111] py-2 shadow-xl">
                   {tjenester.map((t) => (
                     <a
                       key={t.href}
                       href={t.href}
                       className="block px-4 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-                      onClick={() => setDropdownOpen(false)}
                     >
                       {t.label}
                     </a>
                   ))}
                 </div>
-              </>
+              </div>
             )}
           </div>
 
