@@ -4,6 +4,7 @@ import Problems from "./components/Problems";
 import Services from "./components/Services";
 import Pricing from "./components/Pricing";
 import WhyElevera from "./components/WhyElevera";
+import Portfolio from "./components/Portfolio";
 import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
@@ -51,6 +52,7 @@ export default function Home() {
         <Services />
         <Pricing />
         <WhyElevera />
+        <Portfolio />
         <FAQ />
         <CTA />
 <Footer />
