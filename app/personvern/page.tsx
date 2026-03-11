@@ -23,8 +23,8 @@ export default function Personvern() {
             <p className="text-white/60 leading-relaxed">
               Elevera er behandlingsansvarlig for personopplysninger som samles inn via dette nettstedet.
               Har du spørsmål, ta kontakt på{" "}
-              <a href="mailto:hei@elevera.no" className="text-[#7c3aed] hover:underline">
-                hei@elevera.no
+              <a href="mailto:tverbakk@elevera.no" className="text-[#7c3aed] hover:underline">
+                tverbakk@elevera.no
               </a>
               .
             </p>
@@ -64,8 +64,8 @@ export default function Personvern() {
             <h2 className="text-xl font-semibold mb-3">5. Dine rettigheter</h2>
             <p className="text-white/60 leading-relaxed">
               Du har rett til innsyn, retting og sletting av dine personopplysninger. Ta kontakt på{" "}
-              <a href="mailto:hei@elevera.no" className="text-[#7c3aed] hover:underline">
-                hei@elevera.no
+              <a href="mailto:tverbakk@elevera.no" className="text-[#7c3aed] hover:underline">
+                tverbakk@elevera.no
               </a>{" "}
               for å utøve dine rettigheter. Du kan også klage til{" "}
               <a
