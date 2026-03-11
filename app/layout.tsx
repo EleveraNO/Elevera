@@ -47,6 +47,11 @@ export const metadata: Metadata = {
     description:
       "Vi hjelper bedrifter i Ålesund og omegn å vokse på nett. Nettside, foto & video, og betalt annonsering – alt fra én partner.",
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   robots: {
     index: true,
     follow: true,
