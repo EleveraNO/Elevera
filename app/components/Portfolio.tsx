@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { StaggerContainer, StaggerItem } from "./animations";
 
 const projects = [
@@ -13,6 +14,41 @@ const projects = [
   },
 ];
 
+function AutoplayVideo({ src }: { src: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={ref}
+      src={src}
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="absolute inset-0 h-full w-full object-cover"
+    />
+  );
+}
+
 export default function Portfolio() {
   return (
     <div className="bg-[#0a0a0a] px-6 py-12">
@@ -23,14 +59,7 @@ export default function Portfolio() {
               className="relative overflow-hidden rounded-2xl border border-white/10"
               style={{ aspectRatio: "9/16" }}
             >
-              <video
-                src={project.src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+              <AutoplayVideo src={project.src} />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
                 <p className="text-sm font-semibold text-white">{project.client}</p>
               </div>
