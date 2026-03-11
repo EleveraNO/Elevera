@@ -106,7 +106,7 @@ export default function Footer() {
             <a href="/personvern" className="transition-colors hover:text-white">
               Personvern
             </a>
-            <a href="#" className="transition-colors hover:text-white">
+            <a href="/vilkar" className="transition-colors hover:text-white">
               Vilkår
             </a>
           </div>
