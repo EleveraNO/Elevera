@@ -19,6 +19,7 @@ const included = [
   "Produktfotografering",
   "Portrettfoto av ansatte",
   "Innholdsbilder til nettside og sosiale medier",
+  "Dronefoto og luftfoto",
   "Bilder til Google Business Profile",
   "Redigering og bildebehandling",
   "Levering i høy oppløsning",
@@ -109,9 +110,10 @@ export default function FotograferingPage() {
                   signaliserer kvalitet, pålitelighet og seriøsitet.
                 </p>
                 <p>
-                  Som lokal fotograf i Ålesund kjenner vi omgivelsene og vet hvordan vi
+                  Som lokalt byrå i Ålesund kjenner vi omgivelsene og vet hvordan vi
                   best presenterer din bedrift – enten det er ute i naturen, i bybildet
-                  eller i dine egne lokaler.
+                  eller i dine egne lokaler. Vi tilbyr også dronefoto og luftfoto for
+                  unike perspektiver av din bedrift, eiendom eller lokasjon.
                 </p>
               </div>
             </div>

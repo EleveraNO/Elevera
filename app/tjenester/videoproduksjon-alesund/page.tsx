@@ -19,6 +19,7 @@ const included = [
   "Produktvideo og demonstrasjonsfilm",
   "Bedriftspresentasjon og profilfilm",
   "Kortformat video for Instagram og TikTok",
+  "Dronevideo og luftopptak",
   "Manus og konseptutvikling",
   "Profesjonell lyd og musikk",
   "Fargekorrigering og etterarbeid",
@@ -115,7 +116,8 @@ export default function VideoProduksjonPage() {
                 <p>
                   Som lokalt byrå i Ålesund kjenner vi markedet og vet hva som resonerer
                   med målgruppen din i regionen. Vi produserer innhold som faktisk fungerer –
-                  ikke bare ser bra ut.
+                  ikke bare ser bra ut. Vi tilbyr også dronevideo og luftopptak for spektakulære
+                  bilder av Ålesund og omegn.
                 </p>
               </div>
             </div>
