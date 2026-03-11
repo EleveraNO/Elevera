@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Montserrat } from "next/font/google";
 import "./globals.css";
-import GoogleAnalytics from "./components/GoogleAnalytics";
+import CookieBanner from "./components/CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body className={`${geistSans.variable} ${montserrat.variable} antialiased`}>
-        <GoogleAnalytics />
+        <CookieBanner />
         {children}
       </body>
     </html>
