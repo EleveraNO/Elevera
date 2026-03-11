@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://elevera.no/tjenester/foto-og-video-alesund",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: "https://elevera.no/tjenester/videoproduksjon-alesund",
       lastModified: new Date(),
       changeFrequency: "monthly",
