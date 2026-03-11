@@ -79,7 +79,7 @@ export default function Hero() {
             <svg className="h-4 w-4 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            Ingen skjulte kostnader
+            Ålesund og omegn
           </span>
         </div>
       </div>
