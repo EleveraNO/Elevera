@@ -61,21 +61,26 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Social proof */}
-        <div className="mt-16 flex flex-col items-center gap-3">
-          <div className="flex -space-x-2">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div
-                key={i}
-                className="h-9 w-9 rounded-full border-2 border-[#0a0a0a] bg-gradient-to-br from-[#7c3aed] to-[#60a5fa] flex items-center justify-center text-xs font-bold text-white"
-              >
-                {String.fromCharCode(64 + i)}
-              </div>
-            ))}
-          </div>
-          <p className="text-sm text-white/50">
-            Lokalt digitalbyrå i <span className="font-semibold text-white/80">Ålesund og omegn</span>
-          </p>
+        {/* Trust signals */}
+        <div className="mt-16 flex flex-wrap justify-center gap-6 text-sm text-white/40">
+          <span className="flex items-center gap-2">
+            <svg className="h-4 w-4 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Gratis strategimøte
+          </span>
+          <span className="flex items-center gap-2">
+            <svg className="h-4 w-4 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Svar innen 24 timer
+          </span>
+          <span className="flex items-center gap-2">
+            <svg className="h-4 w-4 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Ingen skjulte kostnader
+          </span>
         </div>
       </div>
     </section>
