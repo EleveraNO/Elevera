@@ -2,6 +2,7 @@ const services = [
   {
     number: "01",
     title: "Foto & Video",
+    href: "/tjenester/fotografering-alesund",
     description:
       "Profesjonelt innhold som stopper scrollingen og konverterer. Vi produserer alt fra produktfoto og bedriftsbilder til reklamefilmer og sosiale medier-videoer.",
     features: [
@@ -14,6 +15,7 @@ const services = [
   {
     number: "02",
     title: "Nettside",
+    href: "/tjenester/nettside-alesund",
     description:
       "Raske, konverterende nettsider som ser bra ut på alle enheter. Vi bygger alt fra enkle landingssider til avanserte e-handelssider med SEO i bunn.",
     features: [
@@ -26,6 +28,7 @@ const services = [
   {
     number: "03",
     title: "Betalt annonsering",
+    href: "/tjenester/annonsering-alesund",
     description:
       "Vi administrerer Meta- og Google-annonser som faktisk gir avkastning. Datadrevet optimalisering som skalerer det som virker og kutter det som ikke gjør det.",
     features: [
@@ -38,6 +41,7 @@ const services = [
   {
     number: "04",
     title: "Digital vekststrategi",
+    href: "/#kontakt",
     description:
       "En helhetlig plan for din digitale tilstedeværelse. Vi analyserer markedet, identifiserer muligheter og bygger en skreddersydd strategi for vekst.",
     features: [
@@ -70,8 +74,9 @@ export default function Services() {
         {/* Services grid */}
         <div className="grid gap-6 md:grid-cols-2">
           {services.map((service, index) => (
-            <div
+            <a
               key={index}
+              href={service.href}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-[#7c3aed]/40"
             >
               {/* Background gradient on hover */}
@@ -91,7 +96,7 @@ export default function Services() {
                 </p>
 
                 {/* Features */}
-                <ul className="space-y-2">
+                <ul className="mb-6 space-y-2">
                   {service.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm">
                       <svg
@@ -111,8 +116,16 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
+
+                {/* Les mer */}
+                <span className="flex items-center gap-1 text-sm font-semibold text-[#7c3aed] transition-all group-hover:gap-2">
+                  Les mer
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
