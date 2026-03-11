@@ -6,7 +6,6 @@ import Pricing from "./components/Pricing";
 import WhyElevera from "./components/WhyElevera";
 import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
-import BookingCalendar from "./components/BookingCalendar";
 import Footer from "./components/Footer";
 
 const jsonLd = {
@@ -54,8 +53,7 @@ export default function Home() {
         <WhyElevera />
         <FAQ />
         <CTA />
-        <BookingCalendar />
-        <Footer />
+<Footer />
       </main>
     </>
   );
