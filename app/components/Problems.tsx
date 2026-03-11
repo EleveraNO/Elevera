@@ -1,3 +1,5 @@
+"use client";
+
 import { FadeUp, StaggerContainer, StaggerItem } from "./animations";
 
 const problems = [

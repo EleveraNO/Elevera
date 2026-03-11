@@ -1,3 +1,5 @@
+"use client";
+
 import { ScaleIn } from "./animations";
 
 export default function CTA() {
