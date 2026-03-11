@@ -74,7 +74,7 @@ export default function Hero() {
             ))}
           </div>
           <p className="text-sm text-white/50">
-            <span className="font-semibold text-white/80">50+</span> bedrifter i Ålesund og omegn vokser med Elevera
+            Lokalt digitalbyrå i <span className="font-semibold text-white/80">Ålesund og omegn</span>
           </p>
         </div>
       </div>
