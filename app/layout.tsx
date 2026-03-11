@@ -9,6 +9,7 @@ const geistSans = Geist({
 
 // Montserrat lastes slik at inline SVG-logoen finner riktig font
 const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["700"],
   display: "swap",
