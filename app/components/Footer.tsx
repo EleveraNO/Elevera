@@ -101,7 +101,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/30 sm:flex-row">
-          <p>© {new Date().getFullYear()} Elevera AS. Alle rettigheter forbeholdt.</p>
+          <p>© {new Date().getFullYear()} Elevera. Alle rettigheter forbeholdt.</p>
           <div className="flex gap-6">
             <a href="/personvern" className="transition-colors hover:text-white">
               Personvern
