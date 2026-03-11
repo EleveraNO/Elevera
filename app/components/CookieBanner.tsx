@@ -59,7 +59,7 @@ export default function CookieBanner() {
               <p className="text-sm text-white/50 leading-relaxed">
                 Vi bruker cookies for å analysere trafikk og forbedre opplevelsen din.
                 Les vår{" "}
-                <a href="#" className="text-[#7c3aed] hover:underline">
+                <a href="/personvern" className="text-[#7c3aed] hover:underline">
                   personvernserklæring
                 </a>
                 .
