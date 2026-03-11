@@ -14,7 +14,7 @@ export default function CTA() {
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/10 px-4 py-1.5">
               <span className="h-2 w-2 animate-pulse rounded-full bg-[#7c3aed]" />
               <span className="text-sm font-medium text-[#a78bfa]">
-                Begrenset kapasitet
+                Gratis og uforpliktende
               </span>
             </div>
 
