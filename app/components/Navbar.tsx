@@ -65,7 +65,9 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:block">
           <a
-            href="/#kontakt"
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-[#7c3aed] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-[#6d28d9] hover:shadow-lg hover:shadow-[#7c3aed]/25"
           >
             Book møte
@@ -108,7 +110,9 @@ export default function Navbar() {
               Kontakt
             </a>
             <a
-              href="/#kontakt"
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 rounded-full bg-[#7c3aed] px-5 py-2.5 text-center text-sm font-semibold text-white"
               onClick={() => setMenuOpen(false)}
             >

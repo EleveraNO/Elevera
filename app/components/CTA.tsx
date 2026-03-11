@@ -30,11 +30,14 @@ export default function CTA() {
             {/* CTAs */}
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
-                href="mailto:tverbakk@elevera.no"
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
+              target="_blank"
+              rel="noopener noreferrer"
                 className="rounded-full bg-[#7c3aed] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-[#7c3aed]/30 transition-all hover:bg-[#6d28d9] hover:shadow-xl hover:shadow-[#7c3aed]/40 hover:-translate-y-0.5"
               >
                 Book gratis møte
               </a>
+
               <a
                 href="tel:+4794974165"
                 className="flex items-center gap-2 rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white/80 transition-all hover:border-white/40 hover:text-white"

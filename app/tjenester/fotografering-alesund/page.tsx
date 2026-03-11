@@ -67,7 +67,7 @@ export default function FotograferingPage() {
             bedriftsfoto, produktbilder og innholdsbilder som bygger tillit og selger mer.
           </p>
           <a
-            href="/#kontakt"
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY" target="_blank" rel="noopener noreferrer"
             className="rounded-full bg-[#7c3aed] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#7c3aed]/30 transition-all hover:bg-[#6d28d9] hover:-translate-y-0.5"
           >
             Få et gratis tilbud
@@ -160,7 +160,7 @@ export default function FotograferingPage() {
               Book et gratis møte og hør hva vi kan gjøre for din bedrift i Ålesund.
             </p>
             <a
-              href="/#kontakt"
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY" target="_blank" rel="noopener noreferrer"
               className="inline-block rounded-full bg-[#7c3aed] px-8 py-3.5 font-semibold text-white shadow-lg shadow-[#7c3aed]/30 transition-all hover:bg-[#6d28d9]"
             >
               Book gratis møte
