@@ -1,3 +1,5 @@
+import { FadeUp, StaggerContainer, StaggerItem } from "./animations";
+
 const benefits = [
   {
     icon: (
@@ -6,8 +8,7 @@ const benefits = [
       </svg>
     ),
     title: "Raskere resultater",
-    description:
-      "Vi jobber ikke med lange strategiprosesser uten handling. Du ser resultater innen de første ukene – og vi optimaliserer løpende for å skalere det som virker.",
+    description: "Vi jobber ikke med lange strategiprosesser uten handling. Du ser resultater innen de første ukene – og vi optimaliserer løpende for å skalere det som virker.",
     stat: "30 dager",
     statLabel: "til første resultater",
   },
@@ -18,8 +19,7 @@ const benefits = [
       </svg>
     ),
     title: "Dedikert team",
-    description:
-      "Du får et fast team som kjenner din bedrift, din bransje og dine mål. Ingen rotering av kontaktpersoner – samme menneskene fra dag én til du når toppen.",
+    description: "Du får et fast team som kjenner din bedrift, din bransje og dine mål. Ingen rotering av kontaktpersoner – samme menneskene fra dag én til du når toppen.",
     stat: "1 partner",
     statLabel: "for alt du trenger",
   },
@@ -30,8 +30,7 @@ const benefits = [
       </svg>
     ),
     title: "Full gjennomsiktighet",
-    description:
-      "Du har alltid tilgang til alle tall, rapporter og data. Vi forklarer hva pengene dine gjør og hvorfor vi tar de valgene vi tar – på norsk, uten sjargong.",
+    description: "Du har alltid tilgang til alle tall, rapporter og data. Vi forklarer hva pengene dine gjør og hvorfor vi tar de valgene vi tar – på norsk, uten sjargong.",
     stat: "100%",
     statLabel: "transparent rapportering",
   },
@@ -40,14 +39,11 @@ const benefits = [
 export default function WhyElevera() {
   return (
     <section className="relative px-6 py-24 overflow-hidden">
-      {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-[#7c3aed]/10 blur-[120px]" />
       </div>
-
       <div className="relative z-10 mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="mb-16 text-center">
+        <FadeUp className="mb-16 text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">
             Hvorfor Elevera
           </p>
@@ -55,40 +51,27 @@ export default function WhyElevera() {
             Hva gjør oss annerledes?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-white/50">
-            Vi er ikke nok et digitalbyrå med lovnader. Vi er en partner som
-            leverer – og det er forskjellen.
+            Vi er ikke nok et digitalbyrå med lovnader. Vi er en partner som leverer – og det er forskjellen.
           </p>
-        </div>
+        </FadeUp>
 
-        {/* Benefits */}
-        <div className="grid gap-8 md:grid-cols-3">
+        <StaggerContainer className="grid gap-8 md:grid-cols-3">
           {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              className="group rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-[#7c3aed]/30"
-            >
-              {/* Icon */}
-              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl border border-[#7c3aed]/20 bg-[#7c3aed]/10">
-                {benefit.icon}
+            <StaggerItem key={index}>
+              <div className="group rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-[#7c3aed]/30">
+                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl border border-[#7c3aed]/20 bg-[#7c3aed]/10">
+                  {benefit.icon}
+                </div>
+                <h3 className="mb-3 text-lg font-bold text-white">{benefit.title}</h3>
+                <p className="mb-6 leading-relaxed text-white/50 text-sm">{benefit.description}</p>
+                <div className="border-t border-white/10 pt-6">
+                  <span className="block text-2xl font-bold text-[#7c3aed]">{benefit.stat}</span>
+                  <span className="text-sm text-white/40">{benefit.statLabel}</span>
+                </div>
               </div>
-
-              <h3 className="mb-3 text-lg font-bold text-white">
-                {benefit.title}
-              </h3>
-              <p className="mb-6 leading-relaxed text-white/50 text-sm">
-                {benefit.description}
-              </p>
-
-              {/* Stat */}
-              <div className="border-t border-white/10 pt-6">
-                <span className="block text-2xl font-bold text-[#7c3aed]">
-                  {benefit.stat}
-                </span>
-                <span className="text-sm text-white/40">{benefit.statLabel}</span>
-              </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

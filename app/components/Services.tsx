@@ -1,3 +1,5 @@
+import { FadeUp, StaggerContainer, StaggerItem } from "./animations";
+
 const services = [
   {
     number: "01",
@@ -57,8 +59,7 @@ export default function Services() {
   return (
     <section id="tjenester" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="mb-16 text-center">
+        <FadeUp className="mb-16 text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">
             Tjenester
           </p>
@@ -69,65 +70,43 @@ export default function Services() {
             Elevera tilbyr alle digitale tjenestene du trenger for å vokse –
             slik slipper du å styre med flere byråer.
           </p>
-        </div>
+        </FadeUp>
 
-        {/* Services grid */}
-        <div className="grid gap-6 md:grid-cols-2">
+        <StaggerContainer className="grid gap-6 md:grid-cols-2">
           {services.map((service, index) => (
-            <a
-              key={index}
-              href={service.href}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-[#7c3aed]/40"
-            >
-              {/* Background gradient on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#7c3aed]/0 to-[#7c3aed]/0 transition-all duration-500 group-hover:from-[#7c3aed]/5 group-hover:to-transparent" />
-
-              <div className="relative z-10">
-                {/* Number */}
-                <span className="mb-4 block text-5xl font-bold text-[#7c3aed]/20">
-                  {service.number}
-                </span>
-
-                <h3 className="mb-3 text-xl font-bold text-white">
-                  {service.title}
-                </h3>
-                <p className="mb-6 leading-relaxed text-white/50">
-                  {service.description}
-                </p>
-
-                {/* Features */}
-                <ul className="mb-6 space-y-2">
-                  {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm">
-                      <svg
-                        className="h-4 w-4 flex-shrink-0 text-[#7c3aed]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span className="text-white/70">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Les mer */}
-                <span className="flex items-center gap-1 text-sm font-semibold text-[#7c3aed] transition-all group-hover:gap-2">
-                  Les mer
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </div>
-            </a>
+            <StaggerItem key={index}>
+              <a
+                href={service.href}
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-[#7c3aed]/40"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#7c3aed]/0 to-[#7c3aed]/0 transition-all duration-500 group-hover:from-[#7c3aed]/5 group-hover:to-transparent" />
+                <div className="relative z-10 flex flex-1 flex-col">
+                  <span className="mb-4 block text-5xl font-bold text-[#7c3aed]/20">
+                    {service.number}
+                  </span>
+                  <h3 className="mb-3 text-xl font-bold text-white">{service.title}</h3>
+                  <p className="mb-6 leading-relaxed text-white/50">{service.description}</p>
+                  <ul className="mb-6 flex-1 space-y-2">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm">
+                        <svg className="h-4 w-4 flex-shrink-0 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-white/70">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="flex items-center gap-1 text-sm font-semibold text-[#7c3aed] transition-all group-hover:gap-2">
+                    Les mer
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
