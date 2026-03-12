@@ -26,7 +26,7 @@ const services = [
       "Moderne webdesign",
       "Rask lasting & mobiltilpasset",
       "SEO-optimalisert",
-      "Enkel CMS for deg",
+      "Eget foto & video til siden",
     ],
   },
   {
