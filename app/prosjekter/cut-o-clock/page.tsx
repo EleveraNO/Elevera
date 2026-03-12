@@ -59,7 +59,7 @@ export default function CutOClockPage() {
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden px-6 pt-20">
         {/* Background photo */}
         <Image
-          src="/images/cut-o-clock/Photo 1.jpg"
+          src="/images/cut-o-clock/Photo 2.jpg"
           alt="Cut O' Clock – produksjon"
           fill
           className="object-cover"
