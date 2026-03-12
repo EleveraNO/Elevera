@@ -45,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://elevera.no/prosjekter/cut-o-clock",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://elevera.no/personvern",
       lastModified: new Date(),
       changeFrequency: "yearly",
