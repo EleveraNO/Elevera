@@ -138,7 +138,7 @@ export default function CutOClockPage() {
           <FadeUp>
             <div className="overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "9/16" }}>
               <video
-                src="/videos/cut-o-clock.mp4"
+                src="/videos/cut-o-clock-full.mp4"
                 autoPlay
                 muted
                 loop
