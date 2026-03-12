@@ -118,7 +118,7 @@ export default function CutOClockPage() {
             <FadeUp className="hidden md:block">
               <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "3/4" }}>
                 <Image
-                  src="/images/cut-o-clock/Photo 2.jpg"
+                  src="/images/cut-o-clock/Photo 1.jpg"
                   alt="Cut O' Clock – produksjonsdag"
                   fill
                   className="object-cover"
