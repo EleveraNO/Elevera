@@ -96,7 +96,7 @@ export default function CutOClockPage() {
           <div className="grid gap-16 md:grid-cols-2 md:items-start">
             {/* Timeline */}
             <div className="relative">
-              <div className="absolute left-6 top-0 h-full w-px bg-white/10 sm:left-8" />
+              <div className="absolute left-6 top-0 h-full w-px bg-white/10" />
               <StaggerContainer className="space-y-10">
                 {prosess.map((item) => (
                   <StaggerItem key={item.steg}>
