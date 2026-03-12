@@ -55,8 +55,19 @@ export default function CutOClockPage() {
     <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden px-6 pt-20">
+      {/* Hero with background image */}
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden px-6 pt-20">
+        {/* Background photo */}
+        <Image
+          src="/images/cut-o-clock/Photo 1.jpg"
+          alt="Cut O' Clock – produksjon"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-[#0a0a0a]/60" />
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/20 blur-[120px]" />
         </div>
@@ -67,28 +78,10 @@ export default function CutOClockPage() {
           <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
             Cut O&apos; Clock
           </h1>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/60">
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/70">
             Hvordan Elevera hjalp en lokal frisørsalong i Ålesund med å bygge et
             profesjonelt visuelt uttrykk og en innholdsstrategi som engasjerer på Instagram.
           </p>
-        </div>
-      </section>
-
-      {/* Featured image – full width */}
-      <section className="px-6 pb-4 pt-8">
-        <div className="mx-auto max-w-5xl">
-          <FadeUp>
-            <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "16/9" }}>
-              <Image
-                src="/images/cut-o-clock/Photo 1.jpg"
-                alt="Cut O' Clock – produksjon"
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1024px"
-                priority
-              />
-            </div>
-          </FadeUp>
         </div>
       </section>
 
