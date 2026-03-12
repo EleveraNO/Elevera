@@ -18,7 +18,7 @@ const included = [
   "Moderne og responsivt webdesign",
   "Rask lasting på alle enheter",
   "SEO-optimalisert fra bunn",
-  "Enkelt CMS – oppdater selv",
+  "Eget foto & video til siden",
   "SSL-sertifikat og sikkerhet",
   "Google Analytics integrasjon",
   "Løpende support og vedlikehold",
@@ -30,8 +30,8 @@ const faqs = [
     a: "En standard bedriftsnettside tar 2–4 uker fra oppstart til lansering, avhengig av innhold og kompleksitet.",
   },
   {
-    q: "Kan jeg oppdatere nettsiden selv?",
-    a: "Ja! Vi bygger nettsider med enkle administrasjonsverktøy slik at du enkelt kan oppdatere tekst, bilder og innhold uten teknisk kunnskap.",
+    q: "Får jeg profesjonelt innhold til siden?",
+    a: "Ja! Vi produserer foto og video til nettsiden din som en del av leveransen – slik at du får et helhetlig uttrykk som faktisk konverterer besøkende til kunder.",
   },
   {
     q: "Hva koster en nettside i Ålesund?",
