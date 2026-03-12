@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { FadeUp, StaggerContainer, StaggerItem } from "../../components/animations";
+
+const bilder = [
+  "/images/cut-o-clock/Photo 1.jpg",
+  "/images/cut-o-clock/Photo 2.jpg",
+  "/images/cut-o-clock/Photo 3.jpg",
+  "/images/cut-o-clock/Photo 4.jpg",
+  "/images/cut-o-clock/Photo 5.jpg",
+];
 
 export const metadata: Metadata = {
   title: "Cut O' Clock – Casestudie | Elevera",
@@ -147,6 +156,31 @@ export default function CutOClockPage() {
               />
             </div>
           </FadeUp>
+        </div>
+      </section>
+
+      {/* Bildegalleri */}
+      <section className="px-6 py-20 border-t border-white/10">
+        <div className="mx-auto max-w-5xl">
+          <FadeUp className="mb-10 text-center">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Foto</p>
+            <h2 className="text-3xl font-bold text-white">Bilder fra produksjonen</h2>
+          </FadeUp>
+          <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {bilder.map((src, i) => (
+              <StaggerItem key={i}>
+                <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "4/3" }}>
+                  <Image
+                    src={src}
+                    alt={`Cut O' Clock – bilde ${i + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
