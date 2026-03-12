@@ -4,14 +4,6 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { FadeUp, StaggerContainer, StaggerItem } from "../../components/animations";
 
-const bilder = [
-  "/images/cut-o-clock/Photo 1.jpg",
-  "/images/cut-o-clock/Photo 2.jpg",
-  "/images/cut-o-clock/Photo 3.jpg",
-  "/images/cut-o-clock/Photo 4.jpg",
-  "/images/cut-o-clock/Photo 5.jpg",
-];
-
 export const metadata: Metadata = {
   title: "Cut O' Clock – Casestudie | Elevera",
   description:
@@ -82,35 +74,65 @@ export default function CutOClockPage() {
         </div>
       </section>
 
+      {/* Featured image – full width */}
+      <section className="px-6 pb-4 pt-8">
+        <div className="mx-auto max-w-5xl">
+          <FadeUp>
+            <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "16/9" }}>
+              <Image
+                src="/images/cut-o-clock/Photo 1.jpg"
+                alt="Cut O' Clock – produksjon"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1024px"
+                priority
+              />
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* Prosessen */}
       <section className="px-6 py-20">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-5xl">
           <FadeUp className="mb-12 text-center">
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Slik jobbet vi</p>
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Prosessen</h2>
           </FadeUp>
 
-          <div className="relative">
-            {/* Vertikal linje */}
-            <div className="absolute left-6 top-0 h-full w-px bg-white/10 sm:left-8" />
+          <div className="grid gap-16 md:grid-cols-2 md:items-start">
+            {/* Timeline */}
+            <div className="relative">
+              <div className="absolute left-6 top-0 h-full w-px bg-white/10 sm:left-8" />
+              <StaggerContainer className="space-y-10">
+                {prosess.map((item) => (
+                  <StaggerItem key={item.steg}>
+                    <div className="relative flex gap-6 sm:gap-8">
+                      <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-[#7c3aed]/40 bg-[#7c3aed]/10 text-sm font-bold text-[#a78bfa]">
+                        {item.steg}
+                      </div>
+                      <div className="pb-2 pt-2">
+                        <h3 className="mb-2 font-bold text-white">{item.tittel}</h3>
+                        <p className="text-sm leading-relaxed text-white/50">{item.beskrivelse}</p>
+                      </div>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </div>
 
-            <StaggerContainer className="space-y-10">
-              {prosess.map((item) => (
-                <StaggerItem key={item.steg}>
-                  <div className="relative flex gap-6 sm:gap-8">
-                    {/* Sirkel */}
-                    <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-[#7c3aed]/40 bg-[#7c3aed]/10 text-sm font-bold text-[#a78bfa]">
-                      {item.steg}
-                    </div>
-                    {/* Innhold */}
-                    <div className="pb-2 pt-2">
-                      <h3 className="mb-2 font-bold text-white">{item.tittel}</h3>
-                      <p className="text-sm leading-relaxed text-white/50">{item.beskrivelse}</p>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
+            {/* Image alongside process */}
+            <FadeUp className="hidden md:block">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "3/4" }}>
+                <Image
+                  src="/images/cut-o-clock/Photo 2.jpg"
+                  alt="Cut O' Clock – produksjonsdag"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 480px"
+                />
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -137,6 +159,36 @@ export default function CutOClockPage() {
         </div>
       </section>
 
+      {/* Two images side by side */}
+      <section className="px-6 py-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid grid-cols-2 gap-4">
+            <FadeUp>
+              <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "4/5" }}>
+                <Image
+                  src="/images/cut-o-clock/Photo 3.jpg"
+                  alt="Cut O' Clock – bilde 3"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 45vw, 480px"
+                />
+              </div>
+            </FadeUp>
+            <FadeUp>
+              <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "4/5" }}>
+                <Image
+                  src="/images/cut-o-clock/Photo 4.jpg"
+                  alt="Cut O' Clock – bilde 4"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 45vw, 480px"
+                />
+              </div>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
       {/* Video */}
       <section className="px-6 py-20 border-t border-white/10">
         <div className="mx-auto max-w-sm">
@@ -159,28 +211,20 @@ export default function CutOClockPage() {
         </div>
       </section>
 
-      {/* Bildegalleri */}
-      <section className="px-6 py-20 border-t border-white/10">
+      {/* Closing image */}
+      <section className="px-6 pb-20">
         <div className="mx-auto max-w-5xl">
-          <FadeUp className="mb-10 text-center">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Foto</p>
-            <h2 className="text-3xl font-bold text-white">Bilder fra produksjonen</h2>
+          <FadeUp>
+            <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "16/9" }}>
+              <Image
+                src="/images/cut-o-clock/Photo 5.jpg"
+                alt="Cut O' Clock – resultat"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1024px"
+              />
+            </div>
           </FadeUp>
-          <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {bilder.map((src, i) => (
-              <StaggerItem key={i}>
-                <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "4/3" }}>
-                  <Image
-                    src={src}
-                    alt={`Cut O' Clock – bilde ${i + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </div>
       </section>
 
