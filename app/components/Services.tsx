@@ -8,12 +8,12 @@ const services = [
     title: "Foto & Video",
     href: "/tjenester/foto-og-video-alesund",
     description:
-      "Profesjonelt innhold som stopper scrollingen og konverterer. Vi produserer alt fra produktfoto og bedriftsbilder til reklamefilmer og sosiale medier-videoer.",
+      "Profesjonelt innhold som stopper scrollingen og konverterer. Vi produserer alt fra produktfoto og bedriftsbilder til reklamefilmer og dronevideo.",
     features: [
       "Produktfotografering",
       "Bedriftsfoto & portrett",
       "Reklamevideo & kortfilm",
-      "Innhold for sosiale medier",
+      "Dronevideo & luftopptak",
     ],
   },
   {
