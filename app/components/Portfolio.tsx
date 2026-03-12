@@ -7,7 +7,7 @@ const projects = [
   {
     src: "/videos/cut-o-clock.mp4",
     client: "Cut O' Clock",
-    href: "/prosjekter/cut-o-clock",
+    href: "/prosjekter/cutoclock",
   },
   {
     src: "/videos/drive-trafikkskule.mp4",

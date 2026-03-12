@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   title: "Cut O' Clock – Casestudie | Elevera",
   description:
     "Se hvordan Elevera hjalp frisørsalongen Cut O' Clock i Ålesund med profesjonell foto, video og innholdsstrategi for sosiale medier.",
-  alternates: { canonical: "https://elevera.no/prosjekter/cut-o-clock" },
+  alternates: { canonical: "https://www.elevera.no/prosjekter/cutoclock" },
   openGraph: {
     title: "Cut O' Clock – Casestudie | Elevera",
     description: "Hvordan Elevera leverte profesjonelt innhold til frisørsalongen Cut O' Clock i Ålesund.",
-    url: "https://elevera.no/prosjekter/cut-o-clock",
+    url: "https://www.elevera.no/prosjekter/cutoclock",
   },
 };
 
