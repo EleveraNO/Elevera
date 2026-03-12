@@ -204,22 +204,6 @@ export default function CutOClockPage() {
         </div>
       </section>
 
-      {/* Closing image */}
-      <section className="px-6 pb-20">
-        <div className="mx-auto max-w-5xl">
-          <FadeUp>
-            <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "16/9" }}>
-              <Image
-                src="/images/cut-o-clock/Photo 5.jpg"
-                alt="Cut O' Clock – resultat"
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1024px"
-              />
-            </div>
-          </FadeUp>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="px-6 py-20">
