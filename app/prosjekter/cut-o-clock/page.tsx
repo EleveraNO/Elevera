@@ -106,7 +106,7 @@ export default function CutOClockPage() {
                       </div>
                       <div className="pb-2 pt-2">
                         <h3 className="mb-2 font-bold text-white">{item.tittel}</h3>
-                        <p className="text-sm leading-relaxed text-white/50">{item.beskrivelse}</p>
+                        <p className="text-sm leading-relaxed text-white/70">{item.beskrivelse}</p>
                       </div>
                     </div>
                   </StaggerItem>
