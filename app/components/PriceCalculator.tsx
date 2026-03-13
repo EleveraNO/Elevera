@@ -85,7 +85,7 @@ export default function PriceCalculator() {
   const [submitting, setSubmitting] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
-  const postingFee = adminPosting === true ? 750 : 0;
+  const postingFee = adminPosting === true ? 1000 : 0;
 
   const monthly = sections.reduce(
     (sum, s) => sum + (s.options[selected[s.id]]?.price ?? 0),
@@ -239,13 +239,18 @@ export default function PriceCalculator() {
                     Publisering
                   </p>
                   <p className="mb-5 text-lg font-semibold text-white">
-                    Skal vi administrere publisering for dere?
+                    Vil dere at vi publiserer innholdet for dere?
                   </p>
                   <div className="grid gap-3 sm:grid-cols-2">
                     {[
-                      { label: "Nei, vi publiserer selv", value: false, note: "Ingen tillegg" },
-                      { label: "Ja, dere publiserer for oss", value: true, note: "+750 kr/mnd" },
-                    ].map(({ label, value, note }) => (
+                      { label: "Nei, vi poster selv", note: "0 kr", value: false, bullets: [] },
+                      {
+                        label: "Ja, dere poster for oss",
+                        note: "+1 000 kr/mnd",
+                        value: true,
+                        bullets: ["Publisering på Instagram / Facebook / TikTok", "Captions og hashtags"],
+                      },
+                    ].map(({ label, value, note, bullets }) => (
                       <button
                         key={String(value)}
                         onClick={() => setAdminPosting(value)}
@@ -255,9 +260,18 @@ export default function PriceCalculator() {
                             : "border-white/10 bg-white/[0.02] text-white/70 hover:border-white/20 hover:bg-white/[0.05]"
                         }`}
                       >
-                        <div className="flex items-center justify-between">
-                          <span>{label}</span>
-                          <span className={`text-xs ${adminPosting === value ? "text-[#7c3aed]" : "text-white/30"}`}>{note}</span>
+                        <div className="flex items-start justify-between gap-2">
+                          <div>
+                            <span className="font-semibold">{label}</span>
+                            {bullets.length > 0 && (
+                              <ul className="mt-2 space-y-0.5">
+                                {bullets.map((b, i) => (
+                                  <li key={i} className="text-xs text-white/50 font-normal">{b}</li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                          <span className={`shrink-0 text-xs font-semibold ${adminPosting === value ? "text-[#7c3aed]" : "text-white/30"}`}>{note}</span>
                         </div>
                         {adminPosting === value && (
                           <span className="absolute right-3 top-3 flex h-5 w-5 items-center justify-center rounded-full bg-[#7c3aed] text-xs text-white">
