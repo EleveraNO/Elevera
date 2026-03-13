@@ -79,7 +79,7 @@ export default function Services() {
             <StaggerItem key={index}>
               <a
                 href={service.href}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-[#7c3aed]/40"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:border-[#7c3aed]/50 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#7c3aed]/0 to-[#7c3aed]/0 transition-all duration-500 group-hover:from-[#7c3aed]/5 group-hover:to-transparent" />
                 <div className="relative z-10 flex flex-1 flex-col">
