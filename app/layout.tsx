@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://elevera.no"),
-  title: "Elevera – Digitalbyrå i Ålesund | Nettside, Foto, Video & Annonsering",
+  title: "Elevera – Foto, Video & Annonsering i Ålesund",
   description:
     "Elevera er et digitalbyrå i Ålesund som hjelper lokale bedrifter å vokse på nett med profesjonell foto & video, konverterende nettsider og betalt annonsering.",
   keywords: [
