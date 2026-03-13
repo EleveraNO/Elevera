@@ -7,6 +7,7 @@ import LogoIntro from "./components/LogoIntro";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const montserrat = Montserrat({
