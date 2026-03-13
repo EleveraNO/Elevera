@@ -288,52 +288,42 @@ export default function PriceCalculator() {
           ))}
         </div>
 
-        {/* Result */}
+        {/* Sticky price bar */}
         <AnimatePresence>
           {!nothingSelected && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.4 }}
-              className="mt-8 rounded-2xl border border-[#7c3aed]/40 bg-[#7c3aed]/10 p-8"
+              initial={{ y: 80, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 80, opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="fixed bottom-0 left-0 right-0 z-50 border-t border-[#7c3aed]/30 bg-[#0a0a0a]/95 px-4 py-4 backdrop-blur-md"
             >
-              <p className="mb-6 text-center text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">
-                Din estimerte pakke
-              </p>
-              <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-12">
-                <div className="text-center">
-                  <p className="text-sm text-white/50">Månedlig pris</p>
-                  <p className="text-4xl font-bold text-white">
+              <div className="mx-auto flex max-w-4xl items-center justify-between gap-4">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-2xl font-bold text-white">
                     {formatPrice(monthly)}
-                    <span className="text-lg font-normal text-white/40"> / mnd</span>
-                  </p>
+                    <span className="text-base font-normal text-white/40">/mnd</span>
+                  </span>
+                  {setup > 0 && (
+                    <span className="text-sm text-white/40">
+                      + {formatPrice(setup)} etablering
+                    </span>
+                  )}
                 </div>
-                {setup > 0 && (
-                  <>
-                    <div className="hidden h-12 w-px bg-white/10 sm:block" />
-                    <div className="text-center">
-                      <p className="text-sm text-white/50">Etablering (én gang)</p>
-                      <p className="text-2xl font-bold text-white">
-                        {formatPrice(setup)}
-                      </p>
-                    </div>
-                  </>
-                )}
-              </div>
-              <p className="mt-4 text-center text-xs text-white/30">
-                Annonsebudsjett kommer i tillegg. Priser er veiledende.
-              </p>
-              <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <button
                   onClick={handleSendClick}
-                  className="w-full rounded-full bg-[#7c3aed] px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-[#6d28d9] sm:w-auto"
+                  className="shrink-0 rounded-full bg-[#7c3aed] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#6d28d9]"
                 >
                   Send forespørsel
                 </button>
               </div>
             </motion.div>
           )}
+        </AnimatePresence>
+
+        {/* Spacer so sticky bar doesn't overlap content */}
+        <AnimatePresence>
+          {!nothingSelected && <motion.div initial={{ height: 0 }} animate={{ height: 80 }} exit={{ height: 0 }} />}
         </AnimatePresence>
 
         {/* Contact form */}
