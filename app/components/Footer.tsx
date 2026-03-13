@@ -103,6 +103,9 @@ export default function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/30 sm:flex-row">
           <p>© {new Date().getFullYear()} Elevera — Org.nr. 936 240 658. Alle rettigheter forbeholdt.</p>
           <div className="flex gap-6">
+            <a href="/blogg" className="transition-colors hover:text-white">
+              Blogg
+            </a>
             <a href="/personvern" className="transition-colors hover:text-white">
               Personvern
             </a>
