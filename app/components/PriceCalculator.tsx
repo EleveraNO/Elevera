@@ -288,6 +288,12 @@ export default function PriceCalculator() {
           ))}
         </div>
 
+        {/* Footer note */}
+        <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-5 text-sm text-white/40 space-y-1">
+          <p>For å sikre gode resultater jobber vi med en oppstartsfase på minimum 3 måneder. Dette gir oss tid til å produsere innhold, teste annonser og optimalisere strategien.</p>
+          <p>Alle priser er ekskl. mva. Annonsebudsjett kommer i tillegg til pakkeprisen.</p>
+        </div>
+
         {/* Sticky price bar */}
         <AnimatePresence>
           {!nothingSelected && (
