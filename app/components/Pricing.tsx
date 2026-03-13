@@ -159,6 +159,13 @@ export default function Pricing() {
             <p className="mt-1 text-sm text-white/30">
               Dette gir oss tid til å produsere innhold, teste annonser og optimalisere strategien. Alle priser er ekskl. mva.
             </p>
+            <a
+              href="/kalkulator"
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-2.5 text-sm text-white/60 transition hover:border-white/30 hover:text-white/90"
+            >
+              Ikke sikker på hvilken pakke? Bygg din egen
+              <span>→</span>
+            </a>
           </div>
         </FadeUp>
       </div>
