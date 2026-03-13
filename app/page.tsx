@@ -19,7 +19,7 @@ const jsonLd = {
   url: "https://elevera.no",
   telephone: "+4794974165",
   email: "tverbakk@elevera.no",
-  priceRange: "NOK 3490–9990",
+  priceRange: "NOK 3490–14990",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

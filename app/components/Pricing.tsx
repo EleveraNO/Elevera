@@ -22,7 +22,7 @@ const plans = [
   },
   {
     name: "Vekst",
-    price: "5 990",
+    price: "7 990",
     period: "/ mnd",
     setup: "4 990",
     description: "Den mest populære pakken for bedrifter som vil vokse raskt.",
@@ -41,7 +41,7 @@ const plans = [
   },
   {
     name: "Pro",
-    price: "9 990",
+    price: "14 990",
     period: "/ mnd",
     setup: "7 990",
     description: "Full digital markedsføring for ambisiøse bedrifter uten kompromiss.",
