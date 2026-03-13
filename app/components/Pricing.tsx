@@ -175,7 +175,7 @@ export default function Pricing() {
                   <path d="M7 8h10M7 12h6"/>
                 </svg>
               </span>
-              <span>Ikke sikker på hvilken pakke? Bygg din egen</span>
+              <span>Bygg din egen vekstpakke</span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </div>
