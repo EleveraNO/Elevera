@@ -70,7 +70,7 @@ export default function DronevideoPage() {
             @keyframes p3 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
             @keyframes p4 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
             .drone-body { animation: droneFloat 3s ease-in-out infinite; }
-            .drone-shadow { animation: shadowPulse 3s ease-in-out infinite; }
+            .drone-shadow { animation: shadowPulse 3s ease-in-out infinite; transform-origin: 70px 95px; }
             .prop-tl { animation: p1 0.4s linear infinite; transform-origin: 28px 28px; }
             .prop-tr { animation: p2 0.4s linear infinite; transform-origin: 112px 28px; }
             .prop-bl { animation: p3 0.4s linear infinite; transform-origin: 28px 72px; }
@@ -104,29 +104,29 @@ export default function DronevideoPage() {
                 {/* Top-left */}
                 <circle cx="28" cy="28" r="5" fill="#1a1a2e" stroke="#7c3aed" strokeWidth="1.5" />
                 <g className="prop-tl">
-                  <rect x="18" y="26.5" width="20" height="3" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
-                  <rect x="26.5" y="18" width="3" height="20" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="16" y="26" width="24" height="4" rx="2" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="26" y="16" width="4" height="24" rx="2" fill="#a78bfa" fillOpacity="0.7" />
                 </g>
 
                 {/* Top-right */}
                 <circle cx="112" cy="28" r="5" fill="#1a1a2e" stroke="#7c3aed" strokeWidth="1.5" />
                 <g className="prop-tr">
-                  <rect x="102" y="26.5" width="20" height="3" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
-                  <rect x="110.5" y="18" width="3" height="20" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="100" y="26" width="24" height="4" rx="2" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="110" y="16" width="4" height="24" rx="2" fill="#a78bfa" fillOpacity="0.7" />
                 </g>
 
                 {/* Bottom-left */}
                 <circle cx="28" cy="72" r="5" fill="#1a1a2e" stroke="#7c3aed" strokeWidth="1.5" />
                 <g className="prop-bl">
-                  <rect x="18" y="70.5" width="20" height="3" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
-                  <rect x="26.5" y="62" width="3" height="20" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="16" y="70" width="24" height="4" rx="2" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="26" y="60" width="4" height="24" rx="2" fill="#a78bfa" fillOpacity="0.7" />
                 </g>
 
                 {/* Bottom-right */}
                 <circle cx="112" cy="72" r="5" fill="#1a1a2e" stroke="#7c3aed" strokeWidth="1.5" />
                 <g className="prop-br">
-                  <rect x="102" y="70.5" width="20" height="3" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
-                  <rect x="110.5" y="62" width="3" height="20" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="100" y="70" width="24" height="4" rx="2" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="110" y="60" width="4" height="24" rx="2" fill="#a78bfa" fillOpacity="0.7" />
                 </g>
               </g>
             </svg>
