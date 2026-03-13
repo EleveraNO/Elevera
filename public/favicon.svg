@@ -1,9 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <!-- Lilla bakgrunn med avrundede hjørner -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Lilla bakgrunn -->
   <rect width="32" height="32" rx="7" fill="#7c3aed"/>
-  <!-- Forenklet vekstgraf-silhuett, hvit -->
-  <polygon
-    fill="white"
-    points="2,24 6,19 9,22 13,16 17,20 21,12 25,17 30,8 30,26 2,26"
-  />
+  <!-- Elevera-ikon (fjell/vekstgraf), hvit, skalert og sentrert -->
+  <svg x="1" y="11" width="30" viewBox="-5 45 764 200">
+    <polygon fill="white" points="538.64 85.79 494.51 115.74 402.25 52.77 271.12 142.28 236.36 123.66 0 234.06 165.99 195.18 239.2 230.4 200.47 184.37 223.02 174.31 250.75 198.82 300.27 167.26 360.88 192.44 333.73 145.94 393.11 108.11 474.38 151.01 539.04 128.81 754.2 234.06 538.64 85.79"/>
+  </svg>
 </svg>
