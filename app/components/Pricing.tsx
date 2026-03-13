@@ -8,7 +8,7 @@ const plans = [
     price: "3 490",
     period: "/ mnd",
     setup: "2 990",
-    description: "For deg som vil etablere en profesjonell digital tilstedeværelse.",
+    description: "For små bedrifter som trenger en profesjonell start på nett.",
     features: [
       "Enkel landingsside (1 side)",
       "Foto & video til nettsiden",
@@ -17,7 +17,7 @@ const plans = [
       "Månedlig rapport",
     ],
     notIncluded: ["Månedlig innholdsproduksjon", "Betalt annonsering"],
-    cta: "Kom i gang",
+    cta: "Start prosjekt",
     highlighted: false,
   },
   {
@@ -25,11 +25,11 @@ const plans = [
     price: "7 990",
     period: "/ mnd",
     setup: "4 990",
-    description: "Den mest populære pakken for bedrifter som vil vokse raskt.",
+    description: "For bedrifter som vil vokse gjennom innhold og sosiale medier.",
     features: [
       "Profesjonell nettside (inntil 5 sider)",
       "Foto & video til nettsiden",
-      "SEO-optimalisering",
+      "Lokal SEO",
       "1 shoot per måned",
       "4 reels per måned",
       "10 bilder per måned",
@@ -39,7 +39,7 @@ const plans = [
       "Dedikert kontaktperson",
     ],
     notIncluded: [],
-    cta: "Velg Vekst",
+    cta: "Start vekst",
     highlighted: true,
   },
   {
@@ -47,7 +47,7 @@ const plans = [
     price: "14 990",
     period: "/ mnd",
     setup: "7 990",
-    description: "Full digital markedsføring for ambisiøse bedrifter uten kompromiss.",
+    description: "For bedrifter som vil dominere digitalt i sitt marked.",
     features: [
       "Skreddersydd nettside uten sidebegrensning",
       "Avansert SEO + blogg",
@@ -149,9 +149,14 @@ export default function Pricing() {
         </StaggerContainer>
 
         <FadeUp delay={0.3}>
-          <p className="mt-10 text-center text-sm text-white/30">
-            Alle priser er ekskl. mva. Bindingstid 3 måneder. Kontakt oss for skreddersydde pakker.
-          </p>
+          <div className="mt-10 text-center">
+            <p className="text-sm text-white/50">
+              For å sikre gode resultater jobber vi med en oppstartsfase på minimum 3 måneder.
+            </p>
+            <p className="mt-1 text-sm text-white/30">
+              Dette gir oss tid til å produsere innhold, teste annonser og optimalisere strategien. Alle priser er ekskl. mva.
+            </p>
+          </div>
         </FadeUp>
       </div>
     </section>
