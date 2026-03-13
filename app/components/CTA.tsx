@@ -9,8 +9,16 @@ export default function CTA() {
   const [status, setStatus] = useState<Status>("idle");
   const [navn, setNavn] = useState("");
   const [bedrift, setBedrift] = useState("");
-  const [tjeneste, setTjeneste] = useState("");
+  const [tjenester, setTjenester] = useState<string[]>([]);
   const [melding, setMelding] = useState("");
+
+  const tjenesteListe = ["Nettside", "Markedsføring", "Innholdsproduksjon"];
+
+  function toggleTjeneste(t: string) {
+    setTjenester((prev) =>
+      prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]
+    );
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -19,7 +27,7 @@ export default function CTA() {
       const res = await fetch("https://formspree.io/f/xgonybjn", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ navn, bedrift, tjeneste, melding }),
+        body: JSON.stringify({ navn, bedrift, tjenester: tjenester.join(", "), melding }),
       });
       if (res.ok) {
         setStatus("success");
@@ -150,19 +158,29 @@ export default function CTA() {
                   </div>
 
                   <div>
-                    <label className="mb-1.5 block text-xs font-medium text-white/50">Tjeneste</label>
-                    <select
-                      required
-                      value={tjeneste}
-                      onChange={(e) => setTjeneste(e.target.value)}
-                      className={inputClass + " cursor-pointer"}
-                    >
-                      <option value="" disabled>Velg tjeneste...</option>
-                      <option value="Nettside">Nettside</option>
-                      <option value="Foto & video">Foto & video</option>
-                      <option value="Dronevideo">Dronevideo</option>
-                      <option value="Usikker">Usikker – vil høre mer</option>
-                    </select>
+                    <label className="mb-1.5 block text-xs font-medium text-white/50">
+                      Tjeneste <span className="text-white/30">(velg gjerne flere)</span>
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {tjenesteListe.map((t) => {
+                        const active = tjenester.includes(t);
+                        return (
+                          <button
+                            key={t}
+                            type="button"
+                            onClick={() => toggleTjeneste(t)}
+                            className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+                              active
+                                ? "border-[#7c3aed] bg-[#7c3aed]/20 text-white"
+                                : "border-white/10 bg-white/5 text-white/50 hover:border-white/20 hover:text-white/80"
+                            }`}
+                          >
+                            {active && <span className="mr-1.5">✓</span>}
+                            {t}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
 
                   <div>
