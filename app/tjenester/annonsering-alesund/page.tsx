@@ -119,7 +119,7 @@ export default function AnnonseringPage() {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { stat: "2,5x", label: "Gjennomsnittlig ROAS for våre kunder" },
-                { stat: "4,2mrd", label: "Nordmenn er aktive på sosiale medier daglig" },
+                { stat: "4,1mill", label: "Nordmenn er aktive på sosiale medier daglig" },
                 { stat: "63%", label: "Av bedrifter øker annonsebudsjettet hvert år" },
                 { stat: "Top 3", label: "Google-annonser vises øverst i søkeresultatene" },
               ].map((item, i) => (
