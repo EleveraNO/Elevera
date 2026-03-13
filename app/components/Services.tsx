@@ -66,7 +66,7 @@ export default function Services() {
             Tjenester
           </p>
           <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
-            Tjenester som skaper vekst
+            Foto, video og annonsering som skaper vekst
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/50">
             Elevera tilbyr alle digitale tjenestene du trenger for å vokse –
