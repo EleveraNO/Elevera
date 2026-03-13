@@ -8,6 +8,7 @@ import Portfolio from "./components/Portfolio";
 import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import Marquee from "./components/Marquee";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -48,6 +49,7 @@ export default function Home() {
       <main className="min-h-screen bg-[#0a0a0a]">
         <Navbar />
         <Hero />
+        <Marquee />
         <Problems />
         <Services />
         <Pricing />
