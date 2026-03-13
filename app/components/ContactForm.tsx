@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -9,6 +9,12 @@ const TJENESTER = ["Nettside", "Foto", "Video", "Droneinnhold", "Markedsføring"
 const inputClass =
   "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-[#7c3aed]/60 transition-colors text-sm";
 
+const PAKKE_TJENESTER: Record<string, string[]> = {
+  Start: ["Nettside"],
+  Vekst: ["Nettside", "Foto", "Video", "Markedsføring"],
+  Pro: ["Nettside", "Foto", "Video", "Droneinnhold", "Markedsføring"],
+};
+
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [navn, setNavn] = useState("");
@@ -16,6 +22,17 @@ export default function ContactForm() {
   const [epost, setEpost] = useState("");
   const [tjenester, setTjenester] = useState<string[]>([]);
   const [melding, setMelding] = useState("");
+  const [valgtPakke, setValgtPakke] = useState<string | null>(null);
+
+  useEffect(() => {
+    const pakke = sessionStorage.getItem("valgtPakke");
+    if (pakke) {
+      setValgtPakke(pakke);
+      setTjenester(PAKKE_TJENESTER[pakke] ?? []);
+      setMelding(`Jeg er interessert i ${pakke}-pakken.`);
+      sessionStorage.removeItem("valgtPakke");
+    }
+  }, []);
 
   function toggleTjeneste(t: string) {
     setTjenester((prev) =>
@@ -30,7 +47,7 @@ export default function ContactForm() {
       const res = await fetch("https://formspree.io/f/xgonybjn", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ navn, bedrift, epost, tjenester: tjenester.join(", "), melding }),
+        body: JSON.stringify({ navn, bedrift, epost, pakke: valgtPakke ?? "Ikke valgt", tjenester: tjenester.join(", "), melding }),
       });
       setStatus(res.ok ? "success" : "error");
     } catch {
@@ -56,6 +73,26 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-4 text-left">
+      {valgtPakke && (
+        <div className="flex items-center justify-between rounded-xl border border-[#7c3aed]/40 bg-[#7c3aed]/10 px-4 py-3">
+          <div className="flex items-center gap-2.5">
+            <svg className="h-4 w-4 text-[#a78bfa]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-sm font-medium text-white">Valgt pakke:</span>
+            <span className="rounded-full bg-[#7c3aed]/30 px-3 py-0.5 text-sm font-semibold text-[#a78bfa]">
+              {valgtPakke}
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => { setValgtPakke(null); setTjenester([]); setMelding(""); }}
+            className="text-xs text-white/30 transition hover:text-white/60"
+          >
+            Endre
+          </button>
+        </div>
+      )}
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="mb-1.5 block text-xs font-medium text-white/50">Navn</label>

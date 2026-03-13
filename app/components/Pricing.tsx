@@ -136,16 +136,20 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#kontakt"
-                  className={`block rounded-full py-3 text-center text-sm font-semibold transition-all ${
+                <button
+                  type="button"
+                  onClick={() => {
+                    sessionStorage.setItem("valgtPakke", plan.name);
+                    document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className={`block w-full rounded-full py-3 text-center text-sm font-semibold transition-all ${
                     plan.highlighted
                       ? "bg-[#7c3aed] text-white hover:bg-[#6d28d9] shadow-lg shadow-[#7c3aed]/30"
                       : "border border-white/20 text-white hover:border-white/40 hover:bg-white/5"
                   }`}
                 >
                   {plan.cta}
-                </a>
+                </button>
               </div>
             </StaggerItem>
           ))}
