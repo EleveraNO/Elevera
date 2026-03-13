@@ -9,11 +9,11 @@ export default function LogoIntro() {
   useEffect(() => {
     if (sessionStorage.getItem("elevera_intro_seen")) return;
     setVisible(true);
-    const fadeTimer = setTimeout(() => setFading(true), 2900);
+    const fadeTimer = setTimeout(() => setFading(true), 1600);
     const hideTimer = setTimeout(() => {
       setVisible(false);
       sessionStorage.setItem("elevera_intro_seen", "1");
-    }, 3700);
+    }, 2300);
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(hideTimer);
@@ -50,7 +50,7 @@ export default function LogoIntro() {
               }
               .ei-fill {
                 fill-opacity: 0;
-                animation: elevera-fill 0.5s ease-out 2.0s forwards;
+                animation: elevera-fill 0.4s ease-out 1.1s forwards;
               }
               .ei-stroke {
                 fill: none;
@@ -61,12 +61,12 @@ export default function LogoIntro() {
                 stroke-dasharray: 1500;
                 stroke-dashoffset: 1500;
                 animation:
-                  elevera-draw 1.8s cubic-bezier(0.4,0,0.2,1) 0.2s forwards,
-                  elevera-stroke-out 0.35s ease-out 2.5s forwards;
+                  elevera-draw 1.0s cubic-bezier(0.4,0,0.2,1) 0.1s forwards,
+                  elevera-stroke-out 0.3s ease-out 1.5s forwards;
               }
               .ei-text {
                 opacity: 0;
-                animation: elevera-text 0.7s ease-out 1.6s forwards;
+                animation: elevera-text 0.5s ease-out 0.8s forwards;
               }
             `}</style>
           </defs>
