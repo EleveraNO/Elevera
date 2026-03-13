@@ -40,9 +40,21 @@ const faqs = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Digital annonsering Ålesund",
+  description: "Facebook-annonsering, Instagram-annonsering og Google Ads for bedrifter i Ålesund. Målrettet markedsføring som gir resultater.",
+  provider: { "@type": "LocalBusiness", name: "Elevera", url: "https://elevera.no" },
+  areaServed: { "@type": "City", name: "Ålesund" },
+  url: "https://elevera.no/tjenester/annonsering-alesund",
+};
+
 export default function AnnonseringPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 
       {/* Hero */}
@@ -154,5 +166,6 @@ export default function AnnonseringPage() {
 
       <Footer />
     </main>
+    </>
   );
 }

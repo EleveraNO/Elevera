@@ -43,9 +43,32 @@ const faqs = [
   },
 ];
 
+const jsonLdService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Dronevideo Ålesund",
+  description: "Profesjonell dronevideo og dronefoto i Ålesund og på Sunnmøre. Spektakulære luftopptak for bedrifter, eiendom og event.",
+  provider: { "@type": "LocalBusiness", name: "Elevera", url: "https://elevera.no" },
+  areaServed: { "@type": "City", name: "Ålesund" },
+  url: "https://elevera.no/tjenester/dronevideo-alesund",
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function DronevideoPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
+      <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 
       {/* Hero */}
@@ -236,5 +259,6 @@ export default function DronevideoPage() {
 
       <Footer />
     </main>
+    </>
   );
 }

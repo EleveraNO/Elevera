@@ -19,9 +19,19 @@ const jsonLd = {
   url: "https://elevera.no",
   telephone: "+4794974165",
   email: "tverbakk@elevera.no",
+  priceRange: "NOK 3490–9990",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "17:00",
+    },
+  ],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ålesund",
+    addressRegion: "Møre og Romsdal",
     addressCountry: "NO",
   },
   areaServed: {
@@ -32,6 +42,16 @@ const jsonLd = {
       longitude: 6.1549,
     },
     geoRadius: "50000",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Tjenester",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Nettside Ålesund", url: "https://elevera.no/tjenester/nettside-alesund" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Foto & video Ålesund", url: "https://elevera.no/tjenester/foto-og-video-alesund" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Dronevideo Ålesund", url: "https://elevera.no/tjenester/dronevideo-alesund" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital annonsering Ålesund", url: "https://elevera.no/tjenester/annonsering-alesund" } },
+    ],
   },
   sameAs: [
     "https://www.instagram.com/elevera_no/",

@@ -40,9 +40,28 @@ const faqs = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Nettside Ålesund",
+  description: "Profesjonell nettsideutvikling for bedrifter i Ålesund. Rask, moderne og konverterende nettside tilpasset din bedrift.",
+  provider: { "@type": "LocalBusiness", name: "Elevera", url: "https://elevera.no" },
+  areaServed: { "@type": "City", name: "Ålesund" },
+  url: "https://elevera.no/tjenester/nettside-alesund",
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "NOK",
+    lowPrice: "3490",
+    highPrice: "9990",
+    offerCount: "3",
+  },
+};
+
 export default function NettsidesPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 
       {/* Hero */}
@@ -153,5 +172,6 @@ export default function NettsidesPage() {
 
       <Footer />
     </main>
+    </>
   );
 }

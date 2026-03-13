@@ -52,9 +52,21 @@ const faqs = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Foto og video Ålesund",
+  description: "Profesjonell foto- og videoproduksjon for bedrifter i Ålesund og på Sunnmøre. Innhold til nettside, sosiale medier og markedsføring.",
+  provider: { "@type": "LocalBusiness", name: "Elevera", url: "https://elevera.no" },
+  areaServed: { "@type": "City", name: "Ålesund" },
+  url: "https://elevera.no/tjenester/foto-og-video-alesund",
+};
+
 export default function FotoOgVideoPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 
       {/* Hero */}
@@ -203,5 +215,6 @@ export default function FotoOgVideoPage() {
 
       <Footer />
     </main>
+    </>
   );
 }
