@@ -1,42 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
-const WORDS = ["Foto & Video", "Nettsider", "Dronevideo", "Annonsering"];
-
-function Typewriter() {
-  const [display, setDisplay] = useState("");
-  const [wordIdx, setWordIdx] = useState(0);
-  const [charIdx, setCharIdx] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const word = WORDS[wordIdx];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (!deleting && charIdx < word.length) {
-      timeout = setTimeout(() => setCharIdx((c) => c + 1), 80);
-    } else if (!deleting && charIdx === word.length) {
-      timeout = setTimeout(() => setDeleting(true), 1800);
-    } else if (deleting && charIdx > 0) {
-      timeout = setTimeout(() => setCharIdx((c) => c - 1), 45);
-    } else if (deleting && charIdx === 0) {
-      setDeleting(false);
-      setWordIdx((i) => (i + 1) % WORDS.length);
-    }
-
-    setDisplay(word.slice(0, charIdx));
-    return () => clearTimeout(timeout);
-  }, [charIdx, deleting, wordIdx]);
-
-  return (
-    <span className="bg-gradient-to-r from-[#7c3aed] to-[#60a5fa] bg-clip-text text-transparent">
-      {display}
-      <span className="animate-pulse text-[#7c3aed]">|</span>
-    </span>
-  );
-}
 
 export default function Hero() {
   return (
@@ -73,7 +37,9 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
         >
           Én partner.{" "}
-          <Typewriter />{" "}
+          <span className="bg-gradient-to-r from-[#7c3aed] to-[#60a5fa] bg-clip-text text-transparent">
+            Alt du trenger
+          </span>{" "}
           for å vokse på nett.
         </motion.h1>
 
