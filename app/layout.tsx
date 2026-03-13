@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Montserrat } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "./components/CookieBanner";
-import CursorGlow from "./components/CursorGlow";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,7 +67,6 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body className={`${geistSans.variable} ${montserrat.variable} antialiased`}>
-        <CursorGlow />
         <CookieBanner />
         {children}
       </body>
