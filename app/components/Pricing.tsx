@@ -62,6 +62,13 @@ const plans = [
 
 export default function Pricing() {
   return (
+    <>
+    <style>{`
+      @keyframes vekstPulse {
+        0%, 100% { box-shadow: 0 0 30px rgba(124,58,237,0.2), 0 25px 50px rgba(124,58,237,0.15); }
+        50% { box-shadow: 0 0 60px rgba(124,58,237,0.45), 0 25px 50px rgba(124,58,237,0.3); }
+      }
+    `}</style>
     <section className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <FadeUp className="mb-16 text-center">
@@ -82,9 +89,10 @@ export default function Pricing() {
               <div
                 className={`relative flex h-full flex-col rounded-2xl border p-8 transition-all ${
                   plan.highlighted
-                    ? "border-[#7c3aed] bg-gradient-to-b from-[#7c3aed]/20 to-[#7c3aed]/5 shadow-2xl shadow-[#7c3aed]/20 scale-105"
+                    ? "border-[#7c3aed] bg-gradient-to-b from-[#7c3aed]/20 to-[#7c3aed]/5 scale-105"
                     : "border-white/10 bg-white/5 hover:border-white/20"
                 }`}
+                style={plan.highlighted ? { animation: "vekstPulse 3s ease-in-out infinite" } : {}}
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -140,5 +148,6 @@ export default function Pricing() {
         </FadeUp>
       </div>
     </section>
+    </>
   );
 }

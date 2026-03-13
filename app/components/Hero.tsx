@@ -101,15 +101,36 @@ export default function Hero() {
         {/* Heading */}
         <motion.h1
           className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+          initial="hidden"
+          animate="visible"
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } } }}
         >
-          Én partner.{" "}
+          {["Én", "partner."].map((w, i) => (
+            <motion.span
+              key={i}
+              className="inline-block"
+              style={{ marginRight: "0.25em" }}
+              variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] } } }}
+            >{w}</motion.span>
+          ))}
           <span className="bg-gradient-to-r from-[#7c3aed] to-[#60a5fa] bg-clip-text text-transparent">
-            Alt du trenger
-          </span>{" "}
-          for å vokse på nett.
+            {["Alt", "du", "trenger"].map((w, i) => (
+              <motion.span
+                key={i}
+                className="inline-block"
+                style={{ marginRight: "0.25em" }}
+                variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] } } }}
+              >{w}</motion.span>
+            ))}
+          </span>
+          {["for", "å", "vokse", "på", "nett."].map((w, i) => (
+            <motion.span
+              key={i}
+              className="inline-block"
+              style={{ marginRight: i < 4 ? "0.25em" : 0 }}
+              variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] } } }}
+            >{w}</motion.span>
+          ))}
         </motion.h1>
 
         {/* Subtext */}

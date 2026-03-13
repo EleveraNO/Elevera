@@ -66,11 +66,15 @@ export default function FAQ() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                {openIndex === index && (
-                  <div className="px-6 pb-6">
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="mx-6 mb-6 border-l-2 border-[#7c3aed]/50 pl-4">
                     <p className="leading-relaxed text-white/60">{faq.answer}</p>
                   </div>
-                )}
+                </div>
               </div>
             </StaggerItem>
           ))}
