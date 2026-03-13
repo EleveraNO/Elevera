@@ -101,7 +101,7 @@ export default function PriceCalculator() {
     .map((s) => {
       const opt = s.options[selected[s.id]];
       if (!opt || opt.price === 0) return null;
-      return `${s.title.replace(/^\d+\.\s/, "")}: ${opt.label}${opt.note ? ` (${opt.note})` : ""} – ${formatPrice(opt.price)}/mnd`;
+      return `${s.title.replace(/^\d+\.\s/, "")}: ${opt.label} – ${formatPrice(opt.price)}/mnd`;
     })
     .filter(Boolean)
     .join("\n");
@@ -375,8 +375,7 @@ export default function PriceCalculator() {
                             {s.title.replace(/^\d+\.\s/, "")}
                           </span>
                           <span className="font-semibold text-white">
-                            {opt.label}
-                            {opt.note ? ` (${opt.note})` : ""} — {formatPrice(opt.price)}/mnd
+                            {opt.label} — {formatPrice(opt.price)}/mnd
                           </span>
                         </div>
                       );
