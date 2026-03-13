@@ -13,6 +13,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [navn, setNavn] = useState("");
   const [bedrift, setBedrift] = useState("");
+  const [epost, setEpost] = useState("");
   const [tjenester, setTjenester] = useState<string[]>([]);
   const [melding, setMelding] = useState("");
 
@@ -29,7 +30,7 @@ export default function ContactForm() {
       const res = await fetch("https://formspree.io/f/xgonybjn", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ navn, bedrift, tjenester: tjenester.join(", "), melding }),
+        body: JSON.stringify({ navn, bedrift, epost, tjenester: tjenester.join(", "), melding }),
       });
       setStatus(res.ok ? "success" : "error");
     } catch {
@@ -78,6 +79,18 @@ export default function ContactForm() {
             className={inputClass}
           />
         </div>
+      </div>
+
+      <div>
+        <label className="mb-1.5 block text-xs font-medium text-white/50">E-postadresse</label>
+        <input
+          type="email"
+          required
+          placeholder="ola@bedriften.no"
+          value={epost}
+          onChange={(e) => setEpost(e.target.value)}
+          className={inputClass}
+        />
       </div>
 
       <div>
