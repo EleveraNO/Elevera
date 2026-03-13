@@ -54,6 +54,81 @@ export default function DronevideoPage() {
           <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/20 blur-[120px]" />
         </div>
         <div className="relative z-10 mx-auto max-w-4xl text-center">
+
+          {/* Drone animation */}
+          <style>{`
+            @keyframes droneFloat {
+              0%, 100% { transform: translateY(0px); }
+              50% { transform: translateY(-12px); }
+            }
+            @keyframes propSpin {
+              from { transform: rotate(0deg); }
+              to { transform: rotate(360deg); }
+            }
+            @keyframes shadowPulse {
+              0%, 100% { transform: scaleX(1); opacity: 0.3; }
+              50% { transform: scaleX(0.7); opacity: 0.15; }
+            }
+            .drone-body { animation: droneFloat 3s ease-in-out infinite; }
+            .prop { animation: propSpin 0.4s linear infinite; transform-box: fill-box; transform-origin: center; }
+            .drone-shadow { animation: shadowPulse 3s ease-in-out infinite; }
+          `}</style>
+
+          <div className="mb-8 flex flex-col items-center">
+            <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Shadow */}
+              <ellipse className="drone-shadow" cx="70" cy="95" rx="30" ry="5" fill="#7c3aed" />
+
+              <g className="drone-body">
+                {/* Arms */}
+                <line x1="70" y1="48" x2="28" y2="28" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
+                <line x1="70" y1="48" x2="112" y2="28" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
+                <line x1="70" y1="56" x2="28" y2="72" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
+                <line x1="70" y1="56" x2="112" y2="72" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
+
+                {/* Body */}
+                <rect x="57" y="42" width="26" height="20" rx="5" fill="#7c3aed" fillOpacity="0.2" stroke="#7c3aed" strokeWidth="1.5" />
+                <rect x="63" y="48" width="14" height="8" rx="2" fill="#7c3aed" fillOpacity="0.4" />
+
+                {/* Camera */}
+                <circle cx="70" cy="65" r="4" fill="#7c3aed" fillOpacity="0.6" stroke="#a78bfa" strokeWidth="1" />
+                <circle cx="70" cy="65" r="2" fill="#a78bfa" />
+
+                {/* LED blink */}
+                <circle cx="70" cy="48" r="2" fill="#a78bfa" fillOpacity="0.9" />
+
+                {/* Propeller hubs + spinning blades */}
+                {/* Top-left */}
+                <circle cx="28" cy="28" r="5" fill="#1a1a2e" stroke="#7c3aed" strokeWidth="1.5" />
+                <g className="prop" style={{ transformOrigin: "28px 28px" }}>
+                  <rect x="18" y="26.5" width="20" height="3" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="26.5" y="18" width="3" height="20" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                </g>
+
+                {/* Top-right */}
+                <circle cx="112" cy="28" r="5" fill="#1a1a2e" stroke="#7c3aed" strokeWidth="1.5" />
+                <g className="prop" style={{ transformOrigin: "112px 28px" }}>
+                  <rect x="102" y="26.5" width="20" height="3" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="110.5" y="18" width="3" height="20" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                </g>
+
+                {/* Bottom-left */}
+                <circle cx="28" cy="72" r="5" fill="#1a1a2e" stroke="#7c3aed" strokeWidth="1.5" />
+                <g className="prop" style={{ transformOrigin: "28px 72px" }}>
+                  <rect x="18" y="70.5" width="20" height="3" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="26.5" y="62" width="3" height="20" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                </g>
+
+                {/* Bottom-right */}
+                <circle cx="112" cy="72" r="5" fill="#1a1a2e" stroke="#7c3aed" strokeWidth="1.5" />
+                <g className="prop" style={{ transformOrigin: "112px 72px" }}>
+                  <rect x="102" y="70.5" width="20" height="3" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                  <rect x="110.5" y="62" width="3" height="20" rx="1.5" fill="#a78bfa" fillOpacity="0.7" />
+                </g>
+              </g>
+            </svg>
+          </div>
+
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/10 px-4 py-1.5">
             <span className="h-2 w-2 rounded-full bg-[#7c3aed]" />
             <span className="text-sm font-medium text-[#a78bfa]">Ålesund og Sunnmøre</span>
