@@ -12,6 +12,15 @@ export const metadata: Metadata = {
 
 const innlegg = [
   {
+    slug: "instagram-lokale-kunder",
+    tittel: "Slik bruker du Instagram til å få flere kunder lokalt",
+    ingress:
+      "Mange lokale bedrifter er på Instagram, men få bruker det på en måte som faktisk gir kunder. Her er det som fungerer.",
+    dato: "13. mars 2026",
+    kategori: "Sosiale medier",
+    lesetid: "6 min",
+  },
+  {
     slug: "profesjonelle-bilder-bedrift",
     tittel: "Hvorfor trenger bedriften din profesjonelle bilder?",
     ingress:
