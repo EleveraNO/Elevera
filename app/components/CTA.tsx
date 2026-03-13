@@ -9,9 +9,25 @@ export default function CTA() {
       <div className="mx-auto max-w-4xl">
         <ScaleIn>
           <div className="relative overflow-hidden rounded-3xl border border-[#7c3aed]/30 bg-gradient-to-br from-[#7c3aed]/20 via-[#7c3aed]/10 to-transparent p-12 text-center md:p-20">
+            <style>{`
+              @keyframes glowPulse {
+                0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
+                50% { transform: translate(-50%, -50%) scale(1.25); opacity: 0.35; }
+              }
+              @keyframes glowPulse2 {
+                0%, 100% { transform: scale(1); opacity: 0.1; }
+                50% { transform: scale(0.75); opacity: 0.2; }
+              }
+            `}</style>
             <div className="pointer-events-none absolute inset-0">
-              <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/20 blur-[80px]" />
-              <div className="absolute right-0 bottom-0 h-48 w-48 rounded-full bg-blue-500/10 blur-[60px]" />
+              <div
+                className="absolute left-1/2 top-1/2 h-[400px] w-[400px] rounded-full bg-[#7c3aed]/20 blur-[80px]"
+                style={{ animation: "glowPulse 6s ease-in-out infinite" }}
+              />
+              <div
+                className="absolute right-0 bottom-0 h-48 w-48 rounded-full bg-blue-500/10 blur-[60px]"
+                style={{ animation: "glowPulse2 6s ease-in-out infinite" }}
+              />
             </div>
 
             <div className="relative z-10">
