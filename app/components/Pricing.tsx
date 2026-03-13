@@ -10,7 +10,7 @@ const plans = [
     setup: "2 990",
     description: "For deg som vil etablere en profesjonell digital tilstedeværelse.",
     features: [
-      "1 nettside (inntil 5 sider)",
+      "Enkel landingsside (inntil 5 sider)",
       "Foto & video til nettsiden",
       "Grunnleggende SEO",
       "E-poststøtte",
@@ -27,7 +27,9 @@ const plans = [
     setup: "4 990",
     description: "Den mest populære pakken for bedrifter som vil vokse raskt.",
     features: [
-      "Alt i Start",
+      "Profesjonell nettside (inntil 10 sider)",
+      "Foto & video til nettsiden",
+      "SEO-optimalisering",
       "1 shoot per måned",
       "4 reels per måned",
       "10 bilder per måned",
@@ -47,7 +49,8 @@ const plans = [
     setup: "7 990",
     description: "Full digital markedsføring for ambisiøse bedrifter uten kompromiss.",
     features: [
-      "Alt i Vekst",
+      "Skreddersydd nettside uten sidebegrensning",
+      "Avansert SEO + blogg",
       "2 shoots per måned",
       "8 reels per måned",
       "20 bilder per måned",
