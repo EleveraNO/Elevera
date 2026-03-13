@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import PageCTA from "../../components/PageCTA";
 import { FadeUp, StaggerContainer, StaggerItem } from "../../components/animations";
 
 export const metadata: Metadata = {
@@ -216,25 +217,7 @@ export default function CutOClockPage() {
       </section>
 
 
-      {/* CTA */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="rounded-3xl border border-[#7c3aed]/30 bg-[#7c3aed]/10 p-12">
-            <h2 className="mb-4 text-3xl font-bold text-white">Vil du ha lignende resultater?</h2>
-            <p className="mb-8 text-white/60">
-              Book et gratis møte og hør hva vi kan gjøre for din bedrift i Ålesund.
-            </p>
-            <a
-              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block rounded-full bg-[#7c3aed] px-8 py-3.5 font-semibold text-white shadow-lg shadow-[#7c3aed]/30 transition-all hover:bg-[#6d28d9] hover:-translate-y-0.5"
-            >
-              Book gratis møte
-            </a>
-          </div>
-        </div>
-      </section>
+      <PageCTA heading="Vil du ha lignende resultater?" description="Book et gratis møte og hør hva vi kan gjøre for din bedrift i Ålesund." />
 
       <Footer />
     </main>
