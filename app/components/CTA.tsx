@@ -12,7 +12,7 @@ export default function CTA() {
   const [tjenester, setTjenester] = useState<string[]>([]);
   const [melding, setMelding] = useState("");
 
-  const tjenesteListe = ["Nettside", "Markedsføring", "Innholdsproduksjon"];
+  const tjenesteListe = ["Nettside", "Foto", "Video", "Droneinnhold", "Markedsføring"];
 
   function toggleTjeneste(t: string) {
     setTjenester((prev) =>
