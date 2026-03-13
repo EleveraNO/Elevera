@@ -11,12 +11,15 @@ const plans = [
     description: "For små bedrifter som trenger en profesjonell start på nett.",
     features: [
       "Enkel landingsside (1 side)",
-      "Foto & video til nettsiden",
+      "Foto til nettsiden",
       "Grunnleggende SEO",
-      "E-poststøtte",
       "Månedlig rapport",
     ],
-    notIncluded: ["Månedlig innholdsproduksjon", "Betalt annonsering"],
+    notIncluded: [
+      "Innholdsproduksjon til sosiale medier",
+      "Annonsering",
+      "Strategi",
+    ],
     cta: "Start prosjekt",
     highlighted: false,
   },
@@ -25,7 +28,7 @@ const plans = [
     price: "7 990",
     period: "/ mnd",
     setup: "4 990",
-    description: "For bedrifter som vil vokse gjennom innhold og sosiale medier.",
+    description: "Profesjonell digital vekst for bedrifter som vil få flere kunder.",
     features: [
       "Profesjonell nettside (inntil 5 sider)",
       "Foto & video til nettsiden",
@@ -47,7 +50,7 @@ const plans = [
     price: "14 990",
     period: "/ mnd",
     setup: "7 990",
-    description: "For bedrifter som vil dominere digitalt i sitt marked.",
+    description: "Full digital markedsføring for bedrifter som vil dominere i sitt marked.",
     features: [
       "Skreddersydd nettside uten sidebegrensning",
       "Avansert SEO + blogg",
