@@ -256,15 +256,9 @@ export default function PriceCalculator() {
                 Annonsebudsjett kommer i tillegg. Priser er veiledende.
               </p>
               <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <a
-                  href="mailto:tverbakk@elevera.no?subject=Gratis strategisamtale"
-                  className="w-full rounded-full bg-[#7c3aed] px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-[#6d28d9] sm:w-auto"
-                >
-                  Book gratis strategisamtale
-                </a>
                 <button
                   onClick={handleSendClick}
-                  className="w-full rounded-full border border-white/20 px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:border-white/40 sm:w-auto"
+                  className="w-full rounded-full bg-[#7c3aed] px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-[#6d28d9] sm:w-auto"
                 >
                   Send forespørsel
                 </button>
