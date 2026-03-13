@@ -190,15 +190,26 @@ export default function CutOClockPage() {
             <h2 className="text-3xl font-bold text-white">Se videoen</h2>
           </FadeUp>
           <FadeUp>
-            <div className="overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "9/16" }}>
-              <video
-                src="/videos/cut-o-clock-full.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="h-full w-full object-cover"
-              />
+            <div
+              className="rounded-2xl"
+              style={{
+                boxShadow:
+                  "0 0 60px rgba(124,58,237,0.35), 0 0 120px rgba(124,58,237,0.15)",
+              }}
+            >
+              <div
+                className="overflow-hidden rounded-2xl border border-[#7c3aed]/40"
+                style={{ aspectRatio: "9/16" }}
+              >
+                <video
+                  src="/videos/cut-o-clock-full.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
           </FadeUp>
         </div>
