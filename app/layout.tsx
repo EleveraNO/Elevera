@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Montserrat } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import CookieBanner from "./components/CookieBanner";
 import LogoIntro from "./components/LogoIntro";
 
@@ -69,6 +70,18 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body className={`${geistSans.variable} ${montserrat.variable} antialiased`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-5S67ZX9GY1"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5S67ZX9GY1');
+          `}
+        </Script>
         <LogoIntro />
         <CookieBanner />
         {children}
