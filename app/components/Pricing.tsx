@@ -159,12 +159,24 @@ export default function Pricing() {
             <p className="mt-1 text-sm text-white/30">
               Dette gir oss tid til å produsere innhold, teste annonser og optimalisere strategien. Alle priser er ekskl. mva.
             </p>
+          </div>
+        </FadeUp>
+
+        <FadeUp delay={0.45}>
+          <div className="mt-10 flex justify-center">
             <a
               href="/kalkulator"
-              className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-2.5 text-sm text-white/60 transition hover:border-white/30 hover:text-white/90"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl border border-[#7c3aed]/40 bg-[#7c3aed]/10 px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:border-[#7c3aed]/70 hover:bg-[#7c3aed]/20 hover:shadow-lg hover:shadow-[#7c3aed]/20"
             >
-              Ikke sikker på hvilken pakke? Bygg din egen
-              <span>→</span>
+              <span className="text-[#7c3aed]">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <path d="M8 21h8M12 17v4"/>
+                  <path d="M7 8h10M7 12h6"/>
+                </svg>
+              </span>
+              <span>Ikke sikker på hvilken pakke? Bygg din egen</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </div>
         </FadeUp>
