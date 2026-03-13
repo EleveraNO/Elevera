@@ -85,10 +85,12 @@ export default function PriceCalculator() {
   const [submitting, setSubmitting] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
+  const postingFee = adminPosting === true ? 750 : 0;
+
   const monthly = sections.reduce(
     (sum, s) => sum + (s.options[selected[s.id]]?.price ?? 0),
     0
-  );
+  ) + postingFee;
   const setup = sections.reduce(
     (sum, s) => sum + (s.options[selected[s.id]]?.setup ?? 0),
     0
@@ -241,9 +243,9 @@ export default function PriceCalculator() {
                   </p>
                   <div className="grid gap-3 sm:grid-cols-2">
                     {[
-                      { label: "Ja, dere publiserer for oss", value: true },
-                      { label: "Nei, vi publiserer selv", value: false },
-                    ].map(({ label, value }) => (
+                      { label: "Nei, vi publiserer selv", value: false, note: "Ingen tillegg" },
+                      { label: "Ja, dere publiserer for oss", value: true, note: "+750 kr/mnd" },
+                    ].map(({ label, value, note }) => (
                       <button
                         key={String(value)}
                         onClick={() => setAdminPosting(value)}
@@ -253,7 +255,10 @@ export default function PriceCalculator() {
                             : "border-white/10 bg-white/[0.02] text-white/70 hover:border-white/20 hover:bg-white/[0.05]"
                         }`}
                       >
-                        {label}
+                        <div className="flex items-center justify-between">
+                          <span>{label}</span>
+                          <span className={`text-xs ${adminPosting === value ? "text-[#7c3aed]" : "text-white/30"}`}>{note}</span>
+                        </div>
                         {adminPosting === value && (
                           <span className="absolute right-3 top-3 flex h-5 w-5 items-center justify-center rounded-full bg-[#7c3aed] text-xs text-white">
                             ✓
