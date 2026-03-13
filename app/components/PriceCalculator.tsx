@@ -79,6 +79,7 @@ export default function PriceCalculator() {
     innhold: 0,
     annonsering: 0,
   });
+  const [adminPosting, setAdminPosting] = useState<boolean | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -103,8 +104,13 @@ export default function PriceCalculator() {
     .filter(Boolean)
     .join("\n");
 
+  const postingLine =
+    selected.innhold > 0 && adminPosting !== null
+      ? `\nPublisering: ${adminPosting ? "Elevera administrerer publisering" : "Kunden publiserer selv"}`
+      : "";
+
   const fullSummary = packageSummary
-    ? `Valgt pakke:\n${packageSummary}\n\nMånedlig pris: ${formatPrice(monthly)}/mnd${setup > 0 ? `\nEtablering: ${formatPrice(setup)}` : ""}`
+    ? `Valgt pakke:\n${packageSummary}${postingLine}\n\nMånedlig pris: ${formatPrice(monthly)}/mnd${setup > 0 ? `\nEtablering: ${formatPrice(setup)}` : ""}`
     : "";
 
   function handleSendClick() {
@@ -151,8 +157,8 @@ export default function PriceCalculator() {
         {/* Sections */}
         <div className="space-y-8">
           {sections.map((section) => (
+            <div key={section.id}>
             <div
-              key={section.id}
               className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
             >
               <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#7c3aed]">
@@ -215,6 +221,50 @@ export default function PriceCalculator() {
                   );
                 })}
               </div>
+            </div>
+
+            {/* Posting-spørsmål vises etter innhold-seksjonen */}
+            <AnimatePresence>
+              {section.id === "innhold" && selected.innhold > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-3 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
+                >
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#7c3aed]">
+                    Publisering
+                  </p>
+                  <p className="mb-5 text-lg font-semibold text-white">
+                    Skal vi administrere publisering for dere?
+                  </p>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {[
+                      { label: "Ja, dere publiserer for oss", value: true },
+                      { label: "Nei, vi publiserer selv", value: false },
+                    ].map(({ label, value }) => (
+                      <button
+                        key={String(value)}
+                        onClick={() => setAdminPosting(value)}
+                        className={`relative rounded-xl border p-4 text-left text-sm font-semibold transition-all duration-200 ${
+                          adminPosting === value
+                            ? "border-[#7c3aed] bg-[#7c3aed]/10 text-white"
+                            : "border-white/10 bg-white/[0.02] text-white/70 hover:border-white/20 hover:bg-white/[0.05]"
+                        }`}
+                      >
+                        {label}
+                        {adminPosting === value && (
+                          <span className="absolute right-3 top-3 flex h-5 w-5 items-center justify-center rounded-full bg-[#7c3aed] text-xs text-white">
+                            ✓
+                          </span>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
             </div>
           ))}
         </div>
@@ -312,6 +362,14 @@ export default function PriceCalculator() {
                         </div>
                       );
                     })}
+                    {selected.innhold > 0 && adminPosting !== null && (
+                      <div className="flex justify-between py-1 text-sm">
+                        <span className="text-white/60">Publisering</span>
+                        <span className="font-semibold text-white">
+                          {adminPosting ? "Elevera administrerer" : "Kunden publiserer selv"}
+                        </span>
+                      </div>
+                    )}
                     <div className="mt-3 border-t border-white/10 pt-3 flex justify-between text-sm font-bold">
                       <span className="text-white/60">Totalt</span>
                       <span className="text-white">{formatPrice(monthly)}/mnd{setup > 0 ? ` + ${formatPrice(setup)} etablering` : ""}</span>
