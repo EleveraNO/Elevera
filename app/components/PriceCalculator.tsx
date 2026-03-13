@@ -248,7 +248,7 @@ export default function PriceCalculator() {
                         label: "Ja, dere poster for oss",
                         note: "+1 000 kr/mnd",
                         value: true,
-                        bullets: ["Publisering på Instagram / Facebook / TikTok", "Captions og hashtags"],
+                        bullets: ["Publisering på Instagram / Facebook / TikTok", "Captions og hashtags", "Optimalisert publiseringskalender"],
                       },
                     ].map(({ label, value, note, bullets }) => (
                       <button
