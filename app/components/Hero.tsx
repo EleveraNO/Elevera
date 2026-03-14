@@ -279,25 +279,24 @@ export default function Hero() {
       {/* Scroll indicator */}
       <motion.a
         href="#tjenester"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/25 transition-colors hover:text-white/55"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 group flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/50 backdrop-blur-sm transition-all hover:border-[#7c3aed]/60 hover:bg-[#7c3aed]/15 hover:text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1.4 }}
         aria-label="Scroll ned"
       >
         <motion.svg
-          width="28" height="28"
+          width="18" height="18"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.2"
+          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          animate={{ y: [0, 5, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ y: [0, 3, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <path d="M6 9l6 6 6-6" />
-          <path d="M6 14l6 6 6-6" opacity="0.4" />
+          <path d="M6 10l6 6 6-6" />
         </motion.svg>
       </motion.a>
     </section>
