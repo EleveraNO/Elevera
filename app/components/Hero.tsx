@@ -193,7 +193,7 @@ export default function Hero() {
 
       <RisingGrid />
 
-      <div className="relative z-10 mx-auto max-w-4xl text-center">
+      <div className="relative z-10 mx-auto max-w-4xl text-center pb-24">
         {/* Badge */}
         <motion.div
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/10 px-4 py-1.5"
@@ -250,7 +250,7 @@ export default function Hero() {
 
         {/* Trust signals */}
         <motion.div
-          className="mt-16 flex flex-wrap justify-center gap-6 text-sm text-white/40"
+          className="mt-10 flex flex-wrap justify-center gap-4 text-sm text-white/40 sm:mt-16 sm:gap-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.5 }}
