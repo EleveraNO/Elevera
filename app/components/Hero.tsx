@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-function FlowField() {
+function RisingGrid() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function FlowField() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const c = canvas; // non-null reference for closures
+    const c = canvas;
 
     const resize = () => {
       c.width = c.offsetWidth;
@@ -21,104 +21,112 @@ function FlowField() {
     resize();
     window.addEventListener("resize", resize);
 
-    const COUNT = 380;
-    const SPEED = 1.3;
-    const COLORS = ["124,58,237", "139,92,246", "96,165,250", "167,139,250"];
-
-    type P = {
-      x: number; y: number;
-      vx: number; vy: number;
-      color: string; size: number;
-      life: number; maxLife: number;
-    };
-
-    function spawn(): P {
-      return {
-        x: Math.random() * c.width,
-        y: Math.random() * c.height,
-        vx: 0, vy: 0,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
-        size: 0.7 + Math.random() * 1.2,
-        life: 0,
-        maxLife: 160 + Math.random() * 220,
-      };
-    }
-
-    const particles: P[] = Array.from({ length: COUNT }, () => {
-      const p = spawn();
-      p.life = Math.floor(Math.random() * p.maxLife); // stagger start
-      return p;
-    });
-
-    let t = 0;
+    const SPACING = 52;
     let raf: number;
+    let t = 0;
 
-    function fieldAngle(x: number, y: number): number {
-      const nx = x * 0.004;
-      const ny = y * 0.004;
-      return (
-        Math.sin(nx + t * 0.12) * Math.cos(ny - t * 0.09) * Math.PI * 2 +
-        Math.sin(nx * 2.3 - t * 0.18) * 0.6 +
-        Math.cos(ny * 1.8 + t * 0.11) * 0.6
-      );
-    }
+    type Dot = {
+      x: number; y: number;
+      alpha: number; radius: number;
+      color: string; isBright: boolean; edgeFade: number;
+    };
+    const LINE_MAX_DIST = SPACING * 2.8;
 
     const draw = () => {
-      t += 0.007;
+      t += 0.4;
+      ctx.clearRect(0, 0, c.width, c.height);
 
-      // Semi-transparent fill creates glowing trails
-      ctx.fillStyle = "rgba(10,10,10,0.13)";
-      ctx.fillRect(0, 0, c.width, c.height);
+      const cols = Math.ceil(c.width / SPACING) + 1;
+      const rows = Math.ceil(c.height / SPACING) + 2;
+      const offsetY = t % SPACING;
+      const scrolledRows = Math.floor(t / SPACING);
 
       const cx = c.width / 2;
       const cy = c.height / 2;
       const maxDist = Math.sqrt(cx * cx + cy * cy);
 
-      for (const p of particles) {
-        p.life++;
-        if (p.life >= p.maxLife) {
-          Object.assign(p, spawn());
-          continue;
+      const dots: Dot[] = [];
+
+      for (let col = 0; col < cols; col++) {
+        for (let row = 0; row < rows; row++) {
+          const x = col * SPACING;
+          const y = row * SPACING - offsetY;
+
+          const dx = x - cx;
+          const dy = y - cy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const edgeFade = Math.max(0, 1 - dist / maxDist) * 0.85 + 0.15;
+
+          const wave = Math.sin(dist * 0.018 - t * 0.06) * 0.5 + 0.5;
+
+          const worldRow = row + scrolledRows;
+          const seed = Math.sin(col * 127.1 + worldRow * 311.7) * 43758.5453;
+          const rand = seed - Math.floor(seed);
+          const isBright = rand > 0.94;
+
+          const baseAlpha = 0.1 + wave * 0.12;
+          const alpha = isBright
+            ? Math.min(1, baseAlpha * 4.5 * edgeFade)
+            : baseAlpha * edgeFade;
+
+          const radius = isBright ? 2.2 : 1.3;
+
+          const colorSeed = Math.sin(col * 53.3 + worldRow * 97.1) * 43758.5;
+          const colorRand = colorSeed - Math.floor(colorSeed);
+          const color =
+            colorRand > 0.75
+              ? "96,165,250"
+              : colorRand > 0.55
+              ? "167,139,250"
+              : "124,58,237";
+
+          dots.push({ x, y, alpha, radius, color, isBright, edgeFade });
         }
+      }
 
-        const a = fieldAngle(p.x, p.y);
-        p.vx = p.vx * 0.92 + Math.cos(a) * SPEED * 0.08;
-        p.vy = p.vy * 0.92 + Math.sin(a) * SPEED * 0.08;
-        p.x += p.vx;
-        p.y += p.vy;
+      // Constellation lines between nearby bright dots
+      const brightDots = dots.filter((d) => d.isBright);
+      ctx.lineWidth = 0.6;
+      for (let i = 0; i < brightDots.length; i++) {
+        for (let j = i + 1; j < brightDots.length; j++) {
+          const a = brightDots[i];
+          const b = brightDots[j];
+          const ddx = a.x - b.x;
+          const ddy = a.y - b.y;
+          const lineDist = Math.sqrt(ddx * ddx + ddy * ddy);
+          if (lineDist < LINE_MAX_DIST) {
+            const proximity = 1 - lineDist / LINE_MAX_DIST;
+            const lineAlpha =
+              proximity * proximity * 0.18 * Math.min(a.edgeFade, b.edgeFade);
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(139,92,246,${lineAlpha})`;
+            ctx.stroke();
+          }
+        }
+      }
 
-        // Wrap edges
-        if (p.x < -10) p.x = canvas.width + 10;
-        else if (p.x > canvas.width + 10) p.x = -10;
-        if (p.y < -10) p.y = canvas.height + 10;
-        else if (p.y > canvas.height + 10) p.y = -10;
-
-        // Fade in/out over lifetime
-        const lifeAlpha =
-          Math.min(p.life / 45, 1) * Math.min((p.maxLife - p.life) / 45, 1);
-
-        // Edge vignette — fade toward corners
-        const dx = p.x - cx;
-        const dy = p.y - cy;
-        const edgeFade = Math.max(0, 1 - Math.sqrt(dx * dx + dy * dy) / maxDist);
-
-        const alpha = lifeAlpha * edgeFade * 0.72;
-        if (alpha < 0.01) continue;
-
+      // Dots on top
+      for (const dot of dots) {
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.color},${alpha})`;
+        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+        if (dot.isBright) {
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = `rgba(${dot.color},0.9)`;
+        }
+        ctx.fillStyle = `rgba(${dot.color},${dot.alpha})`;
         ctx.fill();
+        ctx.shadowBlur = 0;
       }
 
       raf = requestAnimationFrame(draw);
     };
-
     draw();
 
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener("resize", resize); // eslint-disable-line
+      window.removeEventListener("resize", resize);
     };
   }, []);
 
@@ -135,19 +143,16 @@ export default function Hero() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
       {/* Deep glow blobs */}
       <div className="pointer-events-none absolute inset-0">
-        {/* Hoved-glow */}
         <motion.div
           className="absolute left-1/2 top-1/3 h-[750px] w-[750px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/20 blur-[130px]"
           animate={{ scale: [1, 1.14, 1], opacity: [0.55, 0.8, 0.55] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         />
-        {/* Blå aksent nede til høyre */}
         <motion.div
           className="absolute right-1/4 bottom-1/4 h-[380px] w-[380px] rounded-full bg-blue-500/10 blur-[95px]"
           animate={{ scale: [1, 1.18, 1], opacity: [0.45, 0.7, 0.45] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
-        {/* Violet aksent nede til venstre */}
         <motion.div
           className="absolute left-1/4 bottom-1/3 h-[250px] w-[250px] rounded-full bg-violet-400/10 blur-[75px]"
           animate={{ scale: [1, 1.25, 1], opacity: [0.35, 0.6, 0.35] }}
@@ -155,7 +160,7 @@ export default function Hero() {
         />
       </div>
 
-      <FlowField />
+      <RisingGrid />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center pb-24">
         {/* Badge */}
@@ -197,7 +202,7 @@ export default function Hero() {
           presis annonsering. Alt fra én partner.
         </motion.p>
 
-        {/* CTA buttons */}
+        {/* CTA */}
         <motion.div
           className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
           initial={{ opacity: 0, y: 30 }}
