@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-function Particles() {
+function DataStreams() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -15,42 +15,99 @@ function Particles() {
     const resize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
+      initStreaks();
     };
+
+    type Streak = {
+      x: number; y: number; vy: number;
+      alpha: number; maxAlpha: number;
+      height: number; width: number;
+      alphaDir: number; color: string;
+      dotY: number; dotAlpha: number;
+    };
+
+    const COLORS = ["124,58,237", "124,58,237", "167,139,250", "96,165,250"];
+    let streaks: Streak[] = [];
+
+    function makeStreak(x?: number): Streak {
+      const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+      return {
+        x: x ?? Math.random() * canvas.width,
+        y: canvas.height + Math.random() * canvas.height,
+        vy: -(Math.random() * 1.4 + 0.5),
+        alpha: 0,
+        maxAlpha: Math.random() * 0.55 + 0.12,
+        height: Math.random() * 120 + 60,
+        width: Math.random() > 0.7 ? 2 : 1,
+        alphaDir: Math.random() * 0.012 + 0.006,
+        color,
+        dotY: 0,
+        dotAlpha: 0,
+      };
+    }
+
+    function initStreaks() {
+      // Spread evenly + some random ones
+      const count = Math.max(18, Math.floor(canvas.width / 55));
+      streaks = Array.from({ length: count }, (_, i) => {
+        const s = makeStreak(
+          i < 12
+            ? (canvas.width / 12) * i + (Math.random() - 0.5) * 40
+            : undefined
+        );
+        // Stagger start positions
+        s.y = Math.random() * (canvas.height + 200) - 200;
+        return s;
+      });
+    }
+
     resize();
     window.addEventListener("resize", resize);
 
-    const COLORS = ["124,58,237", "96,165,250", "167,139,250"];
-    const particles = Array.from({ length: 35 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.5 + 0.5,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      alpha: Math.random(),
-      alphaDir: Math.random() > 0.5 ? 0.003 : -0.003,
-      color: COLORS[Math.floor(Math.random() * COLORS.length)],
-    }));
-
     let raf: number;
+
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (const p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.alpha += p.alphaDir;
-        if (p.alpha <= 0 || p.alpha >= 1) p.alphaDir *= -1;
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+
+      for (const s of streaks) {
+        s.y += s.vy;
+        s.alpha += s.alphaDir;
+
+        if (s.alpha >= s.maxAlpha) s.alphaDir = -(Math.random() * 0.006 + 0.004);
+        if (s.alpha <= 0) {
+          Object.assign(s, makeStreak());
+          continue;
+        }
+
+        // Main streak gradient
+        const grad = ctx.createLinearGradient(s.x, s.y, s.x, s.y - s.height);
+        grad.addColorStop(0, `rgba(${s.color},0)`);
+        grad.addColorStop(0.25, `rgba(${s.color},${s.alpha * 0.5})`);
+        grad.addColorStop(0.7, `rgba(${s.color},${s.alpha})`);
+        grad.addColorStop(1, `rgba(${s.color},0)`);
 
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.color},${p.alpha * 0.7})`;
-        ctx.shadowBlur = 6;
-        ctx.shadowColor = `rgba(${p.color},0.8)`;
+        ctx.moveTo(s.x, s.y);
+        ctx.lineTo(s.x, s.y - s.height);
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = s.width;
+        ctx.shadowBlur = s.width > 1 ? 8 : 4;
+        ctx.shadowColor = `rgba(${s.color},0.6)`;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // Bright leading dot at top of streak
+        const dotX = s.x;
+        const dotY = s.y - s.height;
+        ctx.beginPath();
+        ctx.arc(dotX, dotY, s.width + 0.8, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${s.color},${s.alpha * 1.2})`;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = `rgba(${s.color},1)`;
         ctx.fill();
+        ctx.shadowBlur = 0;
       }
+
       raf = requestAnimationFrame(draw);
     };
     draw();
@@ -64,25 +121,94 @@ function Particles() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 h-full w-full"
+      className="pointer-events-none absolute inset-0 h-full w-full opacity-80"
     />
+  );
+}
+
+// Animated SVG growth curve drawn across background
+function GrowthCurve() {
+  return (
+    <svg
+      className="pointer-events-none absolute inset-0 h-full w-full"
+      preserveAspectRatio="none"
+      viewBox="0 0 1200 700"
+      fill="none"
+    >
+      {/* Main growth curve */}
+      <motion.path
+        d="M -50 620 C 150 580, 280 500, 420 420 C 560 340, 620 260, 720 200 C 820 140, 920 110, 1100 70 C 1150 60, 1200 55, 1260 50"
+        stroke="url(#growthGrad)"
+        strokeWidth="1.5"
+        fill="none"
+        strokeLinecap="round"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{ duration: 3, delay: 0.8, ease: "easeOut" }}
+      />
+      {/* Subtle fill under curve */}
+      <motion.path
+        d="M -50 620 C 150 580, 280 500, 420 420 C 560 340, 620 260, 720 200 C 820 140, 920 110, 1100 70 C 1150 60, 1200 55, 1260 50 L 1260 750 L -50 750 Z"
+        fill="url(#growthFill)"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2.5, delay: 1.5, ease: "easeOut" }}
+      />
+      {/* Secondary fainter curve */}
+      <motion.path
+        d="M -50 680 C 200 650, 350 580, 500 500 C 640 430, 720 360, 850 290 C 950 235, 1060 195, 1260 160"
+        stroke="url(#growthGrad2)"
+        strokeWidth="0.8"
+        fill="none"
+        strokeLinecap="round"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{ duration: 3.5, delay: 1.2, ease: "easeOut" }}
+      />
+      <defs>
+        <linearGradient id="growthGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="rgba(124,58,237,0)" />
+          <stop offset="30%" stopColor="rgba(124,58,237,0.25)" />
+          <stop offset="70%" stopColor="rgba(96,165,250,0.3)" />
+          <stop offset="100%" stopColor="rgba(167,139,250,0.1)" />
+        </linearGradient>
+        <linearGradient id="growthGrad2" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="rgba(96,165,250,0)" />
+          <stop offset="40%" stopColor="rgba(96,165,250,0.12)" />
+          <stop offset="100%" stopColor="rgba(124,58,237,0.05)" />
+        </linearGradient>
+        <linearGradient id="growthFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="rgba(124,58,237,0.04)" />
+          <stop offset="100%" stopColor="rgba(124,58,237,0)" />
+        </linearGradient>
+      </defs>
+    </svg>
   );
 }
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
-      {/* Background glow */}
+      {/* Deep glow blobs */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
-          className="absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/20 blur-[120px]"
-          animate={{ scale: [1, 1.1, 1], opacity: [0.6, 1, 0.6] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-1/2 top-1/3 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/15 blur-[140px]"
+          animate={{ scale: [1, 1.12, 1], opacity: [0.5, 0.85, 0.5] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         />
-        <div className="absolute right-1/4 bottom-1/4 h-[300px] w-[300px] rounded-full bg-blue-600/10 blur-[100px]" />
+        <motion.div
+          className="absolute right-1/4 bottom-1/4 h-[350px] w-[350px] rounded-full bg-blue-500/8 blur-[100px]"
+          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        />
+        <motion.div
+          className="absolute left-1/4 bottom-1/3 h-[200px] w-[200px] rounded-full bg-violet-400/8 blur-[80px]"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+        />
       </div>
 
-      <Particles />
+      <DataStreams />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         {/* Badge */}
