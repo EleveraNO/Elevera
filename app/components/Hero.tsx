@@ -23,6 +23,9 @@ function RisingGrid() {
     let raf: number;
     let t = 0;
 
+    type Dot = { x: number; y: number; alpha: number; radius: number; color: string; isBright: boolean; edgeFade: number };
+    const LINE_MAX_DIST = SPACING * 2.8;
+
     const draw = () => {
       t += 0.4;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -37,21 +40,21 @@ function RisingGrid() {
       const cy = canvas.height / 2;
       const maxDist = Math.sqrt(cx * cx + cy * cy);
 
+      // Collect all dot data first
+      const dots: Dot[] = [];
+
       for (let col = 0; col < cols; col++) {
         for (let row = 0; row < rows; row++) {
           const x = col * SPACING;
           const y = row * SPACING - offsetY;
 
-          // Distance from center → fade out at edges
           const dx = x - cx;
           const dy = y - cy;
           const dist = Math.sqrt(dx * dx + dy * dy);
           const edgeFade = Math.max(0, 1 - dist / maxDist) * 0.85 + 0.15;
 
-          // Slow ripple wave from center
           const wave = Math.sin(dist * 0.018 - t * 0.06) * 0.5 + 0.5;
 
-          // Use world row so pattern stays identical as rows scroll in/out
           const worldRow = row + scrolledRows;
           const seed = Math.sin(col * 127.1 + worldRow * 311.7) * 43758.5453;
           const rand = seed - Math.floor(seed);
@@ -64,7 +67,6 @@ function RisingGrid() {
 
           const radius = isBright ? 2.2 : 1.3;
 
-          // Colour: mostly purple, occasionally blue/violet
           const colorSeed = Math.sin(col * 53.3 + worldRow * 97.1) * 43758.5;
           const colorRand = colorSeed - Math.floor(colorSeed);
           const color =
@@ -74,18 +76,45 @@ function RisingGrid() {
               ? "167,139,250"
               : "124,58,237";
 
-          ctx.beginPath();
-          ctx.arc(x, y, radius, 0, Math.PI * 2);
-
-          if (isBright) {
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = `rgba(${color},0.9)`;
-          }
-
-          ctx.fillStyle = `rgba(${color},${alpha})`;
-          ctx.fill();
-          ctx.shadowBlur = 0;
+          dots.push({ x, y, alpha, radius, color, isBright, edgeFade });
         }
+      }
+
+      // Draw constellation lines between nearby bright dots
+      const brightDots = dots.filter((d) => d.isBright);
+      ctx.lineWidth = 0.6;
+      for (let i = 0; i < brightDots.length; i++) {
+        for (let j = i + 1; j < brightDots.length; j++) {
+          const a = brightDots[i];
+          const b = brightDots[j];
+          const ddx = a.x - b.x;
+          const ddy = a.y - b.y;
+          const lineDist = Math.sqrt(ddx * ddx + ddy * ddy);
+          if (lineDist < LINE_MAX_DIST) {
+            const proximity = 1 - lineDist / LINE_MAX_DIST;
+            const lineAlpha = proximity * proximity * 0.18 * Math.min(a.edgeFade, b.edgeFade);
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(139,92,246,${lineAlpha})`;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw dots on top
+      for (const dot of dots) {
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+
+        if (dot.isBright) {
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = `rgba(${dot.color},0.9)`;
+        }
+
+        ctx.fillStyle = `rgba(${dot.color},${dot.alpha})`;
+        ctx.fill();
+        ctx.shadowBlur = 0;
       }
 
       raf = requestAnimationFrame(draw);
