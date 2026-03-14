@@ -31,9 +31,11 @@ function DataStreams() {
 
     function makeStreak(x?: number): Streak {
       const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+      const w = canvas?.width ?? 800;
+      const h = canvas?.height ?? 600;
       return {
-        x: x ?? Math.random() * canvas.width,
-        y: canvas.height + Math.random() * canvas.height,
+        x: x ?? Math.random() * w,
+        y: h + Math.random() * h,
         vy: -(Math.random() * 1.4 + 0.5),
         alpha: 0,
         maxAlpha: Math.random() * 0.55 + 0.12,
@@ -47,6 +49,7 @@ function DataStreams() {
     }
 
     function initStreaks() {
+      if (!canvas) return;
       // Spread evenly + some random ones
       const count = Math.max(18, Math.floor(canvas.width / 55));
       streaks = Array.from({ length: count }, (_, i) => {
