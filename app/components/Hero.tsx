@@ -171,20 +171,29 @@ export default function Hero() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
       {/* Deep glow blobs */}
       <div className="pointer-events-none absolute inset-0">
+        {/* Hoved-glow — stor lilla puls i midten */}
         <motion.div
-          className="absolute left-1/2 top-1/3 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/15 blur-[140px]"
-          animate={{ scale: [1, 1.12, 1], opacity: [0.5, 0.85, 0.5] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-1/2 top-1/3 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/30 blur-[120px]"
+          animate={{ scale: [1, 1.18, 1], opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
+        {/* Sekundær — litt lysere kjerne for dybde */}
         <motion.div
-          className="absolute right-1/4 bottom-1/4 h-[350px] w-[350px] rounded-full bg-blue-500/8 blur-[100px]"
-          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
-          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute left-1/2 top-1/3 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/25 blur-[60px]"
+          animate={{ scale: [1, 1.25, 1], opacity: [0.5, 0.9, 0.5] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
         />
+        {/* Blå aksent nede til høyre */}
         <motion.div
-          className="absolute left-1/4 bottom-1/3 h-[200px] w-[200px] rounded-full bg-violet-400/8 blur-[80px]"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-blue-500/15 blur-[90px]"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.85, 0.5] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        />
+        {/* Violet aksent nede til venstre */}
+        <motion.div
+          className="absolute left-1/4 bottom-1/3 h-[280px] w-[280px] rounded-full bg-violet-400/15 blur-[70px]"
+          animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.75, 0.4] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 3.5 }}
         />
       </div>
 
