@@ -24,14 +24,22 @@ export default function ContactForm() {
   const [melding, setMelding] = useState("");
   const [valgtPakke, setValgtPakke] = useState<string | null>(null);
 
+  function applyPakke(pakke: string) {
+    setValgtPakke(pakke);
+    setTjenester(PAKKE_TJENESTER[pakke] ?? []);
+    setMelding(`Jeg er interessert i ${pakke}-pakken.`);
+    sessionStorage.removeItem("valgtPakke");
+  }
+
   useEffect(() => {
+    // Ved refresh: les fra sessionStorage
     const pakke = sessionStorage.getItem("valgtPakke");
-    if (pakke) {
-      setValgtPakke(pakke);
-      setTjenester(PAKKE_TJENESTER[pakke] ?? []);
-      setMelding(`Jeg er interessert i ${pakke}-pakken.`);
-      sessionStorage.removeItem("valgtPakke");
-    }
+    if (pakke) applyPakke(pakke);
+
+    // Ved klikk på siden (komponent allerede mountet): lytt på custom event
+    const handler = (e: Event) => applyPakke((e as CustomEvent<string>).detail);
+    window.addEventListener("valgtPakke", handler);
+    return () => window.removeEventListener("valgtPakke", handler);
   }, []);
 
   function toggleTjeneste(t: string) {

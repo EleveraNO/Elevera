@@ -140,6 +140,7 @@ export default function Pricing() {
                   type="button"
                   onClick={() => {
                     sessionStorage.setItem("valgtPakke", plan.name);
+                    window.dispatchEvent(new CustomEvent("valgtPakke", { detail: plan.name }));
                     document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className={`block w-full rounded-full py-3 text-center text-sm font-semibold transition-all ${
