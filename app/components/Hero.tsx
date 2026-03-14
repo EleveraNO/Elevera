@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-function RisingGrid() {
+function FlowField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -19,106 +19,99 @@ function RisingGrid() {
     resize();
     window.addEventListener("resize", resize);
 
-    const SPACING = 52;
-    let raf: number;
-    let t = 0;
+    const COUNT = 380;
+    const SPEED = 1.3;
+    const COLORS = ["124,58,237", "139,92,246", "96,165,250", "167,139,250"];
 
-    type Dot = { x: number; y: number; alpha: number; radius: number; color: string; isBright: boolean; edgeFade: number };
-    const LINE_MAX_DIST = SPACING * 2.8;
+    type P = {
+      x: number; y: number;
+      vx: number; vy: number;
+      color: string; size: number;
+      life: number; maxLife: number;
+    };
+
+    function spawn(): P {
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: 0, vy: 0,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        size: 0.7 + Math.random() * 1.2,
+        life: 0,
+        maxLife: 160 + Math.random() * 220,
+      };
+    }
+
+    const particles: P[] = Array.from({ length: COUNT }, () => {
+      const p = spawn();
+      p.life = Math.floor(Math.random() * p.maxLife); // stagger start
+      return p;
+    });
+
+    let t = 0;
+    let raf: number;
+
+    function fieldAngle(x: number, y: number): number {
+      const nx = x * 0.004;
+      const ny = y * 0.004;
+      return (
+        Math.sin(nx + t * 0.12) * Math.cos(ny - t * 0.09) * Math.PI * 2 +
+        Math.sin(nx * 2.3 - t * 0.18) * 0.6 +
+        Math.cos(ny * 1.8 + t * 0.11) * 0.6
+      );
+    }
 
     const draw = () => {
-      t += 0.4;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      t += 0.007;
 
-      const cols = Math.ceil(canvas.width / SPACING) + 1;
-      const rows = Math.ceil(canvas.height / SPACING) + 2;
-      const offsetY = t % SPACING;
-      // World-space row index — stays consistent as grid scrolls
-      const scrolledRows = Math.floor(t / SPACING);
+      // Semi-transparent fill creates glowing trails
+      ctx.fillStyle = "rgba(10,10,10,0.13)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       const cx = canvas.width / 2;
       const cy = canvas.height / 2;
       const maxDist = Math.sqrt(cx * cx + cy * cy);
 
-      // Collect all dot data first
-      const dots: Dot[] = [];
-
-      for (let col = 0; col < cols; col++) {
-        for (let row = 0; row < rows; row++) {
-          const x = col * SPACING;
-          const y = row * SPACING - offsetY;
-
-          const dx = x - cx;
-          const dy = y - cy;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const edgeFade = Math.max(0, 1 - dist / maxDist) * 0.85 + 0.15;
-
-          const wave = Math.sin(dist * 0.018 - t * 0.06) * 0.5 + 0.5;
-
-          const worldRow = row + scrolledRows;
-          const seed = Math.sin(col * 127.1 + worldRow * 311.7) * 43758.5453;
-          const rand = seed - Math.floor(seed);
-          const isBright = rand > 0.94;
-
-          const baseAlpha = 0.1 + wave * 0.12;
-          const alpha = isBright
-            ? Math.min(1, baseAlpha * 4.5 * edgeFade)
-            : baseAlpha * edgeFade;
-
-          const radius = isBright ? 2.2 : 1.3;
-
-          const colorSeed = Math.sin(col * 53.3 + worldRow * 97.1) * 43758.5;
-          const colorRand = colorSeed - Math.floor(colorSeed);
-          const color =
-            colorRand > 0.75
-              ? "96,165,250"
-              : colorRand > 0.55
-              ? "167,139,250"
-              : "124,58,237";
-
-          dots.push({ x, y, alpha, radius, color, isBright, edgeFade });
+      for (const p of particles) {
+        p.life++;
+        if (p.life >= p.maxLife) {
+          Object.assign(p, spawn());
+          continue;
         }
-      }
 
-      // Draw constellation lines between nearby bright dots
-      const brightDots = dots.filter((d) => d.isBright);
-      ctx.lineWidth = 0.6;
-      for (let i = 0; i < brightDots.length; i++) {
-        for (let j = i + 1; j < brightDots.length; j++) {
-          const a = brightDots[i];
-          const b = brightDots[j];
-          const ddx = a.x - b.x;
-          const ddy = a.y - b.y;
-          const lineDist = Math.sqrt(ddx * ddx + ddy * ddy);
-          if (lineDist < LINE_MAX_DIST) {
-            const proximity = 1 - lineDist / LINE_MAX_DIST;
-            const lineAlpha = proximity * proximity * 0.18 * Math.min(a.edgeFade, b.edgeFade);
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(139,92,246,${lineAlpha})`;
-            ctx.stroke();
-          }
-        }
-      }
+        const a = fieldAngle(p.x, p.y);
+        p.vx = p.vx * 0.92 + Math.cos(a) * SPEED * 0.08;
+        p.vy = p.vy * 0.92 + Math.sin(a) * SPEED * 0.08;
+        p.x += p.vx;
+        p.y += p.vy;
 
-      // Draw dots on top
-      for (const dot of dots) {
+        // Wrap edges
+        if (p.x < -10) p.x = canvas.width + 10;
+        else if (p.x > canvas.width + 10) p.x = -10;
+        if (p.y < -10) p.y = canvas.height + 10;
+        else if (p.y > canvas.height + 10) p.y = -10;
+
+        // Fade in/out over lifetime
+        const lifeAlpha =
+          Math.min(p.life / 45, 1) * Math.min((p.maxLife - p.life) / 45, 1);
+
+        // Edge vignette — fade toward corners
+        const dx = p.x - cx;
+        const dy = p.y - cy;
+        const edgeFade = Math.max(0, 1 - Math.sqrt(dx * dx + dy * dy) / maxDist);
+
+        const alpha = lifeAlpha * edgeFade * 0.72;
+        if (alpha < 0.01) continue;
+
         ctx.beginPath();
-        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
-
-        if (dot.isBright) {
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = `rgba(${dot.color},0.9)`;
-        }
-
-        ctx.fillStyle = `rgba(${dot.color},${dot.alpha})`;
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.color},${alpha})`;
         ctx.fill();
-        ctx.shadowBlur = 0;
       }
 
       raf = requestAnimationFrame(draw);
     };
+
     draw();
 
     return () => {
@@ -132,66 +125,6 @@ function RisingGrid() {
       ref={canvasRef}
       className="pointer-events-none absolute inset-0 h-full w-full"
     />
-  );
-}
-
-// Animated SVG growth curve drawn across background
-function GrowthCurve() {
-  return (
-    <svg
-      className="pointer-events-none absolute inset-0 h-full w-full"
-      preserveAspectRatio="none"
-      viewBox="0 0 1200 700"
-      fill="none"
-    >
-      {/* Main growth curve */}
-      <motion.path
-        d="M -50 620 C 150 580, 280 500, 420 420 C 560 340, 620 260, 720 200 C 820 140, 920 110, 1100 70 C 1150 60, 1200 55, 1260 50"
-        stroke="url(#growthGrad)"
-        strokeWidth="1.5"
-        fill="none"
-        strokeLinecap="round"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 3, delay: 0.8, ease: "easeOut" }}
-      />
-      {/* Subtle fill under curve */}
-      <motion.path
-        d="M -50 620 C 150 580, 280 500, 420 420 C 560 340, 620 260, 720 200 C 820 140, 920 110, 1100 70 C 1150 60, 1200 55, 1260 50 L 1260 750 L -50 750 Z"
-        fill="url(#growthFill)"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2.5, delay: 1.5, ease: "easeOut" }}
-      />
-      {/* Secondary fainter curve */}
-      <motion.path
-        d="M -50 680 C 200 650, 350 580, 500 500 C 640 430, 720 360, 850 290 C 950 235, 1060 195, 1260 160"
-        stroke="url(#growthGrad2)"
-        strokeWidth="0.8"
-        fill="none"
-        strokeLinecap="round"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 3.5, delay: 1.2, ease: "easeOut" }}
-      />
-      <defs>
-        <linearGradient id="growthGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="rgba(124,58,237,0)" />
-          <stop offset="30%" stopColor="rgba(124,58,237,0.25)" />
-          <stop offset="70%" stopColor="rgba(96,165,250,0.3)" />
-          <stop offset="100%" stopColor="rgba(167,139,250,0.1)" />
-        </linearGradient>
-        <linearGradient id="growthGrad2" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="rgba(96,165,250,0)" />
-          <stop offset="40%" stopColor="rgba(96,165,250,0.12)" />
-          <stop offset="100%" stopColor="rgba(124,58,237,0.05)" />
-        </linearGradient>
-        <linearGradient id="growthFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="rgba(124,58,237,0.04)" />
-          <stop offset="100%" stopColor="rgba(124,58,237,0)" />
-        </linearGradient>
-      </defs>
-    </svg>
   );
 }
 
@@ -220,7 +153,7 @@ export default function Hero() {
         />
       </div>
 
-      <RisingGrid />
+      <FlowField />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center pb-24">
         {/* Badge */}
