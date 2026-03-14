@@ -30,6 +30,8 @@ function RisingGrid() {
       const cols = Math.ceil(canvas.width / SPACING) + 1;
       const rows = Math.ceil(canvas.height / SPACING) + 2;
       const offsetY = t % SPACING;
+      // World-space row index — stays consistent as grid scrolls
+      const scrolledRows = Math.floor(t / SPACING);
 
       const cx = canvas.width / 2;
       const cy = canvas.height / 2;
@@ -49,8 +51,9 @@ function RisingGrid() {
           // Slow ripple wave from center
           const wave = Math.sin(dist * 0.018 - t * 0.06) * 0.5 + 0.5;
 
-          // Occasional bright dots (scattered highlight)
-          const seed = Math.sin(col * 127.1 + row * 311.7) * 43758.5453;
+          // Use world row so pattern stays identical as rows scroll in/out
+          const worldRow = row + scrolledRows;
+          const seed = Math.sin(col * 127.1 + worldRow * 311.7) * 43758.5453;
           const rand = seed - Math.floor(seed);
           const isBright = rand > 0.94;
 
@@ -62,7 +65,7 @@ function RisingGrid() {
           const radius = isBright ? 2.2 : 1.3;
 
           // Colour: mostly purple, occasionally blue/violet
-          const colorSeed = Math.sin(col * 53.3 + row * 97.1) * 43758.5;
+          const colorSeed = Math.sin(col * 53.3 + worldRow * 97.1) * 43758.5;
           const colorRand = colorSeed - Math.floor(colorSeed);
           const color =
             colorRand > 0.75
