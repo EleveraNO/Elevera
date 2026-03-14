@@ -94,10 +94,15 @@ export default function ContactForm() {
           </div>
           <button
             type="button"
-            onClick={() => { setValgtPakke(null); setTjenester([]); setMelding(""); }}
+            onClick={() => {
+              setValgtPakke(null);
+              setTjenester([]);
+              setMelding("");
+              document.getElementById("prispakker")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="text-xs text-white/30 transition hover:text-white/60"
           >
-            Endre
+            Endre ↑
           </button>
         </div>
       )}

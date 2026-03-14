@@ -93,6 +93,7 @@ export default function Pricing() {
           </p>
         </FadeUp>
 
+        <div id="prispakker" className="scroll-mt-24">
         <StaggerContainer className="grid gap-8 lg:grid-cols-3">
           {plans.map((plan, index) => (
             <StaggerItem key={index}>
@@ -155,6 +156,7 @@ export default function Pricing() {
             </StaggerItem>
           ))}
         </StaggerContainer>
+        </div>
 
         <FadeUp delay={0.3}>
           <div className="mt-10 text-center">
