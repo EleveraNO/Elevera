@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-function DataStreams() {
+function RisingGrid() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -15,100 +15,74 @@ function DataStreams() {
     const resize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
-      initStreaks();
     };
-
-    type Streak = {
-      x: number; y: number; vy: number;
-      alpha: number; maxAlpha: number;
-      height: number; width: number;
-      alphaDir: number; color: string;
-      dotY: number; dotAlpha: number;
-    };
-
-    const COLORS = ["124,58,237", "124,58,237", "167,139,250", "96,165,250"];
-    let streaks: Streak[] = [];
-
-    function makeStreak(x?: number): Streak {
-      const color = COLORS[Math.floor(Math.random() * COLORS.length)];
-      const w = canvas?.width ?? 800;
-      const h = canvas?.height ?? 600;
-      return {
-        x: x ?? Math.random() * w,
-        y: h + Math.random() * h,
-        vy: -(Math.random() * 1.4 + 0.5),
-        alpha: 0,
-        maxAlpha: Math.random() * 0.55 + 0.12,
-        height: Math.random() * 120 + 60,
-        width: Math.random() > 0.7 ? 2 : 1,
-        alphaDir: Math.random() * 0.012 + 0.006,
-        color,
-        dotY: 0,
-        dotAlpha: 0,
-      };
-    }
-
-    function initStreaks() {
-      if (!canvas) return;
-      // Spread evenly + some random ones
-      const count = Math.max(18, Math.floor(canvas.width / 55));
-      streaks = Array.from({ length: count }, (_, i) => {
-        const s = makeStreak(
-          i < 12
-            ? (canvas.width / 12) * i + (Math.random() - 0.5) * 40
-            : undefined
-        );
-        // Stagger start positions
-        s.y = Math.random() * (canvas.height + 200) - 200;
-        return s;
-      });
-    }
-
     resize();
     window.addEventListener("resize", resize);
 
+    const SPACING = 52;
     let raf: number;
+    let t = 0;
 
     const draw = () => {
+      t += 0.4;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      for (const s of streaks) {
-        s.y += s.vy;
-        s.alpha += s.alphaDir;
+      const cols = Math.ceil(canvas.width / SPACING) + 1;
+      const rows = Math.ceil(canvas.height / SPACING) + 2;
+      const offsetY = t % SPACING;
 
-        if (s.alpha >= s.maxAlpha) s.alphaDir = -(Math.random() * 0.006 + 0.004);
-        if (s.alpha <= 0) {
-          Object.assign(s, makeStreak());
-          continue;
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+      const maxDist = Math.sqrt(cx * cx + cy * cy);
+
+      for (let col = 0; col < cols; col++) {
+        for (let row = 0; row < rows; row++) {
+          const x = col * SPACING;
+          const y = row * SPACING - offsetY;
+
+          // Distance from center → fade out at edges
+          const dx = x - cx;
+          const dy = y - cy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const edgeFade = Math.max(0, 1 - dist / maxDist) * 0.85 + 0.15;
+
+          // Slow ripple wave from center
+          const wave = Math.sin(dist * 0.018 - t * 0.06) * 0.5 + 0.5;
+
+          // Occasional bright dots (scattered highlight)
+          const seed = Math.sin(col * 127.1 + row * 311.7) * 43758.5453;
+          const rand = seed - Math.floor(seed);
+          const isBright = rand > 0.94;
+
+          const baseAlpha = 0.1 + wave * 0.12;
+          const alpha = isBright
+            ? Math.min(1, baseAlpha * 4.5 * edgeFade)
+            : baseAlpha * edgeFade;
+
+          const radius = isBright ? 2.2 : 1.3;
+
+          // Colour: mostly purple, occasionally blue/violet
+          const colorSeed = Math.sin(col * 53.3 + row * 97.1) * 43758.5;
+          const colorRand = colorSeed - Math.floor(colorSeed);
+          const color =
+            colorRand > 0.75
+              ? "96,165,250"
+              : colorRand > 0.55
+              ? "167,139,250"
+              : "124,58,237";
+
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+
+          if (isBright) {
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = `rgba(${color},0.9)`;
+          }
+
+          ctx.fillStyle = `rgba(${color},${alpha})`;
+          ctx.fill();
+          ctx.shadowBlur = 0;
         }
-
-        // Main streak gradient
-        const grad = ctx.createLinearGradient(s.x, s.y, s.x, s.y - s.height);
-        grad.addColorStop(0, `rgba(${s.color},0)`);
-        grad.addColorStop(0.25, `rgba(${s.color},${s.alpha * 0.5})`);
-        grad.addColorStop(0.7, `rgba(${s.color},${s.alpha})`);
-        grad.addColorStop(1, `rgba(${s.color},0)`);
-
-        ctx.beginPath();
-        ctx.moveTo(s.x, s.y);
-        ctx.lineTo(s.x, s.y - s.height);
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = s.width;
-        ctx.shadowBlur = s.width > 1 ? 8 : 4;
-        ctx.shadowColor = `rgba(${s.color},0.6)`;
-        ctx.stroke();
-        ctx.shadowBlur = 0;
-
-        // Bright leading dot at top of streak
-        const dotX = s.x;
-        const dotY = s.y - s.height;
-        ctx.beginPath();
-        ctx.arc(dotX, dotY, s.width + 0.8, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${s.color},${s.alpha * 1.2})`;
-        ctx.shadowBlur = 12;
-        ctx.shadowColor = `rgba(${s.color},1)`;
-        ctx.fill();
-        ctx.shadowBlur = 0;
       }
 
       raf = requestAnimationFrame(draw);
@@ -124,7 +98,7 @@ function DataStreams() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 h-full w-full opacity-80"
+      className="pointer-events-none absolute inset-0 h-full w-full"
     />
   );
 }
@@ -211,7 +185,7 @@ export default function Hero() {
         />
       </div>
 
-      <DataStreams />
+      <RisingGrid />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         {/* Badge */}
