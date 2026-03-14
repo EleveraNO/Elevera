@@ -12,9 +12,11 @@ function FlowField() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const c = canvas; // non-null reference for closures
+
     const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      c.width = c.offsetWidth;
+      c.height = c.offsetHeight;
     };
     resize();
     window.addEventListener("resize", resize);
@@ -32,8 +34,8 @@ function FlowField() {
 
     function spawn(): P {
       return {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        x: Math.random() * c.width,
+        y: Math.random() * c.height,
         vx: 0, vy: 0,
         color: COLORS[Math.floor(Math.random() * COLORS.length)],
         size: 0.7 + Math.random() * 1.2,
@@ -66,10 +68,10 @@ function FlowField() {
 
       // Semi-transparent fill creates glowing trails
       ctx.fillStyle = "rgba(10,10,10,0.13)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillRect(0, 0, c.width, c.height);
 
-      const cx = canvas.width / 2;
-      const cy = canvas.height / 2;
+      const cx = c.width / 2;
+      const cy = c.height / 2;
       const maxDist = Math.sqrt(cx * cx + cy * cy);
 
       for (const p of particles) {
@@ -116,7 +118,7 @@ function FlowField() {
 
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", resize); // eslint-disable-line
     };
   }, []);
 
