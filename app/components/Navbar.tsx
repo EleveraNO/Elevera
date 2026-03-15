@@ -29,7 +29,7 @@ export default function Navbar() {
     }`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a href="/">
+        <a href="/" aria-label="Elevera – til forsiden">
           <Logo />
         </a>
 
@@ -47,7 +47,7 @@ export default function Navbar() {
           >
             <button className="flex items-center gap-1 text-sm text-white/70 transition-colors hover:text-white">
               Tjenester
-              <svg className={`h-3.5 w-3.5 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className={`h-3.5 w-3.5 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>

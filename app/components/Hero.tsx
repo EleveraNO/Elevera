@@ -96,6 +96,7 @@ function DotGrid() {
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
       className="pointer-events-none absolute inset-0 h-full w-full"
     />
   );
@@ -106,7 +107,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
       {/* Deep glow blobs */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <motion.div
           className="absolute left-1/2 top-1/3 h-[750px] w-[750px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/25 blur-[120px]"
           animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
@@ -189,19 +190,19 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
         >
           <span className="flex items-center gap-2">
-            <svg className="h-4 w-4 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-4 w-4 text-[#7c3aed]" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
             Gratis strategimøte
           </span>
           <span className="flex items-center gap-2">
-            <svg className="h-4 w-4 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-4 w-4 text-[#7c3aed]" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
             Svar innen 24 timer
           </span>
           <span className="flex items-center gap-2">
-            <svg className="h-4 w-4 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-4 w-4 text-[#7c3aed]" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
             Ålesund og omegn
@@ -226,6 +227,7 @@ export default function Hero() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          aria-hidden="true"
           animate={{ y: [0, 3, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         >

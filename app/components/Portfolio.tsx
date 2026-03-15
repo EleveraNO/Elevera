@@ -16,7 +16,7 @@ const projects = [
   },
 ];
 
-function AutoplayVideo({ src }: { src: string }) {
+function AutoplayVideo({ src, label }: { src: string; label: string }) {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -46,6 +46,7 @@ function AutoplayVideo({ src }: { src: string }) {
       muted
       loop
       playsInline
+      aria-label={label}
       className="absolute inset-0 h-full w-full object-cover"
     />
   );
@@ -61,7 +62,7 @@ export default function Portfolio() {
               className="relative overflow-hidden rounded-2xl border border-white/10"
               style={{ aspectRatio: "9/16" }}
             >
-              <AutoplayVideo src={project.src} />
+              <AutoplayVideo src={project.src} label={`Reklamevideo for ${project.client}`} />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
                 <p className="text-sm font-semibold text-white">{project.client}</p>
                 {project.href && (
@@ -73,7 +74,7 @@ export default function Portfolio() {
           return (
             <StaggerItem key={project.src} className="w-[calc(50%-8px)]">
               {project.href ? (
-                <a href={project.href}>{inner}</a>
+                <a href={project.href} aria-label={`Se casestudie for ${project.client}`}>{inner}</a>
               ) : (
                 inner
               )}
