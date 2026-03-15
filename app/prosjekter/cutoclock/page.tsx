@@ -208,6 +208,7 @@ export default function CutOClockPage() {
                   muted
                   loop
                   playsInline
+                  aria-label="Reklamevideo produsert for Cut O' Clock"
                   className="h-full w-full object-cover"
                 />
               </div>
