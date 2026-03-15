@@ -101,13 +101,7 @@ function DotGrid() {
   );
 }
 
-// Geometric mountain silhouette inspired by the Elevera logo polygon
 function Mountain() {
-  const ridge =
-    "M 0 590 L 60 568 L 125 545 L 195 520 L 260 498 L 318 478 L 370 460 L 415 443 L 456 427 L 492 412 L 524 397 L 552 382 L 576 368 L 597 354 L 614 341 L 627 328 L 636 317 L 641 304 L 644 291 L 640 278 L 646 265 L 655 252 L 666 239 L 678 226 L 690 213 L 700 200 L 708 187 L 713 174 L 715 162 L 712 150 L 717 140 L 720 130 L 723 140 L 728 150 L 725 162 L 727 174 L 732 187 L 740 200 L 750 213 L 762 226 L 774 239 L 785 252 L 794 265 L 800 278 L 796 291 L 799 304 L 804 317 L 813 328 L 826 341 L 843 354 L 864 368 L 888 382 L 916 397 L 948 412 L 984 427 L 1025 443 L 1070 460 L 1122 478 L 1180 498 L 1245 520 L 1315 545 L 1380 568 L 1440 590";
-
-  const fillPath = `${ridge} L 1440 900 L 0 900 Z`;
-
   return (
     <svg
       className="pointer-events-none absolute inset-0 h-full w-full"
@@ -118,48 +112,25 @@ function Mountain() {
       <defs>
         <linearGradient id="mtnFill" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="rgba(124,58,237,0)" />
-          <stop offset="45%" stopColor="rgba(124,58,237,0.07)" />
-          <stop offset="100%" stopColor="rgba(124,58,237,0.18)" />
-        </linearGradient>
-        <linearGradient
-          id="mtnStroke"
-          x1="720" y1="130"
-          x2="720" y2="590"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0%" stopColor="rgba(167,139,250,0.7)" />
-          <stop offset="55%" stopColor="rgba(124,58,237,0.3)" />
-          <stop offset="100%" stopColor="rgba(124,58,237,0)" />
+          <stop offset="100%" stopColor="rgba(124,58,237,0.08)" />
         </linearGradient>
       </defs>
-
-      {/* Subtle fill beneath the ridge */}
-      <path d={fillPath} fill="url(#mtnFill)" />
-
-      {/* Animated ridge line */}
-      <motion.path
-        d={ridge}
-        stroke="url(#mtnStroke)"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 3.5, delay: 0.6, ease: "easeOut" }}
+      {/* Fill */}
+      <path
+        d="M 0 900 L 0 650 L 200 580 L 450 500 L 620 450 L 720 380 L 820 450 L 990 500 L 1240 580 L 1440 650 L 1440 900 Z"
+        fill="url(#mtnFill)"
       />
-
-      {/* Faint secondary ridge — shifted slightly */}
+      {/* Ridge line */}
       <motion.path
-        d="M 0 640 L 80 618 L 170 594 L 255 570 L 330 550 L 392 531 L 446 514 L 495 498 L 538 482 L 578 466 L 612 451 L 641 437 L 664 423 L 682 410 L 695 396 L 703 383 L 705 368 L 700 353 L 698 338 L 700 323 L 705 308 L 714 293 L 720 278 L 726 293 L 735 308 L 740 323 L 742 338 L 740 353 L 737 368 L 735 383 L 743 396 L 756 410 L 774 423 L 797 437 L 826 451 L 860 466 L 900 482 L 944 498 L 993 514 L 1048 531 L 1110 550 L 1185 570 L 1270 594 L 1360 618 L 1440 640"
-        stroke="rgba(124,58,237,0.12)"
+        d="M 0 650 L 200 580 L 450 500 L 620 450 L 720 380 L 820 450 L 990 500 L 1240 580 L 1440 650"
+        stroke="rgba(124,58,237,0.2)"
         strokeWidth="1"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
         initial={{ pathLength: 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 4, delay: 1.2, ease: "easeOut" }}
+        transition={{ duration: 3, delay: 0.8, ease: "easeOut" }}
       />
     </svg>
   );
