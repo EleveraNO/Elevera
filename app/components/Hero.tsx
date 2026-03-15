@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-function RisingGrid() {
+function DotGrid() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -25,13 +25,6 @@ function RisingGrid() {
     let raf: number;
     let t = 0;
 
-    type Dot = {
-      x: number; y: number;
-      alpha: number; radius: number;
-      color: string; isBright: boolean; edgeFade: number;
-    };
-    const LINE_MAX_DIST = SPACING * 2.8;
-
     const draw = () => {
       t += 0.4;
       ctx.clearRect(0, 0, c.width, c.height);
@@ -44,8 +37,6 @@ function RisingGrid() {
       const cx = c.width / 2;
       const cy = c.height / 2;
       const maxDist = Math.sqrt(cx * cx + cy * cy);
-
-      const dots: Dot[] = [];
 
       for (let col = 0; col < cols; col++) {
         for (let row = 0; row < rows; row++) {
@@ -64,12 +55,12 @@ function RisingGrid() {
           const rand = seed - Math.floor(seed);
           const isBright = rand > 0.94;
 
-          const baseAlpha = 0.1 + wave * 0.12;
+          const baseAlpha = 0.07 + wave * 0.08;
           const alpha = isBright
-            ? Math.min(1, baseAlpha * 4.5 * edgeFade)
+            ? Math.min(1, baseAlpha * 4 * edgeFade)
             : baseAlpha * edgeFade;
 
-          const radius = isBright ? 2.2 : 1.3;
+          const radius = isBright ? 2.0 : 1.2;
 
           const colorSeed = Math.sin(col * 53.3 + worldRow * 97.1) * 43758.5;
           const colorRand = colorSeed - Math.floor(colorSeed);
@@ -80,44 +71,16 @@ function RisingGrid() {
               ? "167,139,250"
               : "124,58,237";
 
-          dots.push({ x, y, alpha, radius, color, isBright, edgeFade });
-        }
-      }
-
-      // Constellation lines between nearby bright dots
-      const brightDots = dots.filter((d) => d.isBright);
-      ctx.lineWidth = 0.6;
-      for (let i = 0; i < brightDots.length; i++) {
-        for (let j = i + 1; j < brightDots.length; j++) {
-          const a = brightDots[i];
-          const b = brightDots[j];
-          const ddx = a.x - b.x;
-          const ddy = a.y - b.y;
-          const lineDist = Math.sqrt(ddx * ddx + ddy * ddy);
-          if (lineDist < LINE_MAX_DIST) {
-            const proximity = 1 - lineDist / LINE_MAX_DIST;
-            const lineAlpha =
-              proximity * proximity * 0.18 * Math.min(a.edgeFade, b.edgeFade);
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(139,92,246,${lineAlpha})`;
-            ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          if (isBright) {
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = `rgba(${color},0.8)`;
           }
+          ctx.fillStyle = `rgba(${color},${alpha})`;
+          ctx.fill();
+          ctx.shadowBlur = 0;
         }
-      }
-
-      // Dots on top
-      for (const dot of dots) {
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
-        if (dot.isBright) {
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = `rgba(${dot.color},0.9)`;
-        }
-        ctx.fillStyle = `rgba(${dot.color},${dot.alpha})`;
-        ctx.fill();
-        ctx.shadowBlur = 0;
       }
 
       raf = requestAnimationFrame(draw);
@@ -135,6 +98,70 @@ function RisingGrid() {
       ref={canvasRef}
       className="pointer-events-none absolute inset-0 h-full w-full"
     />
+  );
+}
+
+// Geometric mountain silhouette inspired by the Elevera logo polygon
+function Mountain() {
+  const ridge =
+    "M 0 590 L 60 568 L 125 545 L 195 520 L 260 498 L 318 478 L 370 460 L 415 443 L 456 427 L 492 412 L 524 397 L 552 382 L 576 368 L 597 354 L 614 341 L 627 328 L 636 317 L 641 304 L 644 291 L 640 278 L 646 265 L 655 252 L 666 239 L 678 226 L 690 213 L 700 200 L 708 187 L 713 174 L 715 162 L 712 150 L 717 140 L 720 130 L 723 140 L 728 150 L 725 162 L 727 174 L 732 187 L 740 200 L 750 213 L 762 226 L 774 239 L 785 252 L 794 265 L 800 278 L 796 291 L 799 304 L 804 317 L 813 328 L 826 341 L 843 354 L 864 368 L 888 382 L 916 397 L 948 412 L 984 427 L 1025 443 L 1070 460 L 1122 478 L 1180 498 L 1245 520 L 1315 545 L 1380 568 L 1440 590";
+
+  const fillPath = `${ridge} L 1440 900 L 0 900 Z`;
+
+  return (
+    <svg
+      className="pointer-events-none absolute inset-0 h-full w-full"
+      preserveAspectRatio="none"
+      viewBox="0 0 1440 900"
+      fill="none"
+    >
+      <defs>
+        <linearGradient id="mtnFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="rgba(124,58,237,0)" />
+          <stop offset="45%" stopColor="rgba(124,58,237,0.07)" />
+          <stop offset="100%" stopColor="rgba(124,58,237,0.18)" />
+        </linearGradient>
+        <linearGradient
+          id="mtnStroke"
+          x1="720" y1="130"
+          x2="720" y2="590"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0%" stopColor="rgba(167,139,250,0.7)" />
+          <stop offset="55%" stopColor="rgba(124,58,237,0.3)" />
+          <stop offset="100%" stopColor="rgba(124,58,237,0)" />
+        </linearGradient>
+      </defs>
+
+      {/* Subtle fill beneath the ridge */}
+      <path d={fillPath} fill="url(#mtnFill)" />
+
+      {/* Animated ridge line */}
+      <motion.path
+        d={ridge}
+        stroke="url(#mtnStroke)"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{ duration: 3.5, delay: 0.6, ease: "easeOut" }}
+      />
+
+      {/* Faint secondary ridge — shifted slightly */}
+      <motion.path
+        d="M 0 640 L 80 618 L 170 594 L 255 570 L 330 550 L 392 531 L 446 514 L 495 498 L 538 482 L 578 466 L 612 451 L 641 437 L 664 423 L 682 410 L 695 396 L 703 383 L 705 368 L 700 353 L 698 338 L 700 323 L 705 308 L 714 293 L 720 278 L 726 293 L 735 308 L 740 323 L 742 338 L 740 353 L 737 368 L 735 383 L 743 396 L 756 410 L 774 423 L 797 437 L 826 451 L 860 466 L 900 482 L 944 498 L 993 514 L 1048 531 L 1110 550 L 1185 570 L 1270 594 L 1360 618 L 1440 640"
+        stroke="rgba(124,58,237,0.12)"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{ duration: 4, delay: 1.2, ease: "easeOut" }}
+      />
+    </svg>
   );
 }
 
@@ -160,7 +187,8 @@ export default function Hero() {
         />
       </div>
 
-      <RisingGrid />
+      <DotGrid />
+      <Mountain />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center pb-24">
         {/* Badge */}
