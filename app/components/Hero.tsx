@@ -101,61 +101,62 @@ function DotGrid() {
   );
 }
 
-// Sunnmørsalpene-inspired silhouette — 5 peaks, dark silhouette, lilla ridge glow
-// Peak heights (y from top in 900px viewBox): P1=740 P2=650 P3=588 P4=614 P5=658
+// Sunnmørsalpene-inspired silhouette — realistic coastal mountain range
+// ViewBox 0 0 1440 900. Tallest peak ~y520. Mountains occupy bottom ~42%.
 const RIDGE =
-  "M 0 862 " +
-  // Far-left flat coast
-  "L 40 831 L 80 801 L 120 771 L 150 748 " +
-  // Minor left hump (P1)
-  "L 160 740 " +
-  "L 170 745 L 182 756 L 197 767 L 213 778 L 228 788 " +
-  // Valley before P2
-  "L 242 797 L 256 803 L 261 804 L 266 803 " +
-  // Rising to P2
-  "L 278 791 L 292 775 L 308 756 L 324 735 " +
-  "L 338 713 L 350 692 L 358 672 " +
-  // P2 rocky twin top
-  "L 357 655 L 360 650 L 363 656 L 362 651 L 366 658 " +
-  // P2 right descent
-  "L 373 667 L 382 677 L 393 690 L 406 704 " +
-  "L 420 718 L 430 727 " +
-  // Valley before P3 (tallest) — dramatic cliff rise
-  "L 436 730 L 441 729 L 446 726 " +
-  "L 450 714 L 454 697 L 456 676 " +
-  "L 458 654 L 459 628 L 459 608 " +
-  // P3 twin summit — tallest peak
-  "L 458 597 L 460 588 L 462 595 L 465 590 L 467 599 " +
-  // P3 right face — near-vertical cliff
-  "L 472 609 L 480 622 L 490 638 " +
-  "L 502 653 L 516 668 " +
-  // Descent to valley
-  "L 532 682 L 547 695 L 558 704 L 568 708 L 579 707 " +
-  // Valley before P4
-  "L 591 697 L 606 681 " +
-  // Rising to P4
-  "L 620 663 L 633 644 L 641 626 " +
-  // P4 rocky top
-  "L 639 620 L 641 614 L 644 620 L 646 614 L 649 622 " +
-  // P4 right descent
-  "L 659 634 L 672 650 L 687 666 " +
-  "L 704 683 L 721 700 " +
+  "M 0 900 " +
+  // Left coast rising from sea level
+  "L 0 820 L 30 810 L 60 798 L 90 785 L 110 778 L 130 770 " +
+  // Foothills — gentle left slope
+  "L 155 758 L 175 748 L 195 740 L 210 735 L 225 730 " +
+  // P1 — small coastal peak (y=710)
+  "L 240 722 L 252 715 L 260 712 L 265 710 L 270 712 L 278 716 " +
+  "L 288 722 L 300 730 " +
+  // Valley between P1 and P2
+  "L 315 738 L 328 742 L 338 743 L 348 741 " +
+  // Rising toward P2 — broad western shoulder
+  "L 362 734 L 375 722 L 388 708 L 398 694 L 408 678 " +
+  "L 415 664 L 422 648 L 428 635 L 434 622 " +
+  // P2 — second peak, rugged (y=595)
+  "L 438 610 L 442 602 L 445 597 L 448 595 " +
+  "L 451 598 L 453 596 L 456 600 " +
+  // P2 eastern descent — steep
+  "L 462 612 L 470 628 L 480 645 L 492 662 " +
+  // Saddle between P2 and P3
+  "L 505 676 L 518 686 L 530 692 L 542 694 L 555 690 " +
+  // Rising to P3 — tallest peak, dramatic cliff
+  "L 568 680 L 580 664 L 590 646 L 598 626 " +
+  "L 604 608 L 610 588 L 614 570 L 618 555 L 620 542 " +
+  // P3 — main summit, jagged twin top (y=520)
+  "L 622 530 L 624 524 L 626 520 L 629 525 " +
+  "L 631 521 L 634 528 " +
+  // P3 eastern face — steep cliff drop
+  "L 640 545 L 648 565 L 658 588 L 670 610 " +
+  "L 684 632 L 698 650 " +
+  // Valley between P3 and P4
+  "L 712 664 L 726 674 L 740 680 L 754 682 L 768 678 " +
+  // Rising to P4 — second tallest (y=570)
+  "L 782 668 L 795 654 L 806 638 L 816 620 " +
+  "L 824 604 L 830 588 L 835 576 " +
+  // P4 summit — rocky (y=570)
+  "L 838 572 L 840 570 L 843 573 L 845 571 L 848 576 " +
+  // P4 eastern slope — more gradual
+  "L 856 592 L 866 612 L 878 634 L 892 654 " +
+  "L 908 672 L 924 686 " +
   // Valley before P5
-  "L 736 714 L 750 724 L 759 730 L 768 731 " +
-  // Rising to P5
-  "L 779 724 L 792 712 L 806 699 " +
-  "L 819 684 L 828 669 " +
-  // P5 rocky top
-  "L 831 659 L 829 658 L 832 662 L 835 657 L 838 664 " +
-  // Right slope — long gentle descent
-  "L 853 675 L 869 687 L 888 700 " +
-  "L 909 712 L 932 722 L 958 731 " +
-  "L 986 739 L 1017 747 L 1050 753 " +
-  "L 1086 759 L 1125 764 L 1166 768 " +
-  "L 1210 772 L 1258 775 L 1310 778 " +
-  "L 1366 781 L 1440 784";
+  "L 940 696 L 955 702 L 968 704 L 980 702 " +
+  // Rising to P5 — medium peak (y=640)
+  "L 994 694 L 1008 682 L 1020 668 L 1030 656 L 1038 646 " +
+  // P5 summit (y=640)
+  "L 1042 642 L 1045 640 L 1048 643 L 1050 641 L 1053 646 " +
+  // P5 eastern slope — long gentle descent to coast
+  "L 1062 658 L 1075 674 L 1092 690 " +
+  "L 1112 706 L 1135 720 L 1160 732 " +
+  "L 1190 744 L 1225 755 L 1265 764 " +
+  "L 1310 772 L 1360 780 L 1410 786 L 1440 790 " +
+  "L 1440 900";
 
-const FILL_PATH = `${RIDGE} L 1440 900 L 0 900 Z`;
+const FILL_PATH = `${RIDGE} Z`;
 
 function Mountain() {
   return (
@@ -166,18 +167,18 @@ function Mountain() {
       fill="none"
     >
       <defs>
-        {/* Solid dark fill — near-opaque everywhere, slight edge fade at peaks */}
-        <linearGradient id="mtnFill" x1="460" y1="588" x2="460" y2="900" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="rgba(8,6,18,0.7)" />
-          <stop offset="8%" stopColor="rgba(8,6,18,0.92)" />
-          <stop offset="30%" stopColor="rgba(8,6,18,0.97)" />
+        {/* Solid dark fill — opaque mountain body */}
+        <linearGradient id="mtnFill" x1="626" y1="520" x2="626" y2="900" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="rgba(8,6,18,0.85)" />
+          <stop offset="5%" stopColor="rgba(8,6,18,0.95)" />
+          <stop offset="15%" stopColor="rgba(8,6,18,1)" />
           <stop offset="100%" stopColor="rgba(8,6,18,1)" />
         </linearGradient>
-        {/* Ridge glow: bright at peaks, fading down */}
-        <linearGradient id="mtnStroke" x1="460" y1="588" x2="460" y2="820" gradientUnits="userSpaceOnUse">
+        {/* Ridge glow: bright at peaks, fading down the slopes */}
+        <linearGradient id="mtnStroke" x1="626" y1="520" x2="626" y2="780" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="rgba(192,168,255,0.7)" />
-          <stop offset="30%" stopColor="rgba(147,119,230,0.4)" />
-          <stop offset="65%" stopColor="rgba(124,58,237,0.15)" />
+          <stop offset="25%" stopColor="rgba(147,119,230,0.4)" />
+          <stop offset="55%" stopColor="rgba(124,58,237,0.12)" />
           <stop offset="100%" stopColor="rgba(124,58,237,0)" />
         </linearGradient>
       </defs>
