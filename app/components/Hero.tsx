@@ -166,20 +166,23 @@ function Mountain() {
       fill="none"
     >
       <defs>
-        <linearGradient id="mtnFill" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-          <stop offset="0%" stopColor="rgba(15,10,30,0)" />
-          <stop offset="35%" stopColor="rgba(15,10,30,0.65)" />
-          <stop offset="100%" stopColor="rgba(10,10,20,0.92)" />
+        {/* Solid dark fill — near-opaque everywhere, slight edge fade at peaks */}
+        <linearGradient id="mtnFill" x1="460" y1="588" x2="460" y2="900" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="rgba(8,6,18,0.7)" />
+          <stop offset="8%" stopColor="rgba(8,6,18,0.92)" />
+          <stop offset="30%" stopColor="rgba(8,6,18,0.97)" />
+          <stop offset="100%" stopColor="rgba(8,6,18,1)" />
         </linearGradient>
+        {/* Ridge glow: bright at peaks, fading down */}
         <linearGradient id="mtnStroke" x1="460" y1="588" x2="460" y2="820" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="rgba(192,168,255,0.75)" />
-          <stop offset="35%" stopColor="rgba(167,139,250,0.45)" />
-          <stop offset="70%" stopColor="rgba(124,58,237,0.18)" />
+          <stop offset="0%" stopColor="rgba(192,168,255,0.7)" />
+          <stop offset="30%" stopColor="rgba(147,119,230,0.4)" />
+          <stop offset="65%" stopColor="rgba(124,58,237,0.15)" />
           <stop offset="100%" stopColor="rgba(124,58,237,0)" />
         </linearGradient>
       </defs>
 
-      {/* Mountain fill */}
+      {/* Mountain solid fill */}
       <path d={FILL_PATH} fill="url(#mtnFill)" />
 
       {/* Animated ridge line */}
