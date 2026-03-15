@@ -101,42 +101,59 @@ function DotGrid() {
   );
 }
 
-// Realistic mountain range silhouette — main peak ~52% from left, ~71% from top
+// Sunnmørsalpene-inspired silhouette — 5 peaks, dark silhouette, lilla ridge glow
+// Peak heights (y from top in 900px viewBox): P1=740 P2=650 P3=588 P4=614 P5=658
 const RIDGE =
-  "M 0 875 " +
-  // Left foothills (smooth)
-  "L 85 859 L 168 843 L 249 828 L 327 813 L 402 798 " +
-  // Slightly rougher terrain begins
-  "L 474 783 L 481 780 L 477 782 L 485 779 " +
-  "L 506 772 L 528 765 L 534 762 L 530 764 L 537 761 " +
-  "L 560 754 L 583 746 L 590 743 L 586 745 L 592 742 " +
-  // Rocky mid-slope
-  "L 615 735 L 637 727 L 644 724 L 640 726 L 646 723 " +
-  "L 666 716 L 685 708 L 702 700 " +
-  "L 711 696 L 707 698 L 713 694 " +
-  "L 723 688 L 731 682 L 738 676 L 743 670 " +
-  // Steeper — approaching main peak
-  "L 747 664 L 750 658 L 752 652 L 753 646 " +
-  "L 752 641 L 751 638 L 750 636 " +
-  // MAIN PEAK (~x=750, y=636)
-  "L 752 638 L 754 642 L 758 648 " +
-  // Right rocky face descent
-  "L 764 655 L 772 662 L 782 669 L 794 675 " +
-  "L 808 680 L 823 684 L 839 687 " +
-  // Valley between peaks
-  "L 856 690 L 871 692 L 885 693 L 897 693 " +
-  // Right secondary peak rising
-  "L 908 690 L 917 686 L 924 680 L 929 674 " +
-  "L 932 668 L 934 663 L 935 659 L 935 656 " +
-  // RIGHT SECONDARY PEAK (~x=935, y=654)
-  "L 934 657 L 932 662 L 931 668 " +
-  // Descent from secondary
-  "L 932 675 L 936 683 L 942 691 L 951 698 " +
-  "L 963 704 L 977 710 L 993 716 " +
-  // Smooth right foothills
-  "L 1012 722 L 1034 728 L 1059 733 L 1087 738 " +
-  "L 1118 743 L 1152 748 L 1189 753 L 1229 757 " +
-  "L 1272 761 L 1318 765 L 1367 768 L 1440 772";
+  "M 0 862 " +
+  // Far-left flat coast
+  "L 40 831 L 80 801 L 120 771 L 150 748 " +
+  // Minor left hump (P1)
+  "L 160 740 " +
+  "L 170 745 L 182 756 L 197 767 L 213 778 L 228 788 " +
+  // Valley before P2
+  "L 242 797 L 256 803 L 261 804 L 266 803 " +
+  // Rising to P2
+  "L 278 791 L 292 775 L 308 756 L 324 735 " +
+  "L 338 713 L 350 692 L 358 672 " +
+  // P2 rocky twin top
+  "L 357 655 L 360 650 L 363 656 L 362 651 L 366 658 " +
+  // P2 right descent
+  "L 373 667 L 382 677 L 393 690 L 406 704 " +
+  "L 420 718 L 430 727 " +
+  // Valley before P3 (tallest) — dramatic cliff rise
+  "L 436 730 L 441 729 L 446 726 " +
+  "L 450 714 L 454 697 L 456 676 " +
+  "L 458 654 L 459 628 L 459 608 " +
+  // P3 twin summit — tallest peak
+  "L 458 597 L 460 588 L 462 595 L 465 590 L 467 599 " +
+  // P3 right face — near-vertical cliff
+  "L 472 609 L 480 622 L 490 638 " +
+  "L 502 653 L 516 668 " +
+  // Descent to valley
+  "L 532 682 L 547 695 L 558 704 L 568 708 L 579 707 " +
+  // Valley before P4
+  "L 591 697 L 606 681 " +
+  // Rising to P4
+  "L 620 663 L 633 644 L 641 626 " +
+  // P4 rocky top
+  "L 639 620 L 641 614 L 644 620 L 646 614 L 649 622 " +
+  // P4 right descent
+  "L 659 634 L 672 650 L 687 666 " +
+  "L 704 683 L 721 700 " +
+  // Valley before P5
+  "L 736 714 L 750 724 L 759 730 L 768 731 " +
+  // Rising to P5
+  "L 779 724 L 792 712 L 806 699 " +
+  "L 819 684 L 828 669 " +
+  // P5 rocky top
+  "L 831 659 L 829 658 L 832 662 L 835 657 L 838 664 " +
+  // Right slope — long gentle descent
+  "L 853 675 L 869 687 L 888 700 " +
+  "L 909 712 L 932 722 L 958 731 " +
+  "L 986 739 L 1017 747 L 1050 753 " +
+  "L 1086 759 L 1125 764 L 1166 768 " +
+  "L 1210 772 L 1258 775 L 1310 778 " +
+  "L 1366 781 L 1440 784";
 
 const FILL_PATH = `${RIDGE} L 1440 900 L 0 900 Z`;
 
@@ -149,14 +166,15 @@ function Mountain() {
       fill="none"
     >
       <defs>
-        <linearGradient id="mtnFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="rgba(124,58,237,0)" />
-          <stop offset="60%" stopColor="rgba(124,58,237,0.06)" />
-          <stop offset="100%" stopColor="rgba(124,58,237,0.12)" />
+        <linearGradient id="mtnFill" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="rgba(15,10,30,0)" />
+          <stop offset="35%" stopColor="rgba(15,10,30,0.65)" />
+          <stop offset="100%" stopColor="rgba(10,10,20,0.92)" />
         </linearGradient>
-        <linearGradient id="mtnStroke" x1="750" y1="636" x2="750" y2="875" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="rgba(167,139,250,0.6)" />
-          <stop offset="50%" stopColor="rgba(124,58,237,0.3)" />
+        <linearGradient id="mtnStroke" x1="460" y1="588" x2="460" y2="820" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="rgba(192,168,255,0.75)" />
+          <stop offset="35%" stopColor="rgba(167,139,250,0.45)" />
+          <stop offset="70%" stopColor="rgba(124,58,237,0.18)" />
           <stop offset="100%" stopColor="rgba(124,58,237,0)" />
         </linearGradient>
       </defs>
@@ -168,7 +186,7 @@ function Mountain() {
       <motion.path
         d={RIDGE}
         stroke="url(#mtnStroke)"
-        strokeWidth="1.2"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
