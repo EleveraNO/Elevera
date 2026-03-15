@@ -101,9 +101,43 @@ function DotGrid() {
   );
 }
 
-// Ridge derived from the Elevera logo polygon, rescaled so the peak sits
-// at ~71% from the top — comfortably below the hero text content.
-const RIDGE = "M 0 870 L 317 821 L 451 730 L 517 754 L 636 759 L 750 711 L 768 640 L 944 720 L 1028 682 L 1440 870";
+// Realistic mountain range silhouette — main peak ~52% from left, ~71% from top
+const RIDGE =
+  "M 0 875 " +
+  // Left foothills (smooth)
+  "L 85 859 L 168 843 L 249 828 L 327 813 L 402 798 " +
+  // Slightly rougher terrain begins
+  "L 474 783 L 481 780 L 477 782 L 485 779 " +
+  "L 506 772 L 528 765 L 534 762 L 530 764 L 537 761 " +
+  "L 560 754 L 583 746 L 590 743 L 586 745 L 592 742 " +
+  // Rocky mid-slope
+  "L 615 735 L 637 727 L 644 724 L 640 726 L 646 723 " +
+  "L 666 716 L 685 708 L 702 700 " +
+  "L 711 696 L 707 698 L 713 694 " +
+  "L 723 688 L 731 682 L 738 676 L 743 670 " +
+  // Steeper — approaching main peak
+  "L 747 664 L 750 658 L 752 652 L 753 646 " +
+  "L 752 641 L 751 638 L 750 636 " +
+  // MAIN PEAK (~x=750, y=636)
+  "L 752 638 L 754 642 L 758 648 " +
+  // Right rocky face descent
+  "L 764 655 L 772 662 L 782 669 L 794 675 " +
+  "L 808 680 L 823 684 L 839 687 " +
+  // Valley between peaks
+  "L 856 690 L 871 692 L 885 693 L 897 693 " +
+  // Right secondary peak rising
+  "L 908 690 L 917 686 L 924 680 L 929 674 " +
+  "L 932 668 L 934 663 L 935 659 L 935 656 " +
+  // RIGHT SECONDARY PEAK (~x=935, y=654)
+  "L 934 657 L 932 662 L 931 668 " +
+  // Descent from secondary
+  "L 932 675 L 936 683 L 942 691 L 951 698 " +
+  "L 963 704 L 977 710 L 993 716 " +
+  // Smooth right foothills
+  "L 1012 722 L 1034 728 L 1059 733 L 1087 738 " +
+  "L 1118 743 L 1152 748 L 1189 753 L 1229 757 " +
+  "L 1272 761 L 1318 765 L 1367 768 L 1440 772";
+
 const FILL_PATH = `${RIDGE} L 1440 900 L 0 900 Z`;
 
 function Mountain() {
@@ -120,9 +154,9 @@ function Mountain() {
           <stop offset="60%" stopColor="rgba(124,58,237,0.06)" />
           <stop offset="100%" stopColor="rgba(124,58,237,0.12)" />
         </linearGradient>
-        <linearGradient id="mtnStroke" x1="768" y1="640" x2="768" y2="870" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="rgba(167,139,250,0.55)" />
-          <stop offset="50%" stopColor="rgba(124,58,237,0.25)" />
+        <linearGradient id="mtnStroke" x1="750" y1="636" x2="750" y2="875" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="rgba(167,139,250,0.6)" />
+          <stop offset="50%" stopColor="rgba(124,58,237,0.3)" />
           <stop offset="100%" stopColor="rgba(124,58,237,0)" />
         </linearGradient>
       </defs>
