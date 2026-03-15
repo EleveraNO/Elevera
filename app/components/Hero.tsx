@@ -101,6 +101,10 @@ function DotGrid() {
   );
 }
 
+// Ridge derived from the Elevera logo polygon, scaled to fill the hero
+const RIDGE = "M 0 752 L 317 634 L 451 416 L 517 473 L 636 484 L 750 369 L 768 201 L 944 392 L 1028 301 L 1440 752";
+const FILL_PATH = `${RIDGE} L 1440 900 L 0 900 Z`;
+
 function Mountain() {
   return (
     <svg
@@ -112,25 +116,30 @@ function Mountain() {
       <defs>
         <linearGradient id="mtnFill" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="rgba(124,58,237,0)" />
-          <stop offset="100%" stopColor="rgba(124,58,237,0.08)" />
+          <stop offset="60%" stopColor="rgba(124,58,237,0.06)" />
+          <stop offset="100%" stopColor="rgba(124,58,237,0.12)" />
+        </linearGradient>
+        <linearGradient id="mtnStroke" x1="768" y1="201" x2="768" y2="752" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="rgba(167,139,250,0.55)" />
+          <stop offset="50%" stopColor="rgba(124,58,237,0.25)" />
+          <stop offset="100%" stopColor="rgba(124,58,237,0)" />
         </linearGradient>
       </defs>
-      {/* Fill */}
-      <path
-        d="M 0 900 L 0 650 L 200 580 L 450 500 L 620 450 L 720 380 L 820 450 L 990 500 L 1240 580 L 1440 650 L 1440 900 Z"
-        fill="url(#mtnFill)"
-      />
-      {/* Ridge line */}
+
+      {/* Mountain fill */}
+      <path d={FILL_PATH} fill="url(#mtnFill)" />
+
+      {/* Animated ridge line */}
       <motion.path
-        d="M 0 650 L 200 580 L 450 500 L 620 450 L 720 380 L 820 450 L 990 500 L 1240 580 L 1440 650"
-        stroke="rgba(124,58,237,0.2)"
-        strokeWidth="1"
+        d={RIDGE}
+        stroke="url(#mtnStroke)"
+        strokeWidth="1.2"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
         initial={{ pathLength: 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 3, delay: 0.8, ease: "easeOut" }}
+        transition={{ duration: 3.5, delay: 0.6, ease: "easeOut" }}
       />
     </svg>
   );
