@@ -101,60 +101,32 @@ function DotGrid() {
   );
 }
 
-// Sunnmørsalpene-inspired silhouette — smooth realistic coastal mountain range
-// ViewBox 0 0 1440 900. Tallest peak ~y540. Cubic bezier for natural slopes.
-// Wide summit shapes (40-80px) so they read as rocky peaks, not needle spikes.
+// 3 sharp peaks — straight edges only, max ~58° slope, no curves, no zigzag
+// ViewBox 0 0 1440 900. P1≈660, P2≈510 (tallest), P3≈590
 const RIDGE =
-  "M 0 900 L 0 810 " +
-  // Left coast — gentle rise from sea
-  "C 50 800, 120 778, 180 760 " +
-  // P1 — low coastal hill (y≈728)
-  "C 210 748, 240 732, 260 728 " +
-  "C 275 726, 290 730, 310 738 " +
-  // Valley before P2
-  "C 330 746, 345 750, 360 748 " +
-  // Rising to P2 — broad western shoulder with curve
-  "C 380 740, 405 715, 425 680 " +
-  "C 438 656, 448 632, 456 612 " +
-  // P2 summit — wide rugged top (~40px wide, y≈598)
-  "C 460 604, 464 598, 470 596 " +
-  "L 476 598 L 480 595 L 486 599 " +
-  "C 490 600, 494 604, 498 612 " +
-  // P2 eastern descent — steep but curved
-  "C 510 640, 525 668, 545 688 " +
-  // Saddle between P2 and P3
-  "C 560 698, 575 702, 590 698 " +
-  // Rising to P3 — tallest peak, dramatic cliff face
-  "C 605 690, 620 668, 635 636 " +
-  "C 645 612, 652 588, 658 566 " +
-  // P3 — main summit, wide rocky top (~70px, y≈540)
-  "C 662 554, 666 546, 672 542 " +
-  "L 680 544 L 688 540 L 696 545 L 702 541 L 708 546 " +
-  "C 714 550, 720 558, 726 570 " +
-  // P3 eastern cliff — steep drop
-  "C 738 598, 755 636, 775 662 " +
-  // Valley between P3 and P4
-  "C 792 680, 808 690, 825 692 " +
-  "C 840 692, 852 688, 865 678 " +
-  // Rising to P4 — second tallest (y≈590)
-  "C 885 660, 905 628, 918 604 " +
-  // P4 summit — angular top (~50px wide, y≈590)
-  "C 922 596, 926 592, 932 590 " +
-  "L 938 593 L 944 589 L 950 592 " +
-  "C 955 594, 960 600, 966 610 " +
-  // P4 eastern slope — gradual descent
-  "C 980 640, 1000 672, 1025 694 " +
-  // Valley before P5
-  "C 1045 708, 1065 714, 1085 712 " +
-  // Rising to P5 — medium peak (y≈668)
-  "C 1100 706, 1118 690, 1132 676 " +
-  // P5 summit (~40px wide, y≈668)
-  "C 1136 672, 1140 669, 1146 668 " +
-  "L 1152 670 L 1158 667 L 1164 671 " +
-  "C 1170 674, 1178 682, 1188 694 " +
-  // P5 eastern descent — long gentle coast
-  "C 1210 718, 1250 744, 1300 764 " +
-  "C 1350 778, 1400 787, 1440 792 " +
+  "M 0 900 L 0 808 " +
+  "L 100 792 L 190 782 " +
+  // P1 left slope (~49° → ~49°)
+  "L 260 740 L 330 660 " +
+  // P1 sharp peak
+  // P1 right slope with ledge
+  "L 370 700 L 385 700 L 440 770 " +
+  // Valley
+  "L 510 780 " +
+  // P2 left slope — ridge breaks (~45° → ~52° → ~59°)
+  "L 570 730 L 590 720 L 610 660 L 700 510 " +
+  // P2 sharp peak (tallest)
+  // P2 right slope — steep then easing (~57° → ~52°)
+  "L 790 650 L 800 660 L 870 770 " +
+  // Valley
+  "L 940 778 " +
+  // P3 left slope (~48° → ~58°)
+  "L 1000 720 L 1080 590 " +
+  // P3 sharp peak
+  // P3 right slope with shelf
+  "L 1130 640 L 1145 645 L 1220 750 L 1280 785 " +
+  // Right coast
+  "L 1360 794 L 1440 800 " +
   "L 1440 900";
 
 const FILL_PATH = `${RIDGE} Z`;
@@ -168,15 +140,13 @@ function Mountain() {
       fill="none"
     >
       <defs>
-        {/* Solid dark fill — opaque mountain body */}
-        <linearGradient id="mtnFill" x1="690" y1="540" x2="690" y2="900" gradientUnits="userSpaceOnUse">
+        <linearGradient id="mtnFill" x1="700" y1="510" x2="700" y2="900" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="rgba(8,6,18,0.85)" />
           <stop offset="5%" stopColor="rgba(8,6,18,0.95)" />
           <stop offset="15%" stopColor="rgba(8,6,18,1)" />
           <stop offset="100%" stopColor="rgba(8,6,18,1)" />
         </linearGradient>
-        {/* Ridge glow: bright at peaks, fading down the slopes */}
-        <linearGradient id="mtnStroke" x1="690" y1="540" x2="690" y2="780" gradientUnits="userSpaceOnUse">
+        <linearGradient id="mtnStroke" x1="700" y1="510" x2="700" y2="800" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="rgba(192,168,255,0.7)" />
           <stop offset="25%" stopColor="rgba(147,119,230,0.4)" />
           <stop offset="55%" stopColor="rgba(124,58,237,0.12)" />
@@ -184,10 +154,8 @@ function Mountain() {
         </linearGradient>
       </defs>
 
-      {/* Mountain solid fill */}
       <path d={FILL_PATH} fill="url(#mtnFill)" />
 
-      {/* Animated ridge line */}
       <motion.path
         d={RIDGE}
         stroke="url(#mtnStroke)"
