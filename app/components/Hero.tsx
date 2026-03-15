@@ -101,8 +101,9 @@ function DotGrid() {
   );
 }
 
-// Ridge derived from the Elevera logo polygon, scaled to fill the hero
-const RIDGE = "M 0 752 L 317 634 L 451 416 L 517 473 L 636 484 L 750 369 L 768 201 L 944 392 L 1028 301 L 1440 752";
+// Ridge derived from the Elevera logo polygon, rescaled so the peak sits
+// at ~71% from the top — comfortably below the hero text content.
+const RIDGE = "M 0 870 L 317 821 L 451 730 L 517 754 L 636 759 L 750 711 L 768 640 L 944 720 L 1028 682 L 1440 870";
 const FILL_PATH = `${RIDGE} L 1440 900 L 0 900 Z`;
 
 function Mountain() {
@@ -119,7 +120,7 @@ function Mountain() {
           <stop offset="60%" stopColor="rgba(124,58,237,0.06)" />
           <stop offset="100%" stopColor="rgba(124,58,237,0.12)" />
         </linearGradient>
-        <linearGradient id="mtnStroke" x1="768" y1="201" x2="768" y2="752" gradientUnits="userSpaceOnUse">
+        <linearGradient id="mtnStroke" x1="768" y1="640" x2="768" y2="870" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="rgba(167,139,250,0.55)" />
           <stop offset="50%" stopColor="rgba(124,58,237,0.25)" />
           <stop offset="100%" stopColor="rgba(124,58,237,0)" />
