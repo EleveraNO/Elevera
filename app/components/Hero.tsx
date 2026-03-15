@@ -101,75 +101,6 @@ function DotGrid() {
   );
 }
 
-// 3 sharp peaks — straight edges only, max ~58° slope, no curves, no zigzag
-// ViewBox 0 0 1440 900. P1≈660, P2≈510 (tallest), P3≈590
-const RIDGE =
-  "M 0 900 L 0 808 " +
-  "L 100 792 L 190 782 " +
-  // P1 left slope (~49° → ~49°)
-  "L 260 740 L 330 660 " +
-  // P1 sharp peak
-  // P1 right slope with ledge
-  "L 370 700 L 385 700 L 440 770 " +
-  // Valley
-  "L 510 780 " +
-  // P2 left slope — ridge breaks (~45° → ~52° → ~59°)
-  "L 570 730 L 590 720 L 610 660 L 700 510 " +
-  // P2 sharp peak (tallest)
-  // P2 right slope — steep then easing (~57° → ~52°)
-  "L 790 650 L 800 660 L 870 770 " +
-  // Valley
-  "L 940 778 " +
-  // P3 left slope (~48° → ~58°)
-  "L 1000 720 L 1080 590 " +
-  // P3 sharp peak
-  // P3 right slope with shelf
-  "L 1130 640 L 1145 645 L 1220 750 L 1280 785 " +
-  // Right coast
-  "L 1360 794 L 1440 800 " +
-  "L 1440 900";
-
-const FILL_PATH = `${RIDGE} Z`;
-
-function Mountain() {
-  return (
-    <svg
-      className="pointer-events-none absolute inset-0 h-full w-full"
-      preserveAspectRatio="none"
-      viewBox="0 0 1440 900"
-      fill="none"
-    >
-      <defs>
-        <linearGradient id="mtnFill" x1="700" y1="510" x2="700" y2="900" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="rgba(8,6,18,0.85)" />
-          <stop offset="5%" stopColor="rgba(8,6,18,0.95)" />
-          <stop offset="15%" stopColor="rgba(8,6,18,1)" />
-          <stop offset="100%" stopColor="rgba(8,6,18,1)" />
-        </linearGradient>
-        <linearGradient id="mtnStroke" x1="700" y1="510" x2="700" y2="800" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="rgba(192,168,255,0.7)" />
-          <stop offset="25%" stopColor="rgba(147,119,230,0.4)" />
-          <stop offset="55%" stopColor="rgba(124,58,237,0.12)" />
-          <stop offset="100%" stopColor="rgba(124,58,237,0)" />
-        </linearGradient>
-      </defs>
-
-      <path d={FILL_PATH} fill="url(#mtnFill)" />
-
-      <motion.path
-        d={RIDGE}
-        stroke="url(#mtnStroke)"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 3.5, delay: 0.6, ease: "easeOut" }}
-      />
-    </svg>
-  );
-}
 
 export default function Hero() {
   return (
@@ -194,7 +125,6 @@ export default function Hero() {
       </div>
 
       <DotGrid />
-      <Mountain />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center pb-24">
         {/* Badge */}
