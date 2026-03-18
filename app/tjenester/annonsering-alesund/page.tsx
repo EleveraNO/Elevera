@@ -40,6 +40,16 @@ const faqs = [
   },
 ];
 
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -54,6 +64,7 @@ export default function AnnonseringPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 

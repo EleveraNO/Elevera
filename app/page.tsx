@@ -17,6 +17,7 @@ const jsonLd = {
   description:
     "Digitalbyrå i Ålesund som hjelper lokale bedrifter å vokse på nett med nettside, foto & video og betalt annonsering.",
   url: "https://elevera.no",
+  image: "https://elevera.no/opengraph-image",
   telephone: "+4794974165",
   email: "tverbakk@elevera.no",
   priceRange: "NOK 3490–14990",

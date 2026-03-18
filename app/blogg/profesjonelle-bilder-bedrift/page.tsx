@@ -26,6 +26,7 @@ const jsonLd = {
   author: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
   publisher: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
   datePublished: "2026-03-13",
+  dateModified: "2026-03-13",
   url: "https://elevera.no/blogg/profesjonelle-bilder-bedrift",
 };
 

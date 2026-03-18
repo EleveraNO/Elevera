@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import PriceCalculator from "../components/PriceCalculator";
 
 export const metadata: Metadata = {
-  title: "Priskalkulator – Elevera",
-  description: "Sett sammen din egen digitale pakke og få en estimert pris med én gang. Nettside, innholdsproduksjon og annonsering.",
+  title: "Priskalkulator for nettside og markedsføring i Ålesund – Elevera",
+  description: "Sett sammen din egen digitale pakke og få en estimert pris med én gang. Nettside, innholdsproduksjon og annonsering for bedrifter i Ålesund.",
   alternates: { canonical: "https://elevera.no/kalkulator" },
 };
 

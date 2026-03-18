@@ -41,8 +41,31 @@ const faqs = [
   },
 ];
 
+const jsonLdService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fotografering Ålesund",
+  description: "Profesjonell bedriftsfotografering og produktfoto i Ålesund og omegn. Bilder som bygger tillit og selger mer.",
+  provider: { "@type": "LocalBusiness", name: "Elevera", url: "https://elevera.no" },
+  areaServed: { "@type": "City", name: "Ålesund" },
+  url: "https://elevera.no/tjenester/fotografering-alesund",
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function FotograferingPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
     <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 
@@ -156,5 +179,6 @@ export default function FotograferingPage() {
 
       <Footer />
     </main>
+    </>
   );
 }

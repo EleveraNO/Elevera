@@ -41,8 +41,31 @@ const faqs = [
   },
 ];
 
+const jsonLdService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Videoproduksjon Ålesund",
+  description: "Profesjonell videoproduksjon for bedrifter i Ålesund. Reklamefilmer, produktvideoer og innhold til sosiale medier.",
+  provider: { "@type": "LocalBusiness", name: "Elevera", url: "https://elevera.no" },
+  areaServed: { "@type": "City", name: "Ålesund" },
+  url: "https://elevera.no/tjenester/videoproduksjon-alesund",
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function VideoProduksjonPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
     <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 
@@ -160,5 +183,6 @@ export default function VideoProduksjonPage() {
 
       <Footer />
     </main>
+    </>
   );
 }
