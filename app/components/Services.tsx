@@ -65,7 +65,7 @@ export default function Services() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">
             Tjenester
           </p>
-          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+          <h2 className="font-fraunces italic text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Foto, video og annonsering som skaper vekst
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/50">
@@ -79,13 +79,13 @@ export default function Services() {
             <StaggerItem key={index}>
               <a
                 href={service.href}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:border-[#7c3aed]/50 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:border-[#7c3aed]/50"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#7c3aed]/0 to-[#7c3aed]/0 transition-all duration-500 group-hover:from-[#7c3aed]/5 group-hover:to-transparent" />
                 <div className="relative z-10 flex flex-1 flex-col">
                   <span className="mb-4 block text-5xl font-bold text-[#7c3aed]/20">
                     {service.number}
                   </span>
+                  <div className="mb-4 h-0.5 w-7 rounded-full bg-gradient-to-r from-[#7c3aed] to-[#fbbf24]" />
                   <h3 className="mb-3 text-xl font-bold text-white">{service.title}</h3>
                   <p className="mb-6 leading-relaxed text-white/50">{service.description}</p>
                   <ul className="mb-6 flex-1 space-y-2">
