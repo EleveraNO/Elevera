@@ -25,7 +25,7 @@ export default function CTA() {
                 style={{ animation: "glowPulse 6s ease-in-out infinite" }}
               />
               <div
-                className="absolute right-0 bottom-0 h-48 w-48 rounded-full bg-blue-500/10 blur-[60px]"
+                className="absolute right-0 bottom-0 h-52 w-52 rounded-full bg-[#fbbf24]/10 blur-[80px]"
                 style={{ animation: "glowPulse2 6s ease-in-out infinite" }}
               />
             </div>
@@ -38,7 +38,7 @@ export default function CTA() {
                 </span>
               </div>
 
-              <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+              <h2 className="mb-4 text-3xl font-bold text-white font-fraunces italic sm:text-4xl md:text-5xl">
                 Klar til å vokse?
               </h2>
               <p className="mx-auto mb-10 max-w-xl text-lg text-white/60">
@@ -52,13 +52,13 @@ export default function CTA() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#7c3aed] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-[#7c3aed]/30 transition-all hover:bg-[#6d28d9] hover:shadow-xl hover:shadow-[#7c3aed]/40 hover:-translate-y-0.5"
+                  className="rounded-lg bg-[#7c3aed] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-[#7c3aed]/30 transition-all hover:bg-[#6d28d9] hover:shadow-xl hover:shadow-[#7c3aed]/40 hover:-translate-y-0.5"
                 >
                   Book gratis møte
                 </a>
                 <a
                   href="tel:+4794974165"
-                  className="flex items-center gap-2 rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white/80 transition-all hover:border-white/40 hover:text-white"
+                  className="flex items-center gap-2 rounded-lg border border-[#fbbf24]/35 px-8 py-4 text-base font-semibold text-white/80 transition-all hover:border-[#fbbf24]/60 hover:bg-[#fbbf24]/8 hover:text-white"
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -69,21 +69,15 @@ export default function CTA() {
 
               <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm text-white/40">
                 <span className="flex items-center gap-1.5">
-                  <svg className="h-4 w-4 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <span className="text-[#fbbf24] text-xs">✦</span>
                   Gratis og uforpliktende
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <svg className="h-4 w-4 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <span className="text-[#fbbf24] text-xs">✦</span>
                   Svar innen 24 timer
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <svg className="h-4 w-4 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <span className="text-[#fbbf24] text-xs">✦</span>
                   Ingen salgsmasi
                 </span>
               </div>
