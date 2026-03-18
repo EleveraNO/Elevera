@@ -49,7 +49,7 @@ export default function WhyElevera() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">
             Hvorfor Elevera
           </p>
-          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold font-fraunces italic text-white sm:text-4xl md:text-5xl">
             Hva gjør oss annerledes?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-white/50">
