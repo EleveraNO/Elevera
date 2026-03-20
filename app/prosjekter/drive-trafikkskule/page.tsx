@@ -52,7 +52,7 @@ const media: MediaItem[] = [
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function DriveTrafikkkulePage() {
+export default function DriveTrafikkskule() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
