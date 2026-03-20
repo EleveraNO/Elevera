@@ -118,8 +118,84 @@ export default function DriveTrafikkskule() {
         </div>
       </section>
 
-      {/* ── Innhold (masonry grid) — Task 2 ── */}
-      {/* TODO: add grid section */}
+      {/* ── Innhold (masonry grid) ── */}
+      <section className="px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <FadeUp className="mb-8">
+            <p className="text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Innhold</p>
+          </FadeUp>
+
+          <StaggerContainer className="grid grid-cols-1 gap-3 md:grid-cols-6">
+            {media.map((item, index) => {
+              const isWide = item.span === "wide";
+              const colSpan = isWide ? "md:col-span-4" : "md:col-span-2";
+              const aspectClass = isWide ? "aspect-video" : "aspect-[4/3]";
+              const sizes = isWide
+                ? "(max-width: 768px) 100vw, 66vw"
+                : "(max-width: 768px) 100vw, 33vw";
+
+              return (
+                <StaggerItem key={index} className={colSpan}>
+                  <button
+                    type="button"
+                    className={`group relative w-full overflow-hidden rounded-xl ${aspectClass}`}
+                    onClick={() => openLightbox(index)}
+                    aria-label={`Åpne ${item.alt} i fullskjerm`}
+                  >
+                    {item.type === "photo" ? (
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                        sizes={sizes}
+                      />
+                    ) : (
+                      <video
+                        src={item.src}
+                        poster={item.poster}
+                        muted
+                        playsInline
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      />
+                    )}
+
+                    {/* Purple hover overlay */}
+                    <div className="absolute inset-0 bg-[#7c3aed]/0 transition-colors duration-300 group-hover:bg-[#7c3aed]/20" />
+
+                    {/* Expand icon (top-right, visible on hover) */}
+                    <div className="absolute right-3 top-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <div className="rounded-md bg-black/50 p-1.5">
+                        <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Video-only: play button overlay (always visible) */}
+                    {item.type === "video" && (
+                      <>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white/40 bg-black/20">
+                            <svg className="ml-0.5 h-4 w-4 text-white/80" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                        {item.label && (
+                          <div className="absolute bottom-3 left-3">
+                            <span className="text-xs text-white/40">{item.label}</span>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </button>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
+        </div>
+      </section>
 
       {/* ── Lightbox — Task 3 ── */}
       {/* TODO: add lightbox modal */}
