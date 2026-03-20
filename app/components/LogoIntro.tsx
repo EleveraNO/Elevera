@@ -94,7 +94,7 @@ export default function LogoIntro() {
           <text
             className="ei-text"
             fill="white"
-            style={{ fontFamily: "var(--font-geist-sans), Arial, sans-serif" }}
+            style={{ fontFamily: "var(--font-montserrat), Montserrat, sans-serif" }}
             fontSize="130.67"
             fontWeight="700"
             transform="translate(0 237.02)"

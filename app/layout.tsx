@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Fraunces } from "next/font/google";
+import { Geist, Fraunces, Montserrat } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import CookieBanner from "./components/CookieBanner";
@@ -8,6 +8,13 @@ import LogoIntro from "./components/LogoIntro";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["700"],
   display: "swap",
 });
 
@@ -73,7 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no">
-      <body className={`${geistSans.variable} ${fraunces.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${fraunces.variable} ${montserrat.variable} antialiased`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5S67ZX9GY1"
           strategy="afterInteractive"
