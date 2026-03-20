@@ -33,7 +33,7 @@ export default function Problems() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">
             Kjenner du deg igjen?
           </p>
-          <h2 className="text-3xl font-bold font-fraunces italic text-white sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Sliter du med dette?
           </h2>
         </FadeUp>

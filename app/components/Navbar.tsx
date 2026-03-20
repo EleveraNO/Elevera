@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled
-        ? "border-b border-white/10 bg-[#0c0c0e]/80 backdrop-blur-md shadow-lg shadow-black/20"
+        ? "border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur-md shadow-lg shadow-black/20"
         : "border-b border-transparent bg-transparent"
     }`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -79,7 +79,7 @@ export default function Navbar() {
             href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border border-[#fbbf24]/35 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-[#fbbf24]/8"
+            className="rounded-full bg-[#7c3aed] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-[#6d28d9] hover:shadow-lg hover:shadow-[#7c3aed]/25"
           >
             Book møte
           </a>
@@ -99,7 +99,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="border-t border-white/10 bg-[#0c0c0e] px-6 py-4 md:hidden">
+        <div className="border-t border-white/10 bg-[#0a0a0a] px-6 py-4 md:hidden">
           <div className="flex flex-col gap-4">
             <a href="/" className="text-sm text-white/70 hover:text-white" onClick={() => setMenuOpen(false)}>
               Hjem

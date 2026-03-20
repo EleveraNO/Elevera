@@ -1,19 +1,111 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+
+function DotGrid() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const c = canvas;
+
+    const resize = () => {
+      c.width = c.offsetWidth;
+      c.height = c.offsetHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    const SPACING = 52;
+    let raf: number;
+    let t = 0;
+
+    const draw = () => {
+      t += 0.4;
+      ctx.clearRect(0, 0, c.width, c.height);
+
+      const cols = Math.ceil(c.width / SPACING) + 1;
+      const rows = Math.ceil(c.height / SPACING) + 2;
+      const offsetY = t % SPACING;
+      const scrolledRows = Math.floor(t / SPACING);
+
+      const cx = c.width / 2;
+      const cy = c.height / 2;
+      const maxDist = Math.sqrt(cx * cx + cy * cy);
+
+      for (let col = 0; col < cols; col++) {
+        for (let row = 0; row < rows; row++) {
+          const x = col * SPACING;
+          const y = row * SPACING - offsetY;
+
+          const dx = x - cx;
+          const dy = y - cy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const edgeFade = Math.max(0, 1 - dist / maxDist) * 0.85 + 0.15;
+
+          const wave = Math.sin(dist * 0.018 - t * 0.06) * 0.5 + 0.5;
+
+          const worldRow = row + scrolledRows;
+          const seed = Math.sin(col * 127.1 + worldRow * 311.7) * 43758.5453;
+          const rand = seed - Math.floor(seed);
+          const isBright = rand > 0.94;
+
+          const baseAlpha = 0.07 + wave * 0.08;
+          const alpha = isBright
+            ? Math.min(1, baseAlpha * 4 * edgeFade)
+            : baseAlpha * edgeFade;
+
+          const radius = isBright ? 2.0 : 1.2;
+
+          const colorSeed = Math.sin(col * 53.3 + worldRow * 97.1) * 43758.5;
+          const colorRand = colorSeed - Math.floor(colorSeed);
+          const color =
+            colorRand > 0.75
+              ? "96,165,250"
+              : colorRand > 0.55
+              ? "167,139,250"
+              : "124,58,237";
+
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          if (isBright) {
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = `rgba(${color},0.8)`;
+          }
+          ctx.fillStyle = `rgba(${color},${alpha})`;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+      }
+
+      raf = requestAnimationFrame(draw);
+    };
+    draw();
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 h-full w-full"
+    />
+  );
+}
+
 
 export default function Hero() {
   return (
-    <section
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20"
-      style={{
-        backgroundImage: `
-          linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)
-        `,
-        backgroundSize: "80px 80px",
-      }}
-    >
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
       {/* Deep glow blobs */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <motion.div
@@ -22,8 +114,8 @@ export default function Hero() {
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-[#fbbf24]/8 blur-[90px]"
-          animate={{ scale: [1, 1.18, 1], opacity: [0.5, 0.8, 0.5] }}
+          className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-blue-500/15 blur-[90px]"
+          animate={{ scale: [1, 1.22, 1], opacity: [0.5, 0.85, 0.5] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
         <motion.div
@@ -32,6 +124,8 @@ export default function Hero() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 3.5 }}
         />
       </div>
+
+      <DotGrid />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center pb-24">
         {/* Badge */}
@@ -49,16 +143,17 @@ export default function Hero() {
 
         {/* Heading */}
         <motion.h1
-          className="mb-6 text-4xl font-bold font-fraunces italic leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
         >
           Én partner.{" "}
-          Alt du trenger{" "}
+          <span className="bg-gradient-to-r from-[#7c3aed] to-[#60a5fa] bg-clip-text text-transparent">
+            Alt du trenger
+          </span>{" "}
           for å vokse på nett.
         </motion.h1>
-        <div className="mx-auto my-4 h-0.5 w-7 rounded-full bg-gradient-to-r from-[#7c3aed] to-[#fbbf24]" />
 
         {/* Subtext */}
         <motion.p
@@ -81,7 +176,7 @@ export default function Hero() {
         >
           <a
             href="#kontakt"
-            className="rounded-lg bg-[#7c3aed] px-10 py-4 text-base font-semibold text-white shadow-lg shadow-[#7c3aed]/30 transition-all hover:bg-[#6d28d9] hover:shadow-xl hover:shadow-[#7c3aed]/40 hover:-translate-y-0.5"
+            className="rounded-full bg-[#7c3aed] px-10 py-4 text-base font-semibold text-white shadow-lg shadow-[#7c3aed]/30 transition-all hover:bg-[#6d28d9] hover:shadow-xl hover:shadow-[#7c3aed]/40 hover:-translate-y-0.5"
           >
             Kom i gang i dag
           </a>
@@ -95,15 +190,21 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
         >
           <span className="flex items-center gap-2">
-            <span className="text-[#fbbf24] text-xs">✦</span>
+            <svg className="h-4 w-4 text-[#7c3aed]" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
             Gratis strategimøte
           </span>
           <span className="flex items-center gap-2">
-            <span className="text-[#fbbf24] text-xs">✦</span>
+            <svg className="h-4 w-4 text-[#7c3aed]" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
             Svar innen 24 timer
           </span>
           <span className="flex items-center gap-2">
-            <span className="text-[#fbbf24] text-xs">✦</span>
+            <svg className="h-4 w-4 text-[#7c3aed]" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
             Ålesund og omegn
           </span>
         </motion.div>

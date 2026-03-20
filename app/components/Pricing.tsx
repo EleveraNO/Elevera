@@ -85,7 +85,7 @@ export default function Pricing() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">
             Prispakker
           </p>
-          <h2 className="text-3xl font-bold text-white font-fraunces italic sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Enkle, transparente priser
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-white/50">
@@ -107,29 +107,22 @@ export default function Pricing() {
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="mb-4 inline-block rounded-full border border-[#fbbf24]/25 bg-[#fbbf24]/10 px-4 py-1 text-xs font-bold text-[#fbbf24]">
-                      ✦ Mest populær
+                    <span className="rounded-full bg-[#7c3aed] px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                      Mest populær
                     </span>
                   </div>
                 )}
                 <h3 className="mb-2 text-lg font-bold text-white">{plan.name}</h3>
                 <p className="mb-6 text-sm leading-relaxed text-white/50">{plan.description}</p>
                 <div className="mb-2 flex items-end gap-1">
-                  <span className="text-4xl font-bold text-white">
-                    <span className="font-fraunces italic font-extrabold">{plan.price}</span> kr
-                  </span>
+                  <span className="text-4xl font-bold text-white">{plan.price} kr</span>
                   <span className="mb-1 text-white/40">{plan.period}</span>
                 </div>
                 <p className="mb-8 text-sm text-white/40">+ {plan.setup} kr etablering (én gang)</p>
                 <ul className="mb-8 flex-1 space-y-3">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-2.5 text-sm">
-                      <svg
-                        className={`h-4 w-4 flex-shrink-0 ${plan.highlighted ? "text-[#fbbf24]" : "text-[#7c3aed]"}`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
+                      <svg className="h-4 w-4 flex-shrink-0 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-white/80">{feature}</span>
@@ -151,7 +144,7 @@ export default function Pricing() {
                     window.dispatchEvent(new CustomEvent("valgtPakke", { detail: plan.name }));
                     document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className={`block w-full rounded-lg py-3 text-center text-sm font-semibold transition-all ${
+                  className={`block w-full rounded-full py-3 text-center text-sm font-semibold transition-all ${
                     plan.highlighted
                       ? "bg-[#7c3aed] text-white hover:bg-[#6d28d9] shadow-lg shadow-[#7c3aed]/30"
                       : "border border-white/20 text-white hover:border-white/40 hover:bg-white/5"
