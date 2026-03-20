@@ -73,6 +73,38 @@ export default function DriveTrafikkskule() {
     setLightboxIndex((i) => (i + 1) % media.length);
   }
 
+  // Body scroll lock
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightboxOpen]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevItem();
+      if (e.key === "ArrowRight") nextItem();
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxOpen]);
+
+  // Focus close button when lightbox opens
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (lightboxOpen) {
+      closeBtnRef.current?.focus();
+    }
+  }, [lightboxOpen]);
+
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
@@ -198,8 +230,92 @@ export default function DriveTrafikkskule() {
         </div>
       </section>
 
-      {/* ── Lightbox — Task 3 ── */}
-      {/* TODO: add lightbox modal */}
+      {/* ── Lightbox modal ── */}
+      <AnimatePresence>
+        {lightboxOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+            onClick={closeLightbox}
+          >
+            {/* Content area — stop propagation so clicking media doesn't close */}
+            <div
+              className="relative flex h-full max-h-[90vh] w-full max-w-5xl items-center justify-center px-16"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {(() => {
+                const item = media[lightboxIndex];
+                if (item.type === "photo") {
+                  return (
+                    <div className="relative h-full w-full">
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        className="object-contain"
+                        sizes="100vw"
+                      />
+                    </div>
+                  );
+                } else {
+                  return (
+                    <video
+                      key={item.src}
+                      src={item.src}
+                      poster={item.poster}
+                      controls
+                      autoPlay
+                      playsInline
+                      className="max-h-full max-w-full rounded-xl"
+                      aria-label={item.alt}
+                    />
+                  );
+                }
+              })()}
+            </div>
+
+            {/* Close button */}
+            <button
+              ref={closeBtnRef}
+              type="button"
+              onClick={closeLightbox}
+              aria-label="Lukk"
+              className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Previous arrow */}
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); prevItem(); }}
+              aria-label="Forrige"
+              className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Next arrow */}
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); nextItem(); }}
+              aria-label="Neste"
+              className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ── Resultater — Task 4 ── */}
       {/* TODO: add results placeholder */}
