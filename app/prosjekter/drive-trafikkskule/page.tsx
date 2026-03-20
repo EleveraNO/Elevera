@@ -353,11 +353,42 @@ export default function DriveTrafikkskule() {
         )}
       </AnimatePresence>
 
-      {/* ── Resultater — Task 4 ── */}
-      {/* TODO: add results placeholder */}
+      {/* ── Resultater (låst placeholder) ── */}
+      <section className="px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <FadeUp>
+            <div className="rounded-xl border border-dashed border-white/10 bg-white/5 px-6 py-10 text-center">
+              <div className="mb-3 flex items-center justify-center gap-2 text-white/30">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                <p className="text-sm font-semibold text-white/30">Resultater &amp; tall</p>
+              </div>
+              <p className="text-sm text-white/20">
+                Innsikt og kampanjeresultater publiseres når prosjektet er ferdig
+              </p>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
 
-      {/* ── Footer nav — Task 4 ── */}
-      {/* TODO: add footer nav */}
+      {/* ── Footer navigation ── */}
+      <div className="mx-auto max-w-6xl border-t border-white/10 px-6 pt-8 mt-16">
+        <div className="flex items-center justify-between">
+          <a
+            href="/#prosjekter"
+            className="text-sm text-white/40 transition-colors hover:text-white"
+          >
+            ← Tilbake til prosjekter
+          </a>
+          <a
+            href="/#kontakt"
+            className="text-sm font-semibold text-[#a78bfa] transition-colors hover:text-white"
+          >
+            Book et møte →
+          </a>
+        </div>
+      </div>
 
       <PageCTA heading="Vil du ha lignende resultater?" />
       <Footer />
