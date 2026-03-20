@@ -71,11 +71,11 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Marquee />
-        <Problems />
         <Services />
-        <Pricing />
-        <WhyElevera />
         <Portfolio />
+        <Problems />
+        <WhyElevera />
+        <Pricing />
         <FAQ />
         <CTA />
 <Footer />

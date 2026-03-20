@@ -1,38 +1,42 @@
 const items = [
-  "Foto",
-  "Video",
+  "Foto & Video",
   "Dronevideo",
   "Nettside",
   "Markedsføring",
-  "Innholdsproduksjon",
   "Annonsering",
+  "Innholdsproduksjon",
   "Redigering",
+  "SEO",
 ];
-
-const dot = (
-  <span className="mx-6 text-[#7c3aed]" aria-hidden>
-    ·
-  </span>
-);
 
 export default function Marquee() {
   const content = items.flatMap((item, i) => [
-    <span key={i} className="text-sm font-semibold uppercase tracking-widest text-white/40">
+    <span
+      key={i}
+      className="text-xs font-semibold uppercase tracking-[0.18em] text-white/35 transition-colors hover:text-white/60"
+    >
       {item}
     </span>,
-    dot,
+    <span key={`sep-${i}`} className="mx-6 text-[#7c3aed]/30 text-[10px] select-none" aria-hidden>
+      ◆
+    </span>,
   ]);
 
   return (
-    <div className="overflow-hidden border-y border-white/5 py-4">
+    <div className="relative overflow-hidden py-5">
+      {/* Fade masks */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#0a0a0a] to-transparent" aria-hidden />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#0a0a0a] to-transparent" aria-hidden />
+
       <style>{`
         @keyframes marquee {
           from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+          to { transform: translateX(-25%); }
         }
         .marquee-track {
-          animation: marquee 20s linear infinite;
+          animation: marquee 30s linear infinite;
           display: flex;
+          align-items: center;
           width: max-content;
         }
         .marquee-track:hover {
@@ -40,6 +44,8 @@ export default function Marquee() {
         }
       `}</style>
       <div className="marquee-track">
+        {content}
+        {content}
         {content}
         {content}
       </div>
