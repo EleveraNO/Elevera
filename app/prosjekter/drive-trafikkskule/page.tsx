@@ -158,7 +158,7 @@ export default function DriveTrafikkskule() {
             </div>
 
             {/* Heading */}
-            <h1 className="mb-3 font-fraunces text-5xl font-extrabold leading-[1.05] text-white sm:text-6xl md:text-7xl">
+            <h1 className="mb-3 text-5xl font-extrabold leading-[1.05] text-white sm:text-6xl md:text-7xl">
               Drive<br />Trafikkskule
             </h1>
 
