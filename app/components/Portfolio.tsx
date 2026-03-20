@@ -12,7 +12,7 @@ const projects = [
   {
     src: "/videos/drive-trafikkskule.mp4",
     client: "Drive Trafikkskule",
-    href: null,
+    href: "/prosjekter/drive-trafikkskule",
   },
 ];
 
