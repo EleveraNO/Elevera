@@ -22,7 +22,8 @@ Matches the existing site exactly:
 - Accent: `#7c3aed` / `#a78bfa`
 - Text: `white` / `white/70` / `white/50`
 - Headings: `font-fraunces` (same as rest of site)
-- Animations: `FadeUp`, `StaggerContainer`, `StaggerItem` from `./components/animations`
+- Animations: `FadeUp`, `StaggerContainer`, `StaggerItem` from `../../components/animations`
+- Imports: `<Navbar />` from `../../components/Navbar`, `<Footer />` from `../../components/Footer`, `<PageCTA />` from `../../components/PageCTA`
 
 ---
 
@@ -51,7 +52,13 @@ Standard `<Navbar />` component.
 Desktop grid: **6 columns** (`grid-cols-6`). `span` values map to:
 - `wide` → `col-span-4`
 - `normal` → `col-span-2`
-- `tall` is not used (keep aspect ratio via padding-top instead)
+- `tall` is not used
+
+**Aspect ratios** (applied as Tailwind classes on each grid item wrapper):
+- Wide video items: `aspect-video` (16:9)
+- Normal photo items: `aspect-[4/3]`
+- Wide photo items (if any): `aspect-video` (16:9)
+- All items use `relative` positioning so `next/image fill` and `<video>` can stretch to fill
 
 Row layout:
 - Row 1: `wide` video (reklamevideo, col-span-4) + `normal` photo (col-span-2)
@@ -59,7 +66,7 @@ Row layout:
 - Row 3: `normal` photo (col-span-2) + `wide` drone video (col-span-4)
 - Row 4: Three `normal` photos (col-span-2 each)
 
-On mobile (`md:` breakpoint): single column, full-width stacked items (`grid-cols-1`).
+The grid is `grid-cols-1` by default (mobile, single column stacked) and `md:grid-cols-6` on desktop. All `col-span-*` values are prefixed with `md:` so they only apply at medium breakpoints and above (e.g. `md:col-span-4`, `md:col-span-2`).
 
 #### Each grid item
 
@@ -94,14 +101,23 @@ Click on any item → opens lightbox.
 Defined at top of file before the component:
 
 ```ts
-type MediaItem = {
-  type: "photo" | "video";
+type PhotoItem = {
+  type: "photo";
   src: string;
   alt: string;
-  poster?: string; // required for video items — used as thumbnail
-  label?: string;  // shown bottom-left on video grid cards
-  span: "wide" | "normal"; // controls col-span in grid
+  span: "wide" | "normal";
 };
+
+type VideoItem = {
+  type: "video";
+  src: string;
+  alt: string;
+  poster: string;   // required — used as thumbnail in grid card
+  label?: string;   // shown bottom-left on video grid cards
+  span: "wide" | "normal";
+};
+
+type MediaItem = PhotoItem | VideoItem;
 
 const media: MediaItem[] = [
   // populated by developer when placing files in /public/
