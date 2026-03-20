@@ -273,9 +273,9 @@ export default function DriveTrafikkskule() {
             transition={{ duration: 0.2 }}
             role="dialog"
             aria-modal="true"
-            aria-label="Mediagalleri"
+            aria-label={`Mediagalleri – element ${lightboxIndex + 1} av ${media.length}`}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
-            onClick={closeLightbox}
+            onClick={(e) => { if (e.target === e.currentTarget) closeLightbox(); }}
           >
             {/* Content area — stop propagation so clicking media doesn't close */}
             <div
@@ -288,6 +288,7 @@ export default function DriveTrafikkskule() {
                   return (
                     <div className="relative h-full w-full">
                       <Image
+                        key={item.src}
                         src={item.src}
                         alt={item.alt}
                         fill
