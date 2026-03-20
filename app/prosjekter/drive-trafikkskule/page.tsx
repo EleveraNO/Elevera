@@ -55,6 +55,7 @@ const media: MediaItem[] = [
 export default function DriveTrafikkskule() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   function openLightbox(index: number) {
     setLightboxIndex(index);
@@ -85,20 +86,52 @@ export default function DriveTrafikkskule() {
     };
   }, [lightboxOpen]);
 
-  // Keyboard navigation
+  // Keyboard navigation + focus trap
   useEffect(() => {
     if (!lightboxOpen) return;
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") prevItem();
-      if (e.key === "ArrowRight") nextItem();
+      if (e.key === "Escape") {
+        setLightboxOpen(false);
+        return;
+      }
+      if (e.key === "ArrowLeft") {
+        setLightboxIndex((i) => (i - 1 + media.length) % media.length);
+        return;
+      }
+      if (e.key === "ArrowRight") {
+        setLightboxIndex((i) => (i + 1) % media.length);
+        return;
+      }
+      if (e.key === "Tab") {
+        // Collect all focusable elements in the lightbox
+        const modal = document.querySelector('[role="dialog"]');
+        if (!modal) return;
+        const focusable = Array.from(
+          modal.querySelectorAll<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          )
+        ).filter((el) => !el.hasAttribute("disabled"));
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [lightboxOpen]);
 
   // Focus close button when lightbox opens
-  const closeBtnRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     if (lightboxOpen) {
       closeBtnRef.current?.focus();
@@ -238,6 +271,9 @@ export default function DriveTrafikkskule() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mediagalleri"
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
             onClick={closeLightbox}
           >
