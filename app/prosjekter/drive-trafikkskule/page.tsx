@@ -135,7 +135,7 @@ export default function DriveTrafikkskule() {
                 : "(max-width: 768px) 100vw, 33vw";
 
               return (
-                <StaggerItem key={index} className={colSpan}>
+                <StaggerItem key={item.src} className={colSpan}>
                   <button
                     type="button"
                     className={`group relative w-full overflow-hidden rounded-xl ${aspectClass}`}
@@ -156,15 +156,16 @@ export default function DriveTrafikkskule() {
                         poster={item.poster}
                         muted
                         playsInline
+                        preload="none"
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                       />
                     )}
 
                     {/* Purple hover overlay */}
-                    <div className="absolute inset-0 bg-[#7c3aed]/0 transition-colors duration-300 group-hover:bg-[#7c3aed]/20" />
+                    <div className="absolute inset-0 bg-[#7c3aed]/0 transition-colors duration-300 group-hover:bg-[#7c3aed]/20 group-focus-visible:bg-[#7c3aed]/20" />
 
                     {/* Expand icon (top-right, visible on hover) */}
-                    <div className="absolute right-3 top-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="absolute right-3 top-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
                       <div className="rounded-md bg-black/50 p-1.5">
                         <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
