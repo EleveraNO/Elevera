@@ -35,19 +35,18 @@ type MediaItem = PhotoItem | VideoItem;
 
 const media: MediaItem[] = [
   // Row 1
-  { type: "video",  src: "/videos/drive-trafikkskule/reklamevideo.mp4", alt: "Reklamevideo for Drive Trafikkskule", poster: "/images/drive-trafikkskule/reklamevideo-poster.jpg", label: "Reklamevideo", span: "wide" },
-  { type: "photo",  src: "/images/drive-trafikkskule/foto-1.jpg", alt: "Drive Trafikkskule – foto 1", span: "normal" },
+  { type: "video", src: "/videos/drive-trafikkskule/kan-du-kjore-med-henger.mp4", alt: "Drive Trafikkskule – kan du kjøre med henger?", poster: "/images/drive-trafikkskule/poster-kan-du-kjore-med-henger.jpg", label: "Kan du kjøre med henger?", span: "wide" },
+  { type: "photo", src: "/images/drive-trafikkskule/foto-1.jpg", alt: "Drive Trafikkskule – foto 1", span: "normal" },
   // Row 2
-  { type: "photo",  src: "/images/drive-trafikkskule/foto-2.jpg", alt: "Drive Trafikkskule – foto 2", span: "normal" },
-  { type: "photo",  src: "/images/drive-trafikkskule/foto-3.jpg", alt: "Drive Trafikkskule – foto 3", span: "normal" },
-  { type: "photo",  src: "/images/drive-trafikkskule/foto-4.jpg", alt: "Drive Trafikkskule – foto 4", span: "normal" },
+  { type: "video", src: "/videos/drive-trafikkskule/koble-pa-henger.mp4", alt: "Drive Trafikkskule – koble på henger", poster: "/images/drive-trafikkskule/poster-koble-pa-henger.jpg", label: "Koble på henger", span: "normal" },
+  { type: "video", src: "/videos/drive-trafikkskule/lyssjekk.mp4", alt: "Drive Trafikkskule – lyssjekk", poster: "/images/drive-trafikkskule/poster-lyssjekk.jpg", label: "Lyssjekk", span: "normal" },
+  { type: "photo", src: "/images/drive-trafikkskule/foto-2.jpg", alt: "Drive Trafikkskule – foto 2", span: "normal" },
   // Row 3
-  { type: "photo",  src: "/images/drive-trafikkskule/foto-5.jpg", alt: "Drive Trafikkskule – foto 5", span: "normal" },
-  { type: "video",  src: "/videos/drive-trafikkskule/dronevideo.mp4", alt: "Dronevideo over Volda", poster: "/images/drive-trafikkskule/dronevideo-poster.jpg", label: "Dronevideo — Volda", span: "wide" },
+  { type: "photo", src: "/images/drive-trafikkskule/foto-3.jpg", alt: "Drive Trafikkskule – foto 3", span: "normal" },
+  { type: "video", src: "/videos/drive-trafikkskule/rundkjoring-fram.mp4", alt: "Drive Trafikkskule – rundkjøring framover", poster: "/images/drive-trafikkskule/poster-rundkjoring-fram.jpg", label: "Rundkjøring framover", span: "wide" },
   // Row 4
-  { type: "photo",  src: "/images/drive-trafikkskule/foto-6.jpg", alt: "Drive Trafikkskule – foto 6", span: "normal" },
-  { type: "photo",  src: "/images/drive-trafikkskule/foto-7.jpg", alt: "Drive Trafikkskule – foto 7", span: "normal" },
-  { type: "photo",  src: "/images/drive-trafikkskule/foto-8.jpg", alt: "Drive Trafikkskule – foto 8", span: "normal" },
+  { type: "video", src: "/videos/drive-trafikkskule/rundkjoring-hoyre.mp4", alt: "Drive Trafikkskule – rundkjøring høyre", poster: "/images/drive-trafikkskule/poster-rundkjoring-hoyre.jpg", label: "Rundkjøring høyre", span: "normal" },
+  { type: "video", src: "/videos/drive-trafikkskule/rundkjoring-venstre.mp4", alt: "Drive Trafikkskule – rundkjøring venstre", poster: "/images/drive-trafikkskule/poster-rundkjoring-venstre.jpg", label: "Rundkjøring venstre", span: "wide" },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
