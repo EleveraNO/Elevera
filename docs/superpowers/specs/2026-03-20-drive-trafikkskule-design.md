@@ -32,73 +32,99 @@ Matches the existing site exactly:
 Standard `<Navbar />` component.
 
 ### 2. Hero
-- "Prosjekt pågår" badge: `rounded-full border border-[#fbbf24]/25 bg-[#fbbf24]/10 text-[#fbbf24]`
+- "Prosjekt pågår" badge: `text-sm rounded-full border border-[#fbbf24]/25 bg-[#fbbf24]/10 text-[#fbbf24] px-4 py-1.5` — no pulsing dot, plain text only
 - H1: `font-fraunces font-extrabold` — "Drive Trafikkskule"
-- Subtitle: "Volda & Ulsteinvik · Trafikkskule"
-- Three service tags (`rounded border border-[#7c3aed]/30 bg-[#7c3aed]/15 text-[#a78bfa]`):
+- Subtitle: "Volda & Ulsteinvik · Trafikkskule" (`text-white/40`)
+- Three service tags (`text-sm rounded border border-[#7c3aed]/30 bg-[#7c3aed]/15 text-[#a78bfa] px-3 py-1`):
   - "Foto"
   - "Video & Dronevideo"
   - "Annonsering"
-- Subtle purple glow blob in background (same pattern as Cut O' Clock hero)
+- Subtle purple glow blob in background (same pattern as Cut O' Clock hero: `absolute rounded-full bg-[#7c3aed]/20 blur-[120px]`)
 - No background photo in hero (unlike Cut O' Clock) — clean dark background so masonry grid below carries the visual weight
 
 ### 3. Innhold — Masonry Grid with Lightbox
 
-**Section label:** "Innhold" (uppercase tracking label in `text-[#7c3aed]`)
+**Section label:** "Innhold" (uppercase tracking label, `text-sm font-semibold uppercase tracking-widest text-[#7c3aed]`)
 
-A CSS grid with varied column spans creating a masonry-like layout. Mix of photos and videos in the same grid. Each cell is an individual item.
+#### Grid structure
 
-**Grid layout (desktop, ~4 rows):**
-- Row 1: Wide video (reklamevideo, `col-span` wider) + tall portrait photo
-- Row 2: Three equal-width photos
-- Row 3: One photo + wide drone video
-- Row 4: Two equal photos
+Desktop grid: **6 columns** (`grid-cols-6`). `span` values map to:
+- `wide` → `col-span-4`
+- `normal` → `col-span-2`
+- `tall` is not used (keep aspect ratio via padding-top instead)
 
-**On mobile:** Single column, full-width stacked items.
+Row layout:
+- Row 1: `wide` video (reklamevideo, col-span-4) + `normal` photo (col-span-2)
+- Row 2: Three `normal` photos (col-span-2 each = 6 total)
+- Row 3: `normal` photo (col-span-2) + `wide` drone video (col-span-4)
+- Row 4: Three `normal` photos (col-span-2 each)
 
-**Each grid item:**
-- Photo items: `next/image` with `object-cover`, `rounded-xl`, `overflow-hidden`
-- Video items: `<video>` tag with poster image, muted, `rounded-xl`. Play button overlay (circle with triangle). Label bottom-left (e.g. "Dronevideo — Volda").
-- Hover state on all items: slight scale up (`hover:scale-[1.02]`), purple overlay tint, "⛶ åpne" hint top-right
-- Click → opens lightbox modal
+On mobile (`md:` breakpoint): single column, full-width stacked items (`grid-cols-1`).
 
-**Lightbox modal:**
-- Full-screen dark overlay (`bg-black/90`)
-- Centered content: photo fills screen with `object-contain`, or video plays with controls
-- Close button top-right (×)
-- Previous/next arrows to navigate between items
-- `useCallback` + keyboard listener for Escape (close) and arrow keys (navigate)
-- Framer Motion `AnimatePresence` for fade in/out
+#### Each grid item
 
-**Media assets location:** `/public/images/drive-trafikkskule/` and `/public/videos/drive-trafikkskule/`
+Photo items:
+- `next/image` with `object-cover`, `rounded-xl`, `overflow-hidden`
+- `sizes` prop based on span: wide items → `"(max-width: 768px) 100vw, 66vw"`, normal items → `"(max-width: 768px) 100vw, 33vw"`
+- Hover: `hover:scale-[1.02] transition-transform duration-300`, purple overlay tint (`bg-[#7c3aed]/20`), SVG expand icon (Heroicons `ArrowsPointingOutIcon` or inline `<svg>`) top-right corner
 
-**Media data array** (defined at top of file):
+Video items:
+- `<video>` tag with `poster`, `muted`, `playsInline`, `rounded-xl`
+- Play button overlay: white circle border with triangle (same pattern as Portfolio component)
+- Label bottom-left: e.g. "Dronevideo — Volda" (`text-xs text-white/40`)
+- Hover: same scale + overlay as photos, expand SVG icon top-right
+
+Click on any item → opens lightbox.
+
+#### Lightbox modal
+
+- `"use client"` — uses `useState` for open/current index
+- Framer Motion `AnimatePresence` wrapping the modal for fade in/out
+- Full-screen overlay: `fixed inset-0 z-50 bg-black/90`
+- Body scroll locked when open: add/remove `overflow-hidden` on `document.body` in `useEffect`
+- Focus trapped within modal: first focusable element (close button) receives focus on open
+- Centered content area: photo renders with `next/image` `object-contain` filling available space; video renders with native controls, **autoplays with sound** when lightbox opens (user explicitly clicked to open)
+- Close button top-right: `×` SVG, `aria-label="Lukk"`
+- Previous / next arrow buttons on left and right edges
+- Keyboard: `useEffect` listener for `Escape` (close), `ArrowLeft` / `ArrowRight` (navigate) — cleaned up on unmount
+- Wraps around at ends (last item → first, first item → last)
+
+#### Media data type
+
+Defined at top of file before the component:
+
 ```ts
 type MediaItem = {
   type: "photo" | "video";
   src: string;
   alt: string;
-  poster?: string; // for video items
-  label?: string;  // shown bottom-left on video cards
-  span?: "wide" | "tall" | "normal"; // controls grid sizing
+  poster?: string; // required for video items — used as thumbnail
+  label?: string;  // shown bottom-left on video grid cards
+  span: "wide" | "normal"; // controls col-span in grid
 };
+
+const media: MediaItem[] = [
+  // populated by developer when placing files in /public/
+];
 ```
+
+**Media assets location:** `/public/images/drive-trafikkskule/` and `/public/videos/drive-trafikkskule/`
 
 ### 4. Resultater — Locked Placeholder
 
 Dashed border box with low-opacity text:
-- "📊 Resultater & tall"
-- "Innsikt og kampanjeresultater publiseres når prosjektet er ferdig"
-- Style: `border border-dashed border-white/10 bg-white/2 rounded-xl`
+- Heading: "Resultater & tall" (plain text, no emoji — use a lock SVG icon if desired)
+- Body: "Innsikt og kampanjeresultater publiseres når prosjektet er ferdig"
+- Style: `border border-dashed border-white/10 bg-white/5 rounded-xl text-center py-10 px-6`
 
 This section is replaced with real stats/results when the project concludes. No structural change needed — just swap the placeholder content.
 
 ### 5. Footer Navigation
 
-Simple row at bottom of content:
-- Left: `← Tilbake til prosjekter` (links to `/#prosjekter` or a future projects index)
+Simple row at bottom of main content area:
+- Left: `← Tilbake til prosjekter` (links to `/#prosjekter`)
 - Right: `Book et møte →` (links to `/#kontakt`)
-- Separated by `border-t border-white/10`
+- Separated by `border-t border-white/10 mt-16 pt-8`
 
 ### 6. PageCTA + Footer
 Standard `<PageCTA />` and `<Footer />` components.
