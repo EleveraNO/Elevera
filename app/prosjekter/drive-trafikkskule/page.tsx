@@ -284,34 +284,27 @@ export default function DriveTrafikkskule() {
             </div>
           </FadeUp>
 
-          {/* Scattered reels grid */}
+          {/* Scattered reels grid — alle 9:16, ulike størrelser */}
           <FadeUp>
-            <div className="grid gap-3" style={{
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gridTemplateRows: "repeat(4, 180px)",
-            }}>
-              {/* V1 — stor (2×2, øverst venstre) */}
-              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "1 / 3", gridRow: "1 / 3" }}>
+            <div className="grid grid-cols-12 gap-3">
+              {/* Rad 1: stor | medium | liten */}
+              <div className="col-span-5 aspect-[9/16] overflow-hidden rounded-2xl">
                 <video src={reels[0].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
               </div>
-              {/* V2 — smal høy (1×2, øverst høyre) */}
-              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "3", gridRow: "1 / 3" }}>
+              <div className="col-span-4 aspect-[9/16] overflow-hidden rounded-2xl">
                 <video src={reels[1].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
               </div>
-              {/* V3 — smal høy (1×2, nederst venstre) */}
-              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "1", gridRow: "3 / 5" }}>
+              <div className="col-span-3 aspect-[9/16] overflow-hidden rounded-2xl">
                 <video src={reels[2].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
               </div>
-              {/* V4 — bred liten (2×1, midten nederst) */}
-              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "2 / 4", gridRow: "3" }}>
+              {/* Rad 2: liten | medium | stor */}
+              <div className="col-span-3 aspect-[9/16] overflow-hidden rounded-2xl">
                 <video src={reels[3].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
               </div>
-              {/* V5 — liten (1×1) */}
-              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "2", gridRow: "4" }}>
+              <div className="col-span-4 aspect-[9/16] overflow-hidden rounded-2xl">
                 <video src={reels[4].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
               </div>
-              {/* V6 — liten (1×1) */}
-              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "3", gridRow: "4" }}>
+              <div className="col-span-5 aspect-[9/16] overflow-hidden rounded-2xl">
                 <video src={reels[5].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
               </div>
             </div>
