@@ -94,7 +94,10 @@ function ReelsCarousel() {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartX = useRef<number | null>(null);
 
+  const isTouch = () => typeof window !== "undefined" && window.matchMedia("(hover: none)").matches;
+
   function startInterval() {
+    if (isTouch()) return;
     if (intervalRef.current) clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       setDirection(1);
@@ -120,7 +123,6 @@ function ReelsCarousel() {
 
   function onTouchStart(e: React.TouchEvent) {
     touchStartX.current = e.touches[0].clientX;
-    stopInterval();
   }
 
   function onTouchEnd(e: React.TouchEvent) {
@@ -133,7 +135,6 @@ function ReelsCarousel() {
       else         { setDirection(-1); setActive(prevIdx); }
     }
     touchStartX.current = null;
-    startInterval();
   }
 
   const variants = {
