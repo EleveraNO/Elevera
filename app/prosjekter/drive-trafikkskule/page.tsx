@@ -250,6 +250,7 @@ export default function DriveTrafikkskule() {
                 {[
                   { val: "10+", label: "Bilder" },
                   { val: "6+", label: "Videoer" },
+                  { val: "Pågår", label: "Status" },
                 ].map(({ val, label }) => (
                   <div key={label} className="rounded-lg border border-white/10 bg-white/5 px-4 py-2.5">
                     <p className="text-base font-black leading-none text-white">{val}</p>
