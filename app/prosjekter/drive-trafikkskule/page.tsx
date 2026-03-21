@@ -221,28 +221,53 @@ export default function DriveTrafikkskule() {
       </section>
 
       {/* ── Om prosjektet ── */}
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
+      <section className="relative overflow-hidden px-6 py-24">
+        {/* Subtil atmosfære */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute inset-0" style={{
+            background: "radial-gradient(ellipse 55% 70% at 90% 50%, rgba(124,58,237,0.12) 0%, transparent 60%)"
+          }} />
+        </div>
+        <div className="relative z-10 mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto] md:items-center">
             {/* Tekst */}
             <FadeUp>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Om prosjektet</p>
-              <h2 className="mb-6 text-3xl font-extrabold text-white sm:text-4xl">
-                Fylle kurs og bygge troverdighet
+              <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Om prosjektet</p>
+              <h2 className="mb-8 text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
+                Fylle kurs<br />
+                <span className="text-white/35">og bygge troverdighet</span>
               </h2>
-              <p className="mb-4 text-base leading-relaxed text-white/60">
-                Drive Trafikkskule ville nå flere folk som vurderer å ta BE-lappen, og overbevise dem om at Drive er det rette valget. Utfordringen var å skape innhold som både stopper scrollingen og bygger tillit.
-              </p>
-              <p className="text-base leading-relaxed text-white/60">
-                Elevera tok på seg å produsere en innholdspakke skreddersydd for sosiale medier, med videoer designet for å gi folk troen på at de faktisk kan kjøre, og lyst til å melde seg på kurs.
-              </p>
+              <div className="mb-8 space-y-4 border-l-2 border-[#7c3aed]/35 pl-5">
+                <p className="text-base leading-relaxed text-white/60">
+                  Drive Trafikkskule ville nå flere folk som vurderer å ta BE-lappen, og overbevise dem om at Drive er det rette valget. Utfordringen var å skape innhold som både stopper scrollingen og bygger tillit.
+                </p>
+                <p className="text-base leading-relaxed text-white/45">
+                  Elevera tok på seg å produsere en innholdspakke skreddersydd for sosiale medier, med videoer designet for å gi folk troen på at de faktisk kan kjøre, og lyst til å melde seg på kurs.
+                </p>
+              </div>
+              {/* Hurtige fakta */}
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { val: "2", label: "Lokasjoner" },
+                  { val: "6+", label: "Videoer" },
+                  { val: "Pågår", label: "Status" },
+                ].map(({ val, label }) => (
+                  <div key={label} className="rounded-lg border border-white/10 bg-white/5 px-4 py-2.5">
+                    <p className="text-base font-black leading-none text-white">{val}</p>
+                    <p className="mt-1 text-xs text-white/35">{label}</p>
+                  </div>
+                ))}
+              </div>
             </FadeUp>
 
-            {/* Video-aksent */}
+            {/* Video-aksent med glow */}
             <FadeUp>
-              <div className="relative aspect-[9/16] w-full max-w-[320px] mx-auto overflow-hidden rounded-2xl">
-                <MutedVideo src="/videos/drive-trafikkskule/skaldutalappen.mp4" />
-                <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10" />
+              <div className="relative mx-auto" style={{ width: "280px" }}>
+                <div className="absolute -inset-6 rounded-3xl bg-[#7c3aed]/20 blur-2xl" />
+                <div className="relative aspect-[9/16] overflow-hidden rounded-2xl">
+                  <MutedVideo src="/videos/drive-trafikkskule/skaldutalappen.mp4" />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-white/15" />
+                </div>
               </div>
             </FadeUp>
           </div>
