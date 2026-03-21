@@ -10,7 +10,7 @@ import { FadeUp, StaggerContainer, StaggerItem } from "../../components/animatio
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-const CAROUSEL = "/videos/drive-trafikkskule/carousel/";
+const CAROUSEL = "/videos/drive-trafikkskule/Carousel/";
 const csrc = (f: string) => CAROUSEL + encodeURIComponent(f);
 
 // ─── Carousel data ────────────────────────────────────────────────────────────
