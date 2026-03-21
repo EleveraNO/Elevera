@@ -8,76 +8,7 @@ import Footer from "../../components/Footer";
 import PageCTA from "../../components/PageCTA";
 import { FadeUp, StaggerContainer, StaggerItem } from "../../components/animations";
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-const CAROUSEL = "/videos/drive-trafikkskule/Carousel/";
-const csrc = (f: string) => CAROUSEL + encodeURIComponent(f);
-
-// ─── Carousel data ────────────────────────────────────────────────────────────
-
-const row1 = [
-  "Koblepåhenger 1.mp4",
-  "Rundkjøringfram 1.mp4",
-  "Lyssjekk 2.mp4",
-  "Rundkjøringhøyre 2.mp4",
-  "Rundkjøring venstre 1.mp4",
-  "Skaldutalappen 1.mp4",
-];
-
 // ─── Components ───────────────────────────────────────────────────────────────
-
-function CarouselCard({ src: videoSrc }: { src: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => {});
-        else video.pause();
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      className="relative h-full shrink-0 bg-transparent"
-      style={{
-        aspectRatio: "9/16",
-        maskImage: "linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)",
-        WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)",
-        marginRight: "-80px",
-      }}
-    >
-      <video
-        ref={videoRef}
-        src={videoSrc}
-        muted
-        loop
-        playsInline
-        preload="none"
-        className="h-full w-full object-cover"
-      />
-    </div>
-  );
-}
-
-function InfiniteRow({ files }: { files: string[] }) {
-  const items = [...files, ...files];
-  return (
-    <div className="h-full overflow-hidden">
-      <div className="flex h-full carousel-left" style={{ width: "max-content" }}>
-        {items.map((file, i) => (
-          <CarouselCard key={i} src={csrc(file)} />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 function MutedVideo({ src, className = "" }: { src: string; className?: string }) {
   return (
@@ -236,11 +167,6 @@ export default function DriveTrafikkskule() {
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
       <style>{`
-        @keyframes scrollLeft {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
-        }
-        .carousel-left { animation: scrollLeft 40s linear infinite; }
         .reels-container { height: 480px; aspect-ratio: 9/16; }
         .reels-video    { height: 480px; aspect-ratio: 9/16; }
         @media (min-width: 768px) {
@@ -255,11 +181,17 @@ export default function DriveTrafikkskule() {
 
       <Navbar />
 
-      {/* ── Hero med carousel-bakgrunn ── */}
+      {/* ── Hero med bakgrunnsvideo ── */}
       <section className="relative flex min-h-screen items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <InfiniteRow files={row1} />
-        </div>
+        <video
+          src="/videos/drive-trafikkskule/hero-bg.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-[#0a0a0a]/60" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/50 via-transparent to-[#0a0a0a]" />
 
