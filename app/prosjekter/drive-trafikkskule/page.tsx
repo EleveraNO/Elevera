@@ -322,7 +322,7 @@ export default function DriveTrafikkskule() {
                 <h3 className="mb-6 text-3xl font-extrabold text-white/60">Bilder</h3>
                 <div className="mb-8 h-px w-12 bg-[#7c3aed]/50" />
                 <p className="mb-8 text-base leading-relaxed text-white/50">
-                  Profesjonelle bilder som viser frem Drive Trafikkskule, elevene og miljøet, klare til bruk på nettside og sosiale medier.
+                  Profesjonelle bilder som viser frem Drive Trafikkskule, ansatte og miljøet, klare til bruk på nettside og sosiale medier.
                 </p>
               </div>
               <div className="flex gap-2">
