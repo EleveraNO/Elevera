@@ -406,7 +406,7 @@ export default function DriveTrafikkskule() {
       </section>
 
       {/* ── Der vi er nå ── */}
-      <section className="relative overflow-hidden py-24">
+      <section className="relative overflow-hidden py-24 min-h-screen flex items-center">
 
         {/* Bakgrunnsvideo */}
         <video
