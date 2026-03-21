@@ -317,10 +317,9 @@ export default function DriveTrafikkskule() {
           <FadeUp className="mb-8">
             <div className="flex items-end justify-between">
               <div>
-                <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
-                <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                  <span className="text-white/20 mr-2">10</span>Bilder
-                </h2>
+                <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
+                <h2 className="mb-2 text-7xl font-black leading-none text-white">10</h2>
+                <h3 className="mb-6 text-3xl font-extrabold text-white/60">Bilder</h3>
               </div>
               <div className="flex gap-2">
                 {["Portrett", "Redigering", "Lokasjon"].map((t) => (
