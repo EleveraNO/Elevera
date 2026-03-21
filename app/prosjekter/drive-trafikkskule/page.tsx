@@ -263,40 +263,58 @@ export default function DriveTrafikkskule() {
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-6xl">
-          <FadeUp className="mb-12">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Hva vi lagde</h2>
+
+          {/* Header — stat + beskrivelse side om side */}
+          <FadeUp className="mb-10">
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
+                <div className="flex items-baseline gap-4">
+                  <span className="text-8xl font-black leading-none text-white">6</span>
+                  <span className="text-3xl font-extrabold text-white/50">Reels</span>
+                </div>
+              </div>
+              <div className="max-w-sm">
+                <p className="mb-3 text-sm leading-relaxed text-white/40">
+                  Videoer optimalisert for Reels og Facebook, designet for å stoppe thumben og bygge troverdighet hos folk som vurderer å ta BE-lappen.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["Kamera", "Drone", "GoPro", "Tutorial-format"].map((t) => (
+                    <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/40">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </FadeUp>
 
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-start">
-
-            {/* Venstre — tekst */}
-            <FadeUp>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
-              <h2 className="mb-2 text-7xl font-black leading-none text-white">6</h2>
-              <h3 className="mb-6 text-3xl font-extrabold text-white/60">Reels</h3>
-              <div className="mb-8 h-px w-12 bg-[#7c3aed]/50" />
-              <p className="mb-8 text-base leading-relaxed text-white/50">
-                Videoer optimalisert for Reels og Facebook, designet for å stoppe thumben og bygge troverdighet hos folk som vurderer å ta BE-lappen.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Kamera", "Drone", "GoPro", "Tutorial-format"].map((t) => (
-                  <span key={t} className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">{t}</span>
-                ))}
-              </div>
-            </FadeUp>
-
-            {/* Høyre — 3×2 grid */}
-            <FadeUp>
-              <div className="grid grid-cols-3 gap-2">
-                {reels.map((reel, i) => (
-                  <div key={i} className="aspect-[9/16] overflow-hidden rounded-xl">
-                    <video src={reel.src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
-                  </div>
-                ))}
-              </div>
-            </FadeUp>
-
+          {/* Full-bredde 3×2 grid med hover-effekter */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            {reels.map((reel, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.55, delay: i * 0.08, ease: "easeOut" }}
+                className="group relative aspect-[9/16] cursor-pointer overflow-hidden rounded-xl"
+              >
+                <video
+                  src={reel.src}
+                  autoPlay muted loop playsInline
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+                {/* Hover overlay med tittel */}
+                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/10 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <p className="text-xs font-semibold leading-snug text-white">{reel.label}</p>
+                </div>
+                {/* Indeks-nummer */}
+                <div className="absolute left-2 top-2 text-[10px] font-bold tabular-nums text-white/25">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                {/* Subtil purple glow på hover */}
+                <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-[#7c3aed]/0 transition-all duration-300 group-hover:ring-[#7c3aed]/40" />
+              </motion.div>
+            ))}
           </div>
 
         </div>
