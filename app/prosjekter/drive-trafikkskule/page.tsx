@@ -296,7 +296,7 @@ export default function DriveTrafikkskule() {
             {/* Video-aksent */}
             <FadeUp>
               <div className="relative aspect-[9/16] w-full max-w-[320px] mx-auto overflow-hidden rounded-2xl">
-                <MutedVideo src={csrc("Skaldutalappen 1.mp4")} />
+                <MutedVideo src="/videos/drive-trafikkskule/skaldutalappen.mp4" />
                 <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10" />
               </div>
             </FadeUp>
