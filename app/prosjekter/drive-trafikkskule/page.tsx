@@ -320,6 +320,10 @@ export default function DriveTrafikkskule() {
                 <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
                 <h2 className="mb-2 text-7xl font-black leading-none text-white">10</h2>
                 <h3 className="mb-6 text-3xl font-extrabold text-white/60">Bilder</h3>
+                <div className="mb-8 h-px w-12 bg-[#7c3aed]/50" />
+                <p className="mb-8 text-base leading-relaxed text-white/50">
+                  Profesjonelle bilder som viser frem Drive Trafikkskule, elevene og miljøet, klare til bruk på nettside og sosiale medier.
+                </p>
               </div>
               <div className="flex gap-2">
                 {["Portrett", "Redigering", "Lokasjon"].map((t) => (
