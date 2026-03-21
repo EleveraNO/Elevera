@@ -268,32 +268,54 @@ export default function DriveTrafikkskule() {
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Hva vi lagde</h2>
           </FadeUp>
 
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
+          {/* Tekst */}
+          <FadeUp className="mb-10">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
+            <h2 className="mb-2 text-7xl font-black leading-none text-white">6</h2>
+            <h3 className="mb-6 text-3xl font-extrabold text-white/60">Reels</h3>
+            <div className="mb-6 h-px w-12 bg-[#7c3aed]/50" />
+            <p className="mb-6 max-w-lg text-base leading-relaxed text-white/50">
+              Videoer optimalisert for Reels og Facebook, designet for å stoppe thumben og bygge troverdighet hos folk som vurderer å ta BE-lappen.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["Kamera", "Drone", "GoPro", "Tutorial-format"].map((t) => (
+                <span key={t} className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">{t}</span>
+              ))}
+            </div>
+          </FadeUp>
 
-            {/* Venstre — tekst */}
-            <FadeUp>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
-              <h2 className="mb-2 text-7xl font-black leading-none text-white">6</h2>
-              <h3 className="mb-6 text-3xl font-extrabold text-white/60">Reels</h3>
-              <div className="mb-8 h-px w-12 bg-[#7c3aed]/50" />
-              <p className="mb-8 text-base leading-relaxed text-white/50">
-                Videoer optimalisert for Reels og Facebook, designet for å stoppe thumben og bygge troverdighet hos folk som vurderer å ta BE-lappen.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Kamera", "Drone", "GoPro", "Tutorial-format"].map((t) => (
-                  <span key={t} className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">{t}</span>
-                ))}
+          {/* Scattered reels grid */}
+          <FadeUp>
+            <div className="grid gap-3" style={{
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gridTemplateRows: "repeat(4, 180px)",
+            }}>
+              {/* V1 — stor (2×2, øverst venstre) */}
+              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "1 / 3", gridRow: "1 / 3" }}>
+                <video src={reels[0].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
               </div>
-            </FadeUp>
-
-            {/* Høyre — carousel */}
-            <FadeUp>
-              <div className="flex justify-center lg:justify-end">
-                <ReelsCarousel />
+              {/* V2 — smal høy (1×2, øverst høyre) */}
+              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "3", gridRow: "1 / 3" }}>
+                <video src={reels[1].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
               </div>
-            </FadeUp>
-
-          </div>
+              {/* V3 — smal høy (1×2, nederst venstre) */}
+              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "1", gridRow: "3 / 5" }}>
+                <video src={reels[2].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+              </div>
+              {/* V4 — bred liten (2×1, midten nederst) */}
+              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "2 / 4", gridRow: "3" }}>
+                <video src={reels[3].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+              </div>
+              {/* V5 — liten (1×1) */}
+              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "2", gridRow: "4" }}>
+                <video src={reels[4].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+              </div>
+              {/* V6 — liten (1×1) */}
+              <div className="overflow-hidden rounded-2xl" style={{ gridColumn: "3", gridRow: "4" }}>
+                <video src={reels[5].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+              </div>
+            </div>
+          </FadeUp>
 
         </div>
       </section>
