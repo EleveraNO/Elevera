@@ -27,6 +27,22 @@ const row1 = [
 // ─── Components ───────────────────────────────────────────────────────────────
 
 function CarouselCard({ src: videoSrc }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       className="relative h-full shrink-0 bg-transparent"
@@ -38,12 +54,12 @@ function CarouselCard({ src: videoSrc }: { src: string }) {
       }}
     >
       <video
+        ref={videoRef}
         src={videoSrc}
-        autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         className="h-full w-full object-cover"
       />
     </div>
