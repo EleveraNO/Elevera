@@ -268,47 +268,43 @@ export default function DriveTrafikkskule() {
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Hva vi lagde</h2>
           </FadeUp>
 
-          {/* Tekst */}
-          <FadeUp className="mb-10">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
-            <h2 className="mb-2 text-7xl font-black leading-none text-white">6</h2>
-            <h3 className="mb-6 text-3xl font-extrabold text-white/60">Reels</h3>
-            <div className="mb-6 h-px w-12 bg-[#7c3aed]/50" />
-            <p className="mb-6 max-w-lg text-base leading-relaxed text-white/50">
-              Videoer optimalisert for Reels og Facebook, designet for å stoppe thumben og bygge troverdighet hos folk som vurderer å ta BE-lappen.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {["Kamera", "Drone", "GoPro", "Tutorial-format"].map((t) => (
-                <span key={t} className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">{t}</span>
-              ))}
-            </div>
-          </FadeUp>
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
 
-          {/* Scattered reels grid — alle 9:16, ulike størrelser */}
-          <FadeUp>
-            <div className="grid grid-cols-12 gap-3">
-              {/* Rad 1: stor | medium | liten */}
-              <div className="col-span-5 aspect-[9/16] overflow-hidden rounded-2xl">
-                <video src={reels[0].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+            {/* Venstre — tekst */}
+            <FadeUp>
+              <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
+              <h2 className="mb-2 text-7xl font-black leading-none text-white">6</h2>
+              <h3 className="mb-6 text-3xl font-extrabold text-white/60">Reels</h3>
+              <div className="mb-8 h-px w-12 bg-[#7c3aed]/50" />
+              <p className="mb-8 text-base leading-relaxed text-white/50">
+                Videoer optimalisert for Reels og Facebook, designet for å stoppe thumben og bygge troverdighet hos folk som vurderer å ta BE-lappen.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Kamera", "Drone", "GoPro", "Tutorial-format"].map((t) => (
+                  <span key={t} className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/40">{t}</span>
+                ))}
               </div>
-              <div className="col-span-4 aspect-[9/16] overflow-hidden rounded-2xl">
-                <video src={reels[1].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+            </FadeUp>
+
+            {/* Høyre — staggered reels */}
+            <FadeUp>
+              <div className="relative overflow-hidden reels-container flex justify-end gap-3 items-start">
+                {/* Video 1 — starter øverst */}
+                <div className="h-full aspect-[9/16] overflow-hidden rounded-2xl shrink-0">
+                  <video src={reels[0].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                </div>
+                {/* Video 2 — forskjøvet ned */}
+                <div className="h-[85%] aspect-[9/16] overflow-hidden rounded-2xl shrink-0 mt-auto">
+                  <video src={reels[1].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                </div>
+                {/* Video 3 — forskjøvet ned litt */}
+                <div className="h-[70%] aspect-[9/16] overflow-hidden rounded-2xl shrink-0" style={{ marginTop: "8%" }}>
+                  <video src={reels[2].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                </div>
               </div>
-              <div className="col-span-3 aspect-[9/16] overflow-hidden rounded-2xl">
-                <video src={reels[2].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
-              </div>
-              {/* Rad 2: liten | medium | stor */}
-              <div className="col-span-3 aspect-[9/16] overflow-hidden rounded-2xl">
-                <video src={reels[3].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
-              </div>
-              <div className="col-span-4 aspect-[9/16] overflow-hidden rounded-2xl">
-                <video src={reels[4].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
-              </div>
-              <div className="col-span-5 aspect-[9/16] overflow-hidden rounded-2xl">
-                <video src={reels[5].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
-              </div>
-            </div>
-          </FadeUp>
+            </FadeUp>
+
+          </div>
 
         </div>
       </section>
