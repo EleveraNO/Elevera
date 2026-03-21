@@ -286,20 +286,35 @@ export default function DriveTrafikkskule() {
               </div>
             </FadeUp>
 
-            {/* Høyre — staggered reels */}
+            {/* Høyre — alle 6 reels, 3 kolonner staggered */}
             <FadeUp>
-              <div className="relative overflow-hidden reels-container flex justify-end gap-3 items-start">
-                {/* Video 1 — starter øverst */}
-                <div className="h-full aspect-[9/16] overflow-hidden rounded-2xl shrink-0">
-                  <video src={reels[0].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+              <div className="relative overflow-hidden reels-container flex gap-2">
+                {/* Kolonne 1 — ingen offset */}
+                <div className="flex flex-1 flex-col gap-2">
+                  <div className="aspect-[9/16] overflow-hidden rounded-2xl">
+                    <video src={reels[0].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                  </div>
+                  <div className="aspect-[9/16] overflow-hidden rounded-2xl">
+                    <video src={reels[3].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                  </div>
                 </div>
-                {/* Video 2 — forskjøvet ned */}
-                <div className="h-[85%] aspect-[9/16] overflow-hidden rounded-2xl shrink-0 mt-auto">
-                  <video src={reels[1].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                {/* Kolonne 2 — forskjøvet ned */}
+                <div className="flex flex-1 flex-col gap-2 mt-10">
+                  <div className="aspect-[9/16] overflow-hidden rounded-2xl">
+                    <video src={reels[1].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                  </div>
+                  <div className="aspect-[9/16] overflow-hidden rounded-2xl">
+                    <video src={reels[4].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                  </div>
                 </div>
-                {/* Video 3 — forskjøvet ned litt */}
-                <div className="h-[70%] aspect-[9/16] overflow-hidden rounded-2xl shrink-0" style={{ marginTop: "8%" }}>
-                  <video src={reels[2].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                {/* Kolonne 3 — litt ned */}
+                <div className="flex flex-1 flex-col gap-2 mt-5">
+                  <div className="aspect-[9/16] overflow-hidden rounded-2xl">
+                    <video src={reels[2].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                  </div>
+                  <div className="aspect-[9/16] overflow-hidden rounded-2xl">
+                    <video src={reels[5].src} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+                  </div>
                 </div>
               </div>
             </FadeUp>
