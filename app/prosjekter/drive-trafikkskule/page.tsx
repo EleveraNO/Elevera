@@ -92,8 +92,9 @@ function ReelsCarousel() {
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const touchStartX = useRef<number | null>(null);
 
-  function resetInterval() {
+  function startInterval() {
     if (intervalRef.current) clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       setDirection(1);
@@ -101,15 +102,38 @@ function ReelsCarousel() {
     }, 3000);
   }
 
+  function stopInterval() {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = null;
+  }
+
   useEffect(() => {
-    resetInterval();
-    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+    startInterval();
+    return () => stopInterval();
   }, []);
 
   function select(i: number) {
     setDirection(i > active ? 1 : -1);
     setActive(i);
-    resetInterval();
+    startInterval();
+  }
+
+  function onTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX;
+    stopInterval();
+  }
+
+  function onTouchEnd(e: React.TouchEvent) {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 40) {
+      const prevIdx = (active - 1 + reels.length) % reels.length;
+      const nextIdx = (active + 1) % reels.length;
+      if (dx < 0) { setDirection(1); setActive(nextIdx); }
+      else         { setDirection(-1); setActive(prevIdx); }
+    }
+    touchStartX.current = null;
+    startInterval();
   }
 
   const variants = {
@@ -118,49 +142,65 @@ function ReelsCarousel() {
     exit: (dir: number) => ({ y: -dir * 320, opacity: 0 }),
   };
 
-  const prev = (active - 1 + reels.length) % reels.length;
-  const next = (active + 1) % reels.length;
+  const prevIdx = (active - 1 + reels.length) % reels.length;
+  const nextIdx = (active + 1) % reels.length;
 
   return (
-    <div
-      className="group relative inline-flex justify-center overflow-hidden rounded-2xl reels-container"
-      onMouseEnter={() => { if (intervalRef.current) clearInterval(intervalRef.current); }}
-      onMouseLeave={() => resetInterval()}
-    >
-      <AnimatePresence mode="popLayout" custom={direction}>
-        <motion.div
-          key={active}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          whileHover={{ scale: 1.08, zIndex: 50 }}
-          transition={{ duration: 0.45, ease: "easeInOut" }}
-          className="absolute inset-0 overflow-hidden rounded-2xl reels-video"
-          style={{ cursor: "zoom-in" }}
+    <div className="flex flex-col items-center gap-4">
+      <div
+        className="group relative inline-flex justify-center overflow-hidden rounded-2xl reels-container touch-pan-y"
+        onMouseEnter={stopInterval}
+        onMouseLeave={startInterval}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        <AnimatePresence mode="popLayout" custom={direction}>
+          <motion.div
+            key={active}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            whileHover={{ scale: 1.08, zIndex: 50 }}
+            transition={{ duration: 0.45, ease: "easeInOut" }}
+            className="absolute inset-0 overflow-hidden rounded-2xl reels-video"
+            style={{ cursor: "zoom-in" }}
+          >
+            <video src={reels[active].src} poster={reels[active].poster} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Pil venstre — alltid synlig på mobil */}
+        <button
+          type="button"
+          onClick={() => select(prevIdx)}
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100"
         >
-          <video src={reels[active].src} poster={reels[active].poster} autoPlay muted loop playsInline className="h-full w-full object-cover" />
-        </motion.div>
-      </AnimatePresence>
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+        </button>
 
-      {/* Pil venstre */}
-      <button
-        type="button"
-        onClick={() => select(prev)}
-        className="absolute left-3 top-1/2 -translate-y-1/2 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 hover:bg-white/10"
-      >
-        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-      </button>
+        {/* Pil høyre — alltid synlig på mobil */}
+        <button
+          type="button"
+          onClick={() => select(nextIdx)}
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100"
+        >
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+        </button>
+      </div>
 
-      {/* Pil høyre */}
-      <button
-        type="button"
-        onClick={() => select(next)}
-        className="absolute right-3 top-1/2 -translate-y-1/2 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 hover:bg-white/10"
-      >
-        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-      </button>
+      {/* Prikk-indikatorer */}
+      <div className="flex gap-2">
+        {reels.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => select(i)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? "w-5 bg-white" : "w-1.5 bg-white/30"}`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
