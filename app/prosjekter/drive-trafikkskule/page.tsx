@@ -138,9 +138,9 @@ function ReelsCarousel() {
   }
 
   const variants = {
-    enter: (dir: number) => ({ y: dir * 320, opacity: 0 }),
-    center: { y: 0, opacity: 1 },
-    exit: (dir: number) => ({ y: -dir * 320, opacity: 0 }),
+    enter: (dir: number) => ({ x: dir * 320, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: -dir * 320, opacity: 0 }),
   };
 
   const prevIdx = (active - 1 + reels.length) % reels.length;
