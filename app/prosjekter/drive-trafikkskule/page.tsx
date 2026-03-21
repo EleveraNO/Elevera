@@ -362,20 +362,20 @@ export default function DriveTrafikkskule() {
         <div className="relative z-10 mx-auto max-w-6xl">
           {/* Header */}
           <FadeUp className="mb-8">
-            <div className="flex items-end justify-between">
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
                 <h2 className="mb-2 text-7xl font-black leading-none text-white">10</h2>
                 <h3 className="mb-6 text-3xl font-extrabold text-white/60">Bilder</h3>
                 <div className="mb-8 h-px w-12 bg-[#7c3aed]/50" />
-                <p className="mb-8 text-base leading-relaxed text-white/50">
+                <p className="mb-6 text-base leading-relaxed text-white/50">
                   Profesjonelle bilder som viser frem Drive Trafikkskule, ansatte og miljøet, klare til bruk på nettside og sosiale medier.
                 </p>
-              </div>
-              <div className="flex gap-2">
-                {["Portrett", "Redigering", "Lokasjon"].map((t) => (
-                  <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/40">{t}</span>
-                ))}
+                <div className="flex flex-wrap gap-2">
+                  {["Portrett", "Redigering", "Lokasjon"].map((t) => (
+                    <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/40">{t}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </FadeUp>
