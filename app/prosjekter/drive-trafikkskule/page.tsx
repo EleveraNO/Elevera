@@ -235,7 +235,7 @@ export default function DriveTrafikkskule() {
               <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Om prosjektet</p>
               <h2 className="mb-8 text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
                 Nå ut til flere<br />
-                <span className="text-white/35">og bygg troverdighet</span>
+                <span className="text-white/35">og bygge troverdighet</span>
               </h2>
               <div className="mb-8 space-y-4 border-l-2 border-[#7c3aed]/35 pl-5">
                 <p className="text-base leading-relaxed text-white/60">
