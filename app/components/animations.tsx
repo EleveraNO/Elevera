@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef, ReactNode } from "react";
 
 // Fade in + slide up ved scroll
@@ -15,13 +15,14 @@ export function FadeUp({
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const reduced = useReducedMotion();
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: reduced ? 0 : 32 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: reduced ? 0.2 : 0.6, delay: reduced ? 0 : delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       className={className}
     >
       {children}
@@ -39,6 +40,7 @@ export function StaggerContainer({
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const reduced = useReducedMotion();
 
   return (
     <motion.div
@@ -47,7 +49,7 @@ export function StaggerContainer({
       animate={inView ? "visible" : "hidden"}
       variants={{
         hidden: {},
-        visible: { transition: { staggerChildren: 0.1 } },
+        visible: { transition: { staggerChildren: reduced ? 0 : 0.1 } },
       }}
       className={className}
     >
@@ -64,11 +66,13 @@ export function StaggerItem({
   children: ReactNode;
   className?: string;
 }) {
+  const reduced = useReducedMotion();
+
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 24 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] } },
+        hidden: { opacity: 0, y: reduced ? 0 : 24 },
+        visible: { opacity: 1, y: 0, transition: { duration: reduced ? 0.2 : 0.5, ease: [0.21, 0.47, 0.32, 0.98] } },
       }}
       className={className}
     >
@@ -89,13 +93,14 @@ export function FadeLeft({
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const reduced = useReducedMotion();
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: -40 }}
+      initial={{ opacity: 0, x: reduced ? 0 : -40 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: reduced ? 0.2 : 0.6, delay: reduced ? 0 : delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       className={className}
     >
       {children}
@@ -115,13 +120,14 @@ export function FadeRight({
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const reduced = useReducedMotion();
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: 40 }}
+      initial={{ opacity: 0, x: reduced ? 0 : 40 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: reduced ? 0.2 : 0.6, delay: reduced ? 0 : delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       className={className}
     >
       {children}
@@ -141,13 +147,14 @@ export function ScaleIn({
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const reduced = useReducedMotion();
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, scale: 0.92 }}
+      initial={{ opacity: 0, scale: reduced ? 1 : 0.92 }}
       animate={inView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: reduced ? 0.2 : 0.6, delay: reduced ? 0 : delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       className={className}
     >
       {children}

@@ -21,7 +21,7 @@ export default function Footer() {
                 href="https://www.instagram.com/elevera_no/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all hover:border-[#7c3aed]/40 hover:text-[#7c3aed]"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all hover:border-[rgba(45,212,191,0.4)] hover:text-[#2DD4BF]"
                 aria-label="Instagram"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -33,7 +33,7 @@ export default function Footer() {
                 href="https://www.facebook.com/profile.php?id=61582956691309"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all hover:border-[#7c3aed]/40 hover:text-[#7c3aed]"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all hover:border-[rgba(45,212,191,0.4)] hover:text-[#2DD4BF]"
                 aria-label="Facebook"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">

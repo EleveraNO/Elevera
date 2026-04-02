@@ -1,239 +1,202 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import FloatingCards from "./FloatingCards";
 
-function DotGrid() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const c = canvas;
-
-    const resize = () => {
-      c.width = c.offsetWidth;
-      c.height = c.offsetHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const SPACING = 52;
-    let raf: number;
-    let t = 0;
-
-    const draw = () => {
-      t += 0.4;
-      ctx.clearRect(0, 0, c.width, c.height);
-
-      const cols = Math.ceil(c.width / SPACING) + 1;
-      const rows = Math.ceil(c.height / SPACING) + 2;
-      const offsetY = t % SPACING;
-      const scrolledRows = Math.floor(t / SPACING);
-
-      const cx = c.width / 2;
-      const cy = c.height / 2;
-      const maxDist = Math.sqrt(cx * cx + cy * cy);
-
-      for (let col = 0; col < cols; col++) {
-        for (let row = 0; row < rows; row++) {
-          const x = col * SPACING;
-          const y = row * SPACING - offsetY;
-
-          const dx = x - cx;
-          const dy = y - cy;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const edgeFade = Math.max(0, 1 - dist / maxDist) * 0.85 + 0.15;
-
-          const wave = Math.sin(dist * 0.018 - t * 0.06) * 0.5 + 0.5;
-
-          const worldRow = row + scrolledRows;
-          const seed = Math.sin(col * 127.1 + worldRow * 311.7) * 43758.5453;
-          const rand = seed - Math.floor(seed);
-          const isBright = rand > 0.94;
-
-          const baseAlpha = 0.07 + wave * 0.08;
-          const alpha = isBright
-            ? Math.min(1, baseAlpha * 4 * edgeFade)
-            : baseAlpha * edgeFade;
-
-          const radius = isBright ? 2.0 : 1.2;
-
-          const colorSeed = Math.sin(col * 53.3 + worldRow * 97.1) * 43758.5;
-          const colorRand = colorSeed - Math.floor(colorSeed);
-          const color =
-            colorRand > 0.75
-              ? "96,165,250"
-              : colorRand > 0.55
-              ? "167,139,250"
-              : "124,58,237";
-
-          ctx.beginPath();
-          ctx.arc(x, y, radius, 0, Math.PI * 2);
-          if (isBright) {
-            ctx.shadowBlur = 8;
-            ctx.shadowColor = `rgba(${color},0.8)`;
-          }
-          ctx.fillStyle = `rgba(${color},${alpha})`;
-          ctx.fill();
-          ctx.shadowBlur = 0;
-        }
-      }
-
-      raf = requestAnimationFrame(draw);
-    };
-    draw();
-
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0 h-full w-full"
-    />
-  );
-}
-
+const ease = [0.21, 0.47, 0.32, 0.98] as const;
 
 export default function Hero() {
+  const reduced = useReducedMotion();
+
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
-      {/* Deep glow blobs */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <motion.div
-          className="absolute left-1/2 top-1/3 h-[750px] w-[750px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/25 blur-[120px]"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-blue-500/15 blur-[90px]"
-          animate={{ scale: [1, 1.22, 1], opacity: [0.5, 0.85, 0.5] }}
-          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        />
-        <motion.div
-          className="absolute left-1/4 bottom-1/3 h-[280px] w-[280px] rounded-full bg-violet-400/15 blur-[70px]"
-          animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.75, 0.4] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 3.5 }}
-        />
-      </div>
+    <section className="relative flex min-h-screen items-center px-6 pb-16 pt-28" style={{ overflowX: "clip" }}>
+      {/* Ambient glow — left */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute"
+        style={{
+          left: "-10%", top: "50%",
+          width: 800, height: 800,
+          transform: "translateY(-50%)",
+          background: "radial-gradient(circle, rgba(45,212,191,0.10) 0%, rgba(45,212,191,0.04) 35%, transparent 70%)",
+          borderRadius: "50%",
+        }}
+        animate={reduced ? {} : { opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* Ambient glow — right */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute"
+        style={{
+          right: "-5%", bottom: "-10%",
+          width: 600, height: 600,
+          background: "radial-gradient(circle, rgba(45,212,191,0.07) 0%, rgba(45,212,191,0.02) 40%, transparent 70%)",
+          borderRadius: "50%",
+        }}
+        animate={reduced ? {} : { opacity: [0.6, 1, 0.6] }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+      />
 
-      <DotGrid />
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-8">
 
-      <div className="relative z-10 mx-auto max-w-4xl text-center pb-24">
-        {/* Badge */}
-        <motion.div
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/10 px-4 py-1.5"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-        >
-          <span className="h-2 w-2 animate-pulse rounded-full bg-[#7c3aed]" />
-          <span className="text-sm font-medium text-[#a78bfa]">
-            Digitalbyrå i Ålesund
-          </span>
-        </motion.div>
+          {/* ── Left column: text ── */}
+          <div className="w-full lg:w-[55%]">
+            {/* Location badge */}
+            <motion.div
+              className="mb-8 inline-flex items-center gap-2.5 rounded-full border px-4 py-1.5"
+              style={{ borderColor: "rgba(45,212,191,0.2)", background: "rgba(45,212,191,0.06)" }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease }}
+            >
+              <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#2DD4BF" }} />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ color: "rgba(45,212,191,0.8)" }}>
+                Digitalbyrå — Ålesund, Norge
+              </span>
+            </motion.div>
 
-        {/* Heading */}
-        <motion.h1
-          className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-        >
-          Én partner.{" "}
-          <span className="bg-gradient-to-r from-[#7c3aed] to-[#60a5fa] bg-clip-text text-transparent">
-            Alt du trenger
-          </span>{" "}
-          for å vokse på nett.
-        </motion.h1>
+            {/* Main heading */}
+            <motion.h1
+              className="mb-6 text-[clamp(3.2rem,7.5vw,6.5rem)] font-bold leading-[1.0] tracking-tight"
+              style={{ color: "#F2EDE6" }}
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.08, ease }}
+            >
+              Én partner for{" "}
+              <em
+                style={{
+                  fontFamily: "var(--font-fraunces), Georgia, serif",
+                  fontStyle: "italic",
+                  color: "#2DD4BF",
+                  textShadow: "0 0 40px rgba(45,212,191,0.35), 0 0 80px rgba(45,212,191,0.15)",
+                }}
+              >
+                vekst
+              </em>{" "}
+              på nett.
+            </motion.h1>
 
-        {/* Subtext */}
-        <motion.p
-          className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/60 sm:text-xl"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
-        >
-          Vi hjelper bedrifter i Ålesund og omegn med å vokse på nett –
-          gjennom profesjonell foto & video, konverterende nettsider og
-          presis annonsering. Alt fra én partner.
-        </motion.p>
+            {/* Teal rule */}
+            <motion.div
+              className="mb-6 h-px origin-left"
+              style={{ background: "#2DD4BF", width: "4rem" }}
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+            />
 
-        {/* CTA */}
-        <motion.div
-          className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-        >
-          <a
-            href="#kontakt"
-            className="rounded-full bg-[#7c3aed] px-10 py-4 text-base font-semibold text-white shadow-lg shadow-[#7c3aed]/30 transition-all hover:bg-[#6d28d9] hover:shadow-xl hover:shadow-[#7c3aed]/40 hover:-translate-y-0.5"
+            {/* Sub-text */}
+            <motion.p
+              className="mb-8 max-w-md text-lg leading-relaxed"
+              style={{ color: "rgba(242,237,230,0.52)" }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.22, ease }}
+            >
+              Foto & video, konverterende nettsider og presis annonsering —
+              alt fra én partner som kjenner Ålesund.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              className="mb-10 flex flex-wrap items-center gap-4"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.34, ease }}
+            >
+              <a
+                href="#kontakt"
+                className="inline-flex items-center rounded-full px-8 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                style={{ background: "#2DD4BF", color: "#09090B", boxShadow: "0 0 0 0 rgba(45,212,191,0)" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = "#14B8A6";
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 30px rgba(45,212,191,0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = "#2DD4BF";
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 0 0 rgba(45,212,191,0)";
+                }}
+              >
+                Book gratis møte
+              </a>
+              <a
+                href="#tjenester"
+                className="flex items-center gap-2 text-sm font-medium transition-colors duration-200"
+                style={{ color: "rgba(242,237,230,0.55)" }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#F2EDE6")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(242,237,230,0.55)")}
+              >
+                Se hva vi tilbyr
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </motion.div>
+
+            {/* Stats row */}
+            <motion.div
+              className="mb-8 flex items-center gap-6"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.45, ease }}
+            >
+              {[
+                { value: "+142%", label: "Klikkvekst for kunder" },
+                { value: "5+", label: "Bedrifter" },
+                { value: "100%", label: "Fornøyde kunder" },
+              ].map((stat, i) => (
+                <div key={i} className="flex flex-col">
+                  <span className="text-xl font-bold" style={{ color: "#F2EDE6", letterSpacing: "-0.03em" }}>{stat.value}</span>
+                  <span className="text-[11px]" style={{ color: "rgba(242,237,230,0.35)" }}>{stat.label}</span>
+                </div>
+              ))}
+            </motion.div>
+
+          </div>
+
+          {/* ── Right column: floating cards ── */}
+          <motion.div
+            className="relative hidden w-full lg:block lg:w-[45%]"
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.15, ease }}
+            aria-hidden="true"
           >
-            Kom i gang i dag
-          </a>
-        </motion.div>
+            <FloatingCards />
+          </motion.div>
 
-        {/* Trust signals */}
-        <motion.div
-          className="mt-10 flex flex-wrap justify-center gap-4 text-sm text-white/40 sm:mt-16 sm:gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-        >
-          <span className="flex items-center gap-2">
-            <svg className="h-4 w-4 text-[#7c3aed]" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            Gratis strategimøte
-          </span>
-          <span className="flex items-center gap-2">
-            <svg className="h-4 w-4 text-[#7c3aed]" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            Svar innen 24 timer
-          </span>
-          <span className="flex items-center gap-2">
-            <svg className="h-4 w-4 text-[#7c3aed]" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            Ålesund og omegn
-          </span>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.a
-        href="#tjenester"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 group flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/50 backdrop-blur-sm transition-all hover:border-[#7c3aed]/60 hover:bg-[#7c3aed]/15 hover:text-white"
+      {/* Scroll indicator — mouse icon */}
+      <motion.button
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.4 }}
+        transition={{ duration: 0.5, delay: 1.1 }}
         aria-label="Scroll ned"
+        onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
+        whileHover={{ opacity: 0.6 }}
       >
-        <motion.svg
-          width="18" height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-          animate={{ y: [0, 3, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        <div
+          className="relative flex justify-center rounded-full"
+          style={{
+            width: 22, height: 36,
+            border: "1.5px solid rgba(255,255,255,0.18)",
+          }}
         >
-          <path d="M6 10l6 6 6-6" />
-        </motion.svg>
-      </motion.a>
+          <motion.div
+            className="rounded-full"
+            style={{ width: 3, height: 7, background: "rgba(255,255,255,0.4)", marginTop: 5 }}
+            animate={reduced ? {} : { y: [0, 10, 0], opacity: [1, 0, 1] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+      </motion.button>
     </section>
   );
 }

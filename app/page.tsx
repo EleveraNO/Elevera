@@ -1,14 +1,17 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Marquee from "./components/Marquee";
 import Problems from "./components/Problems";
 import Services from "./components/Services";
-import Pricing from "./components/Pricing";
-import WhyElevera from "./components/WhyElevera";
+import Process from "./components/Process";
 import Portfolio from "./components/Portfolio";
+import MidCTA from "./components/MidCTA";
+import Testimonials from "./components/Testimonials";
+import WhyElevera from "./components/WhyElevera";
+import Pricing from "./components/Pricing";
 import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
-import Marquee from "./components/Marquee";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -67,18 +70,22 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className="min-h-screen bg-[#0a0a0a]">
+      <main className="min-h-screen" style={{ background: "#09090B" }}>
         <Navbar />
         <Hero />
         <Marquee />
-        <Services />
-        <Portfolio />
+        {/* Problem → Solution flow */}
         <Problems />
+        <Services />
+        <Process />
+        <Portfolio />
+        <MidCTA />
+        <Testimonials />
         <WhyElevera />
         <Pricing />
         <FAQ />
         <CTA />
-<Footer />
+        <Footer />
       </main>
     </>
   );

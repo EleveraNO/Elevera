@@ -16,7 +16,7 @@ const services = [
       "Reklamevideo & kortfilm",
       "Dronevideo & luftopptak",
     ],
-    glow: "radial-gradient(circle at 100% 100%, rgba(251,191,36,0.08) 0%, transparent 60%)",
+    accentColor: "rgba(45,212,191,0.12)",
   },
   {
     number: "02",
@@ -30,7 +30,7 @@ const services = [
       "SEO-optimalisert",
       "Eget foto & video til siden",
     ],
-    glow: "radial-gradient(circle at 100% 100%, rgba(56,189,248,0.08) 0%, transparent 60%)",
+    accentColor: "rgba(45,212,191,0.12)",
   },
   {
     number: "03",
@@ -44,7 +44,7 @@ const services = [
       "A/B-testing av annonser",
       "Månedlig rapportering",
     ],
-    glow: "radial-gradient(circle at 100% 100%, rgba(251,146,60,0.08) 0%, transparent 60%)",
+    accentColor: "rgba(45,212,191,0.12)",
   },
   {
     number: "04",
@@ -58,7 +58,7 @@ const services = [
       "KPI-oppsett & tracking",
       "Kvartalsvise gjennomganger",
     ],
-    glow: "radial-gradient(circle at 100% 100%, rgba(167,139,250,0.08) 0%, transparent 60%)",
+    accentColor: "rgba(45,212,191,0.12)",
   },
 ];
 
@@ -73,59 +73,85 @@ export default function Services() {
   return (
     <section id="tjenester" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
-        <FadeUp className="mb-16 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">
+        <FadeUp className="mb-16">
+          <p
+            className="mb-3 text-xs font-semibold uppercase tracking-[0.2em]"
+            style={{ color: "#2DD4BF" }}
+          >
             Tjenester
           </p>
-          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
-            Foto, video og annonsering som skaper vekst
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-white/50">
-            Elevera tilbyr alle digitale tjenestene du trenger for å vokse –
-            slik slipper du å styre med flere byråer.
-          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <h2
+              className="max-w-sm text-3xl font-bold sm:text-4xl md:text-5xl"
+              style={{ color: "#F2EDE6" }}
+            >
+              Alt du trenger for å vokse på nett
+            </h2>
+            <p className="max-w-xs text-sm leading-relaxed sm:text-right" style={{ color: "rgba(242,237,230,0.45)" }}>
+              Slipper du å styre med flere byråer — Elevera leverer
+              alt fra én partner.
+            </p>
+          </div>
         </FadeUp>
 
         {/* Mobile: stacked cards */}
-        <div className="grid gap-4 md:hidden">
-          {services.map((service, index) => (
+        <div className="grid gap-3 md:hidden">
+          {services.map((service) => (
             <a
               key={service.number}
               href={service.href}
-              className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-7"
+              className="flex flex-col rounded-xl p-7 transition-colors duration-200"
+              style={{
+                border: "1px solid rgba(255,255,255,0.08)",
+                background: "#111115",
+              }}
             >
-              <span className="mb-3 block text-4xl font-bold text-[#7c3aed]/20">
-                {service.number}
-              </span>
-              <h3 className="mb-2 text-lg font-bold text-white">{service.title}</h3>
-              <p className="mb-5 text-sm leading-relaxed text-white/50">{service.description}</p>
-              <ul className="mb-5 space-y-2">
+              <div className="mb-4 flex items-center justify-between">
+                <span
+                  className="text-xs font-mono"
+                  style={{ color: "rgba(45,212,191,0.5)" }}
+                >
+                  {service.number}
+                </span>
+                <svg
+                  aria-hidden="true"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  style={{ color: "rgba(242,237,230,0.3)" }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+              <h3 className="mb-2 text-lg font-bold" style={{ color: "#F2EDE6" }}>
+                {service.title}
+              </h3>
+              <p className="mb-5 text-sm leading-relaxed" style={{ color: "rgba(242,237,230,0.45)" }}>
+                {service.description}
+              </p>
+              <ul className="space-y-2">
                 {service.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm text-white/70">
-                    <svg aria-hidden="true" className="h-3.5 w-3.5 flex-shrink-0 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                  <li key={f} className="flex items-center gap-2 text-sm" style={{ color: "rgba(242,237,230,0.65)" }}>
+                    <span
+                      className="h-1 w-1 flex-shrink-0 rounded-full"
+                      style={{ background: "#2DD4BF" }}
+                    />
                     {f}
                   </li>
                 ))}
               </ul>
-              <span className="flex items-center gap-1 text-sm font-semibold text-[#7c3aed]">
-                Les mer
-                <svg aria-hidden="true" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </span>
             </a>
           ))}
         </div>
 
         {/* Desktop: interactive expanding grid */}
         <div
-          className="hidden h-[620px] gap-3 md:grid"
+          className="hidden h-[600px] gap-3 md:grid"
           style={{
             gridTemplateColumns: cols,
             gridTemplateRows: rows,
-            transition: "grid-template-columns 0.45s ease, grid-template-rows 0.45s ease",
+            transition: "grid-template-columns 0.4s ease, grid-template-rows 0.4s ease",
           }}
         >
           {services.map((service, index) => {
@@ -136,31 +162,41 @@ export default function Services() {
               <a
                 key={service.number}
                 href={service.href}
-                className={`group relative flex flex-col overflow-hidden rounded-2xl border p-8 transition-all duration-300 ${
-                  isActive
-                    ? "border-[#7c3aed]/50 shadow-[0_0_50px_rgba(124,58,237,0.15)]"
+                className="group relative flex flex-col overflow-hidden rounded-xl p-8 transition-all duration-300"
+                style={{
+                  border: isActive
+                    ? "1px solid rgba(45,212,191,0.35)"
+                    : "1px solid rgba(255,255,255,0.07)",
+                  background: isActive
+                    ? "#111115"
                     : isDimmed
-                    ? "border-white/5 bg-white/3"
-                    : "border-white/10 bg-white/5"
-                }`}
-                style={isActive ? { background: service.glow } : undefined}
+                    ? "#0C0C0F"
+                    : "#111115",
+                  opacity: isDimmed ? 0.55 : 1,
+                }}
                 onMouseEnter={() => setHovered(index)}
                 onMouseLeave={() => setHovered(null)}
               >
+                {/* Accent dot on active */}
+                {isActive && (
+                  <div
+                    className="absolute top-0 left-0 h-px w-16"
+                    style={{ background: "#2DD4BF" }}
+                  />
+                )}
+
                 {/* Number */}
                 <span
-                  className={`block font-bold text-[#7c3aed]/20 transition-all duration-300 ${
-                    isActive ? "mb-4 text-6xl" : "mb-3 text-4xl"
-                  }`}
+                  className="mb-3 block font-mono text-sm transition-all duration-300"
+                  style={{ color: isActive ? "rgba(45,212,191,0.7)" : "rgba(255,255,255,0.18)" }}
                 >
                   {service.number}
                 </span>
 
                 {/* Title */}
                 <h3
-                  className={`font-bold text-white transition-all duration-300 ${
-                    isActive ? "mb-4 text-2xl" : "mb-2 text-lg"
-                  }`}
+                  className={`font-bold transition-all duration-300 ${isActive ? "mb-4 text-2xl" : "mb-2 text-lg"}`}
+                  style={{ color: "#F2EDE6" }}
                 >
                   {service.title}
                 </h3>
@@ -171,38 +207,46 @@ export default function Services() {
                     isDimmed ? "max-h-0 opacity-0" : "max-h-32 opacity-100"
                   }`}
                 >
-                  <p className="text-sm leading-relaxed text-white/50">
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(242,237,230,0.45)" }}>
                     {service.description}
                   </p>
                 </div>
 
                 {/* Features — only when active */}
                 <ul
-                  className={`mt-4 space-y-2 overflow-hidden transition-all duration-300 ${
+                  className={`mt-5 space-y-2.5 overflow-hidden transition-all duration-300 ${
                     isActive ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   {service.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm">
-                      <svg aria-hidden="true" className="h-3.5 w-3.5 flex-shrink-0 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-white/70">{f}</span>
+                    <li key={f} className="flex items-center gap-2.5 text-sm">
+                      <span
+                        className="h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                        style={{ background: "#2DD4BF" }}
+                      />
+                      <span style={{ color: "rgba(242,237,230,0.7)" }}>{f}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Les mer — only when active */}
-                <span
-                  className={`mt-auto flex items-center gap-1 pt-4 text-sm font-semibold text-[#7c3aed] transition-all duration-300 ${
+                <div
+                  className={`mt-auto flex items-center gap-1.5 pt-5 text-sm font-semibold transition-all duration-300 ${
                     isActive ? "opacity-100" : "opacity-0"
                   }`}
+                  style={{ color: "#2DD4BF" }}
                 >
                   Les mer
-                  <svg aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    aria-hidden="true"
+                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </span>
+                </div>
               </a>
             );
           })}

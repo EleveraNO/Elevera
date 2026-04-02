@@ -6,13 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "remotion": "remotion studio remotion/index.ts",
+    "render": "remotion render remotion/index.ts AuroraHero public/videos/aurora-hero.mp4",
+    "render:morph": "remotion render remotion/index.ts MorphHero public/videos/morph-hero.mp4",
+    "render:floating": "remotion render remotion/index.ts FloatingCards public/videos/floating-cards.mp4"
   },
   "dependencies": {
+    "@remotion/cli": "^4.0.443",
     "framer-motion": "^12.35.2",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "remotion": "^4.0.443"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

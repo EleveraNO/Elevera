@@ -209,7 +209,7 @@ export default function DriveTrafikkskule() {
                 {["Foto", "Video & Dronevideo", "Annonsering"].map((tag) => (
                   <span
                     key={tag}
-                    className="rounded border border-[#7c3aed]/30 bg-[#7c3aed]/15 px-3 py-1 text-sm text-[#a78bfa]"
+                    className="rounded border border-[#dc2626]/30 bg-[#dc2626]/15 px-3 py-1 text-sm text-[#f87171]"
                   >
                     {tag}
                   </span>
@@ -232,12 +232,12 @@ export default function DriveTrafikkskule() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto] md:items-center">
             {/* Tekst */}
             <FadeUp>
-              <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Om prosjektet</p>
+              <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-[#dc2626]">Om prosjektet</p>
               <h2 className="mb-8 text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
                 Tiltrekke elever<br />
                 <span className="text-white/35">og bygge tillit</span>
               </h2>
-              <div className="mb-8 space-y-4 border-l-2 border-[#7c3aed]/35 pl-5">
+              <div className="mb-8 space-y-4 border-l-2 border-[#dc2626]/35 pl-5">
                 <p className="text-base leading-relaxed text-white/60">
                   Drive Trafikkskule ville nå flere folk som vurderer å ta BE-lappen, og overbevise dem om at Drive er det rette valget. Utfordringen var å skape innhold som både stopper scrollingen og bygger tillit.
                 </p>
@@ -263,7 +263,7 @@ export default function DriveTrafikkskule() {
             {/* Video-aksent med glow */}
             <FadeUp>
               <div className="relative mx-auto" style={{ width: "280px" }}>
-                <div className="absolute -inset-6 rounded-3xl bg-[#7c3aed]/20 blur-2xl" />
+                <div className="absolute -inset-6 rounded-3xl bg-[#dc2626]/20 blur-2xl" />
                 <div className="relative aspect-[9/16] overflow-hidden rounded-2xl">
                   <MutedVideo src="/videos/drive-trafikkskule/skaldutalappen.mp4" />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-white/15" />
@@ -276,7 +276,7 @@ export default function DriveTrafikkskule() {
 
       {/* ── Hva vi lagde ── */}
       <section className="relative overflow-hidden px-6 py-16">
-        {/* Bakgrunnsatmosfære — purple glow + filmstripe */}
+        {/* Bakgrunnsatmosfære — red glow + filmstripe */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute inset-0" style={{
             background: "radial-gradient(ellipse 65% 90% at 90% 50%, rgba(124,58,237,0.18) 0%, transparent 65%), radial-gradient(ellipse 40% 50% at 5% 80%, rgba(124,58,237,0.09) 0%, transparent 60%)"
@@ -293,7 +293,7 @@ export default function DriveTrafikkskule() {
           <FadeUp className="mb-10">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
+                <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#dc2626]">Leveransen</p>
                 <div className="flex items-baseline gap-4">
                   <span className="text-8xl font-black leading-none text-white">6</span>
                   <span className="text-3xl font-extrabold text-white/50">Reels</span>
@@ -336,8 +336,8 @@ export default function DriveTrafikkskule() {
                 <div className="absolute left-2 top-2 text-[10px] font-bold tabular-nums text-white/25">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                {/* Subtil purple glow på hover */}
-                <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-[#7c3aed]/0 transition-all duration-300 group-hover:ring-[#7c3aed]/40" />
+                {/* Subtil red glow på hover */}
+                <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-[#dc2626]/0 transition-all duration-300 group-hover:ring-[#dc2626]/40" />
               </motion.div>
             ))}
           </div>
@@ -364,10 +364,10 @@ export default function DriveTrafikkskule() {
           <FadeUp className="mb-8">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
+                <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#dc2626]">Leveransen</p>
                 <h2 className="mb-2 text-7xl font-black leading-none text-white">10</h2>
                 <h3 className="mb-6 text-3xl font-extrabold text-white/60">Bilder</h3>
-                <div className="mb-8 h-px w-12 bg-[#7c3aed]/50" />
+                <div className="mb-8 h-px w-12 bg-[#dc2626]/50" />
                 <p className="mb-6 text-base leading-relaxed text-white/50">
                   Profesjonelle bilder som viser frem Drive Trafikkskule, ansatte og miljøet, klare til bruk på nettside og sosiale medier.
                 </p>
@@ -419,7 +419,7 @@ export default function DriveTrafikkskule() {
         {/* Fremdrift */}
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <FadeUp>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Status</p>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#dc2626]">Status</p>
             <h2 className="mb-10 text-3xl font-extrabold text-white sm:text-4xl">Der vi er nå</h2>
 
             <div className="space-y-6">
@@ -430,14 +430,14 @@ export default function DriveTrafikkskule() {
               ].map((step, i) => (
                 <div key={step.label} className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold ${step.done ? "border-[#7c3aed] bg-[#7c3aed] text-white" : "border-white/20 bg-transparent text-white/30"}`}>
+                    <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold ${step.done ? "border-[#dc2626] bg-[#dc2626] text-white" : "border-white/20 bg-transparent text-white/30"}`}>
                       {step.done ? (
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       ) : (i + 1)}
                     </div>
-                    {i < 2 && <div className={`mt-1 w-px flex-1 ${step.done ? "bg-[#7c3aed]/40" : "bg-white/10"}`} style={{ minHeight: "2rem" }} />}
+                    {i < 2 && <div className={`mt-1 w-px flex-1 ${step.done ? "bg-[#dc2626]/40" : "bg-white/10"}`} style={{ minHeight: "2rem" }} />}
                   </div>
                   <div className="pb-6">
                     <p className={`mb-1 font-semibold ${step.done ? "text-white" : "text-white/40"}`}>{step.label}</p>
@@ -475,7 +475,7 @@ export default function DriveTrafikkskule() {
           <a href="/#prosjekter" className="text-sm text-white/40 transition-colors hover:text-white">
             ← Tilbake til prosjekter
           </a>
-          <a href="/#kontakt" className="text-sm font-semibold text-[#a78bfa] transition-colors hover:text-white">
+          <a href="/#kontakt" className="text-sm font-semibold text-[#f87171] transition-colors hover:text-white">
             Book et møte →
           </a>
         </div>

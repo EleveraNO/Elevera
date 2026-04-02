@@ -70,11 +70,11 @@ export default function CutOClockPage() {
         {/* Overlays */}
         <div className="absolute inset-0 bg-[#0a0a0a]/75" />
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c3aed]/20 blur-[120px]" />
+          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e07318]/20 blur-[120px]" />
         </div>
         <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/10 px-4 py-1.5">
-            <span className="text-sm font-medium text-[#a78bfa]">Frisør · Ålesund</span>
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#e07318]/30 bg-[#e07318]/10 px-4 py-1.5">
+            <span className="text-sm font-medium text-[#fdba74]">Frisør · Ålesund</span>
           </div>
           <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
             Cut O&apos; Clock
@@ -90,7 +90,7 @@ export default function CutOClockPage() {
       <section className="px-6 py-20">
         <div className="mx-auto max-w-5xl">
           <FadeUp className="mb-12 text-center">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Slik jobbet vi</p>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#e07318]">Slik jobbet vi</p>
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Prosessen</h2>
           </FadeUp>
 
@@ -102,7 +102,7 @@ export default function CutOClockPage() {
                 {prosess.map((item) => (
                   <StaggerItem key={item.steg}>
                     <div className="relative flex gap-6 sm:gap-8">
-                      <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-[#7c3aed]/40 bg-[#7c3aed]/10 text-sm font-bold text-[#a78bfa]">
+                      <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-[#e07318]/40 bg-[#e07318]/10 text-sm font-bold text-[#fdba74]">
                         {item.steg}
                       </div>
                       <div className="pb-2 pt-2">
@@ -135,14 +135,14 @@ export default function CutOClockPage() {
       <section className="px-6 py-20 border-t border-white/10">
         <div className="mx-auto max-w-3xl">
           <FadeUp className="mb-10 text-center">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Leveransen</p>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#e07318]">Leveransen</p>
             <h2 className="text-3xl font-bold text-white">Hva ble levert</h2>
           </FadeUp>
           <StaggerContainer className="grid gap-4 sm:grid-cols-2">
             {levert.map((item, i) => (
               <StaggerItem key={i}>
                 <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4">
-                  <svg className="h-5 w-5 flex-shrink-0 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-5 w-5 flex-shrink-0 text-[#e07318]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-sm text-white/80">{item}</span>
@@ -187,7 +187,7 @@ export default function CutOClockPage() {
       <section className="px-6 py-20 border-t border-white/10">
         <div className="mx-auto max-w-sm">
           <FadeUp className="mb-10 text-center">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">Resultatet</p>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#e07318]">Resultatet</p>
             <h2 className="text-3xl font-bold text-white">Se videoen</h2>
           </FadeUp>
           <FadeUp>
@@ -195,11 +195,11 @@ export default function CutOClockPage() {
               className="rounded-2xl"
               style={{
                 boxShadow:
-                  "0 0 60px rgba(124,58,237,0.35), 0 0 120px rgba(124,58,237,0.15)",
+                  "0 0 60px rgba(224,115,24,0.35), 0 0 120px rgba(224,115,24,0.15)",
               }}
             >
               <div
-                className="overflow-hidden rounded-2xl border border-[#7c3aed]/40"
+                className="overflow-hidden rounded-2xl border border-[#e07318]/40"
                 style={{ aspectRatio: "9/16" }}
               >
                 <video
