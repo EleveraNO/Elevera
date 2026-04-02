@@ -159,7 +159,7 @@ export default function Hero() {
 
           {/* ── Right column: floating cards ── */}
           <motion.div
-            className="relative w-full lg:w-[45%]"
+            className="relative hidden w-full lg:block lg:w-[45%]"
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.15, ease }}
