@@ -283,40 +283,57 @@ export default function FloatingCards() {
   }, [reduced]);
 
   return (
-    // Outer wrapper preserves 900:1080 aspect ratio
-    <div style={{ position: "relative", width: "100%", aspectRatio: "900 / 1080", overflow: "visible" }}>
-
-
-      {/* Card 2: Website — middle left (back layer) */}
-      <div ref={card2Ref} style={{
-        position: "absolute",
-        left: "5%", top: "34%",
-        opacity: 0.82,
-        willChange: "transform",
+    <>
+      {/* ── Mobile: horizontal scroll strip ── */}
+      <div className="lg:hidden" style={{
+        display: "flex",
+        gap: 14,
+        overflowX: "auto",
+        paddingBottom: 8,
+        scrollSnapType: "x mandatory",
+        WebkitOverflowScrolling: "touch",
+        msOverflowStyle: "none",
+        scrollbarWidth: "none",
       }}>
-        <WebCard />
+        <div style={{ scrollSnapAlign: "start", flexShrink: 0 }}><VideoCard /></div>
+        <div style={{ scrollSnapAlign: "start", flexShrink: 0 }}><WebCard /></div>
+        <div style={{ scrollSnapAlign: "start", flexShrink: 0 }}><MetricsCard /></div>
       </div>
 
-      {/* Card 3: Metrics — lower center (mid layer) */}
-      <div ref={card3Ref} style={{
-        position: "absolute",
-        left: "33%", top: "58%",
-        opacity: 0.92,
-        willChange: "transform",
-      }}>
-        <MetricsCard />
-      </div>
+      {/* ── Desktop: floating overlapping layout ── */}
+      <div className="hidden lg:block" style={{ position: "relative", width: "100%", aspectRatio: "900 / 1080", overflow: "visible" }}>
 
-      {/* Card 1: Video — upper right (front layer) */}
-      <div ref={card1Ref} style={{
-        position: "absolute",
-        left: "50%", top: "10%",
-        opacity: 1,
-        willChange: "transform",
-      }}>
-        <VideoCard />
-      </div>
+        {/* Card 2: Website — middle left (back layer) */}
+        <div ref={card2Ref} style={{
+          position: "absolute",
+          left: "5%", top: "34%",
+          opacity: 0.82,
+          willChange: "transform",
+        }}>
+          <WebCard />
+        </div>
 
-    </div>
+        {/* Card 3: Metrics — lower center (mid layer) */}
+        <div ref={card3Ref} style={{
+          position: "absolute",
+          left: "33%", top: "58%",
+          opacity: 0.92,
+          willChange: "transform",
+        }}>
+          <MetricsCard />
+        </div>
+
+        {/* Card 1: Video — upper right (front layer) */}
+        <div ref={card1Ref} style={{
+          position: "absolute",
+          left: "50%", top: "10%",
+          opacity: 1,
+          willChange: "transform",
+        }}>
+          <VideoCard />
+        </div>
+
+      </div>
+    </>
   );
 }
