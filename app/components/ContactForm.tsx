@@ -7,7 +7,7 @@ type Status = "idle" | "sending" | "success" | "error";
 const TJENESTER = ["Nettside", "Foto", "Video", "Droneinnhold", "Markedsføring"];
 
 const inputClass =
-  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-[#7c3aed]/60 transition-colors text-sm";
+  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-[#2DD4BF]/60 transition-colors text-sm";
 
 const PAKKE_TJENESTER: Record<string, string[]> = {
   Start: ["Nettside"],
@@ -65,10 +65,10 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="mx-auto max-w-md rounded-2xl border border-[#7c3aed]/30 bg-[#7c3aed]/10 px-8 py-10 text-center">
+      <div className="mx-auto max-w-md rounded-2xl border border-[#2DD4BF]/30 bg-[#2DD4BF]/10 px-8 py-10 text-center">
         <div className="mb-4 flex justify-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#7c3aed]/20">
-            <svg className="h-7 w-7 text-[#a78bfa]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#2DD4BF]/20">
+            <svg className="h-7 w-7 text-[#2DD4BF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
@@ -82,13 +82,13 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-4 text-left">
       {valgtPakke && (
-        <div className="flex items-center justify-between rounded-xl border border-[#7c3aed]/40 bg-[#7c3aed]/10 px-4 py-3">
+        <div className="flex items-center justify-between rounded-xl border border-[#2DD4BF]/40 bg-[#2DD4BF]/10 px-4 py-3">
           <div className="flex items-center gap-2.5">
-            <svg className="h-4 w-4 text-[#a78bfa]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-4 w-4 text-[#2DD4BF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
             <span className="text-sm font-medium text-white">Valgt pakke:</span>
-            <span className="rounded-full bg-[#7c3aed]/30 px-3 py-0.5 text-sm font-semibold text-[#a78bfa]">
+            <span className="rounded-full bg-[#2DD4BF]/20 px-3 py-0.5 text-sm font-semibold text-[#2DD4BF]">
               {valgtPakke}
             </span>
           </div>
@@ -157,7 +157,7 @@ export default function ContactForm() {
                 onClick={() => toggleTjeneste(t)}
                 className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
                   active
-                    ? "border-[#7c3aed] bg-[#7c3aed]/20 text-white"
+                    ? "border-[#2DD4BF] bg-[#2DD4BF]/20 text-white"
                     : "border-white/10 bg-white/5 text-white/50 hover:border-white/20 hover:text-white/80"
                 }`}
               >
@@ -188,7 +188,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-full border border-[#7c3aed]/50 bg-[#7c3aed]/10 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-[#7c3aed]/20 hover:border-[#7c3aed]/80 disabled:opacity-50"
+        className="w-full rounded-full bg-[#2DD4BF] px-8 py-3.5 text-sm font-semibold text-[#09090B] transition-all hover:bg-[#14B8A6] disabled:opacity-50"
       >
         {status === "sending" ? "Sender..." : "Send melding"}
       </button>
