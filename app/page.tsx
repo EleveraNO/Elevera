@@ -63,12 +63,35 @@ const jsonLd = {
   ],
 };
 
+const jsonLdOrganization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Elevera",
+  url: "https://elevera.no",
+  logo: "https://elevera.no/favicon.svg",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+4794974165",
+    contactType: "customer service",
+    areaServed: "NO",
+    availableLanguage: "Norwegian",
+  },
+  sameAs: [
+    "https://www.instagram.com/elevera_no/",
+    "https://www.facebook.com/profile.php?id=61582956691309",
+  ],
+};
+
 export default function Home() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
       />
       <main className="min-h-screen" style={{ background: "#09090B" }}>
         <Navbar />

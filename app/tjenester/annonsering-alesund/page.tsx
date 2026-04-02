@@ -60,11 +60,22 @@ const jsonLd = {
   url: "https://elevera.no/tjenester/annonsering-alesund",
 };
 
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hjem", item: "https://elevera.no" },
+    { "@type": "ListItem", position: 2, name: "Tjenester", item: "https://elevera.no/tjenester" },
+    { "@type": "ListItem", position: 3, name: "Digital annonsering i Ålesund", item: "https://elevera.no/tjenester/annonsering-alesund" },
+  ],
+};
+
 export default function AnnonseringPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 

@@ -28,7 +28,7 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://elevera.no"),
-  title: "Elevera – Foto, Video & Annonsering i Ålesund",
+  title: "Elevera – Digitalbyrå i Ålesund | Nettside, Foto & Digital annonsering",
   description:
     "Elevera er et digitalbyrå i Ålesund som hjelper lokale bedrifter å vokse på nett med profesjonell foto & video, konverterende nettsider og digital annonsering.",
   keywords: [

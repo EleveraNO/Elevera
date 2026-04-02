@@ -163,8 +163,20 @@ const photos = [
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hjem", item: "https://elevera.no" },
+    { "@type": "ListItem", position: 2, name: "Prosjekter", item: "https://elevera.no/prosjekter" },
+    { "@type": "ListItem", position: 3, name: "Drive Trafikkskule", item: "https://elevera.no/prosjekter/drive-trafikkskule" },
+  ],
+};
+
 export default function DriveTrafikkskule() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
     <main className="min-h-screen bg-[#0a0a0a]">
       <style>{`
         .reels-container { height: 480px; aspect-ratio: 9/16; }
@@ -484,5 +496,6 @@ export default function DriveTrafikkskule() {
       <PageCTA heading="Vil du ha lignende resultater?" />
       <Footer />
     </main>
+    </>
   );
 }

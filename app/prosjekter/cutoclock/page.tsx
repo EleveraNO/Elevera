@@ -51,8 +51,20 @@ const levert = [
   "Publiseringsplan for sosiale medier",
 ];
 
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hjem", item: "https://elevera.no" },
+    { "@type": "ListItem", position: 2, name: "Prosjekter", item: "https://elevera.no/prosjekter" },
+    { "@type": "ListItem", position: 3, name: "Cut O' Clock", item: "https://elevera.no/prosjekter/cutoclock" },
+  ],
+};
+
 export default function CutOClockPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
     <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 
@@ -222,5 +234,6 @@ export default function CutOClockPage() {
 
       <Footer />
     </main>
+    </>
   );
 }

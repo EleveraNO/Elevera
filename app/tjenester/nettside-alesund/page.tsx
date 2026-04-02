@@ -57,10 +57,21 @@ const jsonLd = {
   },
 };
 
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hjem", item: "https://elevera.no" },
+    { "@type": "ListItem", position: 2, name: "Tjenester", item: "https://elevera.no/tjenester" },
+    { "@type": "ListItem", position: 3, name: "Nettside i Ålesund", item: "https://elevera.no/tjenester/nettside-alesund" },
+  ],
+};
+
 export default function NettsidesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 

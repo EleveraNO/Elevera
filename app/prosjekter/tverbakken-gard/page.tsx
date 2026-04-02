@@ -60,6 +60,16 @@ const deliverables = [
   },
 ];
 
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Hjem", item: "https://elevera.no" },
+    { "@type": "ListItem", position: 2, name: "Prosjekter", item: "https://elevera.no/prosjekter" },
+    { "@type": "ListItem", position: 3, name: "Tverbakken Gård", item: "https://elevera.no/prosjekter/tverbakken-gard" },
+  ],
+};
+
 export default function TverbakkenGard() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -94,6 +104,8 @@ export default function TverbakkenGard() {
   const bottomMaskOpacity = useTransform(scrollYProgress, [0.88, 0.97], [1, 0]);
 
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
     <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
 
@@ -514,5 +526,6 @@ export default function TverbakkenGard() {
       <PageCTA heading="Din bedrift har en historie. La oss fortelle den." />
       <Footer />
     </main>
+    </>
   );
 }
