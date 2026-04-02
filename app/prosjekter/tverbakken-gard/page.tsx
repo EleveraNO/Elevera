@@ -106,7 +106,7 @@ export default function TverbakkenGard() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="min-h-screen bg-[#0a0a0a]" style={{ overflowX: "clip" }}>
       <Navbar />
 
       {/* ── Hero ── */}
