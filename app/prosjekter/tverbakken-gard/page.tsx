@@ -110,114 +110,148 @@ export default function TverbakkenGard() {
       <main className="min-h-screen bg-[#0a0a0a]" style={{ overflowX: "clip" }}>
         <Navbar />
 
-        {/* ── Hero: MacBook som sentervisual ── */}
-        <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pb-12 pt-28">
+        {/* ── Hero: split layout — tekst venstre, MacBook høyre ── */}
+        <section className="relative flex min-h-screen items-center overflow-hidden px-6 pb-16 pt-28">
 
-          {/* Atmosfærisk mørk bakgrunn — stor amber-glow + subtil radial */}
+          {/* Ambient glow bak MacBook (høyre side) */}
           <div
-            className="pointer-events-none absolute inset-0"
+            className="pointer-events-none absolute"
             style={{
-              background:
-                "radial-gradient(ellipse 80% 60% at 50% 70%, rgba(245,158,11,0.09) 0%, rgba(245,158,11,0.03) 40%, transparent 70%)",
+              right: "-5%", top: "50%",
+              width: 700, height: 700,
+              transform: "translateY(-50%)",
+              background: "radial-gradient(circle, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.03) 40%, transparent 70%)",
+              borderRadius: "50%",
             }}
           />
-          {/* Subtil vignette øverst og nederst */}
-          <div
-            className="pointer-events-none absolute inset-x-0 top-0 h-40"
-            style={{ background: "linear-gradient(to bottom, #0a0a0a 0%, transparent 100%)" }}
-          />
-          <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-32"
-            style={{ background: "linear-gradient(to top, #0a0a0a 0%, transparent 100%)" }}
-          />
 
-          {/* Innhold */}
-          <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
+          <div className="relative z-10 mx-auto w-full max-w-6xl">
+            <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-8">
 
-            {/* Eyebrow */}
-            <motion.p
-              className="mb-5 text-xs font-semibold uppercase tracking-[0.22em]"
-              style={{ color: "rgba(245,158,11,0.6)" }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, ease }}
-            >
-              Casestudie — Retainer
-            </motion.p>
+              {/* ── Venstre: tekst ── */}
+              <div className="w-full lg:w-[46%]">
 
-            {/* Tittel */}
-            <motion.h1
-              className="mb-10 font-extrabold leading-[1.0] tracking-tight text-white"
-              style={{ fontSize: "clamp(3rem, 8vw, 7rem)" }}
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.07, ease }}
-            >
-              Tverbakken{" "}
-              <em
-                style={{
-                  fontFamily: "var(--font-fraunces), Georgia, serif",
-                  fontStyle: "italic",
-                  fontWeight: 700,
-                  color: ACCENT,
-                }}
+                {/* Eyebrow */}
+                <motion.div
+                  className="mb-6 inline-flex items-center gap-2.5"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease }}
+                >
+                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: ACCENT }} />
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: "rgba(245,158,11,0.65)" }}>
+                    Casestudie · Retainer
+                  </span>
+                </motion.div>
+
+                {/* Tittel */}
+                <motion.h1
+                  className="mb-4 font-extrabold leading-[1.0] tracking-tight text-white"
+                  style={{ fontSize: "clamp(3rem, 6vw, 5.5rem)" }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.65, delay: 0.08, ease }}
+                >
+                  Tverbakken
+                  <br />
+                  <em
+                    style={{
+                      fontFamily: "var(--font-fraunces), Georgia, serif",
+                      fontStyle: "italic",
+                      fontWeight: 700,
+                      color: ACCENT,
+                    }}
+                  >
+                    Gård
+                  </em>
+                </motion.h1>
+
+                {/* Lokasjon */}
+                <motion.p
+                  className="mb-8 text-sm tracking-wide"
+                  style={{ color: "rgba(242,237,230,0.38)" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.18, ease }}
+                >
+                  Kjerringøy, Nordland · Gård siden 1755
+                </motion.p>
+
+                {/* Tags */}
+                <motion.div
+                  className="mb-8 flex flex-wrap gap-2"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.26, ease }}
+                >
+                  {["Nettside", "Design", "E-post integrasjon"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded border px-3 py-1 text-xs font-medium"
+                      style={{ borderColor: ACCENT_BORDER, background: ACCENT_DIM, color: "#fbbf24" }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </motion.div>
+
+                {/* CTA */}
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.34, ease }}
+                >
+                  <a
+                    href="https://tverbakkengard.no"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5"
+                    style={{ background: ACCENT, color: "#0a0a0a" }}
+                    onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = "#d97706")}
+                    onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = ACCENT)}
+                  >
+                    Se nettsiden live
+                    <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </motion.div>
+              </div>
+
+              {/* ── Høyre: MacBook med floating ── */}
+              <motion.div
+                className="relative w-full lg:w-[54%]"
+                initial={{ opacity: 0, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.9, delay: 0.12, ease }}
               >
-                Gård
-              </em>
-            </motion.h1>
+                <div
+                  className="pointer-events-none absolute blur-3xl"
+                  style={{
+                    inset: "-15% -8%",
+                    background: "radial-gradient(ellipse at 55% 60%, rgba(245,158,11,0.22) 0%, transparent 65%)",
+                  }}
+                />
+                <motion.div
+                  animate={{ y: [0, -14, 0] }}
+                  transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Image
+                    src="/images/tverbakken-gard/heromockup.png"
+                    alt="Tverbakken Gård nettside på MacBook"
+                    width={1440}
+                    height={1080}
+                    className="relative w-full h-auto"
+                    style={{
+                      filter: "drop-shadow(0 48px 80px rgba(0,0,0,0.75)) drop-shadow(0 0 50px rgba(245,158,11,0.18))",
+                    }}
+                    sizes="(max-width: 768px) 95vw, 55vw"
+                    priority
+                  />
+                </motion.div>
+              </motion.div>
 
-            {/* MacBook */}
-            <motion.div
-              className="relative mx-auto mb-10"
-              style={{ maxWidth: 820 }}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.14, ease }}
-            >
-              <div
-                className="pointer-events-none absolute blur-3xl"
-                style={{
-                  inset: "-10% -5%",
-                  background: "radial-gradient(ellipse at 50% 65%, rgba(245,158,11,0.18) 0%, transparent 65%)",
-                }}
-              />
-              <Image
-                src="/images/tverbakken-gard/heromockup.png"
-                alt="Tverbakken Gård nettside på MacBook"
-                width={1440}
-                height={1080}
-                className="relative w-full h-auto"
-                style={{
-                  filter: "drop-shadow(0 48px 80px rgba(0,0,0,0.7)) drop-shadow(0 0 40px rgba(245,158,11,0.14))",
-                }}
-                sizes="(max-width: 768px) 95vw, 820px"
-                priority
-              />
-            </motion.div>
-
-            {/* CTA */}
-            <motion.a
-              href="https://tverbakkengard.no"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: ACCENT, color: "#0a0a0a" }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.3, ease }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.background = "#d97706")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.background = ACCENT)
-              }
-            >
-              Se nettsiden live
-              <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </motion.a>
-
+            </div>
           </div>
         </section>
 
