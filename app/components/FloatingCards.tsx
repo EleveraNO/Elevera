@@ -283,8 +283,23 @@ export default function FloatingCards() {
   }, [reduced]);
 
   return (
-    // Outer wrapper preserves 900:1080 aspect ratio
-    <div style={{ position: "relative", width: "100%", aspectRatio: "900 / 1080", overflow: "visible" }}>
+    <>
+      {/* ── Mobile: horizontal scroll strip (hidden on lg+) ── */}
+      <div className="flex lg:hidden" style={{
+        gap: 14,
+        overflowX: "auto",
+        paddingBottom: 8,
+        scrollSnapType: "x mandatory",
+        scrollbarWidth: "none",
+      }}>
+        <style>{`.fc-scroll::-webkit-scrollbar { display: none; }`}</style>
+        <div style={{ scrollSnapAlign: "start", flexShrink: 0 }}><VideoCard /></div>
+        <div style={{ scrollSnapAlign: "start", flexShrink: 0 }}><WebCard /></div>
+        <div style={{ scrollSnapAlign: "start", flexShrink: 0 }}><MetricsCard /></div>
+      </div>
+
+      {/* ── Desktop: floating overlapping layout (hidden below lg) ── */}
+      <div className="hidden lg:block" style={{ position: "relative", width: "100%", aspectRatio: "900 / 1080", overflow: "visible" }}>
 
       {/* Card 2: Website — middle left (back layer) */}
       <div ref={card2Ref} style={{
@@ -316,6 +331,7 @@ export default function FloatingCards() {
         <VideoCard />
       </div>
 
-    </div>
+      </div>
+    </>
   );
 }
