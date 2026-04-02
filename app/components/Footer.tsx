@@ -61,7 +61,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#tjenester" className="transition-colors hover:text-white">
-                  Betalt annonsering
+                  Digital annonsering
                 </a>
               </li>
               <li>

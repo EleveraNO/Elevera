@@ -18,7 +18,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Elevera",
   description:
-    "Digitalbyrå i Ålesund som hjelper lokale bedrifter å vokse på nett med nettside, foto & video og betalt annonsering.",
+    "Digitalbyrå i Ålesund som hjelper lokale bedrifter å vokse på nett med nettside, foto & video og digital annonsering.",
   url: "https://elevera.no",
   image: "https://elevera.no/opengraph-image",
   telephone: "+4794974165",

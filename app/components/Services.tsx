@@ -34,7 +34,7 @@ const services = [
   },
   {
     number: "03",
-    title: "Betalt annonsering",
+    title: "Digital annonsering",
     href: "/tjenester/annonsering-alesund",
     description:
       "Vi administrerer Meta- og Google-annonser som faktisk gir avkastning. Datadrevet optimalisering som skalerer det som virker og kutter det som ikke gjør det.",

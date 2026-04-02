@@ -81,7 +81,7 @@ export default function OGImage() {
             textAlign: "center",
           }}
         >
-          Nettside · Foto & Video · Betalt annonsering
+          Nettside · Foto & Video · Digital annonsering
         </div>
 
         {/* Badge */}

@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "Inkluderer pakkene annonsekostnader?",
-    answer: "Nei, annonsekostnadene (budsjett til Meta og Google) kommer i tillegg til pakkeprisene. Vi anbefaler et minimumsbudsjett på 3 000–5 000 kr/mnd for betalt annonsering.",
+    answer: "Nei, annonsekostnadene (budsjett til Meta og Google) kommer i tillegg til pakkeprisene. Vi anbefaler et minimumsbudsjett på 3 000–5 000 kr/mnd for digital annonsering.",
   },
   {
     question: "Kan jeg oppgradere eller endre pakke underveis?",

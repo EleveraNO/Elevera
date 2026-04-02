@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://elevera.no"),
   title: "Elevera – Foto, Video & Annonsering i Ålesund",
   description:
-    "Elevera er et digitalbyrå i Ålesund som hjelper lokale bedrifter å vokse på nett med profesjonell foto & video, konverterende nettsider og betalt annonsering.",
+    "Elevera er et digitalbyrå i Ålesund som hjelper lokale bedrifter å vokse på nett med profesjonell foto & video, konverterende nettsider og digital annonsering.",
   keywords: [
     "digitalbyrå Ålesund",
     "nettside Ålesund",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     url: "https://elevera.no",
     title: "Elevera – Digitalbyrå i Ålesund",
     description:
-      "Vi hjelper bedrifter i Ålesund og omegn å vokse på nett. Nettside, foto & video, og betalt annonsering – alt fra én partner.",
+      "Vi hjelper bedrifter i Ålesund og omegn å vokse på nett. Nettside, foto & video, og digital annonsering – alt fra én partner.",
     siteName: "Elevera",
     locale: "nb_NO",
   },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Elevera – Digitalbyrå i Ålesund",
     description:
-      "Vi hjelper bedrifter i Ålesund og omegn å vokse på nett. Nettside, foto & video, og betalt annonsering – alt fra én partner.",
+      "Vi hjelper bedrifter i Ålesund og omegn å vokse på nett. Nettside, foto & video, og digital annonsering – alt fra én partner.",
   },
   icons: {
     icon: [
