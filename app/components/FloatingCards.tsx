@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -231,86 +231,120 @@ function MetricsCard() {
   );
 }
 
-// ─── 3D Carousel (mobile) ──────────────────────────────────────────────────────
+// ─── Coverflow Carousel (mobile) ───────────────────────────────────────────────
 
 function Carousel3D() {
   const reduced = useReducedMotion();
-  const sceneRef = useRef<HTMLDivElement>(null);
-  const rafRef = useRef<number>(0);
-  const angleRef = useRef(0);
-  const targetRef = useRef(0);
+  const [active, setActive] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const touchStartX = useRef(0);
 
-  // Auto-rotate
-  useEffect(() => {
+  const N = 3;
+
+  const resetTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
     if (reduced) return;
-    function tick() {
-      targetRef.current -= 0.014;
-      angleRef.current += (targetRef.current - angleRef.current) * 0.06;
-      if (sceneRef.current) {
-        sceneRef.current.style.transform = `rotateY(${angleRef.current}deg)`;
-      }
-      rafRef.current = requestAnimationFrame(tick);
-    }
-    rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
+    timerRef.current = setInterval(() => {
+      setActive(i => (i + 1) % N);
+    }, 3200);
   }, [reduced]);
 
-  const advance = useCallback(() => {
-    targetRef.current -= 120;
-  }, []);
+  useEffect(() => {
+    resetTimer();
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [resetTimer]);
 
-  const RADIUS = 200;
+  const go = useCallback((dir: 1 | -1) => {
+    setActive(i => (i + dir + N) % N);
+    resetTimer();
+  }, [resetTimer]);
 
-  const cards = [
-    { el: <VideoCard />, angle: 0 },
-    { el: <WebCard />,   angle: 120 },
-    { el: <MetricsCard />, angle: 240 },
-  ];
+  const cards = [<VideoCard key="v" />, <WebCard key="w" />, <MetricsCard key="m" />];
 
   return (
     <div
-      style={{ perspective: 700, width: "100%", height: 320, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}
-      onClick={advance}
-      aria-label="Trykk for å rotere"
+      style={{ position: "relative", width: "100%", paddingBottom: 48 }}
+      onTouchStart={e => { touchStartX.current = e.touches[0].clientX; }}
+      onTouchEnd={e => {
+        const dx = e.changedTouches[0].clientX - touchStartX.current;
+        if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+      }}
     >
-      {/* Hint text */}
+      {/* Ambient glow behind active card */}
+      <div style={{
+        position: "absolute",
+        top: "30%", left: "50%",
+        width: 220, height: 220,
+        transform: "translate(-50%, -50%)",
+        background: "radial-gradient(circle, rgba(45,212,191,0.13) 0%, transparent 70%)",
+        borderRadius: "50%",
+        pointerEvents: "none",
+        transition: "opacity 0.4s ease",
+      }} />
+
+      {/* Stage */}
+      <div style={{ position: "relative", height: 280, perspective: 900, overflow: "hidden" }}>
+        {cards.map((card, i) => {
+          const offset = ((i - active + N) % N + N) % N;
+          // 0 = active, 1 = right, 2 = left (wrapping)
+          const pos = offset === 0 ? 0 : offset === 1 ? 1 : -1;
+          const isActive = pos === 0;
+
+          return (
+            <div
+              key={i}
+              onClick={() => { if (!isActive) { go(pos as 1 | -1); } }}
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transformOrigin: "center center",
+                transform: [
+                  `translateX(calc(-50% + ${pos * 210}px))`,
+                  `translateY(-50%)`,
+                  `rotateY(${pos * -38}deg)`,
+                  `scale(${isActive ? 0.82 : 0.62})`,
+                ].join(" "),
+                opacity: isActive ? 1 : 0.38,
+                transition: reduced ? "none" : "transform 0.5s cubic-bezier(0.34,1.1,0.64,1), opacity 0.4s ease",
+                zIndex: isActive ? 3 : 1,
+                cursor: isActive ? "default" : "pointer",
+                filter: isActive ? "none" : "brightness(0.6)",
+              }}
+            >
+              {card}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Dot indicators */}
       <div style={{
         position: "absolute",
         bottom: 0,
-        left: "50%", transform: "translateX(-50%)",
-        fontSize: 11,
-        color: "rgba(242,237,230,0.3)",
-        fontFamily: "system-ui, sans-serif",
-        letterSpacing: "0.06em",
-        pointerEvents: "none",
-        whiteSpace: "nowrap",
+        left: "50%",
+        transform: "translateX(-50%)",
+        display: "flex",
+        alignItems: "center",
+        gap: 6,
       }}>
-        Trykk for å rotere
-      </div>
-
-      <div
-        ref={sceneRef}
-        style={{
-          position: "relative",
-          width: 0, height: 0,
-          transformStyle: "preserve-3d",
-          transform: "rotateY(0deg)",
-        }}
-      >
-        {cards.map(({ el, angle }, i) => (
-          <div
+        {Array.from({ length: N }).map((_, i) => (
+          <button
             key={i}
+            onClick={() => { setActive(i); resetTimer(); }}
             style={{
-              position: "absolute",
-              transform: `rotateY(${angle}deg) translateZ(${RADIUS}px)`,
-              transformStyle: "preserve-3d",
-              translate: "-50% -50%",
+              width: i === active ? 22 : 6,
+              height: 6,
+              borderRadius: 3,
+              background: i === active ? "#2DD4BF" : "rgba(255,255,255,0.18)",
+              border: "none",
+              padding: 0,
+              cursor: "pointer",
+              transition: "all 0.35s cubic-bezier(0.34,1.1,0.64,1)",
+              boxShadow: i === active ? "0 0 8px rgba(45,212,191,0.5)" : "none",
             }}
-          >
-            <div style={{ transform: "scale(0.78)", transformOrigin: "top left" }}>
-              {el}
-            </div>
-          </div>
+            aria-label={`Gå til kort ${i + 1}`}
+          />
         ))}
       </div>
     </div>
