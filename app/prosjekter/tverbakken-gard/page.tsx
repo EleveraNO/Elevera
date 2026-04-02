@@ -113,22 +113,22 @@ export default function TverbakkenGard() {
         {/* ── Hero: MacBook som sentervisual ── */}
         <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pb-12 pt-28">
 
-          {/* Bakgrunnsbilde */}
-          <Image
-            src="/images/tverbakken-gard/hero.jpg"
-            alt=""
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-          {/* Gradientoverlay */}
+          {/* Atmosfærisk mørk bakgrunn — stor amber-glow + subtil radial */}
           <div
-            className="absolute inset-0"
+            className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.45) 45%, rgba(10,10,10,0.82) 100%)",
+                "radial-gradient(ellipse 80% 60% at 50% 70%, rgba(245,158,11,0.09) 0%, rgba(245,158,11,0.03) 40%, transparent 70%)",
             }}
+          />
+          {/* Subtil vignette øverst og nederst */}
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 h-40"
+            style={{ background: "linear-gradient(to bottom, #0a0a0a 0%, transparent 100%)" }}
+          />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-32"
+            style={{ background: "linear-gradient(to top, #0a0a0a 0%, transparent 100%)" }}
           />
 
           {/* Innhold */}
