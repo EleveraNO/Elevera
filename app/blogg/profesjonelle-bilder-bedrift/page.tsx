@@ -54,7 +54,7 @@ export default function BloggInnlegg() {
             {/* Header */}
             <div className="mb-12">
               <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/10 px-3 py-1 text-xs font-medium text-[#a78bfa]">
+                <span className="rounded-full border border-[#2DD4BF]/25 bg-[#2DD4BF]/08 px-3 py-1 text-xs font-medium text-[#2DD4BF]">
                   Foto & Video
                 </span>
                 <span className="text-xs text-white/30">13. mars 2026</span>
@@ -134,7 +134,7 @@ export default function BloggInnlegg() {
             </div>
 
             {/* CTA */}
-            <div className="mt-16 rounded-3xl border border-[#7c3aed]/30 bg-[#7c3aed]/10 p-10 text-center">
+            <div className="mt-16 rounded-3xl border border-[#2DD4BF]/20 bg-[#2DD4BF]/06 p-10 text-center">
               <h3 className="mb-3 text-2xl font-bold text-white">Klar for profesjonelle bilder?</h3>
               <p className="mb-6 text-white/60">
                 Vi hjelper bedrifter i Ålesund og på Sunnmøre med foto og video som faktisk gir resultater.
@@ -144,7 +144,7 @@ export default function BloggInnlegg() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#7c3aed] px-8 py-3.5 font-semibold text-white shadow-lg shadow-[#7c3aed]/30 transition-all hover:bg-[#6d28d9] hover:-translate-y-0.5"
+                  className="rounded-full bg-[#2DD4BF] px-8 py-3.5 font-semibold text-[#09090B] transition-all hover:bg-[#14B8A6] hover:-translate-y-0.5"
                 >
                   Book gratis møte
                 </a>

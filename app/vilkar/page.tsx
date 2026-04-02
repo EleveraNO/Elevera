@@ -68,7 +68,7 @@ export default function Vilkar() {
             <h2 className="text-xl font-semibold mb-3">6. Kontakt</h2>
             <p className="text-white/60 leading-relaxed">
               Spørsmål om vilkårene kan rettes til{" "}
-              <a href="mailto:tverbakk@elevera.no" className="text-[#7c3aed] hover:underline">
+              <a href="mailto:tverbakk@elevera.no" className="text-[#2DD4BF] hover:underline">
                 tverbakk@elevera.no
               </a>
               .

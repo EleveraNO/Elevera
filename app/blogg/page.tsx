@@ -39,7 +39,7 @@ export default function BloggPage() {
       <section className="px-6 pt-32 pb-20">
         <div className="mx-auto max-w-4xl">
           <div className="mb-12">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#7c3aed]">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#2DD4BF]">
               Blogg
             </p>
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
@@ -55,20 +55,20 @@ export default function BloggPage() {
               <Link
                 key={post.slug}
                 href={`/blogg/${post.slug}`}
-                className="group block rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-[#7c3aed]/40 hover:bg-white/8"
+                className="group block rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-[#2DD4BF]/40 hover:bg-white/8"
               >
                 <div className="mb-3 flex items-center gap-3">
-                  <span className="rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/10 px-3 py-1 text-xs font-medium text-[#a78bfa]">
+                  <span className="rounded-full border border-[#2DD4BF]/30 bg-[#2DD4BF]/10 px-3 py-1 text-xs font-medium text-[#2DD4BF]">
                     {post.kategori}
                   </span>
                   <span className="text-xs text-white/30">{post.dato}</span>
                   <span className="text-xs text-white/30">{post.lesetid}</span>
                 </div>
-                <h2 className="mb-3 text-xl font-bold text-white group-hover:text-[#a78bfa] transition-colors">
+                <h2 className="mb-3 text-xl font-bold text-white group-hover:text-white transition-colors">
                   {post.tittel}
                 </h2>
                 <p className="text-sm leading-relaxed text-white/50">{post.ingress}</p>
-                <div className="mt-4 flex items-center gap-1 text-sm font-medium text-[#7c3aed]">
+                <div className="mt-4 flex items-center gap-1 text-sm font-medium text-[#2DD4BF]">
                   Les artikkel
                   <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
