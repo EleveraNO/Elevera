@@ -206,7 +206,7 @@ export default function TverbakkenGard() {
             </FadeUp>
 
             {/* MacBook mockup — overflows column intentionally */}
-            <FadeUp delay={0.15} style={{ overflow: "visible" }}>
+            <FadeUp delay={0.15}>
               <div
                 className="relative"
                 style={{
