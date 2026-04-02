@@ -135,26 +135,23 @@ export default function TverbakkenGard() {
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
 
             {/* Eyebrow */}
-            <motion.div
-              className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5"
-              style={{ borderColor: ACCENT_BORDER, background: ACCENT_DIM }}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+            <motion.p
+              className="mb-5 text-xs font-semibold uppercase tracking-[0.22em]"
+              style={{ color: "rgba(245,158,11,0.6)" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.5, ease }}
             >
-              <span className="h-1.5 w-1.5 rounded-full" style={{ background: ACCENT }} />
-              <span className="text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: ACCENT }}>
-                Casestudie · Retainer
-              </span>
-            </motion.div>
+              Casestudie — Retainer
+            </motion.p>
 
             {/* Tittel */}
             <motion.h1
-              className="mb-3 font-extrabold leading-[1.0] tracking-tight text-white"
-              style={{ fontSize: "clamp(3.2rem, 9vw, 7.5rem)" }}
-              initial={{ opacity: 0, y: 22 }}
+              className="mb-10 font-extrabold leading-[1.0] tracking-tight text-white"
+              style={{ fontSize: "clamp(3rem, 8vw, 7rem)" }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.08, ease }}
+              transition={{ duration: 0.6, delay: 0.07, ease }}
             >
               Tverbakken{" "}
               <em
@@ -163,103 +160,64 @@ export default function TverbakkenGard() {
                   fontStyle: "italic",
                   fontWeight: 700,
                   color: ACCENT,
-                  textShadow: "0 0 60px rgba(245,158,11,0.4)",
                 }}
               >
                 Gård
               </em>
             </motion.h1>
 
-            {/* Undertittel */}
-            <motion.p
-              className="mb-10 text-sm tracking-wide"
-              style={{ color: "rgba(242,237,230,0.42)" }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2, ease }}
-            >
-              Kjerringøy, Nordland · Gård siden 1755
-            </motion.p>
-
-            {/* MacBook — hovedelementet */}
+            {/* MacBook */}
             <motion.div
-              className="relative mx-auto mb-8"
-              style={{ maxWidth: 860 }}
-              initial={{ opacity: 0, y: 32, scale: 0.97 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.9, delay: 0.18, ease }}
+              className="relative mx-auto mb-10"
+              style={{ maxWidth: 820 }}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.14, ease }}
             >
-              {/* Amber glow */}
               <div
                 className="pointer-events-none absolute blur-3xl"
                 style={{
-                  inset: "-15% -8%",
-                  background:
-                    "radial-gradient(ellipse at 50% 60%, rgba(245,158,11,0.28) 0%, transparent 65%)",
+                  inset: "-10% -5%",
+                  background: "radial-gradient(ellipse at 50% 65%, rgba(245,158,11,0.18) 0%, transparent 65%)",
                 }}
               />
-              {/* Floating animation */}
-              <motion.div
-                animate={{ y: [0, -14, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <Image
-                  src="/images/tverbakken-gard/heromockup.png"
-                  alt="Tverbakken Gård nettside på MacBook"
-                  width={1440}
-                  height={1080}
-                  className="relative w-full h-auto"
-                  style={{
-                    filter:
-                      "drop-shadow(0 60px 100px rgba(0,0,0,0.8)) drop-shadow(0 0 60px rgba(245,158,11,0.22))",
-                  }}
-                  sizes="(max-width: 768px) 95vw, 860px"
-                  priority
-                />
-              </motion.div>
+              <Image
+                src="/images/tverbakken-gard/heromockup.png"
+                alt="Tverbakken Gård nettside på MacBook"
+                width={1440}
+                height={1080}
+                className="relative w-full h-auto"
+                style={{
+                  filter: "drop-shadow(0 48px 80px rgba(0,0,0,0.7)) drop-shadow(0 0 40px rgba(245,158,11,0.14))",
+                }}
+                sizes="(max-width: 768px) 95vw, 820px"
+                priority
+              />
             </motion.div>
 
-            {/* Tags + CTA */}
-            <motion.div
-              className="flex flex-col items-center gap-5"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.38, ease }}
+            {/* CTA */}
+            <motion.a
+              href="https://tverbakkengard.no"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5"
+              style={{ background: ACCENT, color: "#0a0a0a" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.3, ease }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLAnchorElement).style.background = "#d97706")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLAnchorElement).style.background = ACCENT)
+              }
             >
-              <div className="flex flex-wrap justify-center gap-2">
-                {["Nettside", "Design", "E-post integrasjon"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded border px-3 py-1 text-xs font-medium"
-                    style={{
-                      borderColor: ACCENT_BORDER,
-                      background: ACCENT_DIM,
-                      color: "#fbbf24",
-                    }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <a
-                href="https://tverbakkengard.no"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5"
-                style={{ background: ACCENT, color: "#0a0a0a" }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLAnchorElement).style.background = "#d97706")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLAnchorElement).style.background = ACCENT)
-                }
-              >
-                Se nettsiden live
-                <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </motion.div>
+              Se nettsiden live
+              <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </motion.a>
+
           </div>
         </section>
 
