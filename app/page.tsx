@@ -5,7 +5,6 @@ import Problems from "./components/Problems";
 import Services from "./components/Services";
 import Process from "./components/Process";
 import Portfolio from "./components/Portfolio";
-import MidCTA from "./components/MidCTA";
 import Testimonials from "./components/Testimonials";
 import WhyElevera from "./components/WhyElevera";
 import Pricing from "./components/Pricing";
@@ -102,7 +101,6 @@ export default function Home() {
         <Services />
         <Process />
         <Portfolio />
-        <MidCTA />
         <Testimonials />
         <WhyElevera />
         <Pricing />

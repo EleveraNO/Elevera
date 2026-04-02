@@ -556,18 +556,6 @@ export default function TverbakkenGard() {
           </div>
         </section>
 
-        {/* ── Footer nav ── */}
-        <div className="mx-auto max-w-6xl border-t border-white/10 px-6 pt-8 mt-8 mb-4">
-          <div className="flex items-center justify-between">
-            <a href="/#prosjekter" className="text-sm text-white/40 transition-colors hover:text-white">
-              ← Tilbake til prosjekter
-            </a>
-            <a href="/#kontakt" className="text-sm font-semibold transition-colors hover:text-white" style={{ color: "#fbbf24" }}>
-              Book et møte →
-            </a>
-          </div>
-        </div>
-
         <PageCTA heading="Din bedrift har en historie. La oss fortelle den." />
         <Footer />
       </main>
