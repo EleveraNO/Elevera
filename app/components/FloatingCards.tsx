@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -231,6 +231,92 @@ function MetricsCard() {
   );
 }
 
+// ─── 3D Carousel (mobile) ──────────────────────────────────────────────────────
+
+function Carousel3D() {
+  const reduced = useReducedMotion();
+  const sceneRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number>(0);
+  const angleRef = useRef(0);
+  const targetRef = useRef(0);
+
+  // Auto-rotate
+  useEffect(() => {
+    if (reduced) return;
+    function tick() {
+      targetRef.current -= 0.014;
+      angleRef.current += (targetRef.current - angleRef.current) * 0.06;
+      if (sceneRef.current) {
+        sceneRef.current.style.transform = `rotateY(${angleRef.current}deg)`;
+      }
+      rafRef.current = requestAnimationFrame(tick);
+    }
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [reduced]);
+
+  const advance = useCallback(() => {
+    targetRef.current -= 120;
+  }, []);
+
+  const RADIUS = 200;
+
+  const cards = [
+    { el: <VideoCard />, angle: 0 },
+    { el: <WebCard />,   angle: 120 },
+    { el: <MetricsCard />, angle: 240 },
+  ];
+
+  return (
+    <div
+      style={{ perspective: 700, width: "100%", height: 320, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}
+      onClick={advance}
+      aria-label="Trykk for å rotere"
+    >
+      {/* Hint text */}
+      <div style={{
+        position: "absolute",
+        bottom: 0,
+        left: "50%", transform: "translateX(-50%)",
+        fontSize: 11,
+        color: "rgba(242,237,230,0.3)",
+        fontFamily: "system-ui, sans-serif",
+        letterSpacing: "0.06em",
+        pointerEvents: "none",
+        whiteSpace: "nowrap",
+      }}>
+        Trykk for å rotere
+      </div>
+
+      <div
+        ref={sceneRef}
+        style={{
+          position: "relative",
+          width: 0, height: 0,
+          transformStyle: "preserve-3d",
+          transform: "rotateY(0deg)",
+        }}
+      >
+        {cards.map(({ el, angle }, i) => (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              transform: `rotateY(${angle}deg) translateZ(${RADIUS}px)`,
+              transformStyle: "preserve-3d",
+              translate: "-50% -50%",
+            }}
+          >
+            <div style={{ transform: "scale(0.78)", transformOrigin: "top left" }}>
+              {el}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Main component ────────────────────────────────────────────────────────────
 
 export default function FloatingCards() {
@@ -284,18 +370,9 @@ export default function FloatingCards() {
 
   return (
     <>
-      {/* ── Mobile: horizontal scroll strip (hidden on lg+) ── */}
-      <div className="flex lg:hidden" style={{
-        gap: 14,
-        overflowX: "auto",
-        paddingBottom: 8,
-        scrollSnapType: "x mandatory",
-        scrollbarWidth: "none",
-      }}>
-        <style>{`.fc-scroll::-webkit-scrollbar { display: none; }`}</style>
-        <div style={{ scrollSnapAlign: "start", flexShrink: 0 }}><VideoCard /></div>
-        <div style={{ scrollSnapAlign: "start", flexShrink: 0 }}><WebCard /></div>
-        <div style={{ scrollSnapAlign: "start", flexShrink: 0 }}><MetricsCard /></div>
+      {/* ── Mobile: 3D carousel (hidden on lg+) ── */}
+      <div className="block lg:hidden" style={{ position: "relative", paddingBottom: 24 }}>
+        <Carousel3D />
       </div>
 
       {/* ── Desktop: floating overlapping layout (hidden below lg) ── */}
