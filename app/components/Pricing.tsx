@@ -123,8 +123,7 @@ export default function Pricing() {
             </span>
             {[
               "Innholdsstrategi",
-              "Tekstforfatning",
-              "Grafisk design",
+              "Foto- og videoredigering",
               "Publisering",
               "Månedlig oppfølging",
             ].map((item) => (
