@@ -388,10 +388,39 @@ export default function Pricing() {
           </div>
         </FadeUp>
 
+        {/* 3-month onboarding callout */}
+        <FadeUp delay={0.25}>
+          <div
+            className="mt-10 flex flex-col items-center gap-2 rounded-xl px-6 py-5 text-center sm:flex-row sm:text-left"
+            style={{
+              border: "1px solid rgba(255,255,255,0.06)",
+              background: "#111115",
+            }}
+          >
+            <div
+              className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
+              style={{ background: "rgba(45,212,191,0.12)" }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-sm font-semibold" style={{ color: "#F2EDE6" }}>
+                Vi starter alltid med en 3 måneders oppstartsfase
+              </p>
+              <p className="mt-0.5 text-xs leading-relaxed" style={{ color: "rgba(242,237,230,0.40)" }}>
+                Dette gir oss tid til å lære bedriften din å kjenne, produsere innhold og optimalisere strategien — slik at vi kan levere faktiske resultater.
+              </p>
+            </div>
+          </div>
+        </FadeUp>
+
         {/* Footer */}
         <FadeUp delay={0.3}>
           <p
-            className="mt-10 text-center text-xs leading-relaxed"
+            className="mt-6 text-center text-xs leading-relaxed"
             style={{ color: "rgba(242,237,230,0.22)" }}
           >
             Alle priser er eks. mva. Annonsekostnader kommer i tillegg og
