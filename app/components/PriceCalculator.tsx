@@ -22,7 +22,7 @@ const sections: Section[] = [
   {
     id: "nettside",
     title: "1. Nettside",
-    subtitle: "Hva trenger dere?",
+    subtitle: "Trenger dere nettside?",
     options: [
       { label: "Ingen nettside", price: 0, setup: 0 },
       { label: "Landingsside", note: "1 side", price: 0, setup: 10990 },
@@ -32,39 +32,28 @@ const sections: Section[] = [
   },
   {
     id: "innhold",
-    title: "2. Innholdsproduksjon",
-    subtitle: "Hvor aktiv vil dere være på sosiale medier?",
+    title: "2. Sosiale medier",
+    subtitle: "Velg pakken som passer dere best",
     options: [
-      { label: "Ingen innhold", price: 0, setup: 0 },
+      { label: "Ingen pakke", price: 0, setup: 0 },
       {
-        label: "Lett tilstedeværelse",
-        bullets: ["1 shoot annenhver måned", "2 reels per måned", "5 bilder per måned"],
-        price: 5990,
+        label: "Synlighet",
+        bullets: ["2 plattformer (Instagram + Facebook)", "8 ferdigproduserte innlegg/mnd", "Månedlig statusoppdatering"],
+        price: 6900,
         setup: 0,
       },
       {
-        label: "Aktiv tilstedeværelse",
-        bullets: ["1 shoot per måned", "1 reel per uke", "10 bilder per måned"],
-        price: 9990,
+        label: "Vekst",
+        bullets: ["3 plattformer (inkl. TikTok)", "12 ferdigproduserte innlegg/mnd", "Meta Ads inkludert", "Månedlig rapport"],
+        price: 12900,
         setup: 0,
       },
       {
-        label: "Aggressiv vekst",
-        bullets: ["2 shoots per måned", "2 reels per uke", "20 bilder per måned"],
-        price: 19990,
+        label: "Premium",
+        bullets: ["3 plattformer (inkl. TikTok)", "16 ferdigproduserte innlegg/mnd", "Månedlig foto/video-shoot", "Meta Ads + Google Ads", "SEO-optimalisering", "Dedikert kontaktperson"],
+        price: 19900,
         setup: 0,
       },
-    ],
-  },
-  {
-    id: "annonsering",
-    title: "3. Annonsering",
-    subtitle: "Vil dere bruke annonser for å skaffe kunder?",
-    options: [
-      { label: "Ingen annonser", price: 0, setup: 0 },
-      { label: "Boosting av innlegg", price: 1490, setup: 0 },
-      { label: "Meta Ads", price: 3490, setup: 0 },
-      { label: "Meta Ads + Google Ads", price: 5490, setup: 0 },
     ],
   },
 ];
@@ -77,7 +66,6 @@ export default function PriceCalculator() {
   const [selected, setSelected] = useState<Record<string, number>>({
     nettside: 0,
     innhold: 0,
-    annonsering: 0,
   });
   const [adminPosting, setAdminPosting] = useState<boolean | null>(null);
   const [showForm, setShowForm] = useState(false);
