@@ -53,8 +53,8 @@ const jsonLd = {
     worksFor: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
   },
   publisher: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
-  datePublished: "2026-04-04",
-  dateModified: "2026-04-04",
+  datePublished: "2026-03-24",
+  dateModified: "2026-03-24",
   url: "https://elevera.no/blogg/markedsforingsbyraa-alesund",
   about: [
     { "@type": "Thing", name: "Markedsføring" },
@@ -110,7 +110,7 @@ export default function MarkedsforingsByraaPage() {
                 <span className="rounded-full border border-[#2DD4BF]/25 bg-[#2DD4BF]/08 px-3 py-1 text-xs font-medium text-[#2DD4BF]">
                   Markedsføring
                 </span>
-                <span className="text-xs text-white/30">4. april 2026</span>
+                <span className="text-xs text-white/30">24. mars 2026</span>
                 <span className="text-xs text-white/30">8 min lesetid</span>
               </div>
               <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
@@ -120,7 +120,7 @@ export default function MarkedsforingsByraaPage() {
                 Et godt markedsføringsbyrå i Ålesund hjelper bedriften din å bli synlig på nett — gjennom nettside, annonsering, foto og video. Her er hva du bør vite før du velger.
               </p>
               <p className="mt-3 text-sm text-white/30">
-                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · Sist oppdatert: april 2026
+                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 24. mars 2026
               </p>
             </div>
 

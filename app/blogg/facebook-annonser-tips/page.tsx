@@ -49,8 +49,8 @@ const jsonLd = {
     worksFor: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
   },
   publisher: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
-  datePublished: "2026-04-04",
-  dateModified: "2026-04-04",
+  datePublished: "2026-04-01",
+  dateModified: "2026-04-01",
   url: "https://elevera.no/blogg/facebook-annonser-tips",
 };
 
@@ -101,7 +101,7 @@ export default function FacebookAnnonserPage() {
                 <span className="rounded-full border border-[#2DD4BF]/25 bg-[#2DD4BF]/08 px-3 py-1 text-xs font-medium text-[#2DD4BF]">
                   Annonsering
                 </span>
-                <span className="text-xs text-white/30">4. april 2026</span>
+                <span className="text-xs text-white/30">1. april 2026</span>
                 <span className="text-xs text-white/30">8 min lesetid</span>
               </div>
               <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
@@ -111,7 +111,7 @@ export default function FacebookAnnonserPage() {
                 Vi ser det hele tiden: bedrifter som bruker tusenvis av kroner på Facebook-annonser uten å egentlig vite hva de får igjen. Ikke fordi Facebook Ads ikke virker — men fordi de vanligste feilene er enkle å unngå når du vet hva du ser etter.
               </p>
               <p className="mt-3 text-sm text-white/30">
-                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 4. april 2026
+                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 1. april 2026
               </p>
             </div>
 

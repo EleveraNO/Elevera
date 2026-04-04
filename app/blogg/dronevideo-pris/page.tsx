@@ -49,8 +49,8 @@ const jsonLd = {
     worksFor: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
   },
   publisher: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
-  datePublished: "2026-04-04",
-  dateModified: "2026-04-04",
+  datePublished: "2026-03-18",
+  dateModified: "2026-03-18",
   url: "https://elevera.no/blogg/dronevideo-pris",
 };
 
@@ -101,7 +101,7 @@ export default function DroneVideoPrisPage() {
                 <span className="rounded-full border border-[#2DD4BF]/25 bg-[#2DD4BF]/08 px-3 py-1 text-xs font-medium text-[#2DD4BF]">
                   Dronevideo
                 </span>
-                <span className="text-xs text-white/30">4. april 2026</span>
+                <span className="text-xs text-white/30">18. mars 2026</span>
                 <span className="text-xs text-white/30">7 min lesetid</span>
               </div>
               <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
@@ -111,7 +111,7 @@ export default function DroneVideoPrisPage() {
                 Dronevideo er et av de spørsmålene vi oftest får. Prisen varierer veldig, og det er ikke alltid lett å forstå hvorfor. Jeg skal forsøke å gi deg et ærlig bilde.
               </p>
               <p className="mt-3 text-sm text-white/30">
-                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 4. april 2026
+                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 18. mars 2026
               </p>
             </div>
 

@@ -16,7 +16,7 @@ const innlegg = [
     tittel: "Markedsføringsbyrå i Ålesund – hva bør du se etter?",
     ingress:
       "Hva gjør et markedsføringsbyrå, hva koster det, og hva skiller et godt byrå fra resten? En praktisk guide for bedrifter i Ålesund.",
-    dato: "4. april 2026",
+    dato: "24. mars 2026",
     kategori: "Markedsføring",
     lesetid: "8 min",
   },
@@ -25,7 +25,7 @@ const innlegg = [
     tittel: "Hva koster dronevideo? Her er prisene — og hva du faktisk betaler for",
     ingress:
       "En halvdag, en hel dag, råfiler eller ferdig redigert video? Vi rydder opp i prisforvirringen og forteller deg hva som faktisk påvirker prisen.",
-    dato: "4. april 2026",
+    dato: "18. mars 2026",
     kategori: "Dronevideo",
     lesetid: "7 min",
   },
@@ -34,7 +34,7 @@ const innlegg = [
     tittel: "Hva koster en nettside til bedriften? Her er de ærlige prisene",
     ingress:
       "Fra null kroner til 150 000 kr — prisen på en bedriftsnettside varierer enormt. Her er hva du faktisk trenger, og når du betaler for mye.",
-    dato: "4. april 2026",
+    dato: "31. mars 2026",
     kategori: "Nettside",
     lesetid: "9 min",
   },
@@ -43,7 +43,7 @@ const innlegg = [
     tittel: "Facebook-annonser for småbedrifter — hva som faktisk fungerer",
     ingress:
       "Mange lokale bedrifter kaster bort penger på Facebook-annonser. Her er de vanligste feilene vi ser — og hva du bør gjøre i stedet.",
-    dato: "4. april 2026",
+    dato: "1. april 2026",
     kategori: "Annonsering",
     lesetid: "8 min",
   },
