@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeUp, StaggerContainer, StaggerItem } from "./animations";
+import PriceCalculator from "./PriceCalculator";
 
 const plans = [
   {
@@ -399,54 +400,9 @@ export default function Pricing() {
           </p>
         </FadeUp>
 
-        {/* Calculator link */}
+        {/* Price calculator */}
         <FadeUp delay={0.4}>
-          <div className="mt-8 flex justify-center">
-            <a
-              href="/kalkulator"
-              className="group inline-flex items-center gap-3 rounded-xl px-6 py-3.5 text-sm font-medium transition-all duration-200"
-              style={{
-                border: "1px solid rgba(45,212,191,0.2)",
-                background: "rgba(45,212,191,0.05)",
-                color: "rgba(45,212,191,0.8)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor =
-                  "rgba(45,212,191,0.4)";
-                (e.currentTarget as HTMLAnchorElement).style.background =
-                  "rgba(45,212,191,0.10)";
-                (e.currentTarget as HTMLAnchorElement).style.color = "#2DD4BF";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor =
-                  "rgba(45,212,191,0.2)";
-                (e.currentTarget as HTMLAnchorElement).style.background =
-                  "rgba(45,212,191,0.05)";
-                (e.currentTarget as HTMLAnchorElement).style.color =
-                  "rgba(45,212,191,0.8)";
-              }}
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="2" y="3" width="20" height="14" rx="2" />
-                <path d="M8 21h8M12 17v4" />
-                <path d="M7 8h10M7 12h6" />
-              </svg>
-              Bygg din egen pakke
-              <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-                →
-              </span>
-            </a>
-          </div>
+          <PriceCalculator />
         </FadeUp>
       </div>
     </section>
