@@ -112,11 +112,11 @@ export default function Pricing() {
                   style={
                     plan.highlighted
                       ? {
-                          border: "1px solid rgba(124,58,237,0.6)",
+                          border: "1px solid rgba(45,212,191,0.5)",
                           background:
-                            "linear-gradient(145deg, rgba(124,58,237,0.10) 0%, #111115 55%)",
+                            "linear-gradient(145deg, rgba(45,212,191,0.07) 0%, #111115 55%)",
                           boxShadow:
-                            "0 0 0 1px rgba(124,58,237,0.15), 0 0 40px rgba(124,58,237,0.12), 0 20px 40px rgba(0,0,0,0.4)",
+                            "0 0 0 1px rgba(45,212,191,0.1), 0 0 40px rgba(45,212,191,0.08), 0 20px 40px rgba(0,0,0,0.4)",
                         }
                       : {
                           border: "1px solid rgba(255,255,255,0.07)",
@@ -146,7 +146,7 @@ export default function Pricing() {
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap">
                       <span
                         className="rounded-full px-4 py-1 text-[11px] font-bold uppercase tracking-widest"
-                        style={{ background: "#7c3aed", color: "#fff" }}
+                        style={{ background: "#2DD4BF", color: "#09090B" }}
                       >
                         Mest populær
                       </span>
@@ -173,7 +173,7 @@ export default function Pricing() {
                   <div className="mb-6 flex items-baseline gap-1">
                     <span
                       className="text-3xl font-bold"
-                      style={{ color: plan.highlighted ? "#a78bfa" : "#F2EDE6" }}
+                      style={{ color: plan.highlighted ? "#2DD4BF" : "#F2EDE6" }}
                     >
                       {plan.price} kr
                     </span>
@@ -190,7 +190,7 @@ export default function Pricing() {
                     className="mb-5 h-px"
                     style={{
                       background: plan.highlighted
-                        ? "rgba(124,58,237,0.2)"
+                        ? "rgba(45,212,191,0.15)"
                         : "rgba(255,255,255,0.06)",
                     }}
                   />
@@ -202,7 +202,7 @@ export default function Pricing() {
                         <span
                           className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
                           style={{
-                            background: plan.highlighted ? "#a78bfa" : "#2DD4BF",
+                            background: plan.highlighted ? "#2DD4BF" : "#2DD4BF",
                           }}
                         />
                         <span style={{ color: "rgba(242,237,230,0.70)" }}>
@@ -218,7 +218,7 @@ export default function Pricing() {
                     className="block w-full cursor-pointer rounded-full py-3 text-center text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
                     style={
                       plan.highlighted
-                        ? { background: "#7c3aed", color: "#fff" }
+                        ? { background: "#2DD4BF", color: "#09090B" }
                         : {
                             border: "1px solid rgba(255,255,255,0.12)",
                             color: "rgba(242,237,230,0.70)",
@@ -228,7 +228,7 @@ export default function Pricing() {
                     onMouseEnter={(e) => {
                       if (plan.highlighted) {
                         (e.currentTarget as HTMLAnchorElement).style.background =
-                          "#6d28d9";
+                          "#14B8A6";
                       } else {
                         (e.currentTarget as HTMLAnchorElement).style.borderColor =
                           "rgba(255,255,255,0.28)";
@@ -239,7 +239,7 @@ export default function Pricing() {
                     onMouseLeave={(e) => {
                       if (plan.highlighted) {
                         (e.currentTarget as HTMLAnchorElement).style.background =
-                          "#7c3aed";
+                          "#2DD4BF";
                       } else {
                         (e.currentTarget as HTMLAnchorElement).style.borderColor =
                           "rgba(255,255,255,0.12)";
