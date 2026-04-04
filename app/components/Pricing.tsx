@@ -5,60 +5,61 @@ import { FadeUp, StaggerContainer, StaggerItem } from "./animations";
 const plans = [
   {
     name: "Synlighet",
+    tag: "Kom i gang",
     price: "6 900",
     period: "/ mnd",
-    description: "Kom i gang med profesjonell tilstedeværelse på sosiale medier.",
+    forWho: "For bedrifter som vil etablere en profesjonell tilstedeværelse på nett.",
     features: [
-      "2 plattformer (f.eks. Instagram + Facebook)",
+      "2 plattformer (Instagram + Facebook)",
       "8 ferdigproduserte innlegg per måned",
-      "Vi tar hånd om alt — fra idé og produksjon til publisering og oppfølging",
       "Månedlig statusoppdatering",
     ],
     highlighted: false,
-    cta: "Ta kontakt",
+    cta: "Start med Synlighet",
   },
   {
     name: "Vekst",
+    tag: "Mest valgt",
     price: "12 900",
     period: "/ mnd",
-    description: "Mer innhold, flere kanaler og betalt annonsering for synlig vekst.",
+    forWho: "For bedrifter som vil nå flere kunder og begynne å annonsere.",
     features: [
       "3 plattformer (inkl. TikTok)",
       "12 ferdigproduserte innlegg per måned",
-      "Vi tar hånd om alt — fra idé og produksjon til publisering og oppfølging",
-      "Meta Ads (annonsekostnader ekskl.)",
+      "Meta Ads — vi setter opp og optimaliserer",
       "Månedlig rapport med tall",
     ],
     highlighted: false,
-    cta: "Ta kontakt",
+    cta: "Start med Vekst",
   },
   {
     name: "Premium",
+    tag: "Anbefalt",
     price: "19 900",
     period: "/ mnd",
-    description: "Full pakke med produksjon, annonsering og SEO — alt på ett sted.",
+    forWho: "For bedrifter som vil vokse raskt og ha alt på ett sted.",
     features: [
       "3 plattformer (inkl. TikTok)",
       "16 ferdigproduserte innlegg per måned",
-      "Vi tar hånd om alt — fra idé og produksjon til publisering og oppfølging",
       "Månedlig foto/video-shoot",
-      "Meta Ads + Google Ads (annonsekostnader ekskl.)",
+      "Meta Ads + Google Ads",
       "Løpende SEO-optimalisering",
       "Dedikert kontaktperson",
     ],
     highlighted: true,
-    cta: "Ta kontakt",
+    cta: "Velg Premium",
   },
   {
     name: "Komplett vekst",
+    tag: "Alt inkludert",
     price: "29 900",
     period: "/ mnd",
-    description: "Alt i Premium — pluss nettside, TikTok Ads og full vekststrategi.",
+    forWho: "For bedrifter som vil ha en komplett digital partner — fra nettside til annonsering.",
     features: [
       "Alt i Premium-pakken",
       "20 ferdigproduserte innlegg per måned",
       "Nettside inkludert (design + utvikling)",
-      "Meta + Google + TikTok Ads (annonsekostnader ekskl.)",
+      "TikTok Ads i tillegg til Meta + Google",
       "Full vekststrategi og roadmap",
       "Prioritert support",
     ],
@@ -80,8 +81,9 @@ export default function Pricing() {
   return (
     <section className="px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-7xl">
+
         {/* Header */}
-        <FadeUp className="mb-16 text-center">
+        <FadeUp className="mb-12 text-center">
           <p
             className="mb-3 text-xs font-semibold uppercase tracking-[0.2em]"
             style={{ color: "#2DD4BF" }}
@@ -92,14 +94,53 @@ export default function Pricing() {
             className="text-3xl font-bold sm:text-4xl md:text-5xl"
             style={{ color: "#F2EDE6", letterSpacing: "-0.02em" }}
           >
-            Enkle, transparente priser
+            Vi tar jobben —{" "}
+            <span style={{ color: "#2DD4BF" }}>du høster resultatene</span>
           </h2>
           <p
             className="mx-auto mt-4 max-w-xl text-sm leading-relaxed"
             style={{ color: "rgba(242,237,230,0.45)" }}
           >
-            Ingen skjulte gebyrer. Vi leverer alt — fra idé til publisering.
+            Ingen skjulte gebyrer. Fra idé og produksjon til publisering og
+            oppfølging — vi tar hånd om alt.
           </p>
+        </FadeUp>
+
+        {/* "Included in all plans" strip */}
+        <FadeUp delay={0.05}>
+          <div
+            className="mb-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-xl px-6 py-4"
+            style={{
+              border: "1px solid rgba(45,212,191,0.15)",
+              background: "rgba(45,212,191,0.04)",
+            }}
+          >
+            <span
+              className="text-xs font-semibold uppercase tracking-widest"
+              style={{ color: "#2DD4BF" }}
+            >
+              Inkludert i alle pakker
+            </span>
+            {[
+              "Innholdsstrategi",
+              "Tekstforfatning",
+              "Grafisk design",
+              "Publisering",
+              "Månedlig oppfølging",
+            ].map((item) => (
+              <span
+                key={item}
+                className="flex items-center gap-1.5 text-xs"
+                style={{ color: "rgba(242,237,230,0.55)" }}
+              >
+                <span
+                  className="h-1 w-1 rounded-full"
+                  style={{ background: "#2DD4BF" }}
+                />
+                {item}
+              </span>
+            ))}
+          </div>
         </FadeUp>
 
         {/* Package cards */}
@@ -141,39 +182,46 @@ export default function Pricing() {
                     }
                   }}
                 >
-                  {/* Most popular badge */}
-                  {plan.highlighted && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                      <span
-                        className="rounded-full px-4 py-1 text-[11px] font-bold uppercase tracking-widest"
-                        style={{ background: "#2DD4BF", color: "#09090B" }}
-                      >
-                        Mest populær
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Plan name + description */}
-                  <div className="mb-5">
-                    <h3
-                      className="mb-1.5 text-base font-bold"
-                      style={{ color: "#F2EDE6" }}
+                  {/* Badge */}
+                  <div className="mb-4 flex items-center justify-between">
+                    <span
+                      className="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest"
+                      style={
+                        plan.highlighted
+                          ? { background: "#2DD4BF", color: "#09090B" }
+                          : {
+                              background: "rgba(255,255,255,0.06)",
+                              color: "rgba(242,237,230,0.45)",
+                            }
+                      }
                     >
-                      {plan.name}
-                    </h3>
-                    <p
-                      className="text-xs leading-relaxed"
-                      style={{ color: "rgba(242,237,230,0.45)" }}
-                    >
-                      {plan.description}
-                    </p>
+                      {plan.tag}
+                    </span>
                   </div>
 
+                  {/* Plan name */}
+                  <h3
+                    className="mb-1 text-lg font-bold"
+                    style={{ color: "#F2EDE6" }}
+                  >
+                    {plan.name}
+                  </h3>
+
+                  {/* "For who" */}
+                  <p
+                    className="mb-5 text-xs leading-relaxed"
+                    style={{ color: "rgba(242,237,230,0.40)" }}
+                  >
+                    {plan.forWho}
+                  </p>
+
                   {/* Price */}
-                  <div className="mb-6 flex items-baseline gap-1">
+                  <div className="mb-5 flex items-baseline gap-1">
                     <span
-                      className="text-3xl font-bold"
-                      style={{ color: plan.highlighted ? "#2DD4BF" : "#F2EDE6" }}
+                      className="text-3xl font-bold tabular-nums"
+                      style={{
+                        color: plan.highlighted ? "#2DD4BF" : "#F2EDE6",
+                      }}
                     >
                       {plan.price} kr
                     </span>
@@ -199,13 +247,21 @@ export default function Pricing() {
                   <ul className="mb-8 flex-1 space-y-2.5">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-xs">
-                        <span
-                          className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
-                          style={{
-                            background: plan.highlighted ? "#2DD4BF" : "#2DD4BF",
-                          }}
-                        />
-                        <span style={{ color: "rgba(242,237,230,0.70)" }}>
+                        <svg
+                          className="mt-0.5 h-3.5 w-3.5 flex-shrink-0"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M2 6l3 3 5-5"
+                            stroke={plan.highlighted ? "#2DD4BF" : "rgba(45,212,191,0.6)"}
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        <span style={{ color: "rgba(242,237,230,0.72)" }}>
                           {feature}
                         </span>
                       </li>
@@ -256,20 +312,52 @@ export default function Pricing() {
           </StaggerContainer>
         </div>
 
+        {/* Usikker? helper */}
+        <FadeUp delay={0.15}>
+          <p
+            className="mt-6 text-center text-xs"
+            style={{ color: "rgba(242,237,230,0.28)" }}
+          >
+            Usikker på hvilken pakke som passer?{" "}
+            <a
+              href="#kontakt"
+              className="underline underline-offset-2 transition-colors duration-150"
+              style={{ color: "rgba(45,212,191,0.6)" }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLAnchorElement).style.color = "#2DD4BF")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLAnchorElement).style.color =
+                  "rgba(45,212,191,0.6)")
+              }
+            >
+              Ta kontakt — vi hjelper deg å velge.
+            </a>
+          </p>
+        </FadeUp>
+
         {/* Tilleggstjenester */}
         <FadeUp delay={0.2}>
           <div className="mt-16">
-            <p
-              className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.2em]"
-              style={{ color: "rgba(242,237,230,0.35)" }}
-            >
-              Tilleggstjenester
-            </p>
+            <div className="mb-6 text-center">
+              <p
+                className="text-xs font-semibold uppercase tracking-[0.2em]"
+                style={{ color: "rgba(242,237,230,0.35)" }}
+              >
+                Tilleggstjenester
+              </p>
+              <p
+                className="mt-1 text-xs"
+                style={{ color: "rgba(242,237,230,0.25)" }}
+              >
+                Legg til det du trenger — uten å bytte pakke.
+              </p>
+            </div>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {addons.map((addon, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-between rounded-xl px-5 py-4"
+                  className="flex items-center justify-between rounded-xl px-5 py-4 transition-colors duration-150"
                   style={{
                     border: "1px solid rgba(255,255,255,0.06)",
                     background: "#111115",
@@ -301,18 +389,18 @@ export default function Pricing() {
           </div>
         </FadeUp>
 
-        {/* Footer note */}
+        {/* Footer */}
         <FadeUp delay={0.3}>
           <p
             className="mt-10 text-center text-xs leading-relaxed"
-            style={{ color: "rgba(242,237,230,0.25)" }}
+            style={{ color: "rgba(242,237,230,0.22)" }}
           >
-            Alle priser er eks. mva. Annonsekostnader kommer i tillegg og avtales
-            separat. Bindingstid 3 måneder, deretter løpende.
+            Alle priser er eks. mva. Annonsekostnader kommer i tillegg og
+            avtales separat. Bindingstid 3 måneder, deretter løpende.
           </p>
         </FadeUp>
 
-        {/* Link to calculator */}
+        {/* Calculator link */}
         <FadeUp delay={0.4}>
           <div className="mt-8 flex justify-center">
             <a
