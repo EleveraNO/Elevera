@@ -23,7 +23,12 @@ const jsonLd = {
   headline: "Hvorfor trenger bedriften din profesjonelle bilder?",
   description:
     "Profesjonelle bilder bygger tillit, øker konvertering og skiller deg fra konkurrentene.",
-  author: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
+  author: {
+    "@type": "Person",
+    name: "Marius Teigen Tverbakk",
+    jobTitle: "Daglig leder",
+    worksFor: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
+  },
   publisher: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
   datePublished: "2026-03-13",
   dateModified: "2026-03-13",
@@ -65,6 +70,9 @@ export default function BloggInnlegg() {
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-white/60">
                 Potensielle kunder tar avgjørelser raskt. Ofte før de har lest et eneste ord. Bildene dine jobber hele tiden, enten de jobber for deg eller mot deg. Her er hva vi har sett gang på gang hos bedriftene vi jobber med.
+              </p>
+              <p className="mt-3 text-sm text-white/30">
+                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 13. mars 2026
               </p>
             </div>
 

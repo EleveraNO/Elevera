@@ -77,6 +77,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: "https://elevera.no/blogg/markedsforingsbyraa-alesund",
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://elevera.no/blogg/dronevideo-pris",
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://elevera.no/blogg/nettside-bedrift-pris",
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://elevera.no/blogg/facebook-annonser-tips",
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: "https://elevera.no/blogg/instagram-lokale-kunder",
       lastModified: today,
       changeFrequency: "monthly",

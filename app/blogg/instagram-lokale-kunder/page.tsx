@@ -23,7 +23,12 @@ const jsonLd = {
   headline: "Slik bruker du Instagram til å få flere kunder lokalt",
   description:
     "Instagram er et av de beste verktøyene for lokale bedrifter, men bare hvis du bruker det riktig.",
-  author: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
+  author: {
+    "@type": "Person",
+    name: "Marius Teigen Tverbakk",
+    jobTitle: "Daglig leder",
+    worksFor: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
+  },
   publisher: { "@type": "Organization", name: "Elevera", url: "https://elevera.no" },
   datePublished: "2026-03-13",
   dateModified: "2026-03-13",
@@ -65,6 +70,9 @@ export default function BloggInnlegg() {
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-white/60">
                 Mange lokale bedrifter er på Instagram, men få bruker det på en måte som faktisk gir kunder. Det handler ikke om å poste mest mulig. Det handler om å poste riktig.
+              </p>
+              <p className="mt-3 text-sm text-white/30">
+                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 13. mars 2026
               </p>
             </div>
 

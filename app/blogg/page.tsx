@@ -12,6 +12,42 @@ export const metadata: Metadata = {
 
 const innlegg = [
   {
+    slug: "markedsforingsbyraa-alesund",
+    tittel: "Markedsføringsbyrå i Ålesund – hva bør du se etter?",
+    ingress:
+      "Hva gjør et markedsføringsbyrå, hva koster det, og hva skiller et godt byrå fra resten? En praktisk guide for bedrifter i Ålesund.",
+    dato: "4. april 2026",
+    kategori: "Markedsføring",
+    lesetid: "8 min",
+  },
+  {
+    slug: "dronevideo-pris",
+    tittel: "Hva koster dronevideo? Her er prisene — og hva du faktisk betaler for",
+    ingress:
+      "En halvdag, en hel dag, råfiler eller ferdig redigert video? Vi rydder opp i prisforvirringen og forteller deg hva som faktisk påvirker prisen.",
+    dato: "4. april 2026",
+    kategori: "Dronevideo",
+    lesetid: "7 min",
+  },
+  {
+    slug: "nettside-bedrift-pris",
+    tittel: "Hva koster en nettside til bedriften? Her er de ærlige prisene",
+    ingress:
+      "Fra null kroner til 150 000 kr — prisen på en bedriftsnettside varierer enormt. Her er hva du faktisk trenger, og når du betaler for mye.",
+    dato: "4. april 2026",
+    kategori: "Nettside",
+    lesetid: "9 min",
+  },
+  {
+    slug: "facebook-annonser-tips",
+    tittel: "Facebook-annonser for småbedrifter — hva som faktisk fungerer",
+    ingress:
+      "Mange lokale bedrifter kaster bort penger på Facebook-annonser. Her er de vanligste feilene vi ser — og hva du bør gjøre i stedet.",
+    dato: "4. april 2026",
+    kategori: "Annonsering",
+    lesetid: "8 min",
+  },
+  {
     slug: "instagram-lokale-kunder",
     tittel: "Slik bruker du Instagram til å få flere kunder lokalt",
     ingress:
