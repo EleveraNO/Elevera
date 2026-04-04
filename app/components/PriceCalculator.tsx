@@ -25,9 +25,9 @@ const sections: Section[] = [
     subtitle: "Hva trenger dere?",
     options: [
       { label: "Ingen nettside", price: 0, setup: 0 },
-      { label: "Landingsside", note: "1 side", price: 2000, setup: 1990 },
-      { label: "Profesjonell nettside", note: "opptil 5 sider", price: 3500, setup: 4990 },
-      { label: "Skreddersydd nettside", note: "ubegrenset sider", price: 6000, setup: 7990 },
+      { label: "Landingsside", note: "1 side", price: 0, setup: 10990 },
+      { label: "Profesjonell nettside", note: "opptil 5 sider", price: 0, setup: 16990 },
+      { label: "Skreddersydd nettside", note: "ubegrenset sider", price: 0, setup: 24990 },
     ],
   },
   {
@@ -39,19 +39,19 @@ const sections: Section[] = [
       {
         label: "Lett tilstedeværelse",
         bullets: ["1 shoot annenhver måned", "2 reels per måned", "5 bilder per måned"],
-        price: 2500,
+        price: 3990,
         setup: 0,
       },
       {
         label: "Aktiv tilstedeværelse",
         bullets: ["1 shoot per måned", "4 reels per måned", "10 bilder per måned"],
-        price: 5000,
+        price: 7490,
         setup: 0,
       },
       {
         label: "Aggressiv vekst",
         bullets: ["2 shoots per måned", "8 reels per måned", "20 bilder per måned"],
-        price: 9000,
+        price: 12990,
         setup: 0,
       },
     ],
@@ -62,9 +62,9 @@ const sections: Section[] = [
     subtitle: "Vil dere bruke annonser for å skaffe kunder?",
     options: [
       { label: "Ingen annonser", price: 0, setup: 0 },
-      { label: "Boosting av innlegg", price: 1000, setup: 0 },
-      { label: "Meta Ads", price: 2500, setup: 0 },
-      { label: "Meta Ads + Google Ads", price: 4000, setup: 0 },
+      { label: "Boosting av innlegg", price: 1490, setup: 0 },
+      { label: "Meta Ads", price: 3490, setup: 0 },
+      { label: "Meta Ads + Google Ads", price: 5490, setup: 0 },
     ],
   },
 ];
@@ -85,7 +85,7 @@ export default function PriceCalculator() {
   const [submitting, setSubmitting] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
-  const postingFee = adminPosting === true ? 1000 : 0;
+  const postingFee = adminPosting === true ? 1490 : 0;
 
   const monthly = sections.reduce(
     (sum, s) => sum + (s.options[selected[s.id]]?.price ?? 0),
@@ -95,7 +95,7 @@ export default function PriceCalculator() {
     (sum, s) => sum + (s.options[selected[s.id]]?.setup ?? 0),
     0
   );
-  const nothingSelected = monthly === 0;
+  const nothingSelected = monthly === 0 && setup === 0;
 
   const packageSummary = sections
     .map((s) => {
@@ -209,8 +209,10 @@ export default function PriceCalculator() {
                             isSelected ? "text-[#7c3aed]" : "text-white/40"
                           }`}
                         >
-                          {option.price === 0
+                          {option.price === 0 && option.setup === 0
                             ? "0 kr"
+                            : option.price === 0 && option.setup > 0
+                            ? <><span>{formatPrice(option.setup)}</span><span className="block text-xs font-normal text-white/30">engangsbeløp</span></>
                             : `+${formatPrice(option.price)}`}
                         </span>
                       </div>
@@ -246,7 +248,7 @@ export default function PriceCalculator() {
                       { label: "Nei, vi poster selv", note: "0 kr", value: false, bullets: [] },
                       {
                         label: "Ja, dere poster for oss",
-                        note: "+1 000 kr/mnd",
+                        note: "+1 490 kr/mnd",
                         value: true,
                         bullets: ["Publisering på Instagram / Facebook / TikTok", "Captions og hashtags", "Optimalisert publiseringskalender"],
                       },
@@ -306,13 +308,22 @@ export default function PriceCalculator() {
             >
               <div className="mx-auto flex max-w-4xl items-center justify-between gap-4">
                 <div className="flex items-baseline gap-3">
-                  <span className="text-2xl font-bold text-white">
-                    {formatPrice(monthly)}
-                    <span className="text-base font-normal text-white/40">/mnd</span>
-                  </span>
-                  {setup > 0 && (
-                    <span className="text-sm text-white/40">
-                      + {formatPrice(setup)} etablering
+                  {monthly > 0 ? (
+                    <>
+                      <span className="text-2xl font-bold text-white">
+                        {formatPrice(monthly)}
+                        <span className="text-base font-normal text-white/40">/mnd</span>
+                      </span>
+                      {setup > 0 && (
+                        <span className="text-sm text-white/40">
+                          + {formatPrice(setup)} engangsbeløp
+                        </span>
+                      )}
+                    </>
+                  ) : (
+                    <span className="text-2xl font-bold text-white">
+                      {formatPrice(setup)}
+                      <span className="text-base font-normal text-white/40"> engangsbeløp</span>
                     </span>
                   )}
                 </div>
@@ -386,7 +397,7 @@ export default function PriceCalculator() {
                     )}
                     <div className="mt-3 border-t border-white/10 pt-3 flex justify-between text-sm font-bold">
                       <span className="text-white/60">Totalt</span>
-                      <span className="text-white">{formatPrice(monthly)}/mnd{setup > 0 ? ` + ${formatPrice(setup)} etablering` : ""}</span>
+                      <span className="text-white">{monthly > 0 ? `${formatPrice(monthly)}/mnd` : ""}{setup > 0 ? `${monthly > 0 ? " + " : ""}${formatPrice(setup)} engangsbeløp` : ""}</span>
                     </div>
                   </div>
 

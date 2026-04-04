@@ -5,9 +5,9 @@ import { FadeUp, StaggerContainer, StaggerItem } from "./animations";
 const plans = [
   {
     name: "Start",
-    price: "3 490",
+    price: "4 990",
     period: "/ mnd",
-    setup: "2 990",
+    setup: "12 990",
     description: "For små bedrifter som trenger en profesjonell start på nett.",
     features: [
       "Enkel landingsside (1 side)",
@@ -25,9 +25,9 @@ const plans = [
   },
   {
     name: "Vekst",
-    price: "7 990",
+    price: "9 990",
     period: "/ mnd",
-    setup: "4 990",
+    setup: "16 990",
     description: "Profesjonell digital vekst for bedrifter som vil få flere kunder.",
     features: [
       "Profesjonell nettside (inntil 5 sider)",
@@ -47,9 +47,9 @@ const plans = [
   },
   {
     name: "Pro",
-    price: "14 990",
+    price: "16 990",
     period: "/ mnd",
-    setup: "7 990",
+    setup: "24 990",
     description: "Full digital markedsføring for bedrifter som vil dominere i sitt marked.",
     features: [
       "Skreddersydd nettside uten sidebegrensning",
@@ -81,10 +81,10 @@ export default function Pricing() {
           >
             Prispakker
           </p>
-          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl" style={{ color: "#F2EDE6" }}>
+          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl" style={{ color: "#EDEDEF", letterSpacing: "-0.02em" }}>
             Enkle, transparente priser
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed" style={{ color: "rgba(242,237,230,0.45)" }}>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed" style={{ color: "rgba(237,237,239,0.45)" }}>
             Ingen skjulte gebyrer. Ingen overraskelser. Velg pakken som passer din bedrift.
           </p>
         </FadeUp>
@@ -100,9 +100,10 @@ export default function Pricing() {
                       ? {
                           border: "1px solid rgba(45,212,191,0.45)",
                           background: "linear-gradient(135deg, rgba(45,212,191,0.08) 0%, #111115 60%)",
+                          boxShadow: "0 0 60px rgba(45,212,191,0.08), 0 20px 40px rgba(0,0,0,0.3)",
                         }
                       : {
-                          border: "1px solid rgba(255,255,255,0.08)",
+                          border: "1px solid rgba(255,255,255,0.07)",
                           background: "#111115",
                         }
                   }
@@ -120,24 +121,24 @@ export default function Pricing() {
 
                   {/* Plan header */}
                   <div className="mb-6">
-                    <h3 className="mb-1 text-lg font-bold" style={{ color: "#F2EDE6" }}>
+                    <h3 className="mb-1 text-lg font-bold" style={{ color: "#EDEDEF" }}>
                       {plan.name}
                     </h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "rgba(242,237,230,0.45)" }}>
+                    <p className="text-sm leading-relaxed" style={{ color: "rgba(237,237,239,0.45)" }}>
                       {plan.description}
                     </p>
                   </div>
 
                   {/* Price */}
                   <div className="mb-1 flex items-baseline gap-1.5">
-                    <span className="text-4xl font-bold" style={{ color: "#F2EDE6" }}>
+                    <span className="text-4xl font-bold" style={{ color: "#EDEDEF" }}>
                       {plan.price} kr
                     </span>
-                    <span className="text-sm" style={{ color: "rgba(242,237,230,0.35)" }}>
+                    <span className="text-sm" style={{ color: "rgba(237,237,239,0.35)" }}>
                       {plan.period}
                     </span>
                   </div>
-                  <p className="mb-8 text-sm" style={{ color: "rgba(242,237,230,0.3)" }}>
+                  <p className="mb-8 text-sm" style={{ color: "rgba(237,237,239,0.3)" }}>
                     + {plan.setup} kr etablering (én gang)
                   </p>
 
@@ -152,7 +153,7 @@ export default function Pricing() {
                           className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
                           style={{ background: "#2DD4BF" }}
                         />
-                        <span style={{ color: "rgba(242,237,230,0.75)" }}>{feature}</span>
+                        <span style={{ color: "rgba(237,237,239,0.75)" }}>{feature}</span>
                       </li>
                     ))}
                     {plan.notIncluded.map((feature, i) => (
@@ -166,11 +167,11 @@ export default function Pricing() {
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
-                          style={{ color: "rgba(242,237,230,0.4)" }}
+                          style={{ color: "rgba(237,237,239,0.4)" }}
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
-                        <span className="line-through" style={{ color: "rgba(242,237,230,0.4)" }}>
+                        <span className="line-through" style={{ color: "rgba(237,237,239,0.4)" }}>
                           {feature}
                         </span>
                       </li>
@@ -194,7 +195,7 @@ export default function Pricing() {
                           }
                         : {
                             border: "1px solid rgba(255,255,255,0.15)",
-                            color: "rgba(242,237,230,0.75)",
+                            color: "rgba(237,237,239,0.75)",
                             background: "transparent",
                           }
                     }
@@ -203,7 +204,7 @@ export default function Pricing() {
                         (e.currentTarget as HTMLButtonElement).style.background = "#14B8A6";
                       } else {
                         (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.3)";
-                        (e.currentTarget as HTMLButtonElement).style.color = "#F2EDE6";
+                        (e.currentTarget as HTMLButtonElement).style.color = "#EDEDEF";
                       }
                     }}
                     onMouseLeave={(e) => {
@@ -211,7 +212,7 @@ export default function Pricing() {
                         (e.currentTarget as HTMLButtonElement).style.background = "#2DD4BF";
                       } else {
                         (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.15)";
-                        (e.currentTarget as HTMLButtonElement).style.color = "rgba(242,237,230,0.75)";
+                        (e.currentTarget as HTMLButtonElement).style.color = "rgba(237,237,239,0.75)";
                       }
                     }}
                   >
@@ -225,10 +226,10 @@ export default function Pricing() {
 
         <FadeUp delay={0.3}>
           <div className="mt-10 text-center">
-            <p className="text-sm" style={{ color: "rgba(242,237,230,0.45)" }}>
+            <p className="text-sm" style={{ color: "rgba(237,237,239,0.45)" }}>
               For å sikre gode resultater jobber vi med en oppstartsfase på minimum 3 måneder.
             </p>
-            <p className="mt-1 text-sm" style={{ color: "rgba(242,237,230,0.25)" }}>
+            <p className="mt-1 text-sm" style={{ color: "rgba(237,237,239,0.25)" }}>
               Dette gir oss tid til å produsere innhold, teste annonser og optimalisere strategien. Alle priser er ekskl. mva.
             </p>
           </div>
