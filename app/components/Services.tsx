@@ -642,15 +642,25 @@ function HorizontalScroll() {
   const reduced = useReducedMotion();
   const [isMobile, setIsMobile] = React.useState(false);
 
-  React.useEffect(() => { setIsMobile(window.innerWidth < 768); }, []);
+  const [panelVw, setPanelVw] = React.useState(70);
+
+  React.useEffect(() => {
+    const w = window.innerWidth;
+    setIsMobile(w < 768);
+    // Match the CSS: 85vw on small, 75vw on md, 70vw on lg
+    setPanelVw(w < 768 ? 85 : w < 1024 ? 75 : 70);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: isMobile ? undefined : containerRef,
     offset: ["start start", "end end"],
   });
   const panelCount = services.length;
-  const totalShift = (panelCount - 1) * 75 - 20;
-  const x = useTransform(scrollYProgress, [0, 0.95], ["0vw", `-${totalShift}vw`]);
+  // Shift enough to show the last panel fully: (panels - 1) * panelWidth, minus the leftover viewport space
+  const gapVw = (24 / (typeof window !== "undefined" ? window.innerWidth : 1920)) * 100 || 1.25;
+  const paddingVw = panelVw < 75 ? 5 : 3; // account for pl-20 or pl-6
+  const totalShift = (panelCount - 1) * (panelVw + gapVw) - (100 - panelVw - paddingVw);
+  const x = useTransform(scrollYProgress, [0, 1], ["0vw", `-${totalShift}vw`]);
 
   // Mobile: simple vertical stack, no scroll hijacking
   if (isMobile) {
