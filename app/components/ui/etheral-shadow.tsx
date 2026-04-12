@@ -104,26 +104,38 @@ export function EtheralShadow({
                 ...style
             }}
         >
-            {/* Mobile: simple CSS-only pulsing radial gradient — no masks, no filters */}
+            {/* Mobile: same mask image as desktop but with CSS animation instead of SVG filter */}
             <div
                 className="md:hidden"
                 style={{
                     position: "absolute",
-                    inset: 0,
-                    animation: "etheral-pulse 8s ease-in-out infinite",
+                    inset: -20,
                 }}
             >
                 <style>{`
-                    @keyframes etheral-pulse {
-                        0%, 100% { opacity: 0.5; transform: scale(1); }
-                        50% { opacity: 0.9; transform: scale(1.1); }
+                    @keyframes etheral-drift {
+                        0% { transform: scale(1) translate(0px, 0px); }
+                        25% { transform: scale(1.05) translate(10px, -8px); }
+                        50% { transform: scale(1.02) translate(-5px, 6px); }
+                        75% { transform: scale(1.07) translate(8px, 4px); }
+                        100% { transform: scale(1) translate(0px, 0px); }
                     }
                 `}</style>
                 <div
                     style={{
                         width: "100%",
                         height: "100%",
-                        background: `radial-gradient(ellipse 80% 70% at 40% 45%, ${color} 0%, transparent 70%), radial-gradient(ellipse 60% 55% at 65% 60%, ${color} 0%, transparent 65%)`,
+                        backgroundColor: color,
+                        maskImage: `url('/etheral-mask.png')`,
+                        WebkitMaskImage: `url('/etheral-mask.png')`,
+                        maskSize: sizing === "stretch" ? "100% 100%" : "cover",
+                        WebkitMaskSize: sizing === "stretch" ? "100% 100%" : "cover",
+                        maskRepeat: "no-repeat",
+                        WebkitMaskRepeat: "no-repeat",
+                        maskPosition: "center",
+                        WebkitMaskPosition: "center",
+                        filter: "blur(6px)",
+                        animation: "etheral-drift 12s ease-in-out infinite",
                     }}
                 />
             </div>

@@ -21,15 +21,24 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+
     const onScroll = () => {
       const y = window.scrollY;
-      const heroHeight = window.innerHeight * 0.85;
-      setScrolled(y > heroHeight);
-      setHidden(y > heroHeight + 100 && y > lastScrollY.current);
+      setScrolled(y > 20);
+      // Hide when scrolling down, show when scrolling up
+      setHidden(y > 100 && y > lastScrollY.current);
       lastScrollY.current = y;
+
+      // Show header when user stops scrolling
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => setHidden(false), 800);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    };
   }, []);
 
   useEffect(() => {
@@ -56,8 +65,6 @@ export default function Navbar() {
         background: scrolled ? "rgba(19,19,18,0.88)" : "transparent",
         backdropFilter: scrolled ? "blur(16px)" : "none",
         transform: hidden && !menuOpen ? "translateY(-100%)" : "translateY(0)",
-        opacity: scrolled ? 1 : 0,
-        pointerEvents: scrolled ? "auto" : "none",
         borderBottom: scrolled
           ? "1px solid rgba(77,70,53,0.28)"
           : "1px solid transparent",
