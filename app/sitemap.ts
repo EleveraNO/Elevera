@@ -84,6 +84,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://elevera.no/blogg/sosiale-medier-bedrift-pris",
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: "https://elevera.no/blogg",
       lastModified: today,
       changeFrequency: "weekly",

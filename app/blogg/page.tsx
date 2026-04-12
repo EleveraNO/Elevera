@@ -12,6 +12,15 @@ export const metadata: Metadata = {
 
 const innlegg = [
   {
+    slug: "sosiale-medier-bedrift-pris",
+    tittel: "Hva koster sosiale medier-styring for bedrifter?",
+    ingress:
+      "Du vet du burde poste oftere. Men hva koster det å la noen andre gjøre det? Her er de ærlige prisene — og hva du bør passe på.",
+    dato: "12. april 2026",
+    kategori: "Sosiale medier",
+    lesetid: "9 min",
+  },
+  {
     slug: "markedsforingsbyraa-alesund",
     tittel: "Markedsføringsbyrå i Ålesund – hva bør du se etter?",
     ingress:
