@@ -31,19 +31,19 @@ export default function FAQ() {
         <FadeUp className="mb-16 text-center">
           <p
             className="mb-3 text-xs font-semibold uppercase tracking-[0.2em]"
-            style={{ color: "#2DD4BF" }}
+            style={{ color: "#f2ca50" }}
           >
             FAQ
           </p>
-          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl" style={{ color: "#F2EDE6" }}>
+          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl" style={{ color: "#e5e2de" }}>
             Vanlige spørsmål
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm" style={{ color: "rgba(242,237,230,0.45)" }}>
+          <p className="mx-auto mt-4 max-w-xl text-sm" style={{ color: "rgba(229,226,222,0.45)" }}>
             Finner du ikke svaret du leter etter?{" "}
             <a
               href="#kontakt"
               className="underline underline-offset-4 transition-opacity hover:opacity-70"
-              style={{ color: "#2DD4BF" }}
+              style={{ color: "#f2ca50" }}
             >
               Ta kontakt med oss
             </a>
@@ -59,12 +59,12 @@ export default function FAQ() {
                 style={
                   openIndex === index
                     ? {
-                        border: "1px solid rgba(45,212,191,0.25)",
-                        background: "rgba(45,212,191,0.04)",
+                        border: "1px solid rgba(242,202,80,0.25)",
+                        background: "rgba(242,202,80,0.04)",
                       }
                     : {
                         border: "1px solid rgba(255,255,255,0.07)",
-                        background: "#111115",
+                        background: "#1c1c1a",
                       }
                 }
               >
@@ -73,7 +73,7 @@ export default function FAQ() {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   aria-expanded={openIndex === index}
                 >
-                  <span className="pr-4 font-semibold" style={{ color: "#F2EDE6" }}>
+                  <span className="pr-4 font-semibold" style={{ color: "#e5e2de" }}>
                     {faq.question}
                   </span>
                   <svg
@@ -82,7 +82,7 @@ export default function FAQ() {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     aria-hidden="true"
-                    style={{ color: "#2DD4BF" }}
+                    style={{ color: "#f2ca50" }}
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -94,9 +94,9 @@ export default function FAQ() {
                 >
                   <div
                     className="mx-6 mb-6 border-l-2 pl-4"
-                    style={{ borderColor: "rgba(45,212,191,0.35)" }}
+                    style={{ borderColor: "rgba(242,202,80,0.35)" }}
                   >
-                    <p className="text-sm leading-relaxed" style={{ color: "rgba(242,237,230,0.55)" }}>
+                    <p className="text-sm leading-relaxed" style={{ color: "rgba(229,226,222,0.55)" }}>
                       {faq.answer}
                     </p>
                   </div>

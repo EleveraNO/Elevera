@@ -12,7 +12,7 @@ function VideoCard() {
     <Link href="/prosjekter/drive-trafikkskule" style={{ display: "block", textDecoration: "none" }}>
       <div style={{
         width: 300,
-        background: "#0E0E12",
+        background: "#131312",
         border: "1px solid rgba(255,255,255,0.09)",
         borderRadius: 18,
         overflow: "hidden",
@@ -22,8 +22,8 @@ function VideoCard() {
       }}
         onMouseEnter={(e) => {
           (e.currentTarget as HTMLDivElement).style.transform = "scale(1.025)";
-          (e.currentTarget as HTMLDivElement).style.boxShadow = "0 28px 70px rgba(0,0,0,0.6), 0 0 0 1px rgba(45,212,191,0.2)";
-          (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(45,212,191,0.3)";
+          (e.currentTarget as HTMLDivElement).style.boxShadow = "0 28px 70px rgba(0,0,0,0.6), 0 0 0 1px rgba(242,202,80,0.2)";
+          (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(242,202,80,0.3)";
         }}
         onMouseLeave={(e) => {
           (e.currentTarget as HTMLDivElement).style.transform = "scale(1)";
@@ -50,14 +50,14 @@ function VideoCard() {
           {/* Badge */}
           <div style={{
             position: "absolute", top: 12, left: 12,
-            background: "rgba(45,212,191,0.15)",
-            border: "1px solid rgba(45,212,191,0.25)",
+            background: "rgba(242,202,80,0.15)",
+            border: "1px solid rgba(242,202,80,0.25)",
             borderRadius: 100,
             padding: "3px 10px",
             fontSize: 10,
             fontWeight: 700,
             letterSpacing: "0.08em",
-            color: "#2DD4BF",
+            color: "#f2ca50",
             fontFamily: "system-ui, sans-serif",
             textTransform: "uppercase",
           }}>
@@ -67,20 +67,20 @@ function VideoCard() {
         {/* Info */}
         <div style={{ padding: "14px 16px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: "#F2EDE6", fontFamily: "system-ui, sans-serif", marginBottom: 2 }}>
+            <div style={{ fontSize: 13, fontWeight: 600, color: "#e5e2de", fontFamily: "system-ui, sans-serif", marginBottom: 2 }}>
               Drive Trafikkskule
             </div>
-            <div style={{ fontSize: 11, color: "rgba(242,237,230,0.38)", fontFamily: "system-ui, sans-serif" }}>
+            <div style={{ fontSize: 11, color: "rgba(229,226,222,0.38)", fontFamily: "system-ui, sans-serif" }}>
               Trafikkskole · Ålesund
             </div>
           </div>
           <div style={{
             width: 28, height: 28, borderRadius: "50%",
-            background: "rgba(45,212,191,0.1)",
-            border: "1px solid rgba(45,212,191,0.2)",
+            background: "rgba(242,202,80,0.1)",
+            border: "1px solid rgba(242,202,80,0.2)",
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" strokeWidth="2.5">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f2ca50" strokeWidth="2.5">
               <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
@@ -95,7 +95,7 @@ function WebCard() {
     <Link href="/prosjekter/tverbakken-gard" style={{ display: "block", textDecoration: "none" }}>
       <div style={{
         width: 280,
-        background: "#0E0E12",
+        background: "#131312",
         border: "1px solid rgba(255,255,255,0.09)",
         borderRadius: 18,
         overflow: "hidden",
@@ -146,10 +146,10 @@ function WebCard() {
         {/* Info */}
         <div style={{ padding: "14px 16px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: "#F2EDE6", fontFamily: "system-ui, sans-serif", marginBottom: 2 }}>
+            <div style={{ fontSize: 13, fontWeight: 600, color: "#e5e2de", fontFamily: "system-ui, sans-serif", marginBottom: 2 }}>
               Tverbakken Gård
             </div>
-            <div style={{ fontSize: 11, color: "rgba(242,237,230,0.38)", fontFamily: "system-ui, sans-serif" }}>
+            <div style={{ fontSize: 11, color: "rgba(229,226,222,0.38)", fontFamily: "system-ui, sans-serif" }}>
               Gård · Kjerringøy, Nordland
             </div>
           </div>
@@ -187,7 +187,7 @@ function MetricsCard() {
   return (
     <div style={{
       width: 268,
-      background: "#0E0E12",
+      background: "#131312",
       border: "1px solid rgba(255,255,255,0.09)",
       borderRadius: 18,
       overflow: "hidden",
@@ -196,19 +196,19 @@ function MetricsCard() {
     }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
         <div>
-          <div style={{ fontSize: 11, color: "rgba(242,237,230,0.35)", fontFamily: "system-ui, sans-serif",
+          <div style={{ fontSize: 11, color: "rgba(229,226,222,0.35)", fontFamily: "system-ui, sans-serif",
             letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 4 }}>
             Annonsering
           </div>
-          <div style={{ fontSize: 20, fontWeight: 700, color: "#F2EDE6", fontFamily: "system-ui, sans-serif", letterSpacing: "-0.5px" }}>
+          <div style={{ fontSize: 20, fontWeight: 700, color: "#e5e2de", fontFamily: "system-ui, sans-serif", letterSpacing: "-0.5px" }}>
             +142%
           </div>
         </div>
         <div style={{
-          background: "rgba(45,212,191,0.12)",
-          border: "1px solid rgba(45,212,191,0.2)",
+          background: "rgba(242,202,80,0.12)",
+          border: "1px solid rgba(242,202,80,0.2)",
           borderRadius: 8, padding: "4px 8px",
-          fontSize: 11, fontWeight: 600, color: "#2DD4BF",
+          fontSize: 11, fontWeight: 600, color: "#f2ca50",
           fontFamily: "system-ui, sans-serif",
         }}>
           ↑ Klikk
@@ -217,15 +217,15 @@ function MetricsCard() {
       <svg width={W} height={H} style={{ overflow: "visible" }}>
         <defs>
           <linearGradient id="fc-areaFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#2DD4BF" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#2DD4BF" stopOpacity="0.01" />
+            <stop offset="0%" stopColor="#f2ca50" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#f2ca50" stopOpacity="0.01" />
           </linearGradient>
         </defs>
         <path d={areaPath} fill="url(#fc-areaFill)" />
-        <path d={linePath} fill="none" stroke="#2DD4BF" strokeWidth="1.8"
+        <path d={linePath} fill="none" stroke="#f2ca50" strokeWidth="1.8"
           strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx={toX(points.length - 1)} cy={toY(points[points.length - 1])} r="4" fill="#2DD4BF" />
-        <circle cx={toX(points.length - 1)} cy={toY(points[points.length - 1])} r="7" fill="rgba(45,212,191,0.2)" />
+        <circle cx={toX(points.length - 1)} cy={toY(points[points.length - 1])} r="4" fill="#f2ca50" />
+        <circle cx={toX(points.length - 1)} cy={toY(points[points.length - 1])} r="7" fill="rgba(242,202,80,0.2)" />
       </svg>
     </div>
   );
@@ -276,7 +276,7 @@ function Carousel3D() {
         top: "30%", left: "50%",
         width: 220, height: 220,
         transform: "translate(-50%, -50%)",
-        background: "radial-gradient(circle, rgba(45,212,191,0.13) 0%, transparent 70%)",
+        background: "radial-gradient(circle, rgba(242,202,80,0.13) 0%, transparent 70%)",
         borderRadius: "50%",
         pointerEvents: "none",
         transition: "opacity 0.4s ease",
@@ -336,12 +336,12 @@ function Carousel3D() {
               width: i === active ? 22 : 6,
               height: 6,
               borderRadius: 3,
-              background: i === active ? "#2DD4BF" : "rgba(255,255,255,0.18)",
+              background: i === active ? "#f2ca50" : "rgba(255,255,255,0.18)",
               border: "none",
               padding: 0,
               cursor: "pointer",
               transition: "all 0.35s cubic-bezier(0.34,1.1,0.64,1)",
-              boxShadow: i === active ? "0 0 8px rgba(45,212,191,0.5)" : "none",
+              boxShadow: i === active ? "0 0 8px rgba(242,202,80,0.5)" : "none",
             }}
             aria-label={`Gå til kort ${i + 1}`}
           />

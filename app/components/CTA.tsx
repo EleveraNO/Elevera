@@ -5,48 +5,56 @@ import ContactForm from "./ContactForm";
 
 export default function CTA() {
   return (
-    <section id="kontakt" className="px-6 py-24">
+    <section id="kontakt" className="px-6 py-24 md:px-20">
       <div className="mx-auto max-w-4xl">
         <ScaleIn>
           <div
-            className="relative overflow-hidden rounded-2xl p-10 text-center md:p-16"
+            className="relative overflow-hidden p-10 text-center md:p-16"
             style={{
-              border: "1px solid rgba(45,212,191,0.2)",
-              background: "linear-gradient(135deg, rgba(45,212,191,0.07) 0%, #111115 50%, #0E0E12 100%)",
+              background: "#1c1c1a",
+              border: "1px solid rgba(77,70,53,0.2)",
+              borderRadius: "2px",
             }}
           >
-            {/* Subtle top accent line */}
+            {/* Gold radial glow */}
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{
+                backgroundImage: "radial-gradient(circle at 50% 50%, rgba(242,202,80,0.06) 0%, transparent 70%)",
+              }}
+              aria-hidden="true"
+            />
+            {/* Top accent line */}
             <div
               className="absolute top-0 left-1/2 h-px w-32 -translate-x-1/2"
-              style={{ background: "linear-gradient(90deg, transparent, #2DD4BF, transparent)" }}
+              style={{ background: "linear-gradient(90deg, transparent, #d4af37, transparent)" }}
               aria-hidden="true"
             />
 
             <div className="relative z-10">
               {/* Badge */}
               <div
-                className="mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5"
+                className="mb-6 inline-flex items-center gap-2 px-4 py-1.5"
                 style={{
-                  border: "1px solid rgba(45,212,191,0.2)",
-                  background: "rgba(45,212,191,0.07)",
+                  border: "1px solid rgba(212,175,55,0.25)",
+                  background: "rgba(212,175,55,0.07)",
+                  borderRadius: "2px",
                 }}
               >
-                <span
-                  className="h-2 w-2 animate-pulse rounded-full"
-                  style={{ background: "#2DD4BF" }}
-                />
-                <span className="text-sm font-medium" style={{ color: "rgba(45,212,191,0.85)" }}>
+                <span className="h-2 w-2 animate-pulse rounded-full" style={{ background: "#f2ca50" }} />
+                <span className="text-sm font-semibold" style={{ color: "rgba(242,202,80,0.9)", fontFamily: "var(--font-manrope), sans-serif" }}>
                   Gratis og uforpliktende
                 </span>
               </div>
 
-              <h2 className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl" style={{ color: "#F2EDE6" }}>
-                Klar til å vokse?
+              <h2
+                className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
+                style={{ fontFamily: "var(--font-noto-serif), Georgia, serif", color: "#e5e2de" }}
+              >
+                Lurer du på hva vi ville gjort for <em style={{ fontStyle: "italic", color: "#f2ca50" }}>din</em> bedrift?
               </h2>
-              <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed" style={{ color: "rgba(242,237,230,0.52)" }}>
-                Book et gratis strategimøte på 30 minutter. Vi hjelper bedrifter i
-                Ålesund og omegn – og forteller deg nøyaktig hva vi ville gjort
-                for å hjelpe akkurat deg vokse på nett.
+              <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed" style={{ color: "#d0c5af" }}>
+                Book et gratis strategimøte på 30 minutter. Vi ser på nettsiden din, annonsene dine og konkurrentene dine — og forteller deg nøyaktig hva vi ville gjort annerledes.
               </p>
 
               <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -54,34 +62,30 @@ export default function CTA() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full px-8 py-3.5 text-base font-semibold transition-all duration-200 hover:-translate-y-0.5"
-                  style={{
-                    background: "#2DD4BF",
-                    color: "#09090B",
-                  }}
+                  className="rounded-sm px-8 py-3.5 text-base font-bold transition-all duration-200 active:scale-95"
+                  style={{ background: "#d4af37", color: "#3c2f00" }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "#14B8A6";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "#f2ca50";
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 24px rgba(212,175,55,0.35)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "#2DD4BF";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "#d4af37";
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none";
                   }}
                 >
                   Book gratis møte
                 </a>
                 <a
                   href="tel:+4794974165"
-                  className="flex items-center gap-2 rounded-full px-8 py-3.5 text-base font-semibold transition-all duration-200"
-                  style={{
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    color: "rgba(242,237,230,0.7)",
-                  }}
+                  className="flex items-center gap-2 rounded-sm px-8 py-3.5 text-base font-semibold transition-all duration-200"
+                  style={{ border: "1px solid rgba(77,70,53,0.35)", color: "rgba(229,226,222,0.7)" }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.3)";
-                    (e.currentTarget as HTMLAnchorElement).style.color = "#F2EDE6";
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(242,202,80,0.4)";
+                    (e.currentTarget as HTMLAnchorElement).style.color = "#f2ca50";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.15)";
-                    (e.currentTarget as HTMLAnchorElement).style.color = "rgba(242,237,230,0.7)";
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(77,70,53,0.35)";
+                    (e.currentTarget as HTMLAnchorElement).style.color = "rgba(229,226,222,0.7)";
                   }}
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -91,10 +95,10 @@ export default function CTA() {
                 </a>
               </div>
 
-              <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm" style={{ color: "rgba(242,237,230,0.38)" }}>
+              <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm" style={{ color: "rgba(208,197,175,0.5)" }}>
                 {["Gratis og uforpliktende", "Svar innen 24 timer", "Ingen salgsmasi"].map((item) => (
                   <span key={item} className="flex items-center gap-1.5">
-                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" style={{ color: "#2DD4BF" }}>
+                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" style={{ color: "#f2ca50" }}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     {item}
@@ -103,11 +107,9 @@ export default function CTA() {
               </div>
 
               <div className="my-10 flex items-center gap-4">
-                <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.08)" }} />
-                <span className="text-sm" style={{ color: "rgba(242,237,230,0.28)" }}>
-                  Eller send oss en melding
-                </span>
-                <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.08)" }} />
+                <div className="h-px flex-1" style={{ background: "rgba(77,70,53,0.25)" }} />
+                <span className="text-sm" style={{ color: "rgba(208,197,175,0.4)" }}>Eller send oss en melding</span>
+                <div className="h-px flex-1" style={{ background: "rgba(77,70,53,0.25)" }} />
               </div>
 
               <ContactForm />

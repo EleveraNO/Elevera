@@ -54,6 +54,8 @@ const jsonLd = {
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Foto & video Ålesund", url: "https://elevera.no/tjenester/foto-og-video-alesund" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Dronevideo Ålesund", url: "https://elevera.no/tjenester/dronevideo-alesund" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital annonsering Ålesund", url: "https://elevera.no/tjenester/annonsering-alesund" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO Ålesund", url: "https://elevera.no/tjenester/seo-alesund" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sosiale medier Ålesund", url: "https://elevera.no/tjenester/sosiale-medier-alesund" } },
     ],
   },
   sameAs: [
@@ -92,7 +94,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
       />
-      <main className="min-h-screen" style={{ background: "#09090B" }}>
+      <main className="min-h-screen" style={{ background: "#131312" }}>
         <Navbar />
         <Hero />
         <Marquee />
@@ -104,7 +106,6 @@ export default function Home() {
         <Testimonials />
         <WhyElevera />
         <Pricing />
-        <FAQ />
         <CTA />
         <Footer />
       </main>

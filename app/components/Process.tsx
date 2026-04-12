@@ -33,20 +33,20 @@ export default function Process() {
         <FadeUp className="mb-16">
           <p
             className="mb-3 text-xs font-semibold uppercase tracking-[0.2em]"
-            style={{ color: "#2DD4BF" }}
+            style={{ color: "#f2ca50" }}
           >
             Slik jobber vi
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <h2
               className="max-w-sm text-3xl font-bold sm:text-4xl md:text-5xl"
-              style={{ color: "#F2EDE6" }}
+              style={{ color: "#e5e2de" }}
             >
               Fra første møte til målbare resultater
             </h2>
             <p
               className="max-w-xs text-sm leading-relaxed sm:text-right"
-              style={{ color: "rgba(242,237,230,0.45)" }}
+              style={{ color: "rgba(229,226,222,0.45)" }}
             >
               En enkel, forutsigbar prosess — slik at du alltid vet
               hva som skjer og hva du betaler for.
@@ -58,7 +58,7 @@ export default function Process() {
         {/* Connecting line on desktop */}
         <div
           className="absolute top-10 left-[calc(33%-1px)] right-[calc(33%-1px)] hidden h-px md:block"
-          style={{ background: "rgba(45,212,191,0.15)" }}
+          style={{ background: "rgba(242,202,80,0.15)" }}
           aria-hidden="true"
         />
         <StaggerContainer className="grid gap-px md:grid-cols-3">
@@ -67,16 +67,16 @@ export default function Process() {
             <StaggerItem key={i}>
               <div
                 className="relative flex flex-col gap-5 p-8 lg:p-10"
-                style={{ background: "#09090B" }}
+                style={{ background: "#131312" }}
               >
                 {/* Step number with teal ring */}
                 <div className="flex items-center gap-4">
                   <div
                     className="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold"
                     style={{
-                      border: "1px solid rgba(45,212,191,0.35)",
-                      background: "rgba(45,212,191,0.07)",
-                      color: "#2DD4BF",
+                      border: "1px solid rgba(242,202,80,0.35)",
+                      background: "rgba(242,202,80,0.07)",
+                      color: "#f2ca50",
                     }}
                   >
                     {step.number}
@@ -91,19 +91,19 @@ export default function Process() {
                 <div>
                   <h3
                     className="mb-2 text-lg font-bold"
-                    style={{ color: "#F2EDE6" }}
+                    style={{ color: "#e5e2de" }}
                   >
                     {step.title}
                   </h3>
                   <p
                     className="mb-4 text-sm leading-relaxed"
-                    style={{ color: "rgba(242,237,230,0.50)" }}
+                    style={{ color: "rgba(229,226,222,0.50)" }}
                   >
                     {step.description}
                   </p>
                   <p
                     className="text-xs font-medium"
-                    style={{ color: "rgba(45,212,191,0.65)" }}
+                    style={{ color: "rgba(242,202,80,0.65)" }}
                   >
                     {step.detail}
                   </p>
@@ -121,14 +121,14 @@ export default function Process() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5"
             style={{
-              background: "#2DD4BF",
-              color: "#09090B",
+              background: "#f2ca50",
+              color: "#131312",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "#14B8A6";
+              (e.currentTarget as HTMLAnchorElement).style.background = "#d4af37";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "#2DD4BF";
+              (e.currentTarget as HTMLAnchorElement).style.background = "#f2ca50";
             }}
           >
             Start med steg 1 — gratis møte

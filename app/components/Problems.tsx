@@ -10,8 +10,8 @@ const problems = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    title: "Ingen synlighet på nett",
-    description: "Du har en nettside, men ingen finner deg. Konkurrentene dine stjeler kundene dine dag for dag.",
+    title: "Ingen finner deg på nett",
+    description: "Du har en nettside, men den dukker ikke opp på Google. Konkurrentene dine tar kundene dine — hver eneste dag.",
   },
   {
     number: "02",
@@ -31,8 +31,8 @@ const problems = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: "Uprofesjonelt visuelt inntrykk",
-    description: "Bilder tatt med mobil og amatøraktig design gjør at kunder velger bort deg til fordel for konkurrenter.",
+    title: "Bilder som skremmer bort kunder",
+    description: "Mobilbilder og amatørdesign gir feil førsteinntrykk. Kundene velger konkurrenten som ser mer profesjonell ut.",
   },
   {
     number: "04",
@@ -53,14 +53,14 @@ export default function Problems() {
         <FadeUp className="mb-16">
           <p
             className="mb-3 text-xs font-semibold uppercase tracking-[0.2em]"
-            style={{ color: "#2DD4BF" }}
+            style={{ color: "#f2ca50" }}
           >
             Kjenner du deg igjen?
           </p>
-          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl" style={{ color: "#F2EDE6" }}>
-            Utfordringer mange{" "}
+          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl" style={{ color: "#e5e2de" }}>
+            Kjenner du igjen{" "}
             <br className="hidden sm:block" />
-            lokale bedrifter møter
+            noen av disse?
           </h2>
         </FadeUp>
 
@@ -70,21 +70,21 @@ export default function Problems() {
             <StaggerItem key={problem.number}>
               <div
                 className="flex h-full flex-col gap-5 p-7 transition-colors duration-200"
-                style={{ background: "#09090B" }}
+                style={{ background: "#131312" }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.background = "#111115";
+                  (e.currentTarget as HTMLDivElement).style.background = "#1c1c1a";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.background = "#09090B";
+                  (e.currentTarget as HTMLDivElement).style.background = "#131312";
                 }}
               >
                 <div className="flex items-start justify-between">
                   <div
                     className="flex h-9 w-9 items-center justify-center rounded-lg"
                     style={{
-                      border: "1px solid rgba(45,212,191,0.18)",
-                      background: "rgba(45,212,191,0.07)",
-                      color: "#2DD4BF",
+                      border: "1px solid rgba(242,202,80,0.18)",
+                      background: "rgba(242,202,80,0.07)",
+                      color: "#f2ca50",
                     }}
                   >
                     {problem.icon}
@@ -94,10 +94,10 @@ export default function Problems() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="mb-2 font-semibold leading-snug" style={{ color: "#F2EDE6" }}>
+                  <h3 className="mb-2 font-semibold leading-snug" style={{ color: "#e5e2de" }}>
                     {problem.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(242,237,230,0.45)" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(229,226,222,0.45)" }}>
                     {problem.description}
                   </p>
                 </div>
@@ -109,12 +109,12 @@ export default function Problems() {
 
         <FadeUp delay={0.3}>
           <div className="mt-10 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
-            <p style={{ color: "rgba(242,237,230,0.45)" }}>
+            <p style={{ color: "rgba(229,226,222,0.45)" }}>
               Kjenner du igjen ett eller flere av disse punktene?{" "}
               <a
                 href="#kontakt"
                 className="underline underline-offset-4 transition-colors hover:opacity-80"
-                style={{ color: "#2DD4BF" }}
+                style={{ color: "#f2ca50" }}
               >
                 Da er Elevera svaret.
               </a>

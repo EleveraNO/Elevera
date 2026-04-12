@@ -1,39 +1,65 @@
+"use client";
+
 import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 px-6 py-12">
-      <div className="mx-auto max-w-6xl">
+    <footer style={{ background: "#0e0e0c", borderTop: "1px solid rgba(77,70,53,0.15)" }} className="px-6 py-12 md:px-20">
+      <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-2">
-            <a href="#" className="mb-4 block">
+            <a href="/" className="mb-5 block" aria-label="Elevera – til forsiden">
               <Logo />
             </a>
-            <p className="mb-6 max-w-sm text-sm leading-relaxed text-white/40">
+            <p className="mb-6 max-w-sm text-sm leading-relaxed" style={{ color: "#99907c" }}>
               Digitalbyrå i Ålesund som hjelper lokale og regionale bedrifter å
               vokse på nett gjennom profesjonelt innhold, konverterende
               nettsider og presis digital markedsføring.
             </p>
             <div className="flex gap-4">
-              {/* Instagram */}
               <a
                 href="https://www.instagram.com/elevera_no/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all hover:border-[rgba(45,212,191,0.4)] hover:text-[#2DD4BF]"
+                className="flex h-9 w-9 items-center justify-center transition-all"
+                style={{
+                  border: "1px solid rgba(77,70,53,0.35)",
+                  borderRadius: "2px",
+                  color: "#99907c",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(242,202,80,0.4)";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#f2ca50";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(77,70,53,0.35)";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#99907c";
+                }}
                 aria-label="Instagram"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                 </svg>
               </a>
-              {/* Facebook */}
               <a
                 href="https://www.facebook.com/profile.php?id=61582956691309"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all hover:border-[rgba(45,212,191,0.4)] hover:text-[#2DD4BF]"
+                className="flex h-9 w-9 items-center justify-center transition-all"
+                style={{
+                  border: "1px solid rgba(77,70,53,0.35)",
+                  borderRadius: "2px",
+                  color: "#99907c",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(242,202,80,0.4)";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#f2ca50";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(77,70,53,0.35)";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#99907c";
+                }}
                 aria-label="Facebook"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -45,43 +71,49 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/60">
+            <h4
+              className="mb-4 text-xs font-bold uppercase tracking-widest"
+              style={{ color: "rgba(208,197,175,0.5)" }}
+            >
               Tjenester
             </h4>
-            <ul className="space-y-3 text-sm text-white/40">
-              <li>
-                <a href="#tjenester" className="transition-colors hover:text-white">
-                  Foto & Video
-                </a>
-              </li>
-              <li>
-                <a href="#tjenester" className="transition-colors hover:text-white">
-                  Nettside
-                </a>
-              </li>
-              <li>
-                <a href="#tjenester" className="transition-colors hover:text-white">
-                  Digital annonsering
-                </a>
-              </li>
-              <li>
-                <a href="#tjenester" className="transition-colors hover:text-white">
-                  Digital vekststrategi
-                </a>
-              </li>
+            <ul className="space-y-3 text-sm" style={{ color: "#99907c" }}>
+              {[
+                { label: "Nettside", href: "/tjenester/nettside-alesund" },
+                { label: "Foto & Video", href: "/tjenester/foto-og-video-alesund" },
+                { label: "Annonsering", href: "/tjenester/annonsering-alesund" },
+                { label: "SEO", href: "/tjenester/seo-alesund" },
+                { label: "Sosiale medier", href: "/tjenester/sosiale-medier-alesund" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    className="transition-colors duration-200"
+                    onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#f2ca50")}
+                    onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#99907c")}
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/60">
+            <h4
+              className="mb-4 text-xs font-bold uppercase tracking-widest"
+              style={{ color: "rgba(208,197,175,0.5)" }}
+            >
               Kontakt
             </h4>
-            <ul className="space-y-3 text-sm text-white/40">
+            <ul className="space-y-3 text-sm" style={{ color: "#99907c" }}>
               <li>
                 <a
                   href="mailto:tverbakk@elevera.no"
-                  className="transition-colors hover:text-white"
+                  className="transition-colors duration-200"
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#f2ca50")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#99907c")}
                 >
                   tverbakk@elevera.no
                 </a>
@@ -89,29 +121,40 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+4794974165"
-                  className="transition-colors hover:text-white"
+                  className="transition-colors duration-200"
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#f2ca50")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#99907c")}
                 >
                   +47 94 97 41 65
                 </a>
               </li>
-              <li className="text-white/30">Ålesund, Norge</li>
+              <li>Ålesund, Norge</li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/30 sm:flex-row">
-          <p>© {new Date().getFullYear()} Elevera — Org.nr. 936 240 658. Alle rettigheter forbeholdt.</p>
+        <div
+          className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-sm sm:flex-row"
+          style={{ borderColor: "rgba(77,70,53,0.15)", color: "rgba(153,144,124,0.5)" }}
+        >
+          <p>© {new Date().getFullYear()} Elevera Digital Agency. Built for prestige.</p>
           <div className="flex gap-6">
-            <a href="/blogg" className="transition-colors hover:text-white">
-              Blogg
-            </a>
-            <a href="/personvern" className="transition-colors hover:text-white">
-              Personvern
-            </a>
-            <a href="/vilkar" className="transition-colors hover:text-white">
-              Vilkår
-            </a>
+            {[
+              { label: "Blogg", href: "/blogg" },
+              { label: "Personvern", href: "/personvern" },
+              { label: "Vilkår", href: "/vilkar" },
+            ].map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="transition-colors duration-200"
+                onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#f2ca50")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(153,144,124,0.5)")}
+              >
+                {l.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>

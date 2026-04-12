@@ -1,6 +1,13 @@
 import type { MetadataRoute } from "next";
 
-const today = new Date("2026-04-02");
+const today = new Date("2026-04-12");
+
+// Programmatic location pages
+const locationPages = [
+  "nettside-molde", "nettside-kristiansund",
+  "annonsering-molde", "annonsering-kristiansund",
+  "sosiale-medier-molde", "sosiale-medier-kristiansund",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -47,6 +54,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://elevera.no/tjenester/seo-alesund",
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: "https://elevera.no/tjenester/sosiale-medier-alesund",
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: "https://elevera.no/prosjekter/tverbakken-gard",
       lastModified: today,
       changeFrequency: "monthly",
@@ -63,12 +82,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: today,
       changeFrequency: "monthly",
       priority: 0.8,
-    },
-    {
-      url: "https://elevera.no/kalkulator",
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.7,
     },
     {
       url: "https://elevera.no/blogg",
@@ -124,5 +137,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    // Programmatic location pages
+    ...locationPages.map((slug) => ({
+      url: `https://elevera.no/tjenester/${slug}`,
+      lastModified: today,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
   ];
 }

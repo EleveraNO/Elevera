@@ -9,18 +9,18 @@ export default function MidCTA() {
         <div
           className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 rounded-xl px-8 py-7 sm:flex-row"
           style={{
-            border: "1px solid rgba(45,212,191,0.15)",
-            background: "linear-gradient(90deg, rgba(45,212,191,0.05) 0%, transparent 100%)",
+            border: "1px solid rgba(242,202,80,0.15)",
+            background: "linear-gradient(90deg, rgba(242,202,80,0.05) 0%, transparent 100%)",
           }}
         >
           <div>
             <p
               className="mb-1 text-base font-semibold sm:text-lg"
-              style={{ color: "#F2EDE6" }}
+              style={{ color: "#e5e2de" }}
             >
               Klar til å se hva Elevera kan gjøre for deg?
             </p>
-            <p className="text-sm" style={{ color: "rgba(242,237,230,0.45)" }}>
+            <p className="text-sm" style={{ color: "rgba(229,226,222,0.45)" }}>
               Book et gratis strategimøte — ingen forpliktelser, ingen salgsmasi.
             </p>
           </div>
@@ -30,12 +30,12 @@ export default function MidCTA() {
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: "#2DD4BF", color: "#09090B" }}
+              style={{ background: "#f2ca50", color: "#131312" }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background = "#14B8A6";
+                (e.currentTarget as HTMLAnchorElement).style.background = "#d4af37";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background = "#2DD4BF";
+                (e.currentTarget as HTMLAnchorElement).style.background = "#f2ca50";
               }}
             >
               Book møte
@@ -43,12 +43,12 @@ export default function MidCTA() {
             <a
               href="tel:+4794974165"
               className="text-sm transition-colors duration-200"
-              style={{ color: "rgba(242,237,230,0.5)" }}
+              style={{ color: "rgba(229,226,222,0.5)" }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.color = "#F2EDE6";
+                (e.currentTarget as HTMLAnchorElement).style.color = "#e5e2de";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(242,237,230,0.5)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(229,226,222,0.5)";
               }}
             >
               eller ring oss

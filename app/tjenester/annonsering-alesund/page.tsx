@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import PageCTA from "../../components/PageCTA";
+import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
   title: "Annonsering i Ålesund | Facebook Ads & Google Ads – Elevera",
@@ -14,16 +14,6 @@ export const metadata: Metadata = {
     url: "https://elevera.no/tjenester/annonsering-alesund",
   },
 };
-
-const included = [
-  "Facebook og Instagram annonsering",
-  "Google Ads og Shopping",
-  "Målgruppeanalyse og segmentering",
-  "Annonsekreativer og tekst",
-  "A/B-testing av annonser",
-  "Løpende optimalisering",
-  "Månedlig rapport med resultater",
-];
 
 const faqs = [
   {
@@ -76,118 +66,43 @@ export default function AnnonseringPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen bg-[#0a0a0a]">
-      <Navbar />
-
-      {/* Hero */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden px-6 pt-20">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]" style={{ background: "rgba(45,212,191,0.07)" }} />
-        </div>
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5" style={{ borderColor: "rgba(45,212,191,0.2)", background: "rgba(45,212,191,0.06)" }}>
-            <span className="h-1.5 w-1.5 rounded-full" style={{ background: "#2DD4BF" }} />
-            <span className="text-sm font-medium" style={{ color: "rgba(45,212,191,0.8)" }}>Ålesund og omegn</span>
-          </div>
-          <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
-            Digital{" "}
-            <em style={{ fontFamily: "var(--font-fraunces), Georgia, serif", fontStyle: "italic", color: "#2DD4BF" }}>annonsering</em>{" "}
-            i Ålesund
-          </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed" style={{ color: "rgba(242,237,230,0.55)" }}>
-            Vi administrerer Facebook Ads, Instagram Ads og Google Ads som faktisk gir
-            avkastning – datadrevet og optimalisert for bedrifter i Ålesund og omegn.
-          </p>
-          <a
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
-            target="_blank" rel="noopener noreferrer"
-            className="rounded-full px-8 py-3.5 text-base font-semibold transition-all duration-200 hover:-translate-y-0.5"
-            style={{ background: "#2DD4BF", color: "#09090B" }}
-          >
-            Få et gratis tilbud
-          </a>
-        </div>
-      </section>
-
-      {/* What's included */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Hva er inkludert?</h2>
-            <p className="mt-4 text-white/50">Alt du trenger for lønnsom digital annonsering.</p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {included.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4">
-                <svg className="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="#2DD4BF">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-sm text-white/80">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why */}
-      <section className="px-6 py-20 border-t border-white/10">
-        <div className="mx-auto max-w-5xl">
-          <div className="grid gap-12 md:grid-cols-2 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Hvorfor profesjonell annonsering?
-              </h2>
-              <div className="space-y-4 text-white/60 leading-relaxed">
-                <p>
-                  Mange bedrifter kaster bort penger på annonser fordi de ikke har riktig
-                  målretting, kreativt eller strategi. Vi sørger for at hver krone du
-                  bruker jobber for deg.
-                </p>
-                <p>
-                  Som lokalt byrå i Ålesund kjenner vi markedet og målgruppene i regionen.
-                  Det gir oss et fortrinn når vi setter opp annonsering som treffer riktig
-                  person til riktig tid.
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { stat: "2,5x", label: "Gjennomsnittlig ROAS for våre kunder" },
-                { stat: "4,1mill", label: "Nordmenn er aktive på sosiale medier daglig" },
-                { stat: "63%", label: "Av bedrifter øker annonsebudsjettet hvert år" },
-                { stat: "Top 3", label: "Google-annonser vises øverst i søkeresultatene" },
-              ].map((item, i) => (
-                <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-5">
-                  <div className="text-2xl font-bold mb-1" style={{ color: "#2DD4BF" }}>{item.stat}</div>
-                  <div className="text-xs text-white/50 leading-relaxed">{item.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="mb-10 text-center text-3xl font-bold text-white">
-            Vanlige spørsmål om annonsering
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <div key={i} className="rounded-2xl border border-white/10 bg-white/5 px-6 py-5">
-                <h3 className="mb-2 font-semibold text-white">{faq.q}</h3>
-                <p className="text-sm leading-relaxed text-white/50">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <PageCTA heading="Klar for lønnsom annonsering?" />
-
-      <Footer />
-    </main>
+      <main className="min-h-screen" style={{ background: "#131312" }}>
+        <Navbar />
+        <ServicePageLayout
+          badge="Annonsering — Ålesund"
+          title="Digital"
+          titleAccent="annonsering"
+          titleSuffix="i Ålesund"
+          description="Vi administrerer Facebook Ads, Instagram Ads og Google Ads som faktisk gir avkastning – datadrevet og optimalisert for bedrifter i Ålesund og omegn."
+          includedLabel="Tjenester"
+          includedHeading="Hva vi tilbyr"
+          includedSubtext="Tilpasset dine behov og din bedrift."
+          included={[
+            "Facebook og Instagram annonsering",
+            "Google Ads og Shopping",
+            "Målgruppeanalyse og segmentering",
+            "Annonsekreativer og tekst",
+            "A/B-testing av annonser",
+            "Løpende optimalisering",
+            "Månedlig rapport med resultater",
+          ]}
+          whyTitle="Hvorfor profesjonell annonsering?"
+          whyText={[
+            "Mange bedrifter kaster bort penger på annonser fordi de ikke har riktig målretting, kreativt eller strategi. Vi sørger for at hver krone du bruker jobber for deg.",
+            "Som lokalt byrå i Ålesund kjenner vi markedet og målgruppene i regionen. Det gir oss et fortrinn når vi setter opp annonsering som treffer riktig person til riktig tid.",
+          ]}
+          stats={[
+            { stat: "2,5x", label: "Gjennomsnittlig ROAS for våre kunder" },
+            { stat: "4,1mill", label: "Nordmenn er aktive på sosiale medier daglig" },
+            { stat: "63%", label: "Av bedrifter øker annonsebudsjettet hvert år" },
+            { stat: "Top 3", label: "Google-annonser vises øverst i søkeresultatene" },
+          ]}
+          faqs={faqs}
+          ctaHeading="Klar for lønnsom annonsering?"
+          aiSummary="Elevera tilbyr digital annonsering for bedrifter i Ålesund og omegn. Vi administrerer Facebook Ads, Instagram Ads og Google Ads med løpende optimalisering og månedlig rapportering. Administrasjon starter fra 3 500 kr/mnd, annonsebudsjett kommer i tillegg."
+        />
+        <Footer />
+      </main>
     </>
   );
 }

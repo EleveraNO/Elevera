@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Fraunces, Montserrat } from "next/font/google";
+import { Geist, Fraunces, Montserrat, Manrope, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import CookieBanner from "./components/CookieBanner";
@@ -23,6 +23,21 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   style: ["italic"],
   weight: ["700", "800"],
+  display: "swap",
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const notoSerif = Noto_Serif({
+  variable: "--font-noto-serif",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -80,7 +95,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no">
-      <body className={`${geistSans.variable} ${fraunces.variable} ${montserrat.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${fraunces.variable} ${montserrat.variable} ${manrope.variable} ${notoSerif.variable} antialiased`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5S67ZX9GY1"
           strategy="afterInteractive"

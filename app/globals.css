@@ -1,51 +1,75 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090B;
-  --foreground: #F2EDE6;
-  --accent: #2DD4BF;
-  --accent-hover: #14B8A6;
-  --surface: #111115;
-  --surface-2: #18181D;
-  --border: rgba(255, 255, 255, 0.08);
-  --text-muted: rgba(242, 237, 230, 0.45);
+  --background: #131312;
+  --foreground: #e5e2de;
+  --primary: #f2ca50;
+  --primary-container: #d4af37;
+  --primary-dim: #e9c349;
+  --secondary: #e9c176;
+  --tertiary: #e5cb9d;
+  --on-primary: #3c2f00;
+  --on-primary-container: #554300;
+  --surface: #131312;
+  --surface-low: #1c1c1a;
+  --surface-mid: #20201e;
+  --surface-high: #2a2a28;
+  --surface-highest: #353532;
+  --surface-lowest: #0e0e0c;
+  --on-surface: #e5e2de;
+  --on-surface-variant: #d0c5af;
+  --border: rgba(77, 70, 53, 0.3);
+  --outline: #99907c;
+  --outline-variant: #4d4635;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-surface: var(--surface);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-fraunces: var(--font-fraunces);
+  --font-manrope: var(--font-manrope);
+  --font-noto-serif: var(--font-noto-serif);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-noto-serif), var(--font-manrope), Georgia, serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Focus-visible ring for keyboard navigation */
 :focus-visible {
-  outline: 2px solid #2DD4BF;
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
-/* Hide scrollbar utility */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 
-/* Grain texture overlay */
+/* Subtle grain overlay */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   background-size: 256px 256px;
+}
+
+/* Ghost outline text utility for editorial numbers */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(153, 144, 124, 0.25);
+  color: transparent;
 }
