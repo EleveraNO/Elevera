@@ -175,7 +175,9 @@ function AnimatedPrice({ value, inView }: { value: number; inView: boolean }) {
 
 function FloatingOrbs() {
   const reduced = useReducedMotion();
-  if (reduced) return null;
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => { setIsMobile(window.innerWidth < 768); }, []);
+  if (reduced || isMobile) return null;
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">

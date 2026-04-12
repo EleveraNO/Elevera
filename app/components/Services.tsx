@@ -117,8 +117,13 @@ function StaggeredFeatures({ features, inView }: { features: string[]; inView: b
 function ParallaxImage({ image, imageAlt, className, style }: { image: string; imageAlt: string; className?: string; style?: React.CSSProperties }) {
   const ref = useRef(null);
   const reduced = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [20, -20]);
+  // Skip parallax on mobile — saves scroll listener overhead
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const { scrollYProgress } = useScroll({
+    target: isMobile ? undefined : ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], isMobile ? [0, 0] : [20, -20]);
 
   return (
     <div ref={ref} className={`group/img overflow-hidden ${className ?? ""}`} style={{ background: "#1c1c1a", ...style }}>
@@ -635,17 +640,57 @@ const floatingIcons = [
 function HorizontalScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => { setIsMobile(window.innerWidth < 768); }, []);
+
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: isMobile ? undefined : containerRef,
     offset: ["start start", "end end"],
   });
   const panelCount = services.length;
-  // Each panel is ~75vw + 24px gap. Last panel should align its right edge with viewport right.
-  // Total translate = (panelCount - 1) panels worth of movement.
-  // But we need to subtract the remaining viewport space (100vw - 75vw = 25vw) so the last card sits flush.
-  const totalShift = (panelCount - 1) * 75 - 20; // subtract ~20vw to keep last panel visible
+  const totalShift = (panelCount - 1) * 75 - 20;
   const x = useTransform(scrollYProgress, [0, 0.95], ["0vw", `-${totalShift}vw`]);
 
+  // Mobile: simple vertical stack, no scroll hijacking
+  if (isMobile) {
+    return (
+      <div className="flex flex-col gap-6 px-4 py-8">
+        {services.map((service) => (
+          <a
+            key={service.number}
+            href={service.href}
+            className="relative flex flex-col overflow-hidden rounded-sm"
+            style={{ background: "#1c1c1a", border: "1px solid rgba(77,70,53,0.2)", minHeight: 280 }}
+          >
+            {/* Background video/image */}
+            <div className="absolute inset-0">
+              {service.layout === "hero" ? (
+                <video src="/videos/photo-reel.mp4" autoPlay muted loop playsInline className="h-full w-full object-cover" style={{ opacity: 0.5 }} />
+              ) : service.layout === "horizontal-tags" ? (
+                <video src="/videos/social-bg.mp4" autoPlay muted loop playsInline className="h-full w-full object-cover" style={{ opacity: 0.5 }} />
+              ) : service.layout === "giant-number" ? (
+                <video src="/videos/seo-bg.mp4" autoPlay muted loop playsInline className="h-full w-full object-cover" style={{ opacity: 0.4 }} />
+              ) : service.layout === "breakout-left" ? (
+                <video src="/videos/website-bg.mp4" autoPlay muted loop playsInline className="h-full w-full object-cover" style={{ opacity: 0.4 }} />
+              ) : service.layout === "editorial-right" ? (
+                <video src="/videos/ads-bg.mp4" autoPlay muted loop playsInline className="h-full w-full object-cover" style={{ opacity: 0.4 }} />
+              ) : null}
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1a] via-[#1c1c1a]/70 to-transparent" />
+            <div className="relative z-10 mt-auto p-6">
+              <span className="mb-2 block text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "rgba(242,202,80,0.5)" }}>{service.number}</span>
+              <h3 className="mb-2 text-xl font-bold" style={{ fontFamily: "var(--font-noto-serif), serif", color: "#e5e2de" }}>{service.title}</h3>
+              <p className="mb-4 text-sm leading-relaxed" style={{ color: "#d0c5af" }}>{service.description}</p>
+              <span className="text-xs font-bold uppercase tracking-wider" style={{ color: "#f2ca50" }}>Les mer →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    );
+  }
+
+  // Desktop: horizontal scroll
   return (
     <div
       ref={containerRef}

@@ -37,6 +37,14 @@ function mapRange(
     return toLow + percentage * (toHigh - toLow);
 }
 
+function useIsMobile() {
+    const [mobile, setMobile] = React.useState(false);
+    React.useEffect(() => {
+        setMobile(window.innerWidth < 768);
+    }, []);
+    return mobile;
+}
+
 export function EtheralShadow({
     sizing = 'fill',
     color = 'rgba(128, 128, 128, 1)',
@@ -47,7 +55,9 @@ export function EtheralShadow({
 }: ShadowOverlayProps) {
     const id = useId().replace(/:/g, '');
     const filterId = `shadowoverlay-${id}`;
-    const animationEnabled = animation && animation.scale > 0;
+    const isMobile = useIsMobile();
+    // Disable SVG filter on mobile — too heavy for mobile GPU
+    const animationEnabled = !isMobile && animation && animation.scale > 0;
     const feColorMatrixRef = useRef<SVGFEColorMatrixElement>(null);
     const hueRotateMotionValue = useMotionValue(180);
     const hueRotateAnimation = useRef<AnimationPlaybackControls | null>(null);
