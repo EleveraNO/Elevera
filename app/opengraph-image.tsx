@@ -10,25 +10,25 @@ export default function OGImage() {
     (
       <div
         style={{
-          background: "#0a0a0a",
+          background: "#131312",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          fontFamily: "sans-serif",
+          fontFamily: "Georgia, serif",
           position: "relative",
         }}
       >
-        {/* Purple glow */}
+        {/* Gold glow */}
         <div
           style={{
             position: "absolute",
-            width: 600,
-            height: 600,
+            width: 700,
+            height: 700,
             borderRadius: "50%",
-            background: "rgba(124, 58, 237, 0.25)",
+            background: "rgba(212, 175, 55, 0.12)",
             filter: "blur(120px)",
             top: "50%",
             left: "50%",
@@ -36,77 +36,94 @@ export default function OGImage() {
           }}
         />
 
+        {/* Second subtle glow — offset */}
+        <div
+          style={{
+            position: "absolute",
+            width: 400,
+            height: 400,
+            borderRadius: "50%",
+            background: "rgba(242, 202, 80, 0.08)",
+            filter: "blur(80px)",
+            top: "30%",
+            left: "60%",
+            transform: "translate(-50%, -50%)",
+          }}
+        />
+
         {/* Logo */}
         <div
           style={{
-            fontSize: 96,
-            fontWeight: 900,
-            letterSpacing: "0.05em",
-            color: "white",
-            marginBottom: 24,
+            fontSize: 88,
+            fontWeight: 700,
+            letterSpacing: "0.06em",
+            color: "#e5e2de",
+            marginBottom: 20,
           }}
         >
           ELEVERA
         </div>
 
-        {/* Divider */}
+        {/* Gold divider */}
         <div
           style={{
-            width: 80,
-            height: 4,
-            background: "#7c3aed",
+            width: 60,
+            height: 3,
+            background: "linear-gradient(90deg, transparent, #f2ca50, transparent)",
             borderRadius: 2,
-            marginBottom: 32,
+            marginBottom: 28,
           }}
         />
 
         {/* Tagline */}
         <div
           style={{
-            fontSize: 32,
-            color: "rgba(255,255,255,0.6)",
+            fontSize: 30,
+            color: "#d0c5af",
             textAlign: "center",
-            maxWidth: 800,
           }}
         >
           Digitalbyrå i Ålesund
         </div>
 
-        {/* Sub-tagline */}
+        {/* Services */}
         <div
           style={{
-            fontSize: 22,
-            color: "rgba(255,255,255,0.35)",
-            marginTop: 16,
+            fontSize: 18,
+            color: "rgba(153, 144, 124, 0.7)",
+            marginTop: 14,
             textAlign: "center",
+            letterSpacing: "0.05em",
           }}
         >
-          Nettside · Foto & Video · Digital annonsering
+          Nettside · Foto & Video · Annonsering · SEO · Sosiale medier
         </div>
 
-        {/* Badge */}
+        {/* Badge bottom */}
         <div
           style={{
             position: "absolute",
-            bottom: 48,
+            bottom: 44,
             display: "flex",
             alignItems: "center",
             gap: 8,
-            background: "rgba(124, 58, 237, 0.15)",
-            border: "1px solid rgba(124, 58, 237, 0.3)",
+            background: "rgba(242, 202, 80, 0.08)",
+            border: "1px solid rgba(242, 202, 80, 0.2)",
             borderRadius: 999,
-            padding: "10px 24px",
+            padding: "8px 22px",
           }}
         >
           <div
             style={{
-              width: 10,
-              height: 10,
+              width: 8,
+              height: 8,
               borderRadius: "50%",
-              background: "#7c3aed",
+              background: "#f2ca50",
             }}
           />
-          <span style={{ color: "#a78bfa", fontSize: 18 }}>elevera.no</span>
+          <span style={{ color: "#f2ca50", fontSize: 16, fontFamily: "sans-serif" }}>
+            elevera.no
+          </span>
         </div>
       </div>
     ),
