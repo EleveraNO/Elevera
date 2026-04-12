@@ -16,22 +16,11 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const lastScrollY = useRef(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
-      const y = window.scrollY;
-      // Transparent at top, solid background after 60px
-      setScrolled(y > 60);
-      // Hide on scroll down, show on scroll up (only after passing 200px)
-      if (y > 200) {
-        setHidden(y > lastScrollY.current + 5);
-      } else {
-        setHidden(false);
-      }
-      lastScrollY.current = y;
+      setScrolled(window.scrollY > 60);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -60,7 +49,6 @@ export default function Navbar() {
       style={{
         background: scrolled ? "rgba(19,19,18,0.88)" : "transparent",
         backdropFilter: scrolled ? "blur(16px)" : "none",
-        transform: hidden && !menuOpen ? "translateY(-100%)" : "translateY(0)",
         borderBottom: scrolled
           ? "1px solid rgba(77,70,53,0.28)"
           : "1px solid transparent",
