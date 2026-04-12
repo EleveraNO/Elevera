@@ -84,7 +84,7 @@ export default function NettsidePrisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen bg-[#0a0a0a]">
+      <main className="min-h-screen bg-[#131312]">
         <Navbar />
 
         <article className="px-6 pt-32 pb-20">
@@ -92,7 +92,7 @@ export default function NettsidePrisPage() {
 
             <Link
               href="/blogg"
-              className="mb-10 inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors"
+              className="mb-10 inline-flex items-center gap-2 text-sm text-[#99907c] hover:text-white/70 transition-colors"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -102,7 +102,7 @@ export default function NettsidePrisPage() {
 
             <div className="mb-12">
               <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full border border-[#2DD4BF]/25 bg-[#2DD4BF]/08 px-3 py-1 text-xs font-medium text-[#2DD4BF]">
+                <span className="rounded-full border border-[#f2ca50]/25 bg-[#f2ca50]/08 px-3 py-1 text-xs font-medium text-[#f2ca50]">
                   Nettside
                 </span>
                 <span className="text-xs text-white/30">31. mars 2026</span>
@@ -111,7 +111,7 @@ export default function NettsidePrisPage() {
               <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
                 Hva koster en nettside til bedriften? Her er de ærlige prisene
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-white/60">
+              <p className="mt-6 text-lg leading-relaxed text-[#d0c5af]">
                 Prisen på en bedriftsnettside kan være alt fra null kroner til 150 000 kr. Ingen av ytterpunktene er nødvendigvis riktig svar for deg. Her er hva som faktisk skiller dem fra hverandre.
               </p>
               <p className="mt-3 text-sm text-white/30">
@@ -126,10 +126,10 @@ export default function NettsidePrisPage() {
                 <p>
                   La oss starte med å rydde opp. En nettside er ikke bare én ting. Wix og en skreddersydd Next.js-løsning er begge «nettsider», akkurat som en brukt Dacia og en ny BMW begge er «biler». Prisen forteller deg hvilken kategori du er i.
                 </p>
-                <div className="mt-6 overflow-x-auto rounded-2xl border border-white/10">
+                <div className="mt-6 overflow-x-auto rounded-2xl border border-[rgba(77,70,53,0.2)]">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-white/10 bg-white/5">
+                      <tr className="border-b border-[rgba(77,70,53,0.2)] bg-white/5">
                         <th className="px-5 py-3 text-left font-semibold text-white">Løsning</th>
                         <th className="px-5 py-3 text-left font-semibold text-white">Pris</th>
                         <th className="px-5 py-3 text-left font-semibold text-white">Hvem passer det?</th>
@@ -143,9 +143,9 @@ export default function NettsidePrisPage() {
                         { type: "Next.js / moderne rammeverk", pris: "10 000–30 000 kr", hvem: "Bedrifter som vil ha rask, moderne nettside" },
                         { type: "Enterprise-løsning", pris: "50 000–150 000+ kr", hvem: "Nettbutikk, kompleks logikk, stor integrasjon" },
                       ].map((row, i) => (
-                        <tr key={i} className="text-white/60">
+                        <tr key={i} className="text-[#d0c5af]">
                           <td className="px-5 py-3 font-medium text-white/80">{row.type}</td>
-                          <td className="px-5 py-3 text-[#2DD4BF]">{row.pris}</td>
+                          <td className="px-5 py-3 text-[#f2ca50]">{row.pris}</td>
                           <td className="px-5 py-3">{row.hvem}</td>
                         </tr>
                       ))}
@@ -180,7 +180,7 @@ export default function NettsidePrisPage() {
                     { punkt: "SEO-grunnoppsett", forklaring: "Sidetitler, metabeskrivelser, hastighetsoptimalisering og teknisk SEO slik at Google faktisk finner deg." },
                     { punkt: "Testing og lansering", forklaring: "Teste på ulike enheter og nettlesere, sette opp domene og hosting, og forsikre seg om at alt fungerer." },
                   ].map((item, i) => (
-                    <li key={i} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                    <li key={i} className="rounded-xl border border-[rgba(77,70,53,0.2)] bg-white/5 p-4">
                       <div className="mb-1 font-semibold text-white">{item.punkt}</div>
                       <div className="text-sm text-white/55">{item.forklaring}</div>
                     </li>
@@ -194,10 +194,10 @@ export default function NettsidePrisPage() {
                   Prisen for selve nettsiden er én ting. I tillegg kommer:
                 </p>
                 <ul className="mt-4 space-y-2 text-white/70">
-                  <li className="flex gap-2"><span className="text-[#2DD4BF]">—</span> <span><strong className="text-white">Domene:</strong> 200–400 kr/år. Nødvendig.</span></li>
-                  <li className="flex gap-2"><span className="text-[#2DD4BF]">—</span> <span><strong className="text-white">Hosting:</strong> 100–500 kr/mnd avhengig av løsning. Nødvendig.</span></li>
-                  <li className="flex gap-2"><span className="text-[#2DD4BF]">—</span> <span><strong className="text-white">Vedlikehold og oppdateringer:</strong> 0 kr (gjør det selv) til 2 000 kr/mnd (via byrå). Valgfritt.</span></li>
-                  <li className="flex gap-2"><span className="text-[#2DD4BF]">—</span> <span><strong className="text-white">SSL-sertifikat:</strong> Gratis via de fleste hostingleverandører i dag.</span></li>
+                  <li className="flex gap-2"><span className="text-[#f2ca50]">—</span> <span><strong className="text-white">Domene:</strong> 200–400 kr/år. Nødvendig.</span></li>
+                  <li className="flex gap-2"><span className="text-[#f2ca50]">—</span> <span><strong className="text-white">Hosting:</strong> 100–500 kr/mnd avhengig av løsning. Nødvendig.</span></li>
+                  <li className="flex gap-2"><span className="text-[#f2ca50]">—</span> <span><strong className="text-white">Vedlikehold og oppdateringer:</strong> 0 kr (gjør det selv) til 2 000 kr/mnd (via byrå). Valgfritt.</span></li>
+                  <li className="flex gap-2"><span className="text-[#f2ca50]">—</span> <span><strong className="text-white">SSL-sertifikat:</strong> Gratis via de fleste hostingleverandører i dag.</span></li>
                 </ul>
                 <p className="mt-4">
                   Regn med 300–800 kr/mnd i løpende kostnader for en typisk bedriftsnettside etter lansering.
@@ -221,7 +221,7 @@ export default function NettsidePrisPage() {
                 <h2 className="text-2xl font-bold text-white mb-6">Vanlige spørsmål om nettside og pris</h2>
                 <div className="space-y-4">
                   {faqs.map((faq, i) => (
-                    <div key={i} className="rounded-2xl border border-white/10 bg-white/5 px-6 py-5">
+                    <div key={i} className="rounded-2xl border border-[rgba(77,70,53,0.2)] bg-white/5 px-6 py-5">
                       <h3 className="mb-2 font-semibold text-white">{faq.q}</h3>
                       <p className="text-sm leading-relaxed text-white/55">{faq.a}</p>
                     </div>
@@ -231,9 +231,9 @@ export default function NettsidePrisPage() {
 
             </div>
 
-            <div className="mt-16 rounded-3xl border border-[#2DD4BF]/20 bg-[#2DD4BF]/06 p-10 text-center">
+            <div className="mt-16 rounded-3xl border border-[#f2ca50]/20 bg-[#f2ca50]/06 p-10 text-center">
               <h3 className="mb-3 text-2xl font-bold text-white">Vil du ha et konkret tilbud på nettside?</h3>
-              <p className="mb-6 text-white/60">
+              <p className="mb-6 text-[#d0c5af]">
                 Vi lager nettsider til bedrifter i Ålesund og på Sunnmøre. Book et gratis møte så gir vi deg en pris uten skjulte kostnader.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -241,7 +241,7 @@ export default function NettsidePrisPage() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#2DD4BF] px-8 py-3.5 font-semibold text-[#09090B] transition-all hover:bg-[#14B8A6] hover:-translate-y-0.5"
+                  className="rounded-full bg-[#f2ca50] px-8 py-3.5 font-semibold text-[#09090B] transition-all hover:bg-[#14B8A6] hover:-translate-y-0.5"
                 >
                   Book gratis møte
                 </a>

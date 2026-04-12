@@ -80,7 +80,7 @@ export default function FacebookAnnonserPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen bg-[#0a0a0a]">
+      <main className="min-h-screen bg-[#131312]">
         <Navbar />
 
         <article className="px-6 pt-32 pb-20">
@@ -88,7 +88,7 @@ export default function FacebookAnnonserPage() {
 
             <Link
               href="/blogg"
-              className="mb-10 inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors"
+              className="mb-10 inline-flex items-center gap-2 text-sm text-[#99907c] hover:text-white/70 transition-colors"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -98,7 +98,7 @@ export default function FacebookAnnonserPage() {
 
             <div className="mb-12">
               <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full border border-[#2DD4BF]/25 bg-[#2DD4BF]/08 px-3 py-1 text-xs font-medium text-[#2DD4BF]">
+                <span className="rounded-full border border-[#f2ca50]/25 bg-[#f2ca50]/08 px-3 py-1 text-xs font-medium text-[#f2ca50]">
                   Annonsering
                 </span>
                 <span className="text-xs text-white/30">1. april 2026</span>
@@ -107,7 +107,7 @@ export default function FacebookAnnonserPage() {
               <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
                 Facebook-annonser for småbedrifter — hva som faktisk fungerer
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-white/60">
+              <p className="mt-6 text-lg leading-relaxed text-[#d0c5af]">
                 Vi ser det hele tiden: bedrifter som bruker tusenvis av kroner på Facebook-annonser uten å egentlig vite hva de får igjen. Ikke fordi Facebook Ads ikke virker — men fordi de vanligste feilene er enkle å unngå når du vet hva du ser etter.
               </p>
               <p className="mt-3 text-sm text-white/30">
@@ -177,8 +177,8 @@ export default function FacebookAnnonserPage() {
                 <p className="mt-4">
                   Det gjelder spesielt retargeting: annonser som vises til folk som allerede har besøkt nettsiden din. De vet hvem du er. De trenger bare en påminnelse og et godt tilbud. Konverteringsraten her er gjerne fem til ti ganger høyere enn kalde annonser.
                 </p>
-                <div className="mt-6 rounded-2xl border border-[#2DD4BF]/20 bg-[#2DD4BF]/05 p-5">
-                  <p className="text-sm font-semibold text-[#2DD4BF] mb-2">Tommelfingerregel for lokale bedrifter:</p>
+                <div className="mt-6 rounded-2xl border border-[#f2ca50]/20 bg-[#f2ca50]/05 p-5">
+                  <p className="text-sm font-semibold text-[#f2ca50] mb-2">Tommelfingerregel for lokale bedrifter:</p>
                   <p className="text-sm text-white/70">
                     Bruk 70 % av budsjettet på å nå nye, kalde målgrupper. Bruk 30 % på retargeting til folk som allerede kjenner deg. De sistnevnte er billige å konvertere og gir raskt synlig avkastning mens det kalde arbeidet bygger seg opp over tid.
                   </p>
@@ -202,7 +202,7 @@ export default function FacebookAnnonserPage() {
                 <h2 className="text-2xl font-bold text-white mb-6">Vanlige spørsmål om Facebook-annonser</h2>
                 <div className="space-y-4">
                   {faqs.map((faq, i) => (
-                    <div key={i} className="rounded-2xl border border-white/10 bg-white/5 px-6 py-5">
+                    <div key={i} className="rounded-2xl border border-[rgba(77,70,53,0.2)] bg-white/5 px-6 py-5">
                       <h3 className="mb-2 font-semibold text-white">{faq.q}</h3>
                       <p className="text-sm leading-relaxed text-white/55">{faq.a}</p>
                     </div>
@@ -212,9 +212,9 @@ export default function FacebookAnnonserPage() {
 
             </div>
 
-            <div className="mt-16 rounded-3xl border border-[#2DD4BF]/20 bg-[#2DD4BF]/06 p-10 text-center">
+            <div className="mt-16 rounded-3xl border border-[#f2ca50]/20 bg-[#f2ca50]/06 p-10 text-center">
               <h3 className="mb-3 text-2xl font-bold text-white">Vil du ha noen som gjør dette riktig for deg?</h3>
-              <p className="mb-6 text-white/60">
+              <p className="mb-6 text-[#d0c5af]">
                 Vi administrerer Facebook og Google Ads for bedrifter i Ålesund og på Sunnmøre. Book et gratis møte.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -222,7 +222,7 @@ export default function FacebookAnnonserPage() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#2DD4BF] px-8 py-3.5 font-semibold text-[#09090B] transition-all hover:bg-[#14B8A6] hover:-translate-y-0.5"
+                  className="rounded-full bg-[#f2ca50] px-8 py-3.5 font-semibold text-[#09090B] transition-all hover:bg-[#14B8A6] hover:-translate-y-0.5"
                 >
                   Book gratis møte
                 </a>

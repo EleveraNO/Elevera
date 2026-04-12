@@ -30,7 +30,6 @@ export default function CookieBanner() {
 
   return (
     <>
-      {/* Google Analytics – lastes kun ved samtykke */}
       {consent === "accepted" && (
         <>
           <Script
@@ -48,19 +47,25 @@ export default function CookieBanner() {
         </>
       )}
 
-      {/* Cookie-banner */}
       {visible && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#111111]/95 backdrop-blur-md px-6 py-5">
+        <div
+          className="fixed bottom-0 left-0 right-0 z-50 px-6 py-5"
+          style={{
+            background: "rgba(19,19,18,0.92)",
+            backdropFilter: "blur(16px)",
+            borderTop: "1px solid rgba(77,70,53,0.2)",
+          }}
+        >
           <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex-1">
-              <p className="text-sm font-semibold text-white mb-1">
+              <p className="mb-1 text-sm font-semibold" style={{ color: "#e5e2de" }}>
                 Vi bruker informasjonskapsler
               </p>
-              <p className="text-sm text-white/50 leading-relaxed">
+              <p className="text-sm leading-relaxed" style={{ color: "#99907c" }}>
                 Vi bruker cookies for å analysere trafikk og forbedre opplevelsen din.
                 Les vår{" "}
-                <a href="/personvern" className="text-[#7c3aed] hover:underline">
-                  personvernserklæring
+                <a href="/personvern" className="underline underline-offset-2 transition-colors" style={{ color: "#f2ca50" }}>
+                  personvernerklæring
                 </a>
                 .
               </p>
@@ -68,13 +73,15 @@ export default function CookieBanner() {
             <div className="flex gap-3 sm:flex-shrink-0">
               <button
                 onClick={decline}
-                className="rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white/70 transition-all hover:border-white/40 hover:text-white"
+                className="rounded-sm border px-5 py-2.5 text-sm font-bold transition-all"
+                style={{ borderColor: "rgba(77,70,53,0.35)", color: "rgba(229,226,222,0.7)" }}
               >
                 Avslå
               </button>
               <button
                 onClick={accept}
-                className="rounded-full bg-[#7c3aed] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-[#6d28d9] shadow-lg shadow-[#7c3aed]/20"
+                className="rounded-sm px-5 py-2.5 text-sm font-bold transition-all active:scale-95"
+                style={{ background: "#d4af37", color: "#3c2f00" }}
               >
                 Godta alle
               </button>
