@@ -23,8 +23,9 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setScrolled(y > 20);
-      setHidden(y > 100 && y > lastScrollY.current);
+      const heroHeight = window.innerHeight * 0.85;
+      setScrolled(y > heroHeight);
+      setHidden(y > heroHeight + 100 && y > lastScrollY.current);
       lastScrollY.current = y;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -52,12 +53,14 @@ export default function Navbar() {
     <nav
       className="fixed left-0 right-0 top-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? "rgba(19,19,18,0.88)" : "rgba(19,19,18,0.72)",
-        backdropFilter: "blur(16px)",
+        background: scrolled ? "rgba(19,19,18,0.88)" : "transparent",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
         transform: hidden && !menuOpen ? "translateY(-100%)" : "translateY(0)",
+        opacity: scrolled ? 1 : 0,
+        pointerEvents: scrolled ? "auto" : "none",
         borderBottom: scrolled
           ? "1px solid rgba(77,70,53,0.28)"
-          : "1px solid rgba(77,70,53,0.12)",
+          : "1px solid transparent",
         boxShadow: scrolled ? "0 20px 40px rgba(0,0,0,0.4)" : "none",
       }}
     >

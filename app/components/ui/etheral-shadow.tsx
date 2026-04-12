@@ -104,46 +104,36 @@ export function EtheralShadow({
                 ...style
             }}
         >
-            {/* Mobile: lightweight CSS-only pulsing glow */}
-            {isMobile && animation && (
+            {/* Mobile: simple CSS-only pulsing radial gradient — no masks, no filters */}
+            <div
+                className="md:hidden"
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    animation: "etheral-pulse 8s ease-in-out infinite",
+                }}
+            >
+                <style>{`
+                    @keyframes etheral-pulse {
+                        0%, 100% { opacity: 0.5; transform: scale(1); }
+                        50% { opacity: 0.9; transform: scale(1.1); }
+                    }
+                `}</style>
                 <div
                     style={{
-                        position: "absolute",
-                        inset: 0,
-                        animation: "etheral-pulse 8s ease-in-out infinite",
+                        width: "100%",
+                        height: "100%",
+                        background: `radial-gradient(ellipse 80% 70% at 40% 45%, ${color} 0%, transparent 70%), radial-gradient(ellipse 60% 55% at 65% 60%, ${color} 0%, transparent 65%)`,
                     }}
-                >
-                    <style>{`
-                        @keyframes etheral-pulse {
-                            0%, 100% { opacity: 0.6; transform: scale(1); }
-                            50% { opacity: 1; transform: scale(1.08); }
-                        }
-                    `}</style>
-                    <div
-                        style={{
-                            backgroundColor: color,
-                            maskImage: `url('/etheral-mask.png')`,
-                            WebkitMaskImage: `url('/etheral-mask.png')`,
-                            maskSize: sizing === "stretch" ? "100% 100%" : "cover",
-                            WebkitMaskSize: sizing === "stretch" ? "100% 100%" : "cover",
-                            maskRepeat: "no-repeat",
-                            WebkitMaskRepeat: "no-repeat",
-                            maskPosition: "center",
-                            WebkitMaskPosition: "center",
-                            width: "100%",
-                            height: "100%",
-                            filter: "blur(8px)",
-                        }}
-                    />
-                </div>
-            )}
+                />
+            </div>
 
             <div
+                className="hidden md:block"
                 style={{
                     position: "absolute",
                     inset: -displacementScale,
                     filter: animationEnabled ? `url(#${filterId}) blur(4px)` : "none",
-                    display: isMobile ? "none" : "block",
                 }}
             >
                 {animationEnabled && (
