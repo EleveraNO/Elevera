@@ -196,31 +196,30 @@ export default function ServicePageLayout({
                 </a>
               </motion.div>
             </div>
+
+            {/* AI summary + freshness — inside hero, right column */}
+            <div className="md:col-span-6">
+              {aiSummary && (
+                <motion.p
+                  className="mb-3 max-w-md text-xs leading-relaxed"
+                  style={{ color: "rgba(153,144,124,0.6)" }}
+                  itemProp="description"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  {aiSummary}
+                </motion.p>
+              )}
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px]" style={{ color: "rgba(153,144,124,0.35)" }}>
+                <span>Sist oppdatert: april 2026</span>
+                <span>·</span>
+                <span>Av Elevera — digitalbyrå i Ålesund</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* AI-extractable summary block + freshness signal (hidden visually, visible to crawlers) */}
-      {aiSummary && (
-        <div className="mx-auto max-w-7xl px-6 md:px-20">
-          <p
-            className="mb-2 max-w-2xl text-sm leading-relaxed"
-            style={{ color: "#99907c" }}
-            itemProp="description"
-          >
-            {aiSummary}
-          </p>
-        </div>
-      )}
-
-      {/* Freshness + author attribution */}
-      <div className="mx-auto max-w-7xl px-6 pb-4 md:px-20">
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-1 text-[11px]" style={{ color: "rgba(153,144,124,0.5)" }}>
-          <span>Sist oppdatert: april 2026</span>
-          <span>·</span>
-          <span>Av Elevera — digitalbyrå i Ålesund</span>
-        </div>
-      </div>
 
       {/* What's included — editorial grid */}
       <section className="px-6 py-24 md:px-20" style={{ background: "#1c1c1a" }}>
