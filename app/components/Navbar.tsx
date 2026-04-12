@@ -21,24 +21,20 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
-
     const onScroll = () => {
       const y = window.scrollY;
-      setScrolled(y > 20);
-      // Hide when scrolling down, show when scrolling up
-      setHidden(y > 100 && y > lastScrollY.current);
+      // Transparent at top, solid background after 60px
+      setScrolled(y > 60);
+      // Hide on scroll down, show on scroll up (only after passing 200px)
+      if (y > 200) {
+        setHidden(y > lastScrollY.current + 5);
+      } else {
+        setHidden(false);
+      }
       lastScrollY.current = y;
-
-      // Show header when user stops scrolling
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => setHidden(false), 800);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
