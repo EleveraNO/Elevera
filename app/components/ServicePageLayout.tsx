@@ -115,43 +115,41 @@ export default function ServicePageLayout({
         </div>
 
         <div className="relative mx-auto w-full max-w-7xl" style={{ zIndex: 1 }}>
-          <div className="grid grid-cols-1 items-end gap-12 md:grid-cols-12">
-            {/* Left: headline */}
-            <div className="md:col-span-7">
-              <motion.span
-                className="mb-5 block text-xs font-bold uppercase tracking-[0.3em]"
-                style={{ color: "#f2ca50", fontFamily: "var(--font-manrope), sans-serif" }}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease }}
-              >
-                {badge}
-              </motion.span>
+          {/* Badge + Headline */}
+          <motion.span
+            className="mb-5 block text-xs font-bold uppercase tracking-[0.3em]"
+            style={{ color: "#f2ca50", fontFamily: "var(--font-manrope), sans-serif" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease }}
+          >
+            {badge}
+          </motion.span>
 
-              <motion.h1
-                className="leading-[1.08] tracking-tight"
-                style={{
-                  fontFamily: "var(--font-noto-serif), Georgia, serif",
-                  fontSize: "clamp(2.5rem, 6vw, 5rem)",
-                  color: "#e5e2de",
-                }}
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.08, ease }}
-              >
-                {title}{" "}
-                <em style={{ fontStyle: "italic", color: "#f2ca50" }}>
-                  {titleAccent}
-                </em>
-                {titleSuffix && <> {titleSuffix}</>}
-              </motion.h1>
-            </div>
+          <motion.h1
+            className="mb-8 max-w-3xl leading-[1.08] tracking-tight"
+            style={{
+              fontFamily: "var(--font-noto-serif), Georgia, serif",
+              fontSize: "clamp(2.5rem, 6vw, 5rem)",
+              color: "#e5e2de",
+            }}
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.08, ease }}
+          >
+            {title}{" "}
+            <em style={{ fontStyle: "italic", color: "#f2ca50" }}>
+              {titleAccent}
+            </em>
+            {titleSuffix && <> {titleSuffix}</>}
+          </motion.h1>
 
-            {/* Right: description + CTA */}
-            <div className="md:col-span-5 pb-1">
+          {/* Description + CTA — below headline, over the background */}
+          <div className="grid grid-cols-1 items-end gap-8 md:grid-cols-12">
+            <div className="md:col-span-6">
               <motion.p
                 className="mb-6 text-base leading-relaxed md:text-lg"
-                style={{ color: "#d0c5af", maxWidth: "36ch" }}
+                style={{ color: "#d0c5af", maxWidth: "42ch" }}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease }}
@@ -218,7 +216,7 @@ export default function ServicePageLayout({
       {/* Freshness + author attribution */}
       <div className="mx-auto max-w-7xl px-6 pb-4 md:px-20">
         <div className="flex flex-wrap items-center gap-x-6 gap-y-1 text-[11px]" style={{ color: "rgba(153,144,124,0.5)" }}>
-          <span>Sist oppdatert: april 2025</span>
+          <span>Sist oppdatert: april 2026</span>
           <span>·</span>
           <span>Av Elevera — digitalbyrå i Ålesund</span>
         </div>
