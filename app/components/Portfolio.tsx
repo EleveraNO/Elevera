@@ -372,120 +372,81 @@ export default function Portfolio() {
           })}
         </motion.div>
 
-        {/* ── Mobile — stacked ── */}
+        {/* ── Mobile — stacked, all same size ── */}
         <div className="flex flex-col gap-3 md:hidden">
-          {projects.map((project, i) => {
-            const isFeatured = i === active;
-            return (
-              <a
-                key={project.id}
-                href={isFeatured ? project.href : undefined}
-                onClick={!isFeatured ? (e: React.MouseEvent) => { e.preventDefault(); goTo(i); } : undefined}
-                className="group relative block overflow-hidden rounded-sm"
-                style={{
-                  border: isFeatured ? "1px solid rgba(242,202,80,0.25)" : "1px solid rgba(77,70,53,0.2)",
-                  minHeight: isFeatured ? 340 : 72,
-                  transition: "min-height 0.6s cubic-bezier(0.21,0.47,0.32,0.98), border-color 0.5s ease",
-                }}
-              >
-                {/* Media */}
-                <div className="absolute inset-0">
-                  {project.type === "video" ? (
-                    <AutoplayVideo src={project.src} label={project.client} />
-                  ) : project.type === "mockup" ? (
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #1a1f1d 0%, #131312 40%, #1a1612 70%, #131312 100%)" }}>
-                      <div className="absolute inset-0 flex items-center justify-center p-6">
-                        <Image src={project.src} alt={project.client} width={400} height={260}
-                          className="drop-shadow-[0_12px_30px_rgba(0,0,0,0.5)]"
-                          style={{ objectFit: "contain", maxHeight: "80%", width: "auto" }} sizes="100vw" />
-                      </div>
+          {projects.map((project) => (
+            <a
+              key={project.id}
+              href={project.href}
+              className="group relative block overflow-hidden rounded-sm"
+              style={{ border: "1px solid rgba(77,70,53,0.2)", height: 280 }}
+            >
+              {/* Media */}
+              <div className="absolute inset-0">
+                {project.type === "video" ? (
+                  <AutoplayVideo src={project.src} label={project.client} />
+                ) : project.type === "mockup" ? (
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #1a1f1d 0%, #131312 40%, #1a1612 70%, #131312 100%)" }}>
+                    <div className="absolute inset-0 flex items-center justify-center p-6">
+                      <Image src={project.src} alt={project.client} width={400} height={260}
+                        className="drop-shadow-[0_12px_30px_rgba(0,0,0,0.5)]"
+                        style={{ objectFit: "contain", maxHeight: "80%", width: "auto" }} sizes="100vw" />
                     </div>
-                  ) : (
-                    <Image src={project.src} alt={project.client} fill className="object-cover" sizes="100vw" />
-                  )}
-                </div>
-
-                {/* Gradient overlay */}
-                <div className="absolute inset-0"
-                  style={{
-                    background: isFeatured
-                      ? "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.15) 100%)"
-                      : "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.5) 100%)",
-                  }} />
-
-                {/* Result badge — featured only */}
-                {isFeatured && project.result && (
-                  <div className="absolute right-3 top-3">
-                    <span className="rounded-full px-2.5 py-1 text-[10px] font-bold tabular-nums"
-                      style={{ background: "rgba(242,202,80,0.15)", backdropFilter: "blur(12px)",
-                        border: "1px solid rgba(242,202,80,0.3)", color: "#f2ca50" }}>
-                      {project.result}
-                    </span>
                   </div>
+                ) : (
+                  <Image src={project.src} alt={project.client} fill className="object-cover" sizes="100vw" />
                 )}
+              </div>
 
-                {/* Tags — featured only */}
-                {isFeatured && (
-                  <div className="absolute left-3 top-3 flex flex-wrap gap-1">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider"
-                        style={{ background: "rgba(19,19,18,0.5)", backdropFilter: "blur(12px)",
-                          border: "1px solid rgba(242,202,80,0.25)", color: "#f2ca50" }}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/15" />
 
-                {/* Bottom content */}
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  {isFeatured ? (
-                    <>
-                      <p className="text-[10px] font-medium uppercase tracking-wider" style={{ color: "rgba(229,226,222,0.35)" }}>
-                        {project.industry}
-                      </p>
-                      <h3 className="text-xl font-bold leading-tight"
-                        style={{ fontFamily: "var(--font-noto-serif), serif", color: "#e5e2de" }}>
-                        {project.client}
-                      </h3>
-                      {textVisible && (
-                        <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-                          <p className="mt-2 text-[13px] leading-relaxed" style={{ color: "rgba(229,226,222,0.55)" }}>
-                            {project.summary}
-                          </p>
-                          <span className="relative mt-3 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider"
-                            style={{ color: "#f2ca50" }}>
-                            {project.cta}
-                            <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </span>
-                        </motion.div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h3 className="text-sm font-bold" style={{ fontFamily: "var(--font-noto-serif), serif", color: "#e5e2de" }}>
-                          {project.client}
-                        </h3>
-                        <p className="text-[9px] font-medium uppercase tracking-wider" style={{ color: "rgba(229,226,222,0.3)" }}>
-                          {project.industry}
-                        </p>
-                      </div>
-                      <span className="rounded-full px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider"
-                        style={{ background: "rgba(19,19,18,0.5)", border: "1px solid rgba(242,202,80,0.15)", color: "rgba(242,202,80,0.5)" }}>
-                        {project.tags[0]}
-                      </span>
-                    </div>
-                  )}
+              {/* Result badge */}
+              {project.result && (
+                <div className="absolute right-3 top-3">
+                  <span className="rounded-full px-2.5 py-1 text-[10px] font-bold tabular-nums"
+                    style={{ background: "rgba(242,202,80,0.15)", backdropFilter: "blur(12px)",
+                      border: "1px solid rgba(242,202,80,0.3)", color: "#f2ca50" }}>
+                    {project.result}
+                  </span>
                 </div>
-              </a>
-            );
-          })}
+              )}
+
+              {/* Tags */}
+              <div className="absolute left-3 top-3 flex flex-wrap gap-1">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider"
+                    style={{ background: "rgba(19,19,18,0.5)", backdropFilter: "blur(12px)",
+                      border: "1px solid rgba(242,202,80,0.25)", color: "#f2ca50" }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Bottom content */}
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="text-[10px] font-medium uppercase tracking-wider" style={{ color: "rgba(229,226,222,0.35)" }}>
+                  {project.industry}
+                </p>
+                <h3 className="text-lg font-bold leading-tight"
+                  style={{ fontFamily: "var(--font-noto-serif), serif", color: "#e5e2de" }}>
+                  {project.client}
+                </h3>
+                <span className="relative mt-2 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider"
+                  style={{ color: "#f2ca50" }}>
+                  {project.cta}
+                  <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
 
-        <ProgressDots active={active} progress={progress} onClick={goTo} />
+        <div className="hidden md:block">
+          <ProgressDots active={active} progress={progress} onClick={goTo} />
+        </div>
       </div>
     </section>
   );
