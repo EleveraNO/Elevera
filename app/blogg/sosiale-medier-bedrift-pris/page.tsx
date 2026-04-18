@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import "../../components/blog.css";
+import HomeFooter from "../../components/home/HomeFooter";
 
 export const metadata: Metadata = {
   title: "Hva koster sosiale medier-styring for bedrifter? Priser i 2026 | Elevera",
@@ -80,15 +81,15 @@ export default function SosialeMedierPrisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen bg-[#131312]">
-        <Navbar />
+      <HomeNav />
+      <main className="blog-article">
 
         <article className="px-6 pt-32 pb-20">
           <div className="mx-auto max-w-3xl">
 
             <Link
               href="/blogg"
-              className="mb-10 inline-flex items-center gap-2 text-sm text-[#99907c] hover:text-white/70 transition-colors"
+              className="mb-10 inline-flex items-center gap-2 text-sm text-[var(--stone-600)] hover:text-[var(--stone-700)] transition-colors"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -99,28 +100,28 @@ export default function SosialeMedierPrisPage() {
             {/* Header */}
             <div className="mb-12">
               <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full border border-[#f2ca50]/25 bg-[#f2ca50]/08 px-3 py-1 text-xs font-medium text-[#f2ca50]">
+                <span className="rounded-full border border-[var(--forest)]/25 bg-[var(--forest)]/08 px-3 py-1 text-xs font-medium text-[var(--forest)]">
                   Sosiale medier
                 </span>
-                <span className="text-xs text-white/30">12. april 2026</span>
-                <span className="text-xs text-white/30">9 min lesetid</span>
+                <span className="text-xs text-[var(--stone-500)]">12. april 2026</span>
+                <span className="text-xs text-[var(--stone-500)]">9 min lesetid</span>
               </div>
-              <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
+              <h1 className="text-3xl font-bold leading-tight text-[var(--black)] sm:text-4xl md:text-5xl">
                 Hva koster sosiale medier-styring for bedrifter?
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-[#d0c5af]">
+              <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
                 Du vet at bedriften din burde vært mer aktiv på Instagram. Kanskje TikTok også. Men hvem har tid? Og hva koster det egentlig å la noen andre gjøre det? Jeg prøver å gi deg et ærlig svar.
               </p>
-              <p className="mt-3 text-sm text-white/30">
+              <p className="mt-3 text-sm text-[var(--stone-500)]">
                 Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 12. april 2026
               </p>
             </div>
 
             {/* Content */}
-            <div className="prose prose-invert max-w-none space-y-12 text-white/70 leading-relaxed">
+            <div className="prose prose-invert max-w-none space-y-12 text-[var(--stone-700)] leading-relaxed">
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Det korte svaret</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Det korte svaret</h2>
                 <p>
                   Regn med 5 000 til 15 000 kr per måned hos et norsk byrå. Det er spennet de fleste opererer i. Under 5 000 kr er det sjelden nok timer til å gjøre en skikkelig jobb. Over 15 000 kr er du inn i pakker der annonsering, fotoshoots og strategi er inkludert.
                 </p>
@@ -130,7 +131,7 @@ export default function SosialeMedierPrisPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Hva prisene faktisk betyr i praksis</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva prisene faktisk betyr i praksis</h2>
                 <p>
                   Problemet med å bare se på månedsprisen er at det som er inkludert varierer enormt. Et byrå som tar 4 000 kr per måned gir deg kanskje 8 ferdige poster — men de har ikke tatt bildene, de har ikke skrevet tekstene for deg, og de svarer ikke på meldinger. Du ender opp med å gjøre halvparten av jobben selv.
                 </p>
@@ -140,13 +141,13 @@ export default function SosialeMedierPrisPage() {
                 <p className="mt-4">
                   Forskjellen er ikke prisen — det er hva du faktisk slipper å gjøre.
                 </p>
-                <div className="mt-6 overflow-x-auto rounded-2xl border border-[rgba(77,70,53,0.2)]">
+                <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--stone-300)]">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-[rgba(77,70,53,0.2)] bg-white/5">
-                        <th className="px-5 py-3 text-left font-semibold text-white">Prisnivå</th>
-                        <th className="px-5 py-3 text-left font-semibold text-white">Hva du typisk får</th>
-                        <th className="px-5 py-3 text-left font-semibold text-white">Din innsats</th>
+                      <tr className="border-b border-[var(--stone-300)] bg-[var(--stone-50)]">
+                        <th className="px-5 py-3 text-left font-semibold text-[var(--black)]">Prisnivå</th>
+                        <th className="px-5 py-3 text-left font-semibold text-[var(--black)]">Hva du typisk får</th>
+                        <th className="px-5 py-3 text-left font-semibold text-[var(--black)]">Din innsats</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-white/10">
@@ -156,10 +157,10 @@ export default function SosialeMedierPrisPage() {
                         { pris: "8 000–12 000 kr/mnd", hva: "Alt over + fotoshoot, stories, community management.", din: "Nesten ingenting" },
                         { pris: "12 000–20 000 kr/mnd", hva: "Alt over + annonsering, video, strategi, rapportering.", din: "Ingenting" },
                       ].map((row, i) => (
-                        <tr key={i} className="text-[#d0c5af]">
-                          <td className="px-5 py-3 font-medium text-[#f2ca50] whitespace-nowrap">{row.pris}</td>
+                        <tr key={i} className="text-[var(--stone-700)]">
+                          <td className="px-5 py-3 font-medium text-[var(--forest)] whitespace-nowrap">{row.pris}</td>
                           <td className="px-5 py-3">{row.hva}</td>
-                          <td className="px-5 py-3 text-white/50">{row.din}</td>
+                          <td className="px-5 py-3 text-[var(--stone-600)]">{row.din}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -168,7 +169,7 @@ export default function SosialeMedierPrisPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Kan du gjøre det selv?</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Kan du gjøre det selv?</h2>
                 <p>
                   Ja. Det er fullt mulig å styre sosiale medier selv. Mange gjør det, og noen gjør det bra. Men la meg være ærlig om hva det krever.
                 </p>
@@ -179,12 +180,12 @@ export default function SosialeMedierPrisPage() {
                   For en bedriftseier som allerede jobber 50 timer i uken er det 8–15 timer du ikke har. Og det merkes: kontoen poster ujevnt, bildene er tatt med mobil mellom to møter, og meldinger fra potensielle kunder ligger ubesvart i tre dager.
                 </p>
                 <p className="mt-4">
-                  Det er ikke et spørsmål om du <em className="text-white/90">kan</em> gjøre det selv. Det er et spørsmål om du <em className="text-white/90">bør</em> bruke tiden din på det.
+                  Det er ikke et spørsmål om du <em className="text-[var(--black)]">kan</em> gjøre det selv. Det er et spørsmål om du <em className="text-[var(--black)]">bør</em> bruke tiden din på det.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Hva du bør se etter i et byrå</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva du bør se etter i et byrå</h2>
                 <p>
                   Det er mange som tilbyr sosiale medier-tjenester. Noen er veldig gode. Noen er ikke det. Her er hva jeg ville sett etter:
                 </p>
@@ -196,18 +197,18 @@ export default function SosialeMedierPrisPage() {
                     { title: "Får du se resultater?", desc: "Månedlig rapport med tall. Ikke bare \"det gikk bra denne måneden\" — men konkrete tall på rekkevidde, engasjement og følgervekst." },
                     { title: "Kjenner de bransjen din?", desc: "Et byrå som har jobbet med lokale bedrifter forstår at du ikke trenger viralt innhold — du trenger innhold som treffer folk i nærområdet ditt." },
                   ].map((item, i) => (
-                    <li key={i} className="rounded-2xl border border-[rgba(77,70,53,0.2)] bg-white/5 px-6 py-4">
-                      <div className="mb-1 font-semibold text-white">{item.title}</div>
-                      <p className="text-sm text-[#d0c5af]">{item.desc}</p>
+                    <li key={i} className="rounded-2xl border border-[var(--stone-300)] bg-[var(--stone-50)] px-6 py-4">
+                      <div className="mb-1 font-semibold text-[var(--black)]">{item.title}</div>
+                      <p className="text-sm text-[var(--stone-700)]">{item.desc}</p>
                     </li>
                   ))}
                 </ul>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Er det verdt pengene?</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Er det verdt pengene?</h2>
                 <p>
-                  Det spørsmålet er egentlig feil stilt. Det riktige spørsmålet er: hva koster det å <em className="text-white/90">ikke</em> ha profesjonelle sosiale medier?
+                  Det spørsmålet er egentlig feil stilt. Det riktige spørsmålet er: hva koster det å <em className="text-[var(--black)]">ikke</em> ha profesjonelle sosiale medier?
                 </p>
                 <p className="mt-4">
                   80 prosent av forbrukere sjekker en bedrifts Instagram før de tar kontakt. Hvis de finner en konto som ikke har postet på tre uker, med bilder tatt i dårlig lys og ingen svar på kommentarer — hva tror du de gjør? De går videre. Til konkurrenten som ser mer profesjonell ut.
@@ -218,7 +219,7 @@ export default function SosialeMedierPrisPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Hva vi tar for det</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva vi tar for det</h2>
                 <p>
                   Hos Elevera starter sosiale medier-styring fra 6 000 kr/mnd som enkelttjeneste. Da tar vi oss av innholdsproduksjon, tekster, publisering 3 ganger per uke og svar på meldinger. Du godkjenner innholdet — ellers gjør vi alt.
                 </p>
@@ -231,12 +232,12 @@ export default function SosialeMedierPrisPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-6">Vanlige spørsmål</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-6">Vanlige spørsmål</h2>
                 <div className="space-y-4">
                   {faqs.map((faq, i) => (
-                    <div key={i} className="rounded-2xl border border-[rgba(77,70,53,0.2)] bg-white/5 px-6 py-5">
-                      <h3 className="mb-2 font-semibold text-white">{faq.q}</h3>
-                      <p className="text-sm leading-relaxed text-white/55">{faq.a}</p>
+                    <div key={i} className="rounded-2xl border border-[var(--stone-300)] bg-[var(--stone-50)] px-6 py-5">
+                      <h3 className="mb-2 font-semibold text-[var(--black)]">{faq.q}</h3>
+                      <p className="text-sm leading-relaxed text-[var(--stone-600)]">{faq.a}</p>
                     </div>
                   ))}
                 </div>
@@ -245,9 +246,9 @@ export default function SosialeMedierPrisPage() {
             </div>
 
             {/* CTA */}
-            <div className="mt-16 rounded-3xl border border-[#f2ca50]/20 bg-[#f2ca50]/06 p-10 text-center">
-              <h3 className="mb-3 text-2xl font-bold text-white">Vil du at noen tar over sosiale medier for deg?</h3>
-              <p className="mb-6 text-[#d0c5af]">
+            <div className="mt-16 rounded-3xl border border-[var(--forest)]/20 bg-[var(--forest)]/06 p-10 text-center">
+              <h3 className="mb-3 text-2xl font-bold text-[var(--black)]">Vil du at noen tar over sosiale medier for deg?</h3>
+              <p className="mb-6 text-[var(--stone-700)]">
                 Book et gratis møte. Vi ser på kontoen din og forteller deg hva vi ville gjort — uforpliktende.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -255,13 +256,13 @@ export default function SosialeMedierPrisPage() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-sm bg-[#d4af37] px-8 py-3.5 font-bold text-[#3c2f00] transition-all hover:bg-[#f2ca50] active:scale-95"
+                  className="btn btn-primary"
                 >
                   Book gratis møte
                 </a>
                 <Link
                   href="/tjenester/sosiale-medier-alesund"
-                  className="rounded-sm border border-white/20 px-8 py-3.5 font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5"
+                  className="btn btn-ghost"
                 >
                   Se tjenesten
                 </Link>
@@ -271,8 +272,8 @@ export default function SosialeMedierPrisPage() {
           </div>
         </article>
 
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

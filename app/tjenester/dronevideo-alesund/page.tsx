@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -70,8 +70,8 @@ export default function DronevideoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen" style={{ background: "#131312" }}>
-        <Navbar />
+      <HomeNav />
+      <main>
         <ServicePageLayout
           badge="Dronevideo — Ålesund"
           title="Profesjonell"
@@ -101,8 +101,8 @@ export default function DronevideoPage() {
           ctaHeading="Klar for luftopptak?"
           aiSummary="Elevera tilbyr profesjonell dronevideo i Ålesund og omegn. Vi produserer luftopptak med 4K-kvalitet for bedrifter, eiendom og arrangementer. Tjenesten inkluderer flyvning, filming og ferdig redigert video fra 4 000 kr."
         />
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

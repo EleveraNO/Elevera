@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import "../../components/blog.css";
+import HomeFooter from "../../components/home/HomeFooter";
 
 export const metadata: Metadata = {
   title: "Slik bruker du Instagram til å få flere kunder lokalt | Elevera",
@@ -39,8 +40,8 @@ export default function BloggInnlegg() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <main className="min-h-screen bg-[#131312]">
-        <Navbar />
+      <HomeNav />
+      <main className="blog-article">
 
         <article className="px-6 pt-32 pb-20">
           <div className="mx-auto max-w-3xl">
@@ -48,7 +49,7 @@ export default function BloggInnlegg() {
             {/* Tilbake */}
             <Link
               href="/blogg"
-              className="mb-10 inline-flex items-center gap-2 text-sm text-[#99907c] hover:text-white/70 transition-colors"
+              className="mb-10 inline-flex items-center gap-2 text-sm text-[var(--stone-600)] hover:text-[var(--stone-700)] transition-colors"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -59,28 +60,28 @@ export default function BloggInnlegg() {
             {/* Header */}
             <div className="mb-12">
               <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full border border-[#f2ca50]/25 bg-[#f2ca50]/08 px-3 py-1 text-xs font-medium text-[#f2ca50]">
+                <span className="rounded-full border border-[var(--forest)]/25 bg-[var(--forest)]/08 px-3 py-1 text-xs font-medium text-[var(--forest)]">
                   Sosiale medier
                 </span>
-                <span className="text-xs text-white/30">13. mars 2026</span>
-                <span className="text-xs text-white/30">6 min lesetid</span>
+                <span className="text-xs text-[var(--stone-500)]">13. mars 2026</span>
+                <span className="text-xs text-[var(--stone-500)]">6 min lesetid</span>
               </div>
-              <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
+              <h1 className="text-3xl font-bold leading-tight text-[var(--black)] sm:text-4xl md:text-5xl">
                 Slik bruker du Instagram til å få flere kunder lokalt
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-[#d0c5af]">
+              <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
                 Mange lokale bedrifter er på Instagram, men få bruker det på en måte som faktisk gir kunder. Det handler ikke om å poste mest mulig. Det handler om å poste riktig.
               </p>
-              <p className="mt-3 text-sm text-white/30">
+              <p className="mt-3 text-sm text-[var(--stone-500)]">
                 Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 13. mars 2026
               </p>
             </div>
 
             {/* Innhold */}
-            <div className="prose prose-invert max-w-none space-y-10 text-white/70 leading-relaxed">
+            <div className="prose prose-invert max-w-none space-y-10 text-[var(--stone-700)] leading-relaxed">
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Profilen din er visitkortet</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Profilen din er visitkortet</h2>
                 <p>
                   Første stopp for de fleste nye følgere er profilen din. Navn, profilbilde og bio er det de ser på under ett sekund. Bruk bedriftsnavnet som brukernavn, et tydelig logo eller ansikt som profilbilde, og en bio som forklarer hva du gjør og hvem du gjør det for.
                 </p>
@@ -90,7 +91,7 @@ export default function BloggInnlegg() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Stedsmarkering er gratis synlighet</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Stedsmarkering er gratis synlighet</h2>
                 <p>
                   Tagge Ålesund, Sunnmøre eller konkrete steder i hvert innlegg er noe av det enkleste du kan gjøre. Folk søker på steder, og innlegg med stedstagging dukker opp i de søkene. Det koster ingenting og tar to sekunder.
                 </p>
@@ -100,7 +101,7 @@ export default function BloggInnlegg() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Reels gir rekkevidde. Bilder bygger tillit.</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Reels gir rekkevidde. Bilder bygger tillit.</h2>
                 <p>
                   Reels vises til folk som ikke følger deg fra før. Det er der du henter nye øyne. Bilder og karuseller er der de som allerede følger deg blir minnet på at du eksisterer og hva du tilbyr.
                 </p>
@@ -110,7 +111,7 @@ export default function BloggInnlegg() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Vis mennesker, ikke bare produkter</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Vis mennesker, ikke bare produkter</h2>
                 <p>
                   Lokale kunder handler med folk de kjenner og liker. Bilder av teamet, bak kulissene, eller hverdagen på jobb bygger en relasjon som et produktbilde aldri gjør. Folk vil se hvem som er på andre siden.
                 </p>
@@ -120,7 +121,7 @@ export default function BloggInnlegg() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Svar på kommentarer og meldinger</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Svar på kommentarer og meldinger</h2>
                 <p>
                   Instagram belønner kontoer som har aktivitet. Hvis folk kommenterer og du svarer, prioriterer algoritmen innholdet ditt høyere. Det er også bare god folkeskikk, og noe som skiller deg fra bedrifter som bruker Instagram som en enveiskanal.
                 </p>
@@ -130,7 +131,7 @@ export default function BloggInnlegg() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Konsistens slår perfeksjon</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Konsistens slår perfeksjon</h2>
                 <p>
                   Mange bedrifter starter med tre innlegg i uken, slutter etter to måneder, og starter på nytt seks måneder senere. Det er verre enn å poste én gang i uken konsekvent gjennom hele året.
                 </p>
@@ -142,9 +143,9 @@ export default function BloggInnlegg() {
             </div>
 
             {/* CTA */}
-            <div className="mt-16 rounded-3xl border border-[#f2ca50]/20 bg-[#f2ca50]/06 p-10 text-center">
-              <h3 className="mb-3 text-2xl font-bold text-white">Vil du ha innhold som faktisk fungerer?</h3>
-              <p className="mb-6 text-[#d0c5af]">
+            <div className="mt-16 rounded-3xl border border-[var(--forest)]/20 bg-[var(--forest)]/06 p-10 text-center">
+              <h3 className="mb-3 text-2xl font-bold text-[var(--black)]">Vil du ha innhold som faktisk fungerer?</h3>
+              <p className="mb-6 text-[var(--stone-700)]">
                 Vi hjelper bedrifter i Ålesund og på Sunnmøre med foto og video som gir resultater på Instagram og andre kanaler.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -152,13 +153,13 @@ export default function BloggInnlegg() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#f2ca50] px-8 py-3.5 font-semibold text-[#09090B] transition-all hover:bg-[#14B8A6] hover:-translate-y-0.5"
+                  className="btn btn-primary"
                 >
                   Book gratis møte
                 </a>
                 <Link
                   href="/tjenester/foto-og-video-alesund"
-                  className="rounded-full border border-white/20 px-8 py-3.5 font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5"
+                  className="btn btn-ghost"
                 >
                   Se foto & video-tjenesten
                 </Link>
@@ -168,8 +169,8 @@ export default function BloggInnlegg() {
           </div>
         </article>
 
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -66,8 +66,8 @@ export default function VideoProduksjonPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen" style={{ background: "#131312" }}>
-        <Navbar />
+      <HomeNav />
+      <main>
         <ServicePageLayout
           badge="Videoproduksjon — Ålesund"
           title="Profesjonell"
@@ -102,8 +102,8 @@ export default function VideoProduksjonPage() {
           ctaHeading="Klar for profesjonell video?"
           aiSummary="Elevera produserer profesjonell video for bedrifter i Ålesund. Vi lager reklamefilm, produktvideo, bedriftspresentasjoner og kortformat video for Instagram og TikTok. Alt inkluderer manus, filming og ferdig redigering."
         />
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

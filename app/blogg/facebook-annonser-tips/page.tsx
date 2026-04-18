@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import "../../components/blog.css";
+import HomeFooter from "../../components/home/HomeFooter";
 
 export const metadata: Metadata = {
   title: "Facebook-annonser for småbedrifter – hva som faktisk fungerer | Elevera",
@@ -80,15 +81,15 @@ export default function FacebookAnnonserPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen bg-[#131312]">
-        <Navbar />
+      <HomeNav />
+      <main className="blog-article">
 
         <article className="px-6 pt-32 pb-20">
           <div className="mx-auto max-w-3xl">
 
             <Link
               href="/blogg"
-              className="mb-10 inline-flex items-center gap-2 text-sm text-[#99907c] hover:text-white/70 transition-colors"
+              className="mb-10 inline-flex items-center gap-2 text-sm text-[var(--stone-600)] hover:text-[var(--stone-700)] transition-colors"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -98,27 +99,27 @@ export default function FacebookAnnonserPage() {
 
             <div className="mb-12">
               <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full border border-[#f2ca50]/25 bg-[#f2ca50]/08 px-3 py-1 text-xs font-medium text-[#f2ca50]">
+                <span className="rounded-full border border-[var(--forest)]/25 bg-[var(--forest)]/08 px-3 py-1 text-xs font-medium text-[var(--forest)]">
                   Annonsering
                 </span>
-                <span className="text-xs text-white/30">1. april 2026</span>
-                <span className="text-xs text-white/30">8 min lesetid</span>
+                <span className="text-xs text-[var(--stone-500)]">1. april 2026</span>
+                <span className="text-xs text-[var(--stone-500)]">8 min lesetid</span>
               </div>
-              <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
+              <h1 className="text-3xl font-bold leading-tight text-[var(--black)] sm:text-4xl md:text-5xl">
                 Facebook-annonser for småbedrifter — hva som faktisk fungerer
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-[#d0c5af]">
+              <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
                 Vi ser det hele tiden: bedrifter som bruker tusenvis av kroner på Facebook-annonser uten å egentlig vite hva de får igjen. Ikke fordi Facebook Ads ikke virker — men fordi de vanligste feilene er enkle å unngå når du vet hva du ser etter.
               </p>
-              <p className="mt-3 text-sm text-white/30">
+              <p className="mt-3 text-sm text-[var(--stone-500)]">
                 Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 1. april 2026
               </p>
             </div>
 
-            <div className="prose prose-invert max-w-none space-y-12 text-white/70 leading-relaxed">
+            <div className="prose prose-invert max-w-none space-y-12 text-[var(--stone-700)] leading-relaxed">
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Feil nummer én: Du annonserer til alle</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Feil nummer én: Du annonserer til alle</h2>
                 <p>
                   Den vanligste tabben er å sette opp en annonse og velge «alle i Norge» eller «alle i Ålesund» som målgruppe. Det er det samme som å henge opp en lapp på et tilfeldig lyktestolpe og håpe at akkurat den personen du vil nå, går forbi.
                 </p>
@@ -131,7 +132,7 @@ export default function FacebookAnnonserPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Feil nummer to: Dårlig kreativt</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Feil nummer to: Dårlig kreativt</h2>
                 <p>
                   Folk scroller med tommelen. Du har under to sekunder på å stoppe dem. Et uskarpt telefonfoto med generisk tekst gjør ikke jobben.
                 </p>
@@ -144,7 +145,7 @@ export default function FacebookAnnonserPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Feil nummer tre: Ingen klar handling</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Feil nummer tre: Ingen klar handling</h2>
                 <p>
                   Hva vil du at folk skal gjøre etter at de har sett annonsen? Ringe? Fylle ut et skjema? Bestille time? Klikke seg inn på nettsiden? Hvis ikke annonsen din har ett tydelig svar på det spørsmålet, er det for mange mulige utfall — og da skjer ingen av dem.
                 </p>
@@ -157,7 +158,7 @@ export default function FacebookAnnonserPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Feil nummer fire: Du gir opp etter to uker</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Feil nummer fire: Du gir opp etter to uker</h2>
                 <p>
                   Facebook-algoritmen trenger tid til å lære. Den bruker de første to ukene på å forstå hvem som klikker, hvem som konverterer og hvem som ignorerer annonsen din. Denne perioden kalles læringsfasen, og i denne perioden vil tallene se dårligere ut enn de kommer til å bli.
                 </p>
@@ -170,23 +171,23 @@ export default function FacebookAnnonserPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Hva fungerer for lokale bedrifter i Ålesund?</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva fungerer for lokale bedrifter i Ålesund?</h2>
                 <p>
                   Vi administrerer annonser for bedrifter på Sunnmøre, og det vi ser igjen og igjen er at lokalt innhold vinner. En annonse med gjenkjennelige omgivelser, norsk tekst uten markedsfjong, og et ekte ansikt fra bedriften — det konverterer bedre enn generiske stockbilder og profesjonelt produsert reklame.
                 </p>
                 <p className="mt-4">
                   Det gjelder spesielt retargeting: annonser som vises til folk som allerede har besøkt nettsiden din. De vet hvem du er. De trenger bare en påminnelse og et godt tilbud. Konverteringsraten her er gjerne fem til ti ganger høyere enn kalde annonser.
                 </p>
-                <div className="mt-6 rounded-2xl border border-[#f2ca50]/20 bg-[#f2ca50]/05 p-5">
-                  <p className="text-sm font-semibold text-[#f2ca50] mb-2">Tommelfingerregel for lokale bedrifter:</p>
-                  <p className="text-sm text-white/70">
+                <div className="mt-6 rounded-2xl border border-[var(--forest)]/20 bg-[var(--forest)]/05 p-5">
+                  <p className="text-sm font-semibold text-[var(--forest)] mb-2">Tommelfingerregel for lokale bedrifter:</p>
+                  <p className="text-sm text-[var(--stone-700)]">
                     Bruk 70 % av budsjettet på å nå nye, kalde målgrupper. Bruk 30 % på retargeting til folk som allerede kjenner deg. De sistnevnte er billige å konvertere og gir raskt synlig avkastning mens det kalde arbeidet bygger seg opp over tid.
                   </p>
                 </div>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Facebook Ads vs. Google Ads — velg riktig verktøy</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Facebook Ads vs. Google Ads — velg riktig verktøy</h2>
                 <p>
                   Facebook Ads og Google Ads løser ulike problemer. Google Ads viser annonsen din til folk som aktivt søker etter det du tilbyr. Facebook Ads viser deg til folk som passer målgruppen din, men ikke nødvendigvis tenker på deg akkurat nå.
                 </p>
@@ -199,12 +200,12 @@ export default function FacebookAnnonserPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-6">Vanlige spørsmål om Facebook-annonser</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-6">Vanlige spørsmål om Facebook-annonser</h2>
                 <div className="space-y-4">
                   {faqs.map((faq, i) => (
-                    <div key={i} className="rounded-2xl border border-[rgba(77,70,53,0.2)] bg-white/5 px-6 py-5">
-                      <h3 className="mb-2 font-semibold text-white">{faq.q}</h3>
-                      <p className="text-sm leading-relaxed text-white/55">{faq.a}</p>
+                    <div key={i} className="rounded-2xl border border-[var(--stone-300)] bg-[var(--stone-50)] px-6 py-5">
+                      <h3 className="mb-2 font-semibold text-[var(--black)]">{faq.q}</h3>
+                      <p className="text-sm leading-relaxed text-[var(--stone-600)]">{faq.a}</p>
                     </div>
                   ))}
                 </div>
@@ -212,9 +213,9 @@ export default function FacebookAnnonserPage() {
 
             </div>
 
-            <div className="mt-16 rounded-3xl border border-[#f2ca50]/20 bg-[#f2ca50]/06 p-10 text-center">
-              <h3 className="mb-3 text-2xl font-bold text-white">Vil du ha noen som gjør dette riktig for deg?</h3>
-              <p className="mb-6 text-[#d0c5af]">
+            <div className="mt-16 rounded-3xl border border-[var(--forest)]/20 bg-[var(--forest)]/06 p-10 text-center">
+              <h3 className="mb-3 text-2xl font-bold text-[var(--black)]">Vil du ha noen som gjør dette riktig for deg?</h3>
+              <p className="mb-6 text-[var(--stone-700)]">
                 Vi administrerer Facebook og Google Ads for bedrifter i Ålesund og på Sunnmøre. Book et gratis møte.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -222,13 +223,13 @@ export default function FacebookAnnonserPage() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#f2ca50] px-8 py-3.5 font-semibold text-[#09090B] transition-all hover:bg-[#14B8A6] hover:-translate-y-0.5"
+                  className="btn btn-primary"
                 >
                   Book gratis møte
                 </a>
                 <Link
                   href="/tjenester/annonsering-alesund"
-                  className="rounded-full border border-white/20 px-8 py-3.5 font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5"
+                  className="btn btn-ghost"
                 >
                   Se annonsering-tjenesten
                 </Link>
@@ -238,8 +239,8 @@ export default function FacebookAnnonserPage() {
           </div>
         </article>
 
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

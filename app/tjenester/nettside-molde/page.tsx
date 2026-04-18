@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import ServicePageLayout from "../../components/ServicePageLayout";
 import { molde } from "../_locations/data";
 import Link from "next/link";
@@ -79,8 +79,8 @@ export default function NettsideMoldePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen" style={{ background: "#131312" }}>
-        <Navbar />
+      <HomeNav />
+      <main>
         <ServicePageLayout
           badge={`Nettside — ${molde.name}`}
           title="Profesjonell"
@@ -133,8 +133,8 @@ export default function NettsideMoldePage() {
           </div>
         </section>
 
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

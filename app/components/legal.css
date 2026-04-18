@@ -1,0 +1,98 @@
+/* ============================================================
+ * Legal pages (personvern, vilkår) — light theme
+ * ============================================================ */
+
+.legal-page {
+  background: var(--cream);
+  padding-top: clamp(120px, 14vw, 180px);
+  padding-bottom: clamp(64px, 9vw, 112px);
+  min-height: 70vh;
+}
+
+.legal-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+.legal-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: 16px;
+}
+.legal-label::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--forest);
+  border-radius: 50%;
+}
+
+.legal-inner h1 {
+  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+
+.legal-meta {
+  font-size: 12px;
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  letter-spacing: .04em;
+  color: var(--stone-500);
+  margin-bottom: 48px;
+}
+
+.legal-section {
+  margin-bottom: 36px;
+  padding-bottom: 0;
+}
+
+.legal-section h2 {
+  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+
+.legal-section p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--stone-700);
+  max-width: 68ch;
+  margin-bottom: 12px;
+}
+.legal-section p:last-child { margin-bottom: 0; }
+
+.legal-section a {
+  color: var(--forest);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal-section a:hover { color: var(--forest-hover); }
+
+.legal-section ul {
+  list-style: disc outside;
+  padding-left: 20px;
+  margin: 8px 0 12px;
+}
+.legal-section li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--stone-700);
+  margin-bottom: 6px;
+  max-width: 64ch;
+}

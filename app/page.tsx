@@ -1,28 +1,27 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Marquee from "./components/Marquee";
-import Problems from "./components/Problems";
-import Services from "./components/Services";
-import Process from "./components/Process";
-import Portfolio from "./components/Portfolio";
-import Testimonials from "./components/Testimonials";
-import WhyElevera from "./components/WhyElevera";
-import Pricing from "./components/Pricing";
-import FAQ from "./components/FAQ";
-import CTA from "./components/CTA";
-import Footer from "./components/Footer";
+import "./components/home/home.css";
+import HomeNav from "./components/home/HomeNav";
+import HomeHero from "./components/home/HomeHero";
+import HomeServices from "./components/home/HomeServices";
+import HomeCaseStudy from "./components/home/HomeCaseStudy";
+import HomeMoreCases from "./components/home/HomeMoreCases";
+import HomeAbout from "./components/home/HomeAbout";
+import HomeProcess from "./components/home/HomeProcess";
+import HomePricing from "./components/home/HomePricing";
+import HomeContact from "./components/home/HomeContact";
+import HomeFooter from "./components/home/HomeFooter";
+import HomeRevealObserver from "./components/home/HomeRevealObserver";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Elevera",
   description:
-    "Digitalbyrå i Ålesund som hjelper lokale bedrifter å vokse på nett med nettside, foto & video og digital annonsering.",
+    "Vekstbyrå i Ålesund. Innhold, sosialt, nettside, SEO og markedsføring for lokale bedrifter på Sunnmøre.",
   url: "https://elevera.no",
   image: "https://elevera.no/opengraph-image",
   telephone: "+4794974165",
   email: "tverbakk@elevera.no",
-  priceRange: "NOK 3490–14990",
+  priceRange: "NOK 7900–22900",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -50,12 +49,11 @@ const jsonLd = {
     "@type": "OfferCatalog",
     name: "Tjenester",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Nettside Ålesund", url: "https://elevera.no/tjenester/nettside-alesund" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Foto & video Ålesund", url: "https://elevera.no/tjenester/foto-og-video-alesund" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Dronevideo Ålesund", url: "https://elevera.no/tjenester/dronevideo-alesund" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital annonsering Ålesund", url: "https://elevera.no/tjenester/annonsering-alesund" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO Ålesund", url: "https://elevera.no/tjenester/seo-alesund" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Foto & Video Ålesund", url: "https://elevera.no/tjenester/foto-og-video-alesund" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sosiale medier Ålesund", url: "https://elevera.no/tjenester/sosiale-medier-alesund" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Nettside Ålesund", url: "https://elevera.no/tjenester/nettside-alesund" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO Ålesund", url: "https://elevera.no/tjenester/seo-alesund" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital annonsering Ålesund", url: "https://elevera.no/tjenester/annonsering-alesund" } },
     ],
   },
   sameAs: [
@@ -94,21 +92,19 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
       />
-      <main className="min-h-screen" style={{ background: "#131312" }}>
-        <Navbar />
-        <Hero />
-        <Marquee />
-        {/* Problem → Solution flow */}
-        <Problems />
-        <Services />
-        <Process />
-        <Portfolio />
-        <Testimonials />
-        <WhyElevera />
-        <Pricing />
-        <CTA />
-        <Footer />
+      <HomeNav />
+      <main>
+        <HomeHero />
+        <HomeServices />
+        <HomeCaseStudy />
+        <HomeMoreCases />
+        <HomeAbout />
+        <HomeProcess />
+        <HomePricing />
+        <HomeContact />
       </main>
+      <HomeFooter />
+      <HomeRevealObserver />
     </>
   );
 }

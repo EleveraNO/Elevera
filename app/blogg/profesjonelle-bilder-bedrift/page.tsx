@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import "../../components/blog.css";
+import HomeFooter from "../../components/home/HomeFooter";
 
 export const metadata: Metadata = {
   title: "Hvorfor trenger bedriften din profesjonelle bilder? | Elevera",
@@ -39,8 +40,8 @@ export default function BloggInnlegg() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <main className="min-h-screen bg-[#131312]">
-        <Navbar />
+      <HomeNav />
+      <main className="blog-article">
 
         <article className="px-6 pt-32 pb-20">
           <div className="mx-auto max-w-3xl">
@@ -48,7 +49,7 @@ export default function BloggInnlegg() {
             {/* Tilbake */}
             <Link
               href="/blogg"
-              className="mb-10 inline-flex items-center gap-2 text-sm text-[#99907c] hover:text-white/70 transition-colors"
+              className="mb-10 inline-flex items-center gap-2 text-sm text-[var(--stone-600)] hover:text-[var(--stone-700)] transition-colors"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -59,28 +60,28 @@ export default function BloggInnlegg() {
             {/* Header */}
             <div className="mb-12">
               <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full border border-[#f2ca50]/25 bg-[#f2ca50]/08 px-3 py-1 text-xs font-medium text-[#f2ca50]">
+                <span className="rounded-full border border-[var(--forest)]/25 bg-[var(--forest)]/08 px-3 py-1 text-xs font-medium text-[var(--forest)]">
                   Foto & Video
                 </span>
-                <span className="text-xs text-white/30">13. mars 2026</span>
-                <span className="text-xs text-white/30">5 min lesetid</span>
+                <span className="text-xs text-[var(--stone-500)]">13. mars 2026</span>
+                <span className="text-xs text-[var(--stone-500)]">5 min lesetid</span>
               </div>
-              <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
+              <h1 className="text-3xl font-bold leading-tight text-[var(--black)] sm:text-4xl md:text-5xl">
                 Hvorfor trenger bedriften din profesjonelle bilder?
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-[#d0c5af]">
+              <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
                 Potensielle kunder tar avgjørelser raskt. Ofte før de har lest et eneste ord. Bildene dine jobber hele tiden, enten de jobber for deg eller mot deg. Her er hva vi har sett gang på gang hos bedriftene vi jobber med.
               </p>
-              <p className="mt-3 text-sm text-white/30">
+              <p className="mt-3 text-sm text-[var(--stone-500)]">
                 Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 13. mars 2026
               </p>
             </div>
 
             {/* Innhold */}
-            <div className="prose prose-invert max-w-none space-y-10 text-white/70 leading-relaxed">
+            <div className="prose prose-invert max-w-none space-y-10 text-[var(--stone-700)] leading-relaxed">
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Folk bestemmer seg før de leser</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Folk bestemmer seg før de leser</h2>
                 <p>
                   Forskning viser at folk danner seg et inntrykk av en nettside på under 50 millisekunder. Det er bildene som gjør jobben, ikke teksten. Uskarpe, mørke eller telefonfotograferte bilder signaliserer at bedriften er uprofesjonell, uansett hvor god tjenesten egentlig er.
                 </p>
@@ -90,7 +91,7 @@ export default function BloggInnlegg() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Tekst forklarer. Bilder overbeviser.</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Tekst forklarer. Bilder overbeviser.</h2>
                 <p>
                   Du kan skrive nok så godt om hvor dyktig du er. Men et bilde av det ferdige arbeidet sier mer. En frisørsalong med profesjonelle bilder av lokalet, teamet og ferdig arbeid vil alltid konvertere bedre enn en som kun har tekst og et generisk stockbilde fra nettet.
                 </p>
@@ -100,7 +101,7 @@ export default function BloggInnlegg() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Algoritmene favoriserer godt innhold</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Algoritmene favoriserer godt innhold</h2>
                 <p>
                   Instagram, Facebook og TikTok gir mer rekkevidde til innhold folk stopper opp ved. Profesjonelle bilder og videoer stopper scrollen. Telefonbilder gjør det sjelden.
                 </p>
@@ -110,7 +111,7 @@ export default function BloggInnlegg() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Siden din selger bedre</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Siden din selger bedre</h2>
                 <p>
                   Nettsider med profesjonelle bilder får flere til å ta kontakt, bestille time eller kjøpe. Det er ikke en mening, det er målbart. Å investere i en god nettside og så fylle den med dårlige bilder er litt som å kjøpe en fin butikk og la det ligge rot i vinduet.
                 </p>
@@ -120,7 +121,7 @@ export default function BloggInnlegg() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">De fleste konkurrentene dine bruker telefon</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">De fleste konkurrentene dine bruker telefon</h2>
                 <p>
                   Sjekk konkurrentene dine på Instagram eller på nettsiden deres. Mange bruker fortsatt telefonfoto. Det er faktisk en fordel for deg. Profesjonelle bilder av din bedrift, ditt team og ditt arbeid er unike for deg og kan ikke kopieres av noen andre.
                 </p>
@@ -130,7 +131,7 @@ export default function BloggInnlegg() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Du bruker innholdet lenge</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Du bruker innholdet lenge</h2>
                 <p>
                   En produksjonsdag gir deg bilder og videoer du kan bruke i mange måneder. På nettsiden, i annonser, i sosiale medier og i tilbud til kunder. Regnet per bruk er det svært kostnadseffektivt sammenlignet med alternativet, som for mange er å ikke ha noe brukbart innhold i det hele tatt.
                 </p>
@@ -142,9 +143,9 @@ export default function BloggInnlegg() {
             </div>
 
             {/* CTA */}
-            <div className="mt-16 rounded-3xl border border-[#f2ca50]/20 bg-[#f2ca50]/06 p-10 text-center">
-              <h3 className="mb-3 text-2xl font-bold text-white">Klar for profesjonelle bilder?</h3>
-              <p className="mb-6 text-[#d0c5af]">
+            <div className="mt-16 rounded-3xl border border-[var(--forest)]/20 bg-[var(--forest)]/06 p-10 text-center">
+              <h3 className="mb-3 text-2xl font-bold text-[var(--black)]">Klar for profesjonelle bilder?</h3>
+              <p className="mb-6 text-[var(--stone-700)]">
                 Vi hjelper bedrifter i Ålesund og på Sunnmøre med foto og video som faktisk gir resultater.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -152,13 +153,13 @@ export default function BloggInnlegg() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#f2ca50] px-8 py-3.5 font-semibold text-[#09090B] transition-all hover:bg-[#14B8A6] hover:-translate-y-0.5"
+                  className="btn btn-primary"
                 >
                   Book gratis møte
                 </a>
                 <Link
                   href="/tjenester/foto-og-video-alesund"
-                  className="rounded-full border border-white/20 px-8 py-3.5 font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5"
+                  className="btn btn-ghost"
                 >
                   Se foto & video-tjenesten
                 </Link>
@@ -168,8 +169,8 @@ export default function BloggInnlegg() {
           </div>
         </article>
 
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

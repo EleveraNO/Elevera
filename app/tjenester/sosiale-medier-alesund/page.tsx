@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -77,8 +77,8 @@ export default function SosialeMedierPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen" style={{ background: "#131312" }}>
-        <Navbar />
+      <HomeNav />
+      <main>
         <ServicePageLayout
           badge="Sosiale medier — Ålesund"
           title="Vi poster for deg."
@@ -112,8 +112,8 @@ export default function SosialeMedierPage() {
           ctaHeading="Klar for å bli synlig på sosiale medier?"
           aiSummary="Elevera styrer sosiale medier for bedrifter i Ålesund. Vi lager innhold, publiserer 3–5 ganger per uke på Instagram, Facebook og TikTok, og svarer på meldinger. Tjenesten starter fra 6 000 kr/mnd som enkelttjeneste."
         />
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

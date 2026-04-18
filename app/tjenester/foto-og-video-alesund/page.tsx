@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -70,8 +70,8 @@ export default function FotoOgVideoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen" style={{ background: "#131312" }}>
-        <Navbar />
+      <HomeNav />
+      <main>
         <ServicePageLayout
           badge="Foto & Video — Ålesund"
           title="Profesjonell"
@@ -107,8 +107,8 @@ export default function FotoOgVideoPage() {
           ctaHeading="Klar for profesjonelt innhold?"
           aiSummary="Elevera produserer profesjonelt foto og video for bedrifter i Ålesund. Vi tilbyr produktfotografering, bedriftsvideo, reklamevideo og dronevideo. En halvdag med fotograf eller videograf starter fra 5 000 kr."
         />
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import "../../components/blog.css";
+import HomeFooter from "../../components/home/HomeFooter";
 
 export const metadata: Metadata = {
   title: "Markedsføringsbyrå i Ålesund – Hva bør du se etter (2026) | Elevera",
@@ -89,15 +90,15 @@ export default function MarkedsforingsByraaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen bg-[#131312]">
-        <Navbar />
+      <HomeNav />
+      <main className="blog-article">
 
         <article className="px-6 pt-32 pb-20">
           <div className="mx-auto max-w-3xl">
 
             <Link
               href="/blogg"
-              className="mb-10 inline-flex items-center gap-2 text-sm text-[#99907c] hover:text-white/70 transition-colors"
+              className="mb-10 inline-flex items-center gap-2 text-sm text-[var(--stone-600)] hover:text-[var(--stone-700)] transition-colors"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -107,27 +108,27 @@ export default function MarkedsforingsByraaPage() {
 
             <div className="mb-12">
               <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full border border-[#f2ca50]/25 bg-[#f2ca50]/08 px-3 py-1 text-xs font-medium text-[#f2ca50]">
+                <span className="rounded-full border border-[var(--forest)]/25 bg-[var(--forest)]/08 px-3 py-1 text-xs font-medium text-[var(--forest)]">
                   Markedsføring
                 </span>
-                <span className="text-xs text-white/30">24. mars 2026</span>
-                <span className="text-xs text-white/30">8 min lesetid</span>
+                <span className="text-xs text-[var(--stone-500)]">24. mars 2026</span>
+                <span className="text-xs text-[var(--stone-500)]">8 min lesetid</span>
               </div>
-              <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
+              <h1 className="text-3xl font-bold leading-tight text-[var(--black)] sm:text-4xl md:text-5xl">
                 Markedsføringsbyrå i Ålesund – hva bør du se etter?
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-[#d0c5af]">
+              <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
                 Et godt markedsføringsbyrå i Ålesund hjelper bedriften din å bli synlig på nett — gjennom nettside, annonsering, foto og video. Her er hva du bør vite før du velger.
               </p>
-              <p className="mt-3 text-sm text-white/30">
+              <p className="mt-3 text-sm text-[var(--stone-500)]">
                 Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 24. mars 2026
               </p>
             </div>
 
-            <div className="prose prose-invert max-w-none space-y-12 text-white/70 leading-relaxed">
+            <div className="prose prose-invert max-w-none space-y-12 text-[var(--stone-700)] leading-relaxed">
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Hva gjør et markedsføringsbyrå?</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva gjør et markedsføringsbyrå?</h2>
                 <p>
                   Et markedsføringsbyrå — også kalt digitalbyrå — er en bedrift som hjelper andre bedrifter å nå ut til kunder på nett. De vanligste tjenestene er nettside, digital annonsering (Facebook Ads og Google Ads), foto og video, og søkemotoroptimalisering (SEO).
                 </p>
@@ -137,15 +138,15 @@ export default function MarkedsforingsByraaPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Tjenester du kan forvente fra et byrå i Ålesund</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Tjenester du kan forvente fra et byrå i Ålesund</h2>
                 <p>De fleste lokale digitalbyrå tilbyr en eller flere av disse tjenestene:</p>
-                <div className="mt-6 overflow-x-auto rounded-2xl border border-[rgba(77,70,53,0.2)]">
+                <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--stone-300)]">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-[rgba(77,70,53,0.2)] bg-white/5">
-                        <th className="px-5 py-3 text-left font-semibold text-white">Tjeneste</th>
-                        <th className="px-5 py-3 text-left font-semibold text-white">Hva det innebærer</th>
-                        <th className="px-5 py-3 text-left font-semibold text-white">Typisk pris</th>
+                      <tr className="border-b border-[var(--stone-300)] bg-[var(--stone-50)]">
+                        <th className="px-5 py-3 text-left font-semibold text-[var(--black)]">Tjeneste</th>
+                        <th className="px-5 py-3 text-left font-semibold text-[var(--black)]">Hva det innebærer</th>
+                        <th className="px-5 py-3 text-left font-semibold text-[var(--black)]">Typisk pris</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-white/10">
@@ -157,22 +158,22 @@ export default function MarkedsforingsByraaPage() {
                         { tjeneste: "Dronevideo", hva: "Luftopptak av eiendommer, anlegg eller omgivelser", pris: "3 000–8 000 kr" },
                         { tjeneste: "SEO", hva: "Optimalisering for organiske søkeresultater i Google", pris: "3 000–10 000 kr/mnd" },
                       ].map((row, i) => (
-                        <tr key={i} className="text-[#d0c5af]">
-                          <td className="px-5 py-3 font-medium text-white/80">{row.tjeneste}</td>
+                        <tr key={i} className="text-[var(--stone-700)]">
+                          <td className="px-5 py-3 font-medium text-[var(--stone-700)]">{row.tjeneste}</td>
                           <td className="px-5 py-3">{row.hva}</td>
-                          <td className="px-5 py-3 text-[#f2ca50]">{row.pris}</td>
+                          <td className="px-5 py-3 text-[var(--forest)]">{row.pris}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
-                <p className="mt-4 text-xs text-[#99907c]">
+                <p className="mt-4 text-xs text-[var(--stone-600)]">
                   Prisene er veiledende for norske digitalbyrå i 2026. Prisen avhenger av omfang og kompleksitet.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Hva skiller et godt byrå fra et dårlig?</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva skiller et godt byrå fra et dårlig?</h2>
                 <p>
                   Det er enkelt å love resultater. Det som faktisk teller er om de kan vise til dokumenterte resultater fra tidligere kunder — ikke bare flotte tall, men konkrete eksempler med kontekst.
                 </p>
@@ -181,12 +182,12 @@ export default function MarkedsforingsByraaPage() {
                     { label: "Se etter", items: ["Kundehistorier med faktiske resultater", "Tydelig prismodell uten skjulte kostnader", "Spesialisering på det du faktisk trenger", "Jevnlig rapportering og kommunikasjon"] },
                     { label: "Vær forsiktig med", items: ["Garantert #1 i Google (ingen kan love det)", "Pakker uten tydelig spesifikasjon", "Byråer som ikke kan vise til referanser", "Kontrakter med lang bindingstid uten resultatkrav"] },
                   ].map((col, i) => (
-                    <div key={i} className="rounded-2xl border border-[rgba(77,70,53,0.2)] bg-white/5 p-5">
-                      <div className="mb-3 text-sm font-semibold text-white">{col.label}</div>
+                    <div key={i} className="rounded-2xl border border-[var(--stone-300)] bg-[var(--stone-50)] p-5">
+                      <div className="mb-3 text-sm font-semibold text-[var(--black)]">{col.label}</div>
                       <ul className="space-y-2">
                         {col.items.map((item, j) => (
-                          <li key={j} className="flex items-start gap-2 text-sm text-[#d0c5af]">
-                            <span className="mt-0.5 text-[#f2ca50]">{i === 0 ? "✓" : "✗"}</span>
+                          <li key={j} className="flex items-start gap-2 text-sm text-[var(--stone-700)]">
+                            <span className="mt-0.5 text-[var(--forest)]">{i === 0 ? "✓" : "✗"}</span>
                             {item}
                           </li>
                         ))}
@@ -197,7 +198,7 @@ export default function MarkedsforingsByraaPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Annonsering eller SEO – hva lønner seg?</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Annonsering eller SEO – hva lønner seg?</h2>
                 <p>
                   Betalt annonsering (Facebook Ads, Google Ads) gir resultater raskt — typisk innen 1–2 uker — men koster penger løpende og stopper å virke når du slutter å betale. Ifølge Google opplever annonsører i gjennomsnitt 2 kr i omsetning per krone brukt på Google Ads.
                 </p>
@@ -210,7 +211,7 @@ export default function MarkedsforingsByraaPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Foto og video – hvorfor det er viktigere enn noen gang</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Foto og video – hvorfor det er viktigere enn noen gang</h2>
                 <p>
                   Ifølge HubSpot (2024) konverterer sider med profesjonelle bilder 94 % bedre enn sider med kun tekst. Video øker sjansen for at besøkende tar kontakt med 80 %. For lokale bedrifter i Ålesund er profesjonelt bildemateriale avgjørende for å skille seg ut — spesielt i bransjer som reiseliv, håndverk, restaurant og faghandel.
                 </p>
@@ -220,19 +221,19 @@ export default function MarkedsforingsByraaPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-6">Vanlige spørsmål om markedsføringsbyrå i Ålesund</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-6">Vanlige spørsmål om markedsføringsbyrå i Ålesund</h2>
                 <div className="space-y-4">
                   {faqs.map((faq, i) => (
-                    <div key={i} className="rounded-2xl border border-[rgba(77,70,53,0.2)] bg-white/5 px-6 py-5">
-                      <h3 className="mb-2 font-semibold text-white">{faq.q}</h3>
-                      <p className="text-sm leading-relaxed text-white/55">{faq.a}</p>
+                    <div key={i} className="rounded-2xl border border-[var(--stone-300)] bg-[var(--stone-50)] px-6 py-5">
+                      <h3 className="mb-2 font-semibold text-[var(--black)]">{faq.q}</h3>
+                      <p className="text-sm leading-relaxed text-[var(--stone-600)]">{faq.a}</p>
                     </div>
                   ))}
                 </div>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Om Elevera – lokalt digitalbyrå i Ålesund</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Om Elevera – lokalt digitalbyrå i Ålesund</h2>
                 <p>
                   Elevera er et digitalbyrå i Ålesund som tilbyr nettside, digital annonsering, foto og video, og dronevideo til bedrifter i Ålesund og på Sunnmøre. Vi spesialiserer oss på å hjelpe lokale bedrifter å bli synlige og konvertere besøkende til kunder — med enkle pakkepriser og tydelig kommunikasjon.
                 </p>
@@ -243,9 +244,9 @@ export default function MarkedsforingsByraaPage() {
 
             </div>
 
-            <div className="mt-16 rounded-3xl border border-[#f2ca50]/20 bg-[#f2ca50]/06 p-10 text-center">
-              <h3 className="mb-3 text-2xl font-bold text-white">Vil du vite hva Elevera kan gjøre for din bedrift?</h3>
-              <p className="mb-6 text-[#d0c5af]">
+            <div className="mt-16 rounded-3xl border border-[var(--forest)]/20 bg-[var(--forest)]/06 p-10 text-center">
+              <h3 className="mb-3 text-2xl font-bold text-[var(--black)]">Vil du vite hva Elevera kan gjøre for din bedrift?</h3>
+              <p className="mb-6 text-[var(--stone-700)]">
                 Book et gratis 30-minutters møte. Vi ser på hva din bedrift trenger og gir deg et konkret tilbud uten forpliktelser.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -253,13 +254,13 @@ export default function MarkedsforingsByraaPage() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#f2ca50] px-8 py-3.5 font-semibold text-[#09090B] transition-all hover:bg-[#14B8A6] hover:-translate-y-0.5"
+                  className="btn btn-primary"
                 >
                   Book gratis møte
                 </a>
                 <Link
                   href="/tjenester/annonsering-alesund"
-                  className="rounded-full border border-white/20 px-8 py-3.5 font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5"
+                  className="btn btn-ghost"
                 >
                   Se annonsering-tjenesten
                 </Link>
@@ -269,8 +270,8 @@ export default function MarkedsforingsByraaPage() {
           </div>
         </article>
 
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

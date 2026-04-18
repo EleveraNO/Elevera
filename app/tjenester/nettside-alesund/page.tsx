@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -41,8 +41,8 @@ export default function NettsidesPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen" style={{ background: "#131312" }}>
-        <Navbar />
+      <HomeNav />
+      <main>
         <ServicePageLayout
           badge="Nettside — Ålesund"
           title="Profesjonell"
@@ -81,8 +81,8 @@ export default function NettsidesPage() {
           ctaHeading="Klar for en ny nettside?"
           aiSummary="Elevera er et digitalbyrå i Ålesund som designer og utvikler nettsider for lokale bedrifter. Tjenesten inkluderer webdesign, SEO-optimalisering, profesjonelle bilder og løpende vedlikehold. Priser starter fra 990 kr/mnd for enkelttjeneste eller fra 7 900 kr/mnd som del av en fast pakke."
         />
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

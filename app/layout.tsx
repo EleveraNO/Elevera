@@ -1,52 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Fraunces, Montserrat, Manrope, Noto_Serif } from "next/font/google";
+import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import CookieBanner from "./components/CookieBanner";
-import LogoIntro from "./components/LogoIntro";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["500", "700"],
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  style: ["italic"],
-  weight: ["700", "800"],
-  display: "swap",
-});
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const notoSerif = Noto_Serif({
-  variable: "--font-noto-serif",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://elevera.no"),
-  title: "Elevera – Digitalbyrå i Ålesund | Nettside, Foto & Digital annonsering",
+  title: "Elevera – Vekstbyrå i Ålesund | Nettside, Foto & Digital annonsering",
   description:
-    "Elevera er et digitalbyrå i Ålesund som hjelper lokale bedrifter å vokse på nett med profesjonell foto & video, konverterende nettsider og digital annonsering.",
+    "Vekstbyrå i Ålesund. Vi lager innhold, nettsider og annonsering som flytter nåla i virksomheten — målt i resultater, ikke estetikk.",
   keywords: [
+    "vekstbyrå Ålesund",
     "digitalbyrå Ålesund",
     "nettside Ålesund",
     "markedsføring Ålesund",
@@ -62,17 +47,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://elevera.no",
-    title: "Elevera – Digitalbyrå i Ålesund",
+    title: "Elevera – Vekstbyrå i Ålesund",
     description:
-      "Vi hjelper bedrifter i Ålesund og omegn å vokse på nett. Nettside, foto & video, og digital annonsering – alt fra én partner.",
+      "Innhold, sosialt, nettside, SEO og annonsering for lokale bedrifter på Sunnmøre. Målt i resultater.",
     siteName: "Elevera",
     locale: "nb_NO",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Elevera – Digitalbyrå i Ålesund",
+    title: "Elevera – Vekstbyrå i Ålesund",
     description:
-      "Vi hjelper bedrifter i Ålesund og omegn å vokse på nett. Nettside, foto & video, og digital annonsering – alt fra én partner.",
+      "Innhold, sosialt, nettside, SEO og annonsering for lokale bedrifter på Sunnmøre. Målt i resultater.",
   },
   icons: {
     icon: [
@@ -95,7 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no">
-      <body className={`${geistSans.variable} ${fraunces.variable} ${montserrat.variable} ${manrope.variable} ${notoSerif.variable} antialiased`}>
+      <body className={`${inter.variable} ${interTight.variable} ${jetbrainsMono.variable} antialiased`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5S67ZX9GY1"
           strategy="afterInteractive"
@@ -108,7 +93,6 @@ export default function RootLayout({
             gtag('config', 'G-5S67ZX9GY1');
           `}
         </Script>
-        <LogoIntro />
         <CookieBanner />
         {children}
       </body>

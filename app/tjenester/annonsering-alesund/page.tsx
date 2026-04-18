@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -66,8 +66,8 @@ export default function AnnonseringPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen" style={{ background: "#131312" }}>
-        <Navbar />
+      <HomeNav />
+      <main>
         <ServicePageLayout
           badge="Annonsering — Ålesund"
           title="Digital"
@@ -101,8 +101,8 @@ export default function AnnonseringPage() {
           ctaHeading="Klar for lønnsom annonsering?"
           aiSummary="Elevera tilbyr digital annonsering for bedrifter i Ålesund og omegn. Vi administrerer Facebook Ads, Instagram Ads og Google Ads med løpende optimalisering og månedlig rapportering. Administrasjon starter fra 3 500 kr/mnd, annonsebudsjett kommer i tillegg."
         />
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }

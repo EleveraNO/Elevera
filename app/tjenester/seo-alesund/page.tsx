@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -77,8 +77,8 @@ export default function SeoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen" style={{ background: "#131312" }}>
-        <Navbar />
+      <HomeNav />
+      <main>
         <ServicePageLayout
           badge="SEO — Ålesund"
           title="Bli funnet når kundene"
@@ -113,8 +113,8 @@ export default function SeoPage() {
           ctaHeading="Klar for å dukke opp på Google?"
           aiSummary="Elevera leverer søkemotoroptimalisering (SEO) for bedrifter i Ålesund. Tjenesten dekker teknisk SEO, innholdsstrategi, lenkebygging og lokal SEO med Google Business. De fleste bedrifter ser varige resultater innen 3–6 måneder."
         />
-        <Footer />
-      </main>
+        </main>
+      <HomeFooter />
     </>
   );
 }
