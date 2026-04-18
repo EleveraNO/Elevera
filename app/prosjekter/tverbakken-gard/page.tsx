@@ -256,7 +256,7 @@ export default function TverbakkenGard() {
         </section>
 
         {/* ── Stats-stripe ── */}
-        <section className="border-y border-white/[0.06]" style={{ background: "#0d0d10" }}>
+        <section className="border-y border-[var(--stone-200)]" style={{ background: "var(--cream)" }}>
           <div className="mx-auto max-w-5xl px-6">
             <div className="grid grid-cols-3 divide-x divide-white/[0.06]">
               {[
@@ -377,7 +377,7 @@ export default function TverbakkenGard() {
                   transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
                   className="rounded-2xl p-6"
                   style={{
-                    background: "#0e0e12",
+                    background: "var(--stone-50)",
                     border: "1px solid rgba(255,255,255,0.07)",
                   }}
                 >
@@ -535,7 +535,7 @@ export default function TverbakkenGard() {
             <FadeUp>
               <div
                 className="rounded-2xl px-8 py-10"
-                style={{ background: "#0e0e12", border: "1px solid rgba(255,255,255,0.07)" }}
+                style={{ background: "var(--stone-50)", border: "1px solid var(--stone-200)" }}
               >
                 <div className="grid gap-8 md:grid-cols-3">
                   <div>
