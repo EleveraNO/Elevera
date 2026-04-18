@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import PageCTA from "../../components/PageCTA";
 import { FadeUp, StaggerContainer, StaggerItem } from "../../components/animations";
 
@@ -65,8 +65,8 @@ export default function CutOClockPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-    <main className="min-h-screen bg-[#0a0a0a]">
-      <Navbar />
+    <main className="min-h-screen bg-[var(--cream)]">
+      <HomeNav />
 
       {/* Hero with background image */}
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden px-6 pt-20">
@@ -80,7 +80,7 @@ export default function CutOClockPage() {
           priority
         />
         {/* Overlays */}
-        <div className="absolute inset-0 bg-[#0a0a0a]/75" />
+        <div className="absolute inset-0 bg-[var(--cream)]/75" />
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e07318]/20 blur-[120px]" />
         </div>
@@ -88,10 +88,10 @@ export default function CutOClockPage() {
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#e07318]/30 bg-[#e07318]/10 px-4 py-1.5">
             <span className="text-sm font-medium text-[#fdba74]">Frisør · Ålesund</span>
           </div>
-          <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold leading-tight text-[var(--black)] sm:text-5xl md:text-6xl">
             Cut O&apos; Clock
           </h1>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/90">
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[var(--black)]">
             Hvordan Elevera hjalp en lokal frisørsalong i Ålesund med å bygge et
             profesjonelt visuelt uttrykk og en innholdsstrategi som engasjerer på Instagram.
           </p>
@@ -103,13 +103,13 @@ export default function CutOClockPage() {
         <div className="mx-auto max-w-5xl">
           <FadeUp className="mb-12 text-center">
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#e07318]">Slik jobbet vi</p>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Prosessen</h2>
+            <h2 className="text-3xl font-bold text-[var(--black)] sm:text-4xl">Prosessen</h2>
           </FadeUp>
 
           <div className="grid gap-16 md:grid-cols-2 md:items-start">
             {/* Timeline */}
             <div className="relative">
-              <div className="absolute left-6 top-0 h-full w-px bg-white/10" />
+              <div className="absolute left-6 top-0 h-full w-px bg-[var(--stone-100)]" />
               <StaggerContainer className="space-y-10">
                 {prosess.map((item) => (
                   <StaggerItem key={item.steg}>
@@ -118,8 +118,8 @@ export default function CutOClockPage() {
                         {item.steg}
                       </div>
                       <div className="pb-2 pt-2">
-                        <h3 className="mb-2 font-bold text-white">{item.tittel}</h3>
-                        <p className="text-sm leading-relaxed text-white/70">{item.beskrivelse}</p>
+                        <h3 className="mb-2 font-bold text-[var(--black)]">{item.tittel}</h3>
+                        <p className="text-sm leading-relaxed text-[var(--stone-700)]">{item.beskrivelse}</p>
                       </div>
                     </div>
                   </StaggerItem>
@@ -129,7 +129,7 @@ export default function CutOClockPage() {
 
             {/* Image alongside process */}
             <FadeUp className="hidden md:block">
-              <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "3/4" }}>
+              <div className="relative overflow-hidden rounded-2xl border border-[var(--stone-200)]" style={{ aspectRatio: "3/4" }}>
                 <Image
                   src="/images/cut-o-clock/Photo 1.jpg"
                   alt="Cut O' Clock – produksjonsdag"
@@ -144,20 +144,20 @@ export default function CutOClockPage() {
       </section>
 
       {/* Hva ble levert */}
-      <section className="px-6 py-20 border-t border-white/10">
+      <section className="px-6 py-20 border-t border-[var(--stone-200)]">
         <div className="mx-auto max-w-3xl">
           <FadeUp className="mb-10 text-center">
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#e07318]">Leveransen</p>
-            <h2 className="text-3xl font-bold text-white">Hva ble levert</h2>
+            <h2 className="text-3xl font-bold text-[var(--black)]">Hva ble levert</h2>
           </FadeUp>
           <StaggerContainer className="grid gap-4 sm:grid-cols-2">
             {levert.map((item, i) => (
               <StaggerItem key={i}>
-                <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4">
+                <div className="flex items-center gap-3 rounded-xl border border-[var(--stone-200)] bg-[var(--stone-50)] px-5 py-4">
                   <svg className="h-5 w-5 flex-shrink-0 text-[#e07318]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-sm text-white/80">{item}</span>
+                  <span className="text-sm text-[var(--stone-700)]">{item}</span>
                 </div>
               </StaggerItem>
             ))}
@@ -170,7 +170,7 @@ export default function CutOClockPage() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-2 gap-4">
             <FadeUp>
-              <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "4/5" }}>
+              <div className="relative overflow-hidden rounded-2xl border border-[var(--stone-200)]" style={{ aspectRatio: "4/5" }}>
                 <Image
                   src="/images/cut-o-clock/Photo 3.jpg"
                   alt="Cut O' Clock – bilde 3"
@@ -181,7 +181,7 @@ export default function CutOClockPage() {
               </div>
             </FadeUp>
             <FadeUp>
-              <div className="relative overflow-hidden rounded-2xl border border-white/10" style={{ aspectRatio: "4/5" }}>
+              <div className="relative overflow-hidden rounded-2xl border border-[var(--stone-200)]" style={{ aspectRatio: "4/5" }}>
                 <Image
                   src="/images/cut-o-clock/Photo 4.jpg"
                   alt="Cut O' Clock – bilde 4"
@@ -196,11 +196,11 @@ export default function CutOClockPage() {
       </section>
 
       {/* Video */}
-      <section className="px-6 py-20 border-t border-white/10">
+      <section className="px-6 py-20 border-t border-[var(--stone-200)]">
         <div className="mx-auto max-w-sm">
           <FadeUp className="mb-10 text-center">
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#e07318]">Resultatet</p>
-            <h2 className="text-3xl font-bold text-white">Se videoen</h2>
+            <h2 className="text-3xl font-bold text-[var(--black)]">Se videoen</h2>
           </FadeUp>
           <FadeUp>
             <div
@@ -232,7 +232,7 @@ export default function CutOClockPage() {
 
       <PageCTA heading="Vil du ha lignende resultater?" description="Book et gratis møte og hør hva vi kan gjøre for din bedrift i Ålesund." />
 
-      <Footer />
+      <HomeFooter />
     </main>
     </>
   );

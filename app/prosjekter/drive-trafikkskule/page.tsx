@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import PageCTA from "../../components/PageCTA";
 import { FadeUp, StaggerContainer, StaggerItem } from "../../components/animations";
 
@@ -123,7 +123,7 @@ function ReelsCarousel() {
         <button
           type="button"
           onClick={() => select(prevIdx)}
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-[var(--stone-300)] bg-black/60 text-[var(--black)] transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
         </button>
@@ -132,7 +132,7 @@ function ReelsCarousel() {
         <button
           type="button"
           onClick={() => select(nextIdx)}
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-[var(--stone-300)] bg-black/60 text-[var(--black)] transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
         </button>
@@ -177,7 +177,7 @@ export default function DriveTrafikkskule() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="min-h-screen bg-[var(--cream)]">
       <style>{`
         .reels-container { height: 480px; aspect-ratio: 9/16; }
         .reels-video    { height: 480px; aspect-ratio: 9/16; }
@@ -191,7 +191,7 @@ export default function DriveTrafikkskule() {
         }
       `}</style>
 
-      <Navbar />
+      <HomeNav />
 
       {/* ── Hero med carousel-bakgrunn ── */}
       <section className="relative flex min-h-screen items-center overflow-hidden">
@@ -200,8 +200,8 @@ export default function DriveTrafikkskule() {
           autoPlay muted loop playsInline preload="auto"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#0a0a0a]/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/50 via-transparent to-[#0a0a0a]" />
+        <div className="absolute inset-0 bg-[var(--cream)]/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--cream)]/50 via-transparent to-[var(--cream)]" />
 
         <div className="relative z-10 w-full px-6 pt-32 pb-24">
           <div className="mx-auto max-w-4xl">
@@ -211,10 +211,10 @@ export default function DriveTrafikkskule() {
                   Prosjekt pågår
                 </span>
               </div>
-              <h1 className="mb-3 text-5xl font-extrabold leading-[1.05] text-white sm:text-6xl md:text-7xl">
+              <h1 className="mb-3 text-5xl font-extrabold leading-[1.05] text-[var(--black)] sm:text-6xl md:text-7xl">
                 Drive<br />Trafikkskule
               </h1>
-              <p className="mb-6 text-sm tracking-wide text-white/40">
+              <p className="mb-6 text-sm tracking-wide text-[var(--stone-500)]">
                 Volda &amp; Ulsteinvik · Trafikkskule
               </p>
               <div className="flex flex-wrap gap-2">
@@ -245,15 +245,15 @@ export default function DriveTrafikkskule() {
             {/* Tekst */}
             <FadeUp>
               <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-[#dc2626]">Om prosjektet</p>
-              <h2 className="mb-8 text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
+              <h2 className="mb-8 text-4xl font-extrabold leading-[1.1] text-[var(--black)] sm:text-5xl lg:text-6xl">
                 Tiltrekke elever<br />
-                <span className="text-white/35">og bygge tillit</span>
+                <span className="text-[var(--stone-500)]">og bygge tillit</span>
               </h2>
               <div className="mb-8 space-y-4 border-l-2 border-[#dc2626]/35 pl-5">
-                <p className="text-base leading-relaxed text-white/60">
+                <p className="text-base leading-relaxed text-[var(--stone-600)]">
                   Drive Trafikkskule ville nå flere folk som vurderer å ta BE-lappen, og overbevise dem om at Drive er det rette valget. Utfordringen var å skape innhold som både stopper scrollingen og bygger tillit.
                 </p>
-                <p className="text-base leading-relaxed text-white/45">
+                <p className="text-base leading-relaxed text-[var(--stone-500)]">
                   Elevera tok på seg å produsere en innholdspakke skreddersydd for sosiale medier, med videoer designet for å gi folk troen på at de faktisk kan kjøre, og lyst til å melde seg på kurs.
                 </p>
               </div>
@@ -264,9 +264,9 @@ export default function DriveTrafikkskule() {
                   { val: "6+", label: "Videoer" },
                   { val: "Pågår", label: "Status" },
                 ].map(({ val, label }) => (
-                  <div key={label} className="rounded-lg border border-white/10 bg-white/5 px-4 py-2.5">
-                    <p className="text-base font-black leading-none text-white">{val}</p>
-                    <p className="mt-1 text-xs text-white/35">{label}</p>
+                  <div key={label} className="rounded-lg border border-[var(--stone-200)] bg-[var(--stone-50)] px-4 py-2.5">
+                    <p className="text-base font-black leading-none text-[var(--black)]">{val}</p>
+                    <p className="mt-1 text-xs text-[var(--stone-500)]">{label}</p>
                   </div>
                 ))}
               </div>
@@ -296,8 +296,8 @@ export default function DriveTrafikkskule() {
           <div className="absolute inset-0 opacity-[0.035]" style={{
             backgroundImage: "repeating-linear-gradient(45deg, white 0px, white 1px, transparent 1px, transparent 18px)"
           }} />
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[var(--cream)] to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[var(--cream)] to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-6xl">
 
@@ -307,17 +307,17 @@ export default function DriveTrafikkskule() {
               <div>
                 <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#dc2626]">Leveransen</p>
                 <div className="flex items-baseline gap-4">
-                  <span className="text-8xl font-black leading-none text-white">6</span>
-                  <span className="text-3xl font-extrabold text-white/50">Reels</span>
+                  <span className="text-8xl font-black leading-none text-[var(--black)]">6</span>
+                  <span className="text-3xl font-extrabold text-[var(--stone-600)]">Reels</span>
                 </div>
               </div>
               <div className="max-w-sm">
-                <p className="mb-3 text-sm leading-relaxed text-white/40">
+                <p className="mb-3 text-sm leading-relaxed text-[var(--stone-500)]">
                   Videoer optimalisert for Reels og Facebook, designet for å stoppe thumben og bygge troverdighet hos folk som vurderer å ta BE-lappen.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {["Kamera", "Drone", "GoPro", "Tutorial-format"].map((t) => (
-                    <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/40">{t}</span>
+                    <span key={t} className="rounded-full border border-[var(--stone-200)] bg-[var(--stone-50)] px-3 py-1 text-xs text-[var(--stone-500)]">{t}</span>
                   ))}
                 </div>
               </div>
@@ -342,10 +342,10 @@ export default function DriveTrafikkskule() {
                 />
                 {/* Hover overlay med tittel */}
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/10 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <p className="text-xs font-semibold leading-snug text-white">{reel.label}</p>
+                  <p className="text-xs font-semibold leading-snug text-[var(--black)]">{reel.label}</p>
                 </div>
                 {/* Indeks-nummer */}
-                <div className="absolute left-2 top-2 text-[10px] font-bold tabular-nums text-white/25">
+                <div className="absolute left-2 top-2 text-[10px] font-bold tabular-nums text-[var(--stone-400)]">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 {/* Subtil red glow på hover */}
@@ -368,8 +368,8 @@ export default function DriveTrafikkskule() {
             backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
             backgroundSize: "22px 22px"
           }} />
-          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[var(--cream)] to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[var(--cream)] to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-6xl">
           {/* Header */}
@@ -377,15 +377,15 @@ export default function DriveTrafikkskule() {
             <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#dc2626]">Leveransen</p>
-                <h2 className="mb-2 text-7xl font-black leading-none text-white">10</h2>
-                <h3 className="mb-6 text-3xl font-extrabold text-white/60">Bilder</h3>
+                <h2 className="mb-2 text-7xl font-black leading-none text-[var(--black)]">10</h2>
+                <h3 className="mb-6 text-3xl font-extrabold text-[var(--stone-600)]">Bilder</h3>
                 <div className="mb-8 h-px w-12 bg-[#dc2626]/50" />
-                <p className="mb-6 text-base leading-relaxed text-white/50">
+                <p className="mb-6 text-base leading-relaxed text-[var(--stone-600)]">
                   Profesjonelle bilder som viser frem Drive Trafikkskule, ansatte og miljøet, klare til bruk på nettside og sosiale medier.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {["Portrett", "Redigering", "Lokasjon"].map((t) => (
-                    <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/40">{t}</span>
+                    <span key={t} className="rounded-full border border-[var(--stone-200)] bg-[var(--stone-50)] px-3 py-1 text-xs text-[var(--stone-500)]">{t}</span>
                   ))}
                 </div>
               </div>
@@ -425,14 +425,14 @@ export default function DriveTrafikkskule() {
           preload="metadata"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#0a0a0a]/75" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a]" />
+        <div className="absolute inset-0 bg-[var(--cream)]/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--cream)] via-transparent to-[var(--cream)]" />
 
         {/* Fremdrift */}
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <FadeUp>
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#dc2626]">Status</p>
-            <h2 className="mb-10 text-3xl font-extrabold text-white sm:text-4xl">Der vi er nå</h2>
+            <h2 className="mb-10 text-3xl font-extrabold text-[var(--black)] sm:text-4xl">Der vi er nå</h2>
 
             <div className="space-y-6">
               {[
@@ -442,18 +442,18 @@ export default function DriveTrafikkskule() {
               ].map((step, i) => (
                 <div key={step.label} className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold ${step.done ? "border-[#dc2626] bg-[#dc2626] text-white" : "border-white/20 bg-transparent text-white/30"}`}>
+                    <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold ${step.done ? "border-[#dc2626] bg-[#dc2626] text-[var(--black)]" : "border-[var(--stone-300)] bg-transparent text-[var(--stone-500)]"}`}>
                       {step.done ? (
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       ) : (i + 1)}
                     </div>
-                    {i < 2 && <div className={`mt-1 w-px flex-1 ${step.done ? "bg-[#dc2626]/40" : "bg-white/10"}`} style={{ minHeight: "2rem" }} />}
+                    {i < 2 && <div className={`mt-1 w-px flex-1 ${step.done ? "bg-[#dc2626]/40" : "bg-[var(--stone-100)]"}`} style={{ minHeight: "2rem" }} />}
                   </div>
                   <div className="pb-6">
-                    <p className={`mb-1 font-semibold ${step.done ? "text-white" : "text-white/40"}`}>{step.label}</p>
-                    <p className="text-sm text-white/30">{step.desc}</p>
+                    <p className={`mb-1 font-semibold ${step.done ? "text-[var(--black)]" : "text-[var(--stone-500)]"}`}>{step.label}</p>
+                    <p className="text-sm text-[var(--stone-500)]">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -466,14 +466,14 @@ export default function DriveTrafikkskule() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <FadeUp>
-            <div className="rounded-xl border border-dashed border-white/10 bg-white/5 px-6 py-10 text-center">
+            <div className="rounded-xl border border-dashed border-[var(--stone-200)] bg-[var(--stone-50)] px-6 py-10 text-center">
               <div className="mb-3 flex items-center justify-center gap-2">
-                <svg className="h-4 w-4 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-4 w-4 text-[var(--stone-500)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
-                <p className="text-sm font-semibold text-white/30">Resultater &amp; tall</p>
+                <p className="text-sm font-semibold text-[var(--stone-500)]">Resultater &amp; tall</p>
               </div>
-              <p className="text-sm text-white/20">
+              <p className="text-sm text-[var(--stone-400)]">
                 Innsikt og kampanjeresultater publiseres når prosjektet er ferdig
               </p>
             </div>
@@ -482,19 +482,19 @@ export default function DriveTrafikkskule() {
       </section>
 
       {/* ── Footer navigation ── */}
-      <div className="mx-auto max-w-6xl border-t border-white/10 px-6 pt-8 mt-16">
+      <div className="mx-auto max-w-6xl border-t border-[var(--stone-200)] px-6 pt-8 mt-16">
         <div className="flex items-center justify-between">
-          <a href="/#prosjekter" className="text-sm text-white/40 transition-colors hover:text-white">
+          <a href="/#prosjekter" className="text-sm text-[var(--stone-500)] transition-colors hover:text-[var(--black)]">
             ← Tilbake til prosjekter
           </a>
-          <a href="/#kontakt" className="text-sm font-semibold text-[#f87171] transition-colors hover:text-white">
+          <a href="/#kontakt" className="text-sm font-semibold text-[#f87171] transition-colors hover:text-[var(--black)]">
             Book et møte →
           </a>
         </div>
       </div>
 
       <PageCTA heading="Vil du ha lignende resultater?" />
-      <Footer />
+      <HomeFooter />
     </main>
     </>
   );

@@ -3,8 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import HomeNav from "../../components/home/HomeNav";
+import HomeFooter from "../../components/home/HomeFooter";
 import PageCTA from "../../components/PageCTA";
 import { FadeUp } from "../../components/animations";
 
@@ -107,8 +107,8 @@ export default function TverbakkenGard() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-      <main className="min-h-screen bg-[#0a0a0a]" style={{ overflowX: "clip" }}>
-        <Navbar />
+      <main className="min-h-screen bg-[var(--cream)]" style={{ overflowX: "clip" }}>
+        <HomeNav />
 
         {/* ── Hero: split layout — tekst venstre, MacBook høyre ── */}
         <section className="relative flex min-h-screen items-center overflow-hidden px-6 pb-16 pt-28">
@@ -146,7 +146,7 @@ export default function TverbakkenGard() {
 
                 {/* Tittel */}
                 <motion.h1
-                  className="mb-4 font-extrabold leading-[1.0] tracking-tight text-white"
+                  className="mb-4 font-extrabold leading-[1.0] tracking-tight text-[var(--black)]"
                   style={{ fontSize: "clamp(3rem, 6vw, 5.5rem)" }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -304,7 +304,7 @@ export default function TverbakkenGard() {
               {/* Pull quote */}
               <FadeUp>
                 <h2
-                  className="leading-[1.05] text-white"
+                  className="leading-[1.05] text-[var(--black)]"
                   style={{ fontSize: "clamp(2.4rem, 4.5vw, 3.8rem)", fontWeight: 800 }}
                 >
                   10 generasjoner.
@@ -356,11 +356,11 @@ export default function TverbakkenGard() {
                 Leveransen
               </p>
               <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-                <h2 className="text-5xl font-extrabold text-white">
+                <h2 className="text-5xl font-extrabold text-[var(--black)]">
                   Én nettside.<br />
-                  <span className="text-white/35">Komplett.</span>
+                  <span className="text-[var(--stone-500)]">Komplett.</span>
                 </h2>
-                <p className="max-w-xs text-sm leading-relaxed text-white/40 sm:text-right">
+                <p className="max-w-xs text-sm leading-relaxed text-[var(--stone-500)] sm:text-right">
                   Design, kode og bestillingssystem — alt på plass. Roger trengte ikke å gjøre noe.
                 </p>
               </div>
@@ -387,8 +387,8 @@ export default function TverbakkenGard() {
                   >
                     {item.icon}
                   </div>
-                  <h3 className="mb-2 font-bold text-white">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-white/45">{item.desc}</p>
+                  <h3 className="mb-2 font-bold text-[var(--black)]">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-[var(--stone-500)]">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -407,7 +407,7 @@ export default function TverbakkenGard() {
               <p className="mb-3 text-sm font-semibold uppercase tracking-widest" style={{ color: ACCENT }}>
                 Nettsiden
               </p>
-              <h2 className="text-4xl font-extrabold text-white">
+              <h2 className="text-4xl font-extrabold text-[var(--black)]">
                 Se den i sin helhet
               </h2>
             </motion.div>
@@ -487,7 +487,7 @@ export default function TverbakkenGard() {
                   <p className="mb-3 text-sm font-semibold uppercase tracking-widest" style={{ color: ACCENT }}>
                     Gården
                   </p>
-                  <h2 className="text-4xl font-extrabold text-white">
+                  <h2 className="text-4xl font-extrabold text-[var(--black)]">
                     Historien bak produktet
                   </h2>
                 </div>
@@ -520,7 +520,7 @@ export default function TverbakkenGard() {
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                     style={{ background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%)" }}
                   />
-                  <p className="absolute bottom-0 left-0 right-0 translate-y-1 px-4 py-3 text-xs font-semibold tracking-wide text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="absolute bottom-0 left-0 right-0 translate-y-1 px-4 py-3 text-xs font-semibold tracking-wide text-[var(--black)] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     {photo.label}
                   </p>
                 </motion.div>
@@ -539,16 +539,16 @@ export default function TverbakkenGard() {
               >
                 <div className="grid gap-8 md:grid-cols-3">
                   <div>
-                    <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/30">Stack</p>
-                    <p className="font-semibold text-white">Next.js 16 · TypeScript · Tailwind</p>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[var(--stone-500)]">Stack</p>
+                    <p className="font-semibold text-[var(--black)]">Next.js 16 · TypeScript · Tailwind</p>
                   </div>
                   <div>
-                    <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/30">Integrasjoner</p>
-                    <p className="font-semibold text-white">Resend · Vercel</p>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[var(--stone-500)]">Integrasjoner</p>
+                    <p className="font-semibold text-[var(--black)]">Resend · Vercel</p>
                   </div>
                   <div>
-                    <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/30">Design</p>
-                    <p className="font-semibold text-white">Cormorant Garamond · Lora · Rå Nordisk</p>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[var(--stone-500)]">Design</p>
+                    <p className="font-semibold text-[var(--black)]">Cormorant Garamond · Lora · Rå Nordisk</p>
                   </div>
                 </div>
               </div>
@@ -557,7 +557,7 @@ export default function TverbakkenGard() {
         </section>
 
         <PageCTA heading="Din bedrift har en historie. La oss fortelle den." />
-        <Footer />
+        <HomeFooter />
       </main>
     </>
   );
