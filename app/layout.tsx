@@ -59,14 +59,7 @@ export const metadata: Metadata = {
     description:
       "Innhold, sosialt, nettside, SEO og annonsering for lokale bedrifter på Sunnmøre. Målt i resultater.",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
-    ],
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
+  // Favicon + apple-icon auto-detected from app/icon.svg and app/apple-icon.tsx
   robots: {
     index: true,
     follow: true,
