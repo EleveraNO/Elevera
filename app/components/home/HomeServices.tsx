@@ -123,11 +123,16 @@ export default function HomeServices() {
 
           <div className="svc-radial-center" aria-hidden="true">
             <div className="svc-radial-image">
-              <div className="svc-radial-placeholder">
-                <span className="svc-radial-placeholder-label">
-                  Plass for illustrasjon
-                </span>
-              </div>
+              <video
+                className="svc-radial-video"
+                src="/videos/tjenester.mp4"
+                poster="/videos/tjenester-poster.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
               {services.map((s) => (
                 <button
                   key={s.num}
