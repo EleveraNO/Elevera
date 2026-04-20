@@ -7,12 +7,10 @@ type ServiceItem = {
   title: string;
   description: string;
   href: string;
-  /** Hotspot position on the central video (0–100 percent) */
-  hotspot: { x: number; y: number };
-  /** Label position over the video (0–100 percent of the video container) */
-  label: { x: number; y: number };
-  /** Which side the title number sits on */
-  align: "left" | "right";
+  /** Which side of the video this label sits on */
+  side: "left" | "right";
+  /** Display order within its column (1 = top) */
+  order: number;
 };
 
 const services: ServiceItem[] = [
@@ -22,9 +20,8 @@ const services: ServiceItem[] = [
     description:
       "Foto, video, drone og klipp som faktisk blir brukt. Filmet på lokasjon, klippet for kanalen det skal ut på.",
     href: "/tjenester/foto-og-video-alesund",
-    hotspot: { x: 38, y: 42 },
-    label: { x: 4, y: 22 },
-    align: "left",
+    side: "left",
+    order: 1,
   },
   {
     num: "02",
@@ -32,9 +29,8 @@ const services: ServiceItem[] = [
     description:
       "Strategi, publisering og måling. Fra null til synlig. Vi jobber med kanalen som faktisk treffer målgruppen din.",
     href: "/tjenester/sosiale-medier-alesund",
-    hotspot: { x: 56, y: 22 },
-    label: { x: 66, y: 12 },
-    align: "right",
+    side: "right",
+    order: 1,
   },
   {
     num: "03",
@@ -42,9 +38,8 @@ const services: ServiceItem[] = [
     description:
       "Sider som gjør besøk om til kontaktforespørsler. Raskt, ryddig, laget for å bli funnet og for å få kontakt.",
     href: "/tjenester/nettside-alesund",
-    hotspot: { x: 70, y: 50 },
-    label: { x: 78, y: 38 },
-    align: "right",
+    side: "right",
+    order: 2,
   },
   {
     num: "04",
@@ -52,9 +47,8 @@ const services: ServiceItem[] = [
     description:
       "Bli funnet av folk som allerede leter etter tjenesten din. Lokalt søk, struktur og innhold som rangerer.",
     href: "/tjenester/seo-alesund",
-    hotspot: { x: 32, y: 78 },
-    label: { x: 4, y: 70 },
-    align: "left",
+    side: "left",
+    order: 2,
   },
   {
     num: "05",
@@ -62,9 +56,8 @@ const services: ServiceItem[] = [
     description:
       "Annonser på Meta og Google som gir målbare leads, ikke bare visninger. Testet, målt og justert hver uke.",
     href: "/tjenester/annonsering-alesund",
-    hotspot: { x: 66, y: 78 },
-    label: { x: 66, y: 76 },
-    align: "right",
+    side: "right",
+    order: 3,
   },
 ];
 
@@ -72,34 +65,23 @@ function ServiceLabel({
   item,
   active,
   setActive,
-  overlay,
 }: {
   item: ServiceItem;
   active: string | null;
   setActive: (n: string | null) => void;
-  overlay: boolean;
 }) {
-  const className = overlay
-    ? `svc-fw-label svc-fw-label-${item.align}${active === item.num ? " active" : ""}`
-    : `svc-stack-item${active === item.num ? " active" : ""}`;
-
-  const overlayStyle = overlay
-    ? { left: `${item.label.x}%`, top: `${item.label.y}%` }
-    : undefined;
-
   return (
     <a
       href={item.href}
-      className={className}
-      style={overlayStyle}
+      className={`svc-side-item svc-side-item-${item.side}${active === item.num ? " active" : ""}`}
       onMouseEnter={() => setActive(item.num)}
       onMouseLeave={() => setActive(null)}
       onFocus={() => setActive(item.num)}
       onBlur={() => setActive(null)}
     >
-      <div className="svc-fw-head">
+      <div className="svc-side-head">
         <h3>{item.title}</h3>
-        <span className="svc-fw-num">{item.num}</span>
+        <span className="svc-side-num">{item.num}</span>
       </div>
       <p>{item.description}</p>
     </a>
@@ -109,8 +91,15 @@ function ServiceLabel({
 export default function HomeServices() {
   const [active, setActive] = useState<string | null>(null);
 
+  const leftItems = services
+    .filter((s) => s.side === "left")
+    .sort((a, b) => a.order - b.order);
+  const rightItems = services
+    .filter((s) => s.side === "right")
+    .sort((a, b) => a.order - b.order);
+
   return (
-    <section id="tjenester" className="home-section svc-fw-section">
+    <section id="tjenester" className="home-section">
       <div className="wrap">
         <div className="home-section-head">
           <div className="reveal">
@@ -122,57 +111,47 @@ export default function HomeServices() {
             ikke en mal. Den enkleste kombinasjonen som faktisk virker for deg.
           </p>
         </div>
-      </div>
 
-      {/* Full-width visual with overlaid labels (desktop only) */}
-      <div className="svc-fw-bleed reveal">
         <div
-          className="svc-fw-card"
-          data-active={active ?? ""}
+          className={`svc-radial reveal${active ? " is-active" : ""}`}
           onMouseLeave={() => setActive(null)}
         >
-          <video
-            className="svc-fw-video"
-            src="/videos/tjenester.mp4"
-            poster="/videos/tjenester-poster.jpg"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
-          />
-          <div className="svc-fw-vignette" aria-hidden="true" />
+          <div className="svc-side-col svc-side-col-left">
+            {leftItems.map((s) => (
+              <ServiceLabel
+                key={s.num}
+                item={s}
+                active={active}
+                setActive={setActive}
+              />
+            ))}
+          </div>
 
-          {/* Labels — absolutely positioned over the video on desktop.
-              The video itself has 01–05 numbered markers baked into the
-              illustration, so we don't render extra hotspot buttons. */}
-          {services.map((s) => (
-            <ServiceLabel
-              key={`label-${s.num}`}
-              item={s}
-              active={active}
-              setActive={setActive}
-              overlay
+          <div className="svc-radial-video-wrap" aria-hidden="true">
+            <video
+              className="svc-radial-video"
+              src="/videos/tjenester.mp4"
+              poster="/videos/tjenester-poster.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
             />
-          ))}
+          </div>
+
+          <div className="svc-side-col svc-side-col-right">
+            {rightItems.map((s) => (
+              <ServiceLabel
+                key={s.num}
+                item={s}
+                active={active}
+                setActive={setActive}
+              />
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Stacked fallback for mobile / narrow screens */}
-      <div className="wrap svc-stack">
-        {services.map((s) => (
-          <ServiceLabel
-            key={`stack-${s.num}`}
-            item={s}
-            active={active}
-            setActive={setActive}
-            overlay={false}
-          />
-        ))}
-      </div>
-
-      <div className="wrap">
         <div className="home-connector reveal">
           <div className="home-connector-glyph" aria-hidden="true">
             <span />
