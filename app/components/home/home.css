@@ -221,7 +221,7 @@
   text-decoration: none;
   transition: opacity .25s cubic-bezier(.2, .7, .2, 1), transform .25s;
 }
-.svc-stage-label-left { text-align: right; }
+.svc-stage-label-left { text-align: left; }
 .svc-stage-label-right { text-align: left; }
 
 .svc-stage[data-active]:not([data-active=""]) .svc-stage-label:not(.active) {
@@ -237,7 +237,7 @@
 }
 .svc-stage-label-left .svc-stage-head {
   /* Title first, then num — reads "Foto & Video 01" */
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .svc-stage-label-right .svc-stage-head {
   /* Num first, then title — reads "02 Sosiale medier" */
