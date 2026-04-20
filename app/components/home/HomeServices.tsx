@@ -9,8 +9,12 @@ type ServiceItem = {
   href: string;
   /** Vertical position of the label within the stage (0–100% from top) */
   top: number;
-  /** Which edge the label anchors to */
+  /** Which edge the label anchors to (controls text alignment) */
   anchor: "left" | "right";
+  /** Distance from anchor edge (0 = flush with edge, higher pulls inward) */
+  inset: number;
+  /** Label width as percent of stage */
+  widthPct: number;
 };
 
 const services: ServiceItem[] = [
@@ -22,6 +26,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/foto-og-video-alesund",
     top: 20,
     anchor: "left",
+    inset: 0,
+    widthPct: 21,
   },
   {
     num: "02",
@@ -31,6 +37,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/sosiale-medier-alesund",
     top: 6,
     anchor: "right",
+    inset: 26,
+    widthPct: 20,
   },
   {
     num: "03",
@@ -40,6 +48,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/nettside-alesund",
     top: 30,
     anchor: "right",
+    inset: 8,
+    widthPct: 22,
   },
   {
     num: "04",
@@ -49,6 +59,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/seo-alesund",
     top: 62,
     anchor: "left",
+    inset: 0,
+    widthPct: 21,
   },
   {
     num: "05",
@@ -58,6 +70,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/annonsering-alesund",
     top: 62,
     anchor: "right",
+    inset: 18,
+    widthPct: 24,
   },
 ];
 
@@ -72,7 +86,10 @@ function ServiceLabel({
 }) {
   const style: React.CSSProperties = {
     top: `${item.top}%`,
-    ...(item.anchor === "left" ? { left: 0 } : { right: 0 }),
+    width: `${item.widthPct}%`,
+    ...(item.anchor === "left"
+      ? { left: `${item.inset}%` }
+      : { right: `${item.inset}%` }),
   };
 
   return (
