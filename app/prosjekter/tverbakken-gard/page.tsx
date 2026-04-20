@@ -8,9 +8,9 @@ import HomeFooter from "../../components/home/HomeFooter";
 import PageCTA from "../../components/PageCTA";
 import { FadeUp } from "../../components/animations";
 
-const ACCENT = "#f59e0b";
-const ACCENT_DIM = "rgba(245,158,11,0.12)";
-const ACCENT_BORDER = "rgba(245,158,11,0.25)";
+const ACCENT = "#B87B2C";
+const ACCENT_DIM = "rgba(184,123,44,0.10)";
+const ACCENT_BORDER = "rgba(184,123,44,0.28)";
 
 const photos = [
   { src: "/images/tverbakken-gard/sau-paa-fjell.jpg",     label: "Sau på fjell",       w: 1656, h: 2208 },
@@ -120,7 +120,7 @@ export default function TverbakkenGard() {
               right: "-5%", top: "50%",
               width: 700, height: 700,
               transform: "translateY(-50%)",
-              background: "radial-gradient(circle, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.03) 40%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(184,123,44,0.12) 0%, rgba(184,123,44,0.04) 40%, transparent 70%)",
               borderRadius: "50%",
             }}
           />
@@ -139,7 +139,7 @@ export default function TverbakkenGard() {
                   transition={{ duration: 0.5, ease }}
                 >
                   <span className="h-1.5 w-1.5 rounded-full" style={{ background: ACCENT }} />
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: "rgba(245,158,11,0.65)" }}>
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
                     Casestudie · Retainer
                   </span>
                 </motion.div>
@@ -169,7 +169,7 @@ export default function TverbakkenGard() {
                 {/* Lokasjon */}
                 <motion.p
                   className="mb-8 text-sm tracking-wide"
-                  style={{ color: "rgba(242,237,230,0.38)" }}
+                  style={{ color: "var(--stone-500)" }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.18, ease }}
@@ -188,7 +188,7 @@ export default function TverbakkenGard() {
                     <span
                       key={tag}
                       className="rounded border px-3 py-1 text-xs font-medium"
-                      style={{ borderColor: ACCENT_BORDER, background: ACCENT_DIM, color: "#fbbf24" }}
+                      style={{ borderColor: ACCENT_BORDER, background: ACCENT_DIM, color: ACCENT }}
                     >
                       {tag}
                     </span>
@@ -229,7 +229,7 @@ export default function TverbakkenGard() {
                   className="pointer-events-none absolute blur-3xl"
                   style={{
                     inset: "-15% -8%",
-                    background: "radial-gradient(ellipse at 55% 60%, rgba(245,158,11,0.22) 0%, transparent 65%)",
+                    background: "radial-gradient(ellipse at 55% 60%, rgba(184,123,44,0.22) 0%, transparent 65%)",
                   }}
                 />
                 <motion.div
@@ -243,7 +243,7 @@ export default function TverbakkenGard() {
                     height={1080}
                     className="relative w-full h-auto"
                     style={{
-                      filter: "drop-shadow(0 48px 80px rgba(0,0,0,0.75)) drop-shadow(0 0 50px rgba(245,158,11,0.18))",
+                      filter: "drop-shadow(0 48px 80px rgba(15,15,14,0.25)) drop-shadow(0 0 50px rgba(184,123,44,0.18))",
                     }}
                     sizes="(max-width: 768px) 95vw, 55vw"
                     priority
@@ -258,7 +258,7 @@ export default function TverbakkenGard() {
         {/* ── Stats-stripe ── */}
         <section className="border-y border-[var(--stone-200)]" style={{ background: "var(--cream)" }}>
           <div className="mx-auto max-w-5xl px-6">
-            <div className="grid grid-cols-3 divide-x divide-white/[0.06]">
+            <div className="grid grid-cols-3 divide-x divide-[var(--stone-200)]">
               {[
                 { val: "1755", label: "Grunnlagt" },
                 { val: "10", label: "Generasjoner" },
@@ -274,12 +274,12 @@ export default function TverbakkenGard() {
                     )}
                     <p
                       className="text-2xl font-black leading-none tracking-tight"
-                      style={{ color: dot ? "#F2EDE6" : ACCENT }}
+                      style={{ color: dot ? "var(--black)" : ACCENT }}
                     >
                       {val}
                     </p>
                   </div>
-                  <p className="mt-1.5 text-[11px] uppercase tracking-widest" style={{ color: "rgba(242,237,230,0.3)" }}>
+                  <p className="mt-1.5 text-[11px] uppercase tracking-widest" style={{ color: "var(--stone-500)" }}>
                     {label}
                   </p>
                 </div>
@@ -296,7 +296,7 @@ export default function TverbakkenGard() {
                 <span className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
                   Om prosjektet
                 </span>
-                <div className="h-px flex-1" style={{ background: "rgba(245,158,11,0.2)" }} />
+                <div className="h-px flex-1" style={{ background: "var(--stone-300)" }} />
               </div>
             </FadeUp>
 
@@ -327,18 +327,18 @@ export default function TverbakkenGard() {
               <FadeUp delay={0.1}>
                 <div
                   className="space-y-5 text-base leading-relaxed"
-                  style={{ borderLeft: "2px solid rgba(245,158,11,0.2)", paddingLeft: "1.5rem" }}
+                  style={{ borderLeft: "2px solid var(--stone-300)", paddingLeft: "1.5rem" }}
                 >
-                  <p style={{ color: "rgba(242,237,230,0.68)" }}>
+                  <p style={{ color: "var(--stone-700)" }}>
                     Roger Tverbakk driver gård i Kjerringøy — et sted familien har holdt til siden 1755.
                     Han selger saueskinn med sjel, men manglet en nettside som fortalte den historien.
                   </p>
-                  <p style={{ color: "rgba(242,237,230,0.45)" }}>
+                  <p style={{ color: "var(--stone-600)" }}>
                     Vi bygde «Rå Nordisk» — et designspråk som matcher gårdens karakter.
                     Naturbilder, klassiske fonter og jordfarger. En bestillingsflyt som fungerer
                     uten at Roger trenger å løfte en finger.
                   </p>
-                  <p style={{ color: "rgba(242,237,230,0.35)" }}>
+                  <p style={{ color: "var(--stone-500)" }}>
                     Resultatet er en nettside som ikke ser ut som en nettside — den ser ut som gården.
                   </p>
                 </div>
@@ -378,7 +378,7 @@ export default function TverbakkenGard() {
                   className="rounded-2xl p-6"
                   style={{
                     background: "var(--stone-50)",
-                    border: "1px solid rgba(255,255,255,0.07)",
+                    border: "1px solid var(--stone-200)",
                   }}
                 >
                   <div
@@ -420,8 +420,8 @@ export default function TverbakkenGard() {
               className="relative overflow-hidden rounded-2xl"
               style={{
                 height: VIEWPORT_H,
-                border: "1px solid rgba(255,255,255,0.10)",
-                boxShadow: "0 40px 100px rgba(0,0,0,0.6), 0 0 0 0.5px rgba(255,255,255,0.04)",
+                border: "1px solid var(--stone-200)",
+                boxShadow: "0 40px 100px rgba(15,15,14,0.18), 0 0 0 0.5px var(--stone-200)",
               }}
             >
               <motion.div
@@ -450,7 +450,7 @@ export default function TverbakkenGard() {
 
             <div
               className="mt-3 h-[2px] overflow-hidden rounded-full"
-              style={{ background: "rgba(255,255,255,0.06)" }}
+              style={{ background: "var(--stone-200)" }}
             >
               <motion.div
                 className="h-full rounded-full"
@@ -462,12 +462,12 @@ export default function TverbakkenGard() {
               className="mt-4 flex items-center justify-center gap-2"
               style={{ opacity: hintOpacity }}
             >
-              <p className="text-xs" style={{ color: "rgba(255,255,255,0.22)" }}>
+              <p className="text-xs" style={{ color: "var(--stone-500)" }}>
                 Scroll for å se hele nettsiden
               </p>
               <motion.svg
                 width="10" height="10" viewBox="0 0 24 24"
-                fill="none" stroke="rgba(255,255,255,0.22)" strokeWidth="2"
+                fill="none" stroke="var(--stone-500)" strokeWidth="2"
                 animate={{ y: [0, 3, 0] }}
                 transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -491,7 +491,7 @@ export default function TverbakkenGard() {
                     Historien bak produktet
                   </h2>
                 </div>
-                <p className="max-w-xs text-sm leading-relaxed sm:text-right" style={{ color: "rgba(255,255,255,0.35)" }}>
+                <p className="max-w-xs text-sm leading-relaxed sm:text-right" style={{ color: "var(--stone-500)" }}>
                   Kjerringøy, Nordland — et sted familien<br className="hidden sm:block" /> har holdt til siden 1755.
                 </p>
               </div>
@@ -520,7 +520,7 @@ export default function TverbakkenGard() {
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                     style={{ background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%)" }}
                   />
-                  <p className="absolute bottom-0 left-0 right-0 translate-y-1 px-4 py-3 text-xs font-semibold tracking-wide text-[var(--black)] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="absolute bottom-0 left-0 right-0 translate-y-1 px-4 py-3 text-xs font-semibold tracking-wide text-[var(--cream)] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     {photo.label}
                   </p>
                 </motion.div>
