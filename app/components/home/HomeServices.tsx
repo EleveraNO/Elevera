@@ -7,10 +7,10 @@ type ServiceItem = {
   title: string;
   description: string;
   href: string;
-  /** Which side of the video this label sits on */
-  side: "left" | "right";
-  /** Display order within its column (1 = top) */
-  order: number;
+  /** Vertical position of the label within the stage (0–100% from top) */
+  top: number;
+  /** Which edge the label anchors to */
+  anchor: "left" | "right";
 };
 
 const services: ServiceItem[] = [
@@ -20,8 +20,8 @@ const services: ServiceItem[] = [
     description:
       "Foto, video, drone og klipp som faktisk blir brukt. Filmet på lokasjon, klippet for kanalen det skal ut på.",
     href: "/tjenester/foto-og-video-alesund",
-    side: "left",
-    order: 1,
+    top: 25,
+    anchor: "left",
   },
   {
     num: "02",
@@ -29,8 +29,8 @@ const services: ServiceItem[] = [
     description:
       "Strategi, publisering og måling. Fra null til synlig. Vi jobber med kanalen som faktisk treffer målgruppen din.",
     href: "/tjenester/sosiale-medier-alesund",
-    side: "right",
-    order: 1,
+    top: 10,
+    anchor: "right",
   },
   {
     num: "03",
@@ -38,8 +38,8 @@ const services: ServiceItem[] = [
     description:
       "Sider som gjør besøk om til kontaktforespørsler. Raskt, ryddig, laget for å bli funnet og for å få kontakt.",
     href: "/tjenester/nettside-alesund",
-    side: "right",
-    order: 2,
+    top: 38,
+    anchor: "right",
   },
   {
     num: "04",
@@ -47,8 +47,8 @@ const services: ServiceItem[] = [
     description:
       "Bli funnet av folk som allerede leter etter tjenesten din. Lokalt søk, struktur og innhold som rangerer.",
     href: "/tjenester/seo-alesund",
-    side: "left",
-    order: 2,
+    top: 55,
+    anchor: "left",
   },
   {
     num: "05",
@@ -56,8 +56,8 @@ const services: ServiceItem[] = [
     description:
       "Annonser på Meta og Google som gir målbare leads, ikke bare visninger. Testet, målt og justert hver uke.",
     href: "/tjenester/annonsering-alesund",
-    side: "right",
-    order: 3,
+    top: 68,
+    anchor: "right",
   },
 ];
 
@@ -70,18 +70,24 @@ function ServiceLabel({
   active: string | null;
   setActive: (n: string | null) => void;
 }) {
+  const style: React.CSSProperties = {
+    top: `${item.top}%`,
+    ...(item.anchor === "left" ? { left: 0 } : { right: 0 }),
+  };
+
   return (
     <a
       href={item.href}
-      className={`svc-side-item svc-side-item-${item.side}${active === item.num ? " active" : ""}`}
+      className={`svc-stage-label svc-stage-label-${item.anchor}${active === item.num ? " active" : ""}`}
+      style={style}
       onMouseEnter={() => setActive(item.num)}
       onMouseLeave={() => setActive(null)}
       onFocus={() => setActive(item.num)}
       onBlur={() => setActive(null)}
     >
-      <div className="svc-side-head">
+      <div className="svc-stage-head">
         <h3>{item.title}</h3>
-        <span className="svc-side-num">{item.num}</span>
+        <span className="svc-stage-num">{item.num}</span>
       </div>
       <p>{item.description}</p>
     </a>
@@ -90,13 +96,6 @@ function ServiceLabel({
 
 export default function HomeServices() {
   const [active, setActive] = useState<string | null>(null);
-
-  const leftItems = services
-    .filter((s) => s.side === "left")
-    .sort((a, b) => a.order - b.order);
-  const rightItems = services
-    .filter((s) => s.side === "right")
-    .sort((a, b) => a.order - b.order);
 
   return (
     <section id="tjenester" className="home-section">
@@ -113,24 +112,13 @@ export default function HomeServices() {
         </div>
 
         <div
-          className="svc-radial reveal"
+          className="svc-stage reveal"
           data-active={active ?? ""}
           onMouseLeave={() => setActive(null)}
         >
-          <div className="svc-side-col svc-side-col-left">
-            {leftItems.map((s) => (
-              <ServiceLabel
-                key={s.num}
-                item={s}
-                active={active}
-                setActive={setActive}
-              />
-            ))}
-          </div>
-
-          <div className="svc-radial-video-wrap" aria-hidden="true">
+          <div className="svc-stage-video-wrap" aria-hidden="true">
             <video
-              className="svc-radial-video"
+              className="svc-stage-video"
               src="/videos/tjenester.mp4"
               poster="/videos/tjenester-poster.jpg"
               autoPlay
@@ -141,16 +129,33 @@ export default function HomeServices() {
             />
           </div>
 
-          <div className="svc-side-col svc-side-col-right">
-            {rightItems.map((s) => (
-              <ServiceLabel
-                key={s.num}
-                item={s}
-                active={active}
-                setActive={setActive}
-              />
-            ))}
-          </div>
+          {services.map((s) => (
+            <ServiceLabel
+              key={s.num}
+              item={s}
+              active={active}
+              setActive={setActive}
+            />
+          ))}
+        </div>
+
+        {/* Mobile fallback — simple stacked list */}
+        <div className="svc-stage-stack">
+          {services.map((s) => (
+            <a
+              key={`stack-${s.num}`}
+              href={s.href}
+              className="svc-stack-item"
+              onMouseEnter={() => setActive(s.num)}
+              onMouseLeave={() => setActive(null)}
+            >
+              <div className="svc-stage-head">
+                <h3>{s.title}</h3>
+                <span className="svc-stage-num">{s.num}</span>
+              </div>
+              <p>{s.description}</p>
+            </a>
+          ))}
         </div>
 
         <div className="home-connector reveal">
