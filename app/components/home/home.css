@@ -236,8 +236,13 @@
   margin-bottom: 6px;
 }
 .svc-stage-label-left .svc-stage-head {
+  /* Title first, then num — reads "Foto & Video 01" */
+  justify-content: flex-end;
+}
+.svc-stage-label-right .svc-stage-head {
+  /* Num first, then title — reads "02 Sosiale medier" */
   flex-direction: row-reverse;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 .svc-stage-head h3 {
   font-family: var(--font-inter-tight), var(--font-inter), sans-serif;

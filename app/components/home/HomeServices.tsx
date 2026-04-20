@@ -20,7 +20,7 @@ const services: ServiceItem[] = [
     description:
       "Foto, video, drone og klipp som faktisk blir brukt. Filmet på lokasjon, klippet for kanalen det skal ut på.",
     href: "/tjenester/foto-og-video-alesund",
-    top: 25,
+    top: 20,
     anchor: "left",
   },
   {
@@ -29,7 +29,7 @@ const services: ServiceItem[] = [
     description:
       "Strategi, publisering og måling. Fra null til synlig. Vi jobber med kanalen som faktisk treffer målgruppen din.",
     href: "/tjenester/sosiale-medier-alesund",
-    top: 10,
+    top: 6,
     anchor: "right",
   },
   {
@@ -38,7 +38,7 @@ const services: ServiceItem[] = [
     description:
       "Sider som gjør besøk om til kontaktforespørsler. Raskt, ryddig, laget for å bli funnet og for å få kontakt.",
     href: "/tjenester/nettside-alesund",
-    top: 38,
+    top: 30,
     anchor: "right",
   },
   {
@@ -47,7 +47,7 @@ const services: ServiceItem[] = [
     description:
       "Bli funnet av folk som allerede leter etter tjenesten din. Lokalt søk, struktur og innhold som rangerer.",
     href: "/tjenester/seo-alesund",
-    top: 55,
+    top: 62,
     anchor: "left",
   },
   {
@@ -56,7 +56,7 @@ const services: ServiceItem[] = [
     description:
       "Annonser på Meta og Google som gir målbare leads, ikke bare visninger. Testet, målt og justert hver uke.",
     href: "/tjenester/annonsering-alesund",
-    top: 68,
+    top: 62,
     anchor: "right",
   },
 ];
