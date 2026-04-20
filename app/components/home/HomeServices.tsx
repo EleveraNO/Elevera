@@ -7,8 +7,12 @@ type ServiceItem = {
   title: string;
   description: string;
   href: string;
-  /** Hotspot position on the central image (0–100 percent) */
+  /** Hotspot position on the central video (0–100 percent) */
   hotspot: { x: number; y: number };
+  /** Label position over the video (0–100 percent of the video container) */
+  label: { x: number; y: number };
+  /** Which side the title number sits on */
+  align: "left" | "right";
 };
 
 const services: ServiceItem[] = [
@@ -18,7 +22,9 @@ const services: ServiceItem[] = [
     description:
       "Foto, video, drone og klipp som faktisk blir brukt. Filmet på lokasjon, klippet for kanalen det skal ut på.",
     href: "/tjenester/foto-og-video-alesund",
-    hotspot: { x: 34, y: 42 },
+    hotspot: { x: 38, y: 42 },
+    label: { x: 4, y: 22 },
+    align: "left",
   },
   {
     num: "02",
@@ -26,7 +32,9 @@ const services: ServiceItem[] = [
     description:
       "Strategi, publisering og måling. Fra null til synlig. Vi jobber med kanalen som faktisk treffer målgruppen din.",
     href: "/tjenester/sosiale-medier-alesund",
-    hotspot: { x: 62, y: 22 },
+    hotspot: { x: 56, y: 22 },
+    label: { x: 66, y: 12 },
+    align: "right",
   },
   {
     num: "03",
@@ -34,7 +42,9 @@ const services: ServiceItem[] = [
     description:
       "Sider som gjør besøk om til kontaktforespørsler. Raskt, ryddig, laget for å bli funnet og for å få kontakt.",
     href: "/tjenester/nettside-alesund",
-    hotspot: { x: 76, y: 52 },
+    hotspot: { x: 70, y: 50 },
+    label: { x: 78, y: 38 },
+    align: "right",
   },
   {
     num: "04",
@@ -42,7 +52,9 @@ const services: ServiceItem[] = [
     description:
       "Bli funnet av folk som allerede leter etter tjenesten din. Lokalt søk, struktur og innhold som rangerer.",
     href: "/tjenester/seo-alesund",
-    hotspot: { x: 28, y: 78 },
+    hotspot: { x: 32, y: 78 },
+    label: { x: 4, y: 70 },
+    align: "left",
   },
   {
     num: "05",
@@ -50,7 +62,9 @@ const services: ServiceItem[] = [
     description:
       "Annonser på Meta og Google som gir målbare leads, ikke bare visninger. Testet, målt og justert hver uke.",
     href: "/tjenester/annonsering-alesund",
-    hotspot: { x: 70, y: 80 },
+    hotspot: { x: 66, y: 78 },
+    label: { x: 66, y: 76 },
+    align: "right",
   },
 ];
 
@@ -58,25 +72,34 @@ function ServiceLabel({
   item,
   active,
   setActive,
-  align,
+  overlay,
 }: {
   item: ServiceItem;
   active: string | null;
   setActive: (n: string | null) => void;
-  align: "left" | "right";
+  overlay: boolean;
 }) {
+  const className = overlay
+    ? `svc-fw-label svc-fw-label-${item.align}${active === item.num ? " active" : ""}`
+    : `svc-stack-item${active === item.num ? " active" : ""}`;
+
+  const overlayStyle = overlay
+    ? { left: `${item.label.x}%`, top: `${item.label.y}%` }
+    : undefined;
+
   return (
     <a
       href={item.href}
-      className={`svc-radial-item svc-radial-item-${align}${active === item.num ? " active" : ""}`}
+      className={className}
+      style={overlayStyle}
       onMouseEnter={() => setActive(item.num)}
       onMouseLeave={() => setActive(null)}
       onFocus={() => setActive(item.num)}
       onBlur={() => setActive(null)}
     >
-      <div className="svc-radial-head">
+      <div className="svc-fw-head">
         <h3>{item.title}</h3>
-        <span className="svc-radial-num">{item.num}</span>
+        <span className="svc-fw-num">{item.num}</span>
       </div>
       <p>{item.description}</p>
     </a>
@@ -85,10 +108,9 @@ function ServiceLabel({
 
 export default function HomeServices() {
   const [active, setActive] = useState<string | null>(null);
-  const byNum = (n: string) => services.find((s) => s.num === n)!;
 
   return (
-    <section id="tjenester" className="home-section">
+    <section id="tjenester" className="home-section svc-fw-section">
       <div className="wrap">
         <div className="home-section-head">
           <div className="reveal">
@@ -100,95 +122,71 @@ export default function HomeServices() {
             ikke en mal. Den enkleste kombinasjonen som faktisk virker for deg.
           </p>
         </div>
+      </div>
 
+      {/* Full-width visual with overlaid labels (desktop only) */}
+      <div className="svc-fw-bleed reveal">
         <div
-          className="svc-radial reveal"
+          className="svc-fw-card"
           data-active={active ?? ""}
           onMouseLeave={() => setActive(null)}
         >
-          <div className="svc-radial-col svc-radial-col-left">
-            <ServiceLabel
-              item={byNum("01")}
-              active={active}
-              setActive={setActive}
-              align="left"
-            />
-            <ServiceLabel
-              item={byNum("04")}
-              active={active}
-              setActive={setActive}
-              align="left"
-            />
-          </div>
+          <video
+            className="svc-fw-video"
+            src="/videos/tjenester.mp4"
+            poster="/videos/tjenester-poster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+          />
+          <div className="svc-fw-vignette" aria-hidden="true" />
 
-          <div className="svc-radial-center" aria-hidden="true">
-            <div className="svc-radial-image">
-              <video
-                className="svc-radial-video"
-                src="/videos/tjenester.mp4"
-                poster="/videos/tjenester-poster.jpg"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              />
-              {services.map((s) => (
-                <button
-                  key={s.num}
-                  type="button"
-                  tabIndex={-1}
-                  className={`svc-hotspot${active === s.num ? " active" : ""}`}
-                  style={{ left: `${s.hotspot.x}%`, top: `${s.hotspot.y}%` }}
-                  onMouseEnter={() => setActive(s.num)}
-                  onMouseLeave={() => setActive(null)}
-                  aria-label={s.title}
-                >
-                  {s.num}
-                </button>
-              ))}
-              {/* Decorative connecting lines */}
-              <svg
-                className="svc-radial-lines"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                {services.map((s) => (
-                  <circle
-                    key={s.num}
-                    cx={s.hotspot.x}
-                    cy={s.hotspot.y}
-                    r="0.6"
-                    className={`svc-radial-line-dot${active === s.num ? " active" : ""}`}
-                  />
-                ))}
-              </svg>
-            </div>
-          </div>
+          {/* Labels — absolutely positioned over the video on desktop */}
+          {services.map((s) => (
+            <ServiceLabel
+              key={`label-${s.num}`}
+              item={s}
+              active={active}
+              setActive={setActive}
+              overlay
+            />
+          ))}
 
-          <div className="svc-radial-col svc-radial-col-right">
-            <ServiceLabel
-              item={byNum("02")}
-              active={active}
-              setActive={setActive}
-              align="right"
-            />
-            <ServiceLabel
-              item={byNum("03")}
-              active={active}
-              setActive={setActive}
-              align="right"
-            />
-            <ServiceLabel
-              item={byNum("05")}
-              active={active}
-              setActive={setActive}
-              align="right"
-            />
-          </div>
+          {/* Hotspots on the video itself */}
+          {services.map((s) => (
+            <button
+              key={`spot-${s.num}`}
+              type="button"
+              tabIndex={-1}
+              className={`svc-hotspot${active === s.num ? " active" : ""}`}
+              style={{ left: `${s.hotspot.x}%`, top: `${s.hotspot.y}%` }}
+              onMouseEnter={() => setActive(s.num)}
+              onMouseLeave={() => setActive(null)}
+              aria-label={s.title}
+            >
+              {s.num}
+            </button>
+          ))}
         </div>
+      </div>
 
+      {/* Stacked fallback for mobile / narrow screens */}
+      <div className="wrap svc-stack">
+        {services.map((s) => (
+          <ServiceLabel
+            key={`stack-${s.num}`}
+            item={s}
+            active={active}
+            setActive={setActive}
+            overlay={false}
+          />
+        ))}
+      </div>
+
+      <div className="wrap">
         <div className="home-connector reveal">
           <div className="home-connector-glyph" aria-hidden="true">
             <span />

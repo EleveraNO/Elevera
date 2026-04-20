@@ -172,86 +172,25 @@
 }
 .home-section-head .lead { max-width: 42ch; }
 
-/* Services — radial layout with central illustration */
-.svc-radial {
-  display: grid;
-  grid-template-columns: 1fr minmax(320px, 1.3fr) 1fr;
-  grid-template-rows: auto auto auto;
-  gap: clamp(24px, 3vw, 48px) clamp(32px, 5vw, 80px);
-  align-items: stretch;
-  padding: clamp(32px, 5vw, 64px) 0;
-  position: relative;
+/* Services — full-bleed video with overlaid labels */
+.svc-fw-bleed {
+  width: 100%;
+  padding: 0 clamp(16px, 3vw, 40px);
+  margin-bottom: clamp(40px, 6vw, 80px);
 }
-
-.svc-radial-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: clamp(48px, 7vw, 112px);
-}
-.svc-radial-col-left { grid-column: 1; grid-row: 1 / -1; align-items: flex-end; text-align: right; }
-.svc-radial-col-right { grid-column: 3; grid-row: 1 / -1; align-items: flex-start; text-align: left; }
-.svc-radial-center { grid-column: 2; grid-row: 1 / -1; display: flex; align-items: center; justify-content: center; }
-
-.svc-radial-item {
-  display: block;
-  max-width: 40ch;
-  color: inherit;
-  opacity: 1;
-  transition: opacity .25s cubic-bezier(.2, .7, .2, 1), transform .25s;
-}
-.svc-radial-item-left { align-self: flex-end; }
-.svc-radial-item-right { align-self: flex-start; }
-
-.svc-radial[data-active]:not([data-active=""]) .svc-radial-item:not(.active) {
-  opacity: 0.35;
-}
-.svc-radial-item.active { transform: translateY(-2px); }
-
-.svc-radial-head {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-.svc-radial-item-left .svc-radial-head { justify-content: flex-end; flex-direction: row-reverse; }
-.svc-radial-head h3 {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
-  font-size: clamp(20px, 2.1vw, 28px);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  color: var(--black);
-}
-.svc-radial-num {
-  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
-  font-size: 12px;
-  color: var(--stone-500);
-  letter-spacing: .08em;
-  transition: color .2s;
-}
-.svc-radial-item.active .svc-radial-num { color: var(--forest); }
-
-.svc-radial-item p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--stone-700);
-  max-width: 36ch;
-}
-
-/* Central illustration — matches 16:9 video aspect */
-.svc-radial-image {
+.svc-fw-card {
   position: relative;
   width: 100%;
-  max-width: 620px;
-  aspect-ratio: 16 / 9;
-  border-radius: clamp(20px, 2.5vw, 32px);
+  max-width: 1600px;
+  margin: 0 auto;
+  aspect-ratio: 21 / 9;
+  border-radius: clamp(20px, 2.5vw, 36px);
   overflow: hidden;
   background: var(--stone-100);
-  box-shadow: 0 24px 48px -28px rgba(15, 15, 14, .28),
+  box-shadow: 0 30px 60px -36px rgba(15, 15, 14, .3),
               0 0 0 1px var(--stone-200);
 }
-.svc-radial-video {
+.svc-fw-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -260,14 +199,85 @@
   display: block;
   z-index: 0;
 }
-.svc-radial-image::after {
-  content: "";
+.svc-fw-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(80% 60% at 50% 50%, transparent 55%, rgba(15, 15, 14, .12) 100%);
-  pointer-events: none;
   z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(75% 60% at 50% 50%, transparent 50%, rgba(15, 15, 14, .12) 100%);
 }
+
+/* Overlaid label cards — sit on the video's empty cream regions */
+.svc-fw-label {
+  position: absolute;
+  z-index: 4;
+  display: block;
+  width: clamp(200px, 22vw, 280px);
+  color: inherit;
+  text-decoration: none;
+  transition: opacity .25s cubic-bezier(.2, .7, .2, 1), transform .25s;
+}
+.svc-fw-label-left { text-align: left; }
+.svc-fw-label-right { text-align: left; }
+
+.svc-fw-card[data-active]:not([data-active=""]) .svc-fw-label:not(.active) {
+  opacity: 0.4;
+}
+.svc-fw-label.active { transform: translateY(-2px); }
+
+.svc-fw-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.svc-fw-head h3 {
+  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--black);
+}
+.svc-fw-num {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--stone-500);
+  letter-spacing: .08em;
+  transition: color .2s;
+}
+.svc-fw-label.active .svc-fw-num { color: var(--forest); }
+
+.svc-fw-label p {
+  font-size: clamp(12px, 0.95vw, 14px);
+  line-height: 1.55;
+  color: var(--stone-700);
+  max-width: 32ch;
+}
+
+/* Stacked fallback — only shown on narrow screens */
+.svc-stack {
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.svc-stack-item {
+  display: block;
+  background: var(--cream);
+  border: 0.5px solid var(--stone-300);
+  border-radius: 12px;
+  padding: 24px;
+  color: inherit;
+  transition: border-color .2s, transform .2s, background .2s;
+}
+.svc-stack-item:hover {
+  border-color: var(--stone-500);
+  background: var(--stone-50);
+  transform: translateY(-2px);
+}
+.svc-stack-item .svc-fw-head { justify-content: flex-start; gap: 16px; }
 
 /* Hotspots */
 .svc-hotspot {
@@ -327,48 +337,12 @@
   50% { transform: translate(-50%, calc(-50% - 3px)); }
 }
 
-.svc-radial-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-.svc-radial-line-dot { fill: var(--forest); opacity: 0; transition: opacity .25s, r .25s; }
-.svc-radial-line-dot.active { opacity: .18; r: 8; }
-
-/* Responsive — stack vertically on smaller screens */
-@media (max-width: 1024px) {
-  .svc-radial {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 40px;
-  }
-  .svc-radial-col-left,
-  .svc-radial-col-right {
-    grid-column: 1;
-    grid-row: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-    align-items: stretch;
-    text-align: left;
-  }
-  .svc-radial-col-left { order: 2; }
-  .svc-radial-center { order: 1; grid-column: 1; grid-row: auto; }
-  .svc-radial-col-right { order: 3; }
-  .svc-radial-item,
-  .svc-radial-item-left,
-  .svc-radial-item-right {
-    text-align: left;
-    align-self: flex-start;
-    flex: 1 1 240px;
-  }
-  .svc-radial-item-left .svc-radial-head {
-    justify-content: flex-start;
-    flex-direction: row;
-  }
-  .svc-radial-image { max-width: 420px; margin: 0 auto; }
-}
-@media (max-width: 560px) {
-  .svc-radial-col-left,
-  .svc-radial-col-right { flex-direction: column; gap: 28px; }
-  .svc-radial-image { aspect-ratio: 16 / 9; max-width: 100%; }
+/* Responsive — drop overlay on narrow screens, show stacked fallback */
+@media (max-width: 960px) {
+  .svc-fw-card { aspect-ratio: 16 / 9; }
+  .svc-fw-label { display: none; }
+  .svc-stack { display: flex; }
+  .svc-hotspot { display: none; }
 }
 
 /* Connector */
