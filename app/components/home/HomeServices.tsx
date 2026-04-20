@@ -27,7 +27,7 @@ const services: ServiceItem[] = [
     top: 20,
     anchor: "left",
     inset: 0,
-    widthPct: 21,
+    widthPct: 22,
   },
   {
     num: "02",
@@ -37,8 +37,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/sosiale-medier-alesund",
     top: 6,
     anchor: "right",
-    inset: 6,
-    widthPct: 19,
+    inset: 0,
+    widthPct: 23,
   },
   {
     num: "03",
@@ -49,7 +49,7 @@ const services: ServiceItem[] = [
     top: 30,
     anchor: "right",
     inset: 0,
-    widthPct: 21,
+    widthPct: 23,
   },
   {
     num: "04",
@@ -60,7 +60,7 @@ const services: ServiceItem[] = [
     top: 62,
     anchor: "left",
     inset: 0,
-    widthPct: 21,
+    widthPct: 22,
   },
   {
     num: "05",
@@ -70,8 +70,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/annonsering-alesund",
     top: 62,
     anchor: "right",
-    inset: 6,
-    widthPct: 22,
+    inset: 0,
+    widthPct: 24,
   },
 ];
 
