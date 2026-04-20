@@ -37,8 +37,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/sosiale-medier-alesund",
     top: 6,
     anchor: "right",
-    inset: 26,
-    widthPct: 20,
+    inset: 6,
+    widthPct: 19,
   },
   {
     num: "03",
@@ -48,8 +48,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/nettside-alesund",
     top: 30,
     anchor: "right",
-    inset: 8,
-    widthPct: 22,
+    inset: 0,
+    widthPct: 21,
   },
   {
     num: "04",
@@ -70,8 +70,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/annonsering-alesund",
     top: 62,
     anchor: "right",
-    inset: 18,
-    widthPct: 24,
+    inset: 6,
+    widthPct: 22,
   },
 ];
 
