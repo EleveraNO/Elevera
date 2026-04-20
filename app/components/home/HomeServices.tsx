@@ -144,7 +144,9 @@ export default function HomeServices() {
           />
           <div className="svc-fw-vignette" aria-hidden="true" />
 
-          {/* Labels — absolutely positioned over the video on desktop */}
+          {/* Labels — absolutely positioned over the video on desktop.
+              The video itself has 01–05 numbered markers baked into the
+              illustration, so we don't render extra hotspot buttons. */}
           {services.map((s) => (
             <ServiceLabel
               key={`label-${s.num}`}
@@ -153,22 +155,6 @@ export default function HomeServices() {
               setActive={setActive}
               overlay
             />
-          ))}
-
-          {/* Hotspots on the video itself */}
-          {services.map((s) => (
-            <button
-              key={`spot-${s.num}`}
-              type="button"
-              tabIndex={-1}
-              className={`svc-hotspot${active === s.num ? " active" : ""}`}
-              style={{ left: `${s.hotspot.x}%`, top: `${s.hotspot.y}%` }}
-              onMouseEnter={() => setActive(s.num)}
-              onMouseLeave={() => setActive(null)}
-              aria-label={s.title}
-            >
-              {s.num}
-            </button>
           ))}
         </div>
       </div>

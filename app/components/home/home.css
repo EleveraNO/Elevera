@@ -295,70 +295,11 @@
 }
 .svc-stack-item .svc-fw-head { justify-content: flex-start; gap: 16px; }
 
-/* Hotspots */
-.svc-hotspot {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--cream) 95%, transparent);
-  border: 1px solid var(--stone-300);
-  color: var(--stone-600);
-  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: .04em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-  z-index: 3;
-  transition: transform .25s cubic-bezier(.2, .7, .2, 1), background .25s, color .25s,
-              border-color .25s, box-shadow .25s;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-.svc-hotspot::before {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 1px solid var(--stone-400);
-  opacity: 0;
-  transition: opacity .3s, transform .3s;
-}
-.svc-hotspot:hover,
-.svc-hotspot.active {
-  background: var(--forest);
-  color: var(--cream);
-  border-color: var(--forest);
-  transform: translate(-50%, -50%) scale(1.15);
-  box-shadow: 0 8px 20px -4px rgba(47, 95, 63, .35);
-}
-.svc-hotspot.active::before { opacity: .6; transform: scale(1.15); }
-
-/* Subtle drift animation on idle */
-.svc-hotspot:not(.active):not(:hover) {
-  animation: svcHotspotFloat 6s ease-in-out infinite;
-}
-.svc-hotspot:nth-of-type(1) { animation-delay: 0s; }
-.svc-hotspot:nth-of-type(2) { animation-delay: .8s; }
-.svc-hotspot:nth-of-type(3) { animation-delay: 1.6s; }
-.svc-hotspot:nth-of-type(4) { animation-delay: 2.4s; }
-.svc-hotspot:nth-of-type(5) { animation-delay: 3.2s; }
-@keyframes svcHotspotFloat {
-  0%, 100% { transform: translate(-50%, -50%); }
-  50% { transform: translate(-50%, calc(-50% - 3px)); }
-}
-
 /* Responsive — drop overlay on narrow screens, show stacked fallback */
 @media (max-width: 960px) {
   .svc-fw-card { aspect-ratio: 16 / 9; }
   .svc-fw-label { display: none; }
   .svc-stack { display: flex; }
-  .svc-hotspot { display: none; }
 }
 
 /* Connector */
