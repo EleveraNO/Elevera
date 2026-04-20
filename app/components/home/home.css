@@ -203,7 +203,7 @@
   text-decoration: none;
   transition: opacity .25s cubic-bezier(.2, .7, .2, 1), transform .25s;
 }
-.svc-radial.is-active .svc-side-item:not(.active) {
+.svc-radial[data-active]:not([data-active=""]) .svc-side-item:not(.active) {
   opacity: 0.4;
 }
 .svc-side-item.active {

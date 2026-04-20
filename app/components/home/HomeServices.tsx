@@ -113,7 +113,8 @@ export default function HomeServices() {
         </div>
 
         <div
-          className={`svc-radial reveal${active ? " is-active" : ""}`}
+          className="svc-radial reveal"
+          data-active={active ?? ""}
           onMouseLeave={() => setActive(null)}
         >
           <div className="svc-side-col svc-side-col-left">
