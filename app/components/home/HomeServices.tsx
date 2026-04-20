@@ -1,84 +1,92 @@
-type Service = {
-  index: string;
+"use client";
+
+import { useState } from "react";
+
+type ServiceItem = {
+  num: string;
   title: string;
-  href: string;
   description: string;
-  icon: React.ReactNode;
+  href: string;
+  /** Hotspot position on the central image (0–100 percent) */
+  hotspot: { x: number; y: number };
 };
 
-const services: Service[] = [
+const services: ServiceItem[] = [
   {
-    index: "01",
+    num: "01",
     title: "Foto & Video",
-    href: "/tjenester/foto-og-video-alesund",
     description:
       "Foto, video, drone og klipp som faktisk blir brukt. Filmet på lokasjon, klippet for kanalen det skal ut på.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="6" width="18" height="13" rx="1.5" stroke="currentColor" strokeWidth="1.6" />
-        <circle cx="12" cy="12.5" r="3.2" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M8 6l1.5-2h5L16 6" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-      </svg>
-    ),
+    href: "/tjenester/foto-og-video-alesund",
+    hotspot: { x: 34, y: 42 },
   },
   {
-    index: "02",
+    num: "02",
     title: "Sosiale medier",
-    href: "/tjenester/sosiale-medier-alesund",
     description:
       "Strategi, publisering og måling. Fra null til synlig. Vi jobber med kanalen som faktisk treffer målgruppen din.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M4 19V8l8-4 8 4v11" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-        <path d="M9 19v-5h6v5" stroke="currentColor" strokeWidth="1.6" />
-        <circle cx="12" cy="10" r="1.4" fill="currentColor" />
-      </svg>
-    ),
+    href: "/tjenester/sosiale-medier-alesund",
+    hotspot: { x: 62, y: 22 },
   },
   {
-    index: "03",
+    num: "03",
     title: "Nettside",
-    href: "/tjenester/nettside-alesund",
     description:
       "Sider som gjør besøk om til kontaktforespørsler. Raskt, ryddig, laget for å bli funnet og for å få kontakt.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="5" width="18" height="14" rx="1.6" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M3 9h18" stroke="currentColor" strokeWidth="1.6" />
-        <circle cx="6" cy="7" r=".8" fill="currentColor" />
-        <circle cx="8.5" cy="7" r=".8" fill="currentColor" />
-      </svg>
-    ),
+    href: "/tjenester/nettside-alesund",
+    hotspot: { x: 76, y: 52 },
   },
   {
-    index: "04",
+    num: "04",
     title: "SEO",
-    href: "/tjenester/seo-alesund",
     description:
       "Bli funnet av folk som allerede leter etter tjenesten din. Lokalt søk, struktur og innhold som rangerer.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none">
-        <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M16 16l4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
+    href: "/tjenester/seo-alesund",
+    hotspot: { x: 28, y: 78 },
   },
   {
-    index: "05",
+    num: "05",
     title: "Digital annonsering",
-    href: "/tjenester/annonsering-alesund",
     description:
       "Annonser på Meta og Google som gir målbare leads, ikke bare visninger. Testet, målt og justert hver uke.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M3 17L9 11l4 4 8-8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M15 7h6v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    href: "/tjenester/annonsering-alesund",
+    hotspot: { x: 70, y: 80 },
   },
 ];
 
+function ServiceLabel({
+  item,
+  active,
+  setActive,
+  align,
+}: {
+  item: ServiceItem;
+  active: string | null;
+  setActive: (n: string | null) => void;
+  align: "left" | "right";
+}) {
+  return (
+    <a
+      href={item.href}
+      className={`svc-radial-item svc-radial-item-${align}${active === item.num ? " active" : ""}`}
+      onMouseEnter={() => setActive(item.num)}
+      onMouseLeave={() => setActive(null)}
+      onFocus={() => setActive(item.num)}
+      onBlur={() => setActive(null)}
+    >
+      <div className="svc-radial-head">
+        <h3>{item.title}</h3>
+        <span className="svc-radial-num">{item.num}</span>
+      </div>
+      <p>{item.description}</p>
+    </a>
+  );
+}
+
 export default function HomeServices() {
+  const [active, setActive] = useState<string | null>(null);
+  const byNum = (n: string) => services.find((s) => s.num === n)!;
+
   return (
     <section id="tjenester" className="home-section">
       <div className="wrap">
@@ -93,24 +101,87 @@ export default function HomeServices() {
           </p>
         </div>
 
-        <div className="home-services">
-          {services.map((s, i) => (
-            <a
-              key={s.index}
-              href={s.href}
-              className="home-card reveal"
-              style={{ transitionDelay: `${i * 90}ms` }}
-            >
-              <div className="home-svc-head">
-                <div className="home-svc-icon" aria-hidden="true">
-                  {s.icon}
-                </div>
-                <span className="home-svc-index">{s.index}</span>
+        <div
+          className="svc-radial reveal"
+          data-active={active ?? ""}
+          onMouseLeave={() => setActive(null)}
+        >
+          <div className="svc-radial-col svc-radial-col-left">
+            <ServiceLabel
+              item={byNum("01")}
+              active={active}
+              setActive={setActive}
+              align="left"
+            />
+            <ServiceLabel
+              item={byNum("04")}
+              active={active}
+              setActive={setActive}
+              align="left"
+            />
+          </div>
+
+          <div className="svc-radial-center" aria-hidden="true">
+            <div className="svc-radial-image">
+              <div className="svc-radial-placeholder">
+                <span className="svc-radial-placeholder-label">
+                  Plass for illustrasjon
+                </span>
               </div>
-              <h3>{s.title}</h3>
-              <p>{s.description}</p>
-            </a>
-          ))}
+              {services.map((s) => (
+                <button
+                  key={s.num}
+                  type="button"
+                  tabIndex={-1}
+                  className={`svc-hotspot${active === s.num ? " active" : ""}`}
+                  style={{ left: `${s.hotspot.x}%`, top: `${s.hotspot.y}%` }}
+                  onMouseEnter={() => setActive(s.num)}
+                  onMouseLeave={() => setActive(null)}
+                  aria-label={s.title}
+                >
+                  {s.num}
+                </button>
+              ))}
+              {/* Decorative connecting lines */}
+              <svg
+                className="svc-radial-lines"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                {services.map((s) => (
+                  <circle
+                    key={s.num}
+                    cx={s.hotspot.x}
+                    cy={s.hotspot.y}
+                    r="0.6"
+                    className={`svc-radial-line-dot${active === s.num ? " active" : ""}`}
+                  />
+                ))}
+              </svg>
+            </div>
+          </div>
+
+          <div className="svc-radial-col svc-radial-col-right">
+            <ServiceLabel
+              item={byNum("02")}
+              active={active}
+              setActive={setActive}
+              align="right"
+            />
+            <ServiceLabel
+              item={byNum("03")}
+              active={active}
+              setActive={setActive}
+              align="right"
+            />
+            <ServiceLabel
+              item={byNum("05")}
+              active={active}
+              setActive={setActive}
+              align="right"
+            />
+          </div>
         </div>
 
         <div className="home-connector reveal">
