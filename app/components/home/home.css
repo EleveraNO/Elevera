@@ -196,6 +196,20 @@
   object-fit: cover;
   display: block;
   background: transparent;
+  /* Radial feather — fades video edges to transparent so the warmer
+     video surface blends smoothly into the page cream. */
+  mask-image: radial-gradient(
+    ellipse 58% 58% at 50% 50%,
+    black 0%,
+    black 50%,
+    transparent 92%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 58% 58% at 50% 50%,
+    black 0%,
+    black 50%,
+    transparent 92%
+  );
 }
 
 /* Absolutely positioned labels hug the video edges */
