@@ -44,7 +44,7 @@ const packages = [
     includes: [
       "Nettside utvidet til 8 sider",
       "4 videoer + 8 bilder produsert per måned",
-      "Publisering 3x per uke på Instagram og TikTok",
+      "Publisering 3x per uke på sosiale medier",
       "Innholdsstrategi og redaksjonsplan",
       "Aktiv SEO-oppfølging",
       "Månedlig resultatrapport",
