@@ -46,7 +46,7 @@ const services: ServiceItem[] = [
     description:
       "Sider som gjør besøk om til kontaktforespørsler. Raskt, ryddig, laget for å bli funnet og for å få kontakt.",
     href: "/tjenester/nettside-alesund",
-    top: 32,
+    top: 34,
     anchor: "right",
     inset: 0,
     widthPct: 23,
