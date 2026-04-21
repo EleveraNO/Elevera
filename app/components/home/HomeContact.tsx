@@ -90,26 +90,42 @@ export default function HomeContact() {
                 href="mailto:tverbakk@elevera.no"
                 className="home-contact-channel"
               >
-                <span className="home-contact-channel-label">E-post</span>
-                <span className="home-contact-channel-value">
-                  tverbakk@elevera.no
+                <div className="home-contact-channel-text">
+                  <span className="home-contact-channel-label">E-post</span>
+                  <span className="home-contact-channel-value">
+                    tverbakk@elevera.no
+                  </span>
+                </div>
+                <span className="home-contact-channel-arrow" aria-hidden="true">
+                  <Arrow />
                 </span>
               </a>
               <a href="tel:+4794974165" className="home-contact-channel">
-                <span className="home-contact-channel-label">Telefon</span>
-                <span className="home-contact-channel-value">
-                  +47 949 74 165
+                <div className="home-contact-channel-text">
+                  <span className="home-contact-channel-label">Telefon</span>
+                  <span className="home-contact-channel-value">
+                    +47 949 74 165
+                  </span>
+                </div>
+                <span className="home-contact-channel-arrow" aria-hidden="true">
+                  <Arrow />
                 </span>
               </a>
               <a
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="home-contact-channel"
+                className="home-contact-channel home-contact-channel-featured"
               >
-                <span className="home-contact-channel-label">Booking</span>
-                <span className="home-contact-channel-value">
-                  Velg tid direkte i kalenderen
+                <div className="home-contact-channel-text">
+                  <span className="home-contact-channel-label">Booking</span>
+                  <span className="home-contact-channel-value">
+                    Velg tid direkte i kalenderen
+                  </span>
+                </div>
+                <span className="home-contact-channel-cta">
+                  Åpne kalender
+                  <Arrow />
                 </span>
               </a>
             </div>
