@@ -67,7 +67,7 @@ export default function HomePricing() {
             <ul className="home-tier-features">
               <li>Nettside utvidet til 8 sider</li>
               <li>4 videoer + 8 bilder produsert per måned</li>
-              <li>Publisering 3x per uke på Instagram og TikTok</li>
+              <li>Publisering 3x per uke på sosiale medier</li>
               <li>Innholdsstrategi og redaksjonsplan</li>
               <li>Aktiv SEO-oppfølging</li>
               <li>Månedlig resultatrapport</li>
