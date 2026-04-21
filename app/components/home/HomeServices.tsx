@@ -68,7 +68,7 @@ const services: ServiceItem[] = [
     description:
       "Annonser på Meta og Google som gir målbare leads, ikke bare visninger. Testet, målt og justert hver uke.",
     href: "/tjenester/annonsering-alesund",
-    top: 74,
+    top: 72,
     anchor: "right",
     inset: 5,
     widthPct: 23,
