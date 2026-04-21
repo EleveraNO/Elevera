@@ -70,7 +70,7 @@ const services: ServiceItem[] = [
     href: "/tjenester/annonsering-alesund",
     top: 74,
     anchor: "right",
-    inset: 0,
+    inset: 5,
     widthPct: 23,
   },
 ];
