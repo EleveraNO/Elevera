@@ -59,7 +59,7 @@ const services: ServiceItem[] = [
     href: "/tjenester/seo-alesund",
     top: 70,
     anchor: "left",
-    inset: 2,
+    inset: 3,
     widthPct: 22,
   },
   {
