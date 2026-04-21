@@ -24,7 +24,7 @@ const services: ServiceItem[] = [
     description:
       "Foto, video, drone og klipp som faktisk blir brukt. Filmet på lokasjon, klippet for kanalen det skal ut på.",
     href: "/tjenester/foto-og-video-alesund",
-    top: 20,
+    top: 30,
     anchor: "left",
     inset: 0,
     widthPct: 22,
@@ -37,8 +37,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/sosiale-medier-alesund",
     top: 6,
     anchor: "right",
-    inset: 0,
-    widthPct: 23,
+    inset: 10,
+    widthPct: 22,
   },
   {
     num: "03",
@@ -46,7 +46,7 @@ const services: ServiceItem[] = [
     description:
       "Sider som gjør besøk om til kontaktforespørsler. Raskt, ryddig, laget for å bli funnet og for å få kontakt.",
     href: "/tjenester/nettside-alesund",
-    top: 30,
+    top: 32,
     anchor: "right",
     inset: 0,
     widthPct: 23,
@@ -57,7 +57,7 @@ const services: ServiceItem[] = [
     description:
       "Bli funnet av folk som allerede leter etter tjenesten din. Lokalt søk, struktur og innhold som rangerer.",
     href: "/tjenester/seo-alesund",
-    top: 62,
+    top: 70,
     anchor: "left",
     inset: 0,
     widthPct: 22,
@@ -70,8 +70,8 @@ const services: ServiceItem[] = [
     href: "/tjenester/annonsering-alesund",
     top: 62,
     anchor: "right",
-    inset: 0,
-    widthPct: 24,
+    inset: 10,
+    widthPct: 23,
   },
 ];
 
