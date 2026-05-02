@@ -19,6 +19,15 @@ const cases = [
     image: "/images/tverbakken-gard/sau-paa-fjell.jpg",
     tags: ["Nettside", "Foto", "Strategi"],
   },
+  {
+    href: "/prosjekter/mathilde-teigen",
+    overline: "Artist · Trøndelag/Nordland",
+    title: "Mathilde Teigen",
+    description:
+      "Visuell hjemmeside for artist, låtskriver og dirigent — der det visuelle uttrykket matcher musikken.",
+    image: "/images/mathilde-teigen/thumb.jpg",
+    tags: ["Nettside", "Design", "Kontaktskjema"],
+  },
 ];
 
 export default function HomeMoreCases() {
