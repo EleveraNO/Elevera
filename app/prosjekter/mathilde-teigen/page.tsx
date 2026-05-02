@@ -20,7 +20,7 @@ const deliverables = [
       </svg>
     ),
     title: "Visuelt designspråk",
-    desc: "Mørk, taktil, filmaktig stemning som matcher musikken. Cormorant Garamond, gylden accent mot dyp blågrønn — typografi som puster.",
+    desc: "Mørk og taktil stemning som matcher musikken. Cormorant i italic, gylden accent mot dyp blågrønn, og luftig typografi.",
   },
   {
     icon: (
@@ -38,7 +38,7 @@ const deliverables = [
       </svg>
     ),
     title: "Kontaktskjema",
-    desc: "Bookingforespørsler kommer rett i innboksen — ingen skjemaverktøy, ingen mellomledd.",
+    desc: "Bookingforespørsler kommer rett i innboksen, uten skjemaverktøy eller mellomledd.",
   },
   {
     icon: (
@@ -163,7 +163,7 @@ export default function MathildeTeigen() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.18, ease }}
                 >
-                  Trøndelag · Nordland — Artist, låtskriver, dirigent
+                  Trøndelag og Nordland · Artist, låtskriver, dirigent
                 </motion.p>
 
                 <motion.div
@@ -304,7 +304,7 @@ export default function MathildeTeigen() {
                       fontSize: "0.9em",
                     }}
                   >
-                    en hjemmeside som matchet uttrykket.
+                    en hjemmeside som matchet uttrykket hennes.
                   </em>
                 </h2>
               </FadeUp>
@@ -315,15 +315,15 @@ export default function MathildeTeigen() {
                   style={{ borderLeft: "2px solid var(--stone-300)", paddingLeft: "1.5rem" }}
                 >
                   <p style={{ color: "var(--stone-700)" }}>
-                    Mathilde er artist, låtskriver og dirigent — med et sterkt bånd til natur, stemmer og det organiske.
-                    Men hjemmesiden hennes manglet helt det visuelle uttrykket som musikken bærer.
+                    Mathilde er artist, låtskriver og dirigent, med et sterkt bånd til natur, stemmer og det organiske.
+                    Hjemmesiden hennes manglet det visuelle uttrykket musikken bærer.
                   </p>
                   <p style={{ color: "var(--stone-600)" }}>
-                    Vi bygde en mørk, taktil hjemmeside som lar bilder og typografi bære stemningen.
-                    Cormorant i italic, gylden accent mot dyp blågrønn, og store fotografier som puster med teksten.
+                    Vi bygde en mørk, taktil hjemmeside hvor bilder og typografi får bære stemningen.
+                    Cormorant i italic, gylden accent mot dyp blågrønn, og store fotografier med god luft.
                   </p>
                   <p style={{ color: "var(--stone-500)" }}>
-                    Resultatet er en side som ikke bare lister hva hun gjør — den ligner på henne.
+                    Resultatet er en side som ikke bare lister hva hun gjør. Den ligner på henne.
                   </p>
                 </div>
               </FadeUp>
@@ -345,7 +345,7 @@ export default function MathildeTeigen() {
                   <span className="text-[var(--stone-500)]">Komplett.</span>
                 </h2>
                 <p className="max-w-xs text-sm leading-relaxed text-[var(--stone-500)] sm:text-right">
-                  Design, kode og kontaktflyt — alt på plass.
+                  Design, kode og kontaktflyt. Alt på plass.
                 </p>
               </div>
             </FadeUp>

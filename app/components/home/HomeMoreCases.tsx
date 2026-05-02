@@ -15,7 +15,7 @@ const cases = [
     overline: "Gård · Kjerringøy",
     title: "Tverbakken Gård",
     description:
-      "Komplett nettside med nettbutikk for 10. generasjons gård på Kjerringøy — fra null til e-handel.",
+      "Komplett nettside med nettbutikk for 10. generasjons gård på Kjerringøy, fra null til e-handel.",
     image: "/images/tverbakken-gard/sau-paa-fjell.jpg",
     tags: ["Nettside", "Foto", "Strategi"],
   },
@@ -24,7 +24,7 @@ const cases = [
     overline: "Artist · Trøndelag/Nordland",
     title: "Mathilde Teigen",
     description:
-      "Visuell hjemmeside for artist, låtskriver og dirigent — der det visuelle uttrykket matcher musikken.",
+      "Visuell hjemmeside for artist, låtskriver og dirigent, der det visuelle uttrykket matcher musikken.",
     image: "/images/mathilde-teigen/thumb.jpg",
     tags: ["Nettside", "Design", "Kontaktskjema"],
   },
