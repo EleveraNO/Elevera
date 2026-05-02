@@ -224,11 +224,11 @@ export default function MathildeTeigen() {
                   transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
                 >
                   <Image
-                    src="/images/mathilde-teigen/hero-screenshot.png"
+                    src="/images/mathilde-teigen/mockup.webp"
                     alt="Mathilde Teigen nettside"
-                    width={1440}
-                    height={900}
-                    className="relative w-full h-auto rounded-2xl"
+                    width={1280}
+                    height={714}
+                    className="relative w-full h-auto"
                     style={{
                       filter: "drop-shadow(0 48px 80px rgba(15,15,14,0.25)) drop-shadow(0 0 50px rgba(47,95,63,0.18))",
                     }}
