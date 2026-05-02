@@ -1,7 +1,7 @@
 import { BLOG_POSTS } from "../../lib/blog-content";
 
 /**
- * /llms.txt — directory file for LLM discovery (Anthropic's proposed standard).
+ * /llms.txt, directory file for LLM discovery (Anthropic's proposed standard).
  *
  * Keeps under ~2 KB. Points AI crawlers at:
  *  - The main site sections
@@ -20,17 +20,17 @@ export async function GET() {
     b.publishedDate.localeCompare(a.publishedDate)
   );
 
-  const body = `# Elevera — Vekstbyrå i Ålesund
+  const body = `# Elevera, Vekstbyrå i Ålesund
 
-> Lokalt vekstbyrå på Sunnmøre. Foto, video, nettside, SEO og digital annonsering for lokale bedrifter — alt fra én person. Resultat-fokusert, ikke estetikk-drevet.
+> Lokalt vekstbyrå på Sunnmøre. Foto, video, nettside, SEO og digital annonsering for lokale bedrifter, alt fra én person. Resultat-fokusert, ikke estetikk-drevet.
 
 Kontakt: tverbakk@elevera.no · +47 949 74 165 · ${SITE}
 
 ## Hovedsider
 
-- [Forside](${SITE}): Vekstbyrå i Ålesund — hele markedsføringen fra én partner
+- [Forside](${SITE}): Vekstbyrå i Ålesund, hele markedsføringen fra én partner
 - [Priser og pakker](${SITE}/#priser): Tre pakker fra 7 900 til 22 900 kr/mnd
-- [Om Elevera](${SITE}/#om): Én person, hele jobben — Marius i Ålesund
+- [Om Elevera](${SITE}/#om): Én person, hele jobben, Marius i Ålesund
 - [Kontakt](${SITE}/#kontakt): Book møte eller send melding
 - [Blogg](${SITE}/blogg): Artikler om digital markedsføring for lokale bedrifter
 
@@ -45,7 +45,7 @@ Kontakt: tverbakk@elevera.no · +47 949 74 165 · ${SITE}
 
 ## Prosjekter / Case-studier
 
-- [Drive Trafikkskule](${SITE}/prosjekter/drive-trafikkskule): 1 000 nye følgere på TikTok på syv dager — uten annonser
+- [Drive Trafikkskule](${SITE}/prosjekter/drive-trafikkskule): 1 000 nye følgere på TikTok på syv dager, uten annonser
 - [Cut O' Clock](${SITE}/prosjekter/cutoclock): Profesjonelle bilder og innhold for frisørsalong
 - [Tverbakken Gård](${SITE}/prosjekter/tverbakken-gard): Komplett nettside med e-handel for 10. generasjons gård
 
@@ -62,7 +62,7 @@ ${posts
 
 Alt innhold samlet: [${SITE}/llms-full.txt](${SITE}/llms-full.txt)
 
-Individuelle blogginnlegg som markdown: ${SITE}/blogg/{slug}/md — for eksempel [${SITE}/blogg/${posts[0].slug}/md](${SITE}/blogg/${posts[0].slug}/md)
+Individuelle blogginnlegg som markdown: ${SITE}/blogg/{slug}/md, for eksempel [${SITE}/blogg/${posts[0].slug}/md](${SITE}/blogg/${posts[0].slug}/md)
 `;
 
   return new Response(body, {

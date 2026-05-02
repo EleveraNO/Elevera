@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://elevera.no"),
   title: "Elevera – Vekstbyrå i Ålesund | Nettside, Foto & Digital annonsering",
   description:
-    "Vekstbyrå i Ålesund. Vi lager innhold, nettsider og annonsering som flytter nåla i virksomheten — målt i resultater, ikke estetikk.",
+    "Vekstbyrå i Ålesund. Vi lager innhold, nettsider og annonsering som flytter nåla i virksomheten, målt i resultater, ikke estetikk.",
   keywords: [
     "vekstbyrå Ålesund",
     "digitalbyrå Ålesund",

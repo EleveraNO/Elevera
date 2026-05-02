@@ -294,7 +294,7 @@ export default function HomeROICalculator() {
           <div>
             {results.breakevenReached ? (
               <>
-                Break-even fra <strong>{results.breakevenText}</strong> — resten
+                Break-even fra <strong>{results.breakevenText}</strong>, resten
                 er ren avkastning.
               </>
             ) : (

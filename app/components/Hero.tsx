@@ -13,7 +13,7 @@ export default function Hero() {
       className="relative isolate flex items-end overflow-hidden px-6 pb-24 pt-36 md:px-20"
       style={{ minHeight: "100dvh" }}
     >
-      {/* Ethereal shadow — animated atmospheric glow */}
+      {/* Ethereal shadow, animated atmospheric glow */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{ zIndex: 0 }}
@@ -34,7 +34,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Content — asymmetric two-column */}
+      {/* Content, asymmetric two-column */}
       <div className="relative mx-auto w-full max-w-7xl" style={{ zIndex: 1 }}>
         <div className="grid grid-cols-1 items-end gap-12 md:grid-cols-12">
 

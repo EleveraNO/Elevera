@@ -106,7 +106,7 @@ export default function DroneVideoPrisPage() {
                 <span className="text-xs text-[var(--stone-500)]">7 min lesetid</span>
               </div>
               <h1 className="text-3xl font-bold leading-tight text-[var(--black)] sm:text-4xl md:text-5xl">
-                Hva koster dronevideo? Her er prisene — og hva du faktisk betaler for
+                Hva koster dronevideo? Her er prisene, og hva du faktisk betaler for
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
                 Dronevideo er et av de spørsmålene vi oftest får. Prisen varierer veldig, og det er ikke alltid lett å forstå hvorfor. Jeg skal forsøke å gi deg et ærlig bilde.
@@ -121,7 +121,7 @@ export default function DroneVideoPrisPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva koster dronevideo i 2026?</h2>
                 <p>
-                  La oss starte med det konkrete. En halvdag med droneopptak — si to til fire timer — koster typisk mellom 2 500 og 5 000 kr hos norske leverandører. Trenger du en hel produksjonsdag med opptak og ferdig redigert video, er du oppe i 5 000 til 12 000 kr.
+                  La oss starte med det konkrete. En halvdag med droneopptak, si to til fire timer, koster typisk mellom 2 500 og 5 000 kr hos norske leverandører. Trenger du en hel produksjonsdag med opptak og ferdig redigert video, er du oppe i 5 000 til 12 000 kr.
                 </p>
                 <p className="mt-4">
                   Det er stor forskjell, og årsaken er like enkel som den er viktig: det er redigeringen som tar tid. Rå droneopptak er et par timers jobb. En ferdig film med klipping, fargekorrigering, musikk og undertekster kan ta to til tre ganger så lang tid etterpå.
@@ -156,27 +156,27 @@ export default function DroneVideoPrisPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva du faktisk betaler for</h2>
                 <p>
-                  Dronen i seg selv er ikke det dyreste. En god drone koster 15 000–30 000 kr, men det er ikke utstyret som definerer prisen — det er kompetansen bak. En sertifisert pilot med øye for komposisjon og lys, som vet hvordan han skal fortelle noe visuelt fra lufta, er en annen vare enn noen som bare sender opp en drone og trykker på record.
+                  Dronen i seg selv er ikke det dyreste. En god drone koster 15 000–30 000 kr, men det er ikke utstyret som definerer prisen, det er kompetansen bak. En sertifisert pilot med øye for komposisjon og lys, som vet hvordan han skal fortelle noe visuelt fra lufta, er en annen vare enn noen som bare sender opp en drone og trykker på record.
                 </p>
                 <p className="mt-4">
-                  I tillegg er det verdt å merke seg at kommersielle droneopptak i Norge krever godkjent pilotsertifikat fra Luftfartstilsynet. Det er ikke en formalitet — det er et krav. Uforsikrete og usertifiserte piloter er billigere, men de kan ikke lovlig ta betalt for arbeidet, og du som oppdragsgiver kan i verste fall bli holdt ansvarlig.
+                  I tillegg er det verdt å merke seg at kommersielle droneopptak i Norge krever godkjent pilotsertifikat fra Luftfartstilsynet. Det er ikke en formalitet, det er et krav. Uforsikrete og usertifiserte piloter er billigere, men de kan ikke lovlig ta betalt for arbeidet, og du som oppdragsgiver kan i verste fall bli holdt ansvarlig.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Ålesund er perfekt for dronevideo</h2>
                 <p>
-                  Jeg sier ikke dette bare fordi vi holder til her. Ålesund og Sunnmøre er objektivt sett blant de mest fotogene stedene i landet for luftopptak. Du har fjord, øyer, åser og by i nær kombinasjon — og lyset her er noe annet enn i flatbygdene.
+                  Jeg sier ikke dette bare fordi vi holder til her. Ålesund og Sunnmøre er objektivt sett blant de mest fotogene stedene i landet for luftopptak. Du har fjord, øyer, åser og by i nær kombinasjon, og lyset her er noe annet enn i flatbygdene.
                 </p>
                 <p className="mt-4">
-                  Vi har gjort dronevideo for alt fra gårdsbruk i Kjerringøy til bedrifter i Ålesund sentrum. Felles for dem er at omgivelsene løfter innholdet på en måte som er umulig å gjenskape fra bakken. En bedrift som er fin på bakkenivå blir imponerende fra lufta — spesielt her på Vestlandet.
+                  Vi har gjort dronevideo for alt fra gårdsbruk i Kjerringøy til bedrifter i Ålesund sentrum. Felles for dem er at omgivelsene løfter innholdet på en måte som er umulig å gjenskape fra bakken. En bedrift som er fin på bakkenivå blir imponerende fra lufta, spesielt her på Vestlandet.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Når er dronevideo verdt det — og når er det ikke det?</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Når er dronevideo verdt det, og når er det ikke det?</h2>
                 <p>
-                  Dronevideo er ikke svaret på alt. For en frisørsalong midt i sentrum er det trolig ikke behovet — da er det teamet og atmosfæren innendørs som selger. Men for en eiendom, et anlegg, et hotell, en gård, et bygg under oppføring eller en bedrift med flott beliggenhet er dronevideo nesten alltid verdt investeringen.
+                  Dronevideo er ikke svaret på alt. For en frisørsalong midt i sentrum er det trolig ikke behovet, da er det teamet og atmosfæren innendørs som selger. Men for en eiendom, et anlegg, et hotell, en gård, et bygg under oppføring eller en bedrift med flott beliggenhet er dronevideo nesten alltid verdt investeringen.
                 </p>
                 <p className="mt-4">
                   Spør deg selv: er det noe ved det jeg selger som ser bedre ut fra oven, eller i sammenheng med omgivelsene rundt? Hvis svaret er ja, er dronevideo sannsynligvis riktig.
@@ -213,7 +213,7 @@ export default function DroneVideoPrisPage() {
                 <ul className="mt-4 space-y-3">
                   {[
                     "Er du sertifisert pilot og er oppdraget forsikret?",
-                    "Hva er inkludert — bare opptak, eller ferdig redigert video?",
+                    "Hva er inkludert, bare opptak, eller ferdig redigert video?",
                     "Hvor mange ferdigklipte videoer eller bilder leverer du?",
                     "Hva skjer hvis det er dårlig vær på opptaksdagen?",
                     "I hvilket format leverer du materialet?",

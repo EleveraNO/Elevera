@@ -1,7 +1,7 @@
 import { BLOG_POSTS } from "../../lib/blog-content";
 
 /**
- * /llms-full.txt — all primary content concatenated as one markdown file
+ * /llms-full.txt, all primary content concatenated as one markdown file
  * for LLM consumption. Used by AI crawlers and chat assistants that want
  * to ingest the whole site in a single fetch.
  */
@@ -15,9 +15,9 @@ export async function GET() {
     b.publishedDate.localeCompare(a.publishedDate)
   );
 
-  const header = `# Elevera — Vekstbyrå i Ålesund
+  const header = `# Elevera, Vekstbyrå i Ålesund
 
-Lokalt vekstbyrå på Sunnmøre. Foto, video, nettside, SEO og digital annonsering for lokale bedrifter — alt fra én person.
+Lokalt vekstbyrå på Sunnmøre. Foto, video, nettside, SEO og digital annonsering for lokale bedrifter, alt fra én person.
 
 - **Nettsted:** ${SITE}
 - **E-post:** tverbakk@elevera.no
@@ -26,33 +26,33 @@ Lokalt vekstbyrå på Sunnmøre. Foto, video, nettside, SEO og digital annonseri
 
 ## Verdiløfte
 
-Vi bygger hele markedsføringen fra én partner, så alle kanaler snakker samme språk. Foto, sosiale medier, nettside, SEO og annonser bygges sammen — og måles sammen. Målt i resultater, ikke estetikk.
+Vi bygger hele markedsføringen fra én partner, så alle kanaler snakker samme språk. Foto, sosiale medier, nettside, SEO og annonser bygges sammen, og måles sammen. Målt i resultater, ikke estetikk.
 
 ## Tjenester
 
-1. **Foto og video** — Bedriftsfoto, produktfoto, dronefoto, reklamefilm, innhold til sosiale medier
-2. **Sosiale medier** — Strategi, innholdsproduksjon, publisering, community management
-3. **Nettside** — Design, utvikling, SEO-grunnlag, mobiloptimalisering
-4. **SEO** — Teknisk, innhold, Google Business Profile, lokal søk
-5. **Digital annonsering** — Meta (Facebook/Instagram) og Google Ads
+1. **Foto og video**, Bedriftsfoto, produktfoto, dronefoto, reklamefilm, innhold til sosiale medier
+2. **Sosiale medier**, Strategi, innholdsproduksjon, publisering, community management
+3. **Nettside**, Design, utvikling, SEO-grunnlag, mobiloptimalisering
+4. **SEO**, Teknisk, innhold, Google Business Profile, lokal søk
+5. **Digital annonsering**, Meta (Facebook/Instagram) og Google Ads
 
 ## Pakker og priser
 
-- **Start** — 7 900 kr/mnd. Nettside (inntil 5 sider), bilder, grunnleggende SEO, Google Business Profile.
-- **Vekst** — 14 900 kr/mnd. Alt i Start + 4 videoer + 8 bilder per måned, publisering 3x/uke, innholdsstrategi, aktiv SEO. *Mest populær.*
-- **Partner** — 22 900 kr/mnd. Alt i Vekst + 6 videoer + 12 bilder per måned, publisering 5x/uke, annonsering på Meta og Google, dronevideo, strategi.
+- **Start**, 7 900 kr/mnd. Nettside (inntil 5 sider), bilder, grunnleggende SEO, Google Business Profile.
+- **Vekst**, 14 900 kr/mnd. Alt i Start + 4 videoer + 8 bilder per måned, publisering 3x/uke, innholdsstrategi, aktiv SEO. *Mest populær.*
+- **Partner**, 22 900 kr/mnd. Alt i Vekst + 6 videoer + 12 bilder per måned, publisering 5x/uke, annonsering på Meta og Google, dronevideo, strategi.
 
 Alle priser eks. mva. Ingen bindingstid. Oppstart faktureres separat.
 
 ## Case-studier
 
-### Drive Trafikkskule — TikTok-vekst uten betalte annonser
+### Drive Trafikkskule, TikTok-vekst uten betalte annonser
 Drive trengte å nå flere folk som vurderer å ta BE-lappen. Vi bygget en innholdspakke for sosiale medier med videoer som både stopper scrollingen og bygger tillit. Resultat første uke: **200 000 visninger, 1 000 nye følgere, 0 kr i annonsekostnad**.
 
-### Cut O' Clock — frisørsalong i Ålesund
+### Cut O' Clock, frisørsalong i Ålesund
 Profesjonelle bilder og innhold for en ny frisørsalong som skulle sette seg i markedet.
 
-### Tverbakken Gård — e-handel fra null
+### Tverbakken Gård, e-handel fra null
 Komplett nettside med nettbutikk for 10. generasjons gård på Kjerringøy. Rå Nordisk-design, bestilling via e-post, egen SEO.
 
 ---

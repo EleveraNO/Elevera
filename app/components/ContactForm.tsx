@@ -175,7 +175,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-4 text-left">
-      {/* Pakkevalg — alltid synlig */}
+      {/* Pakkevalg, alltid synlig */}
       <div>
         <label className="mb-1.5 block text-xs font-medium text-white/50">
           Hvilken pakke er du interessert i?
@@ -212,7 +212,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {/* Prisestimat — vises bare ved enkelttjenester */}
+      {/* Prisestimat, vises bare ved enkelttjenester */}
       {!valgtPakke && prisEstimat && tjenester.length > 0 && (
         <div className="rounded-xl border border-[#f2ca50]/30 bg-[#f2ca50]/5 px-4 py-3">
           <div className="flex items-start gap-2.5">
@@ -264,7 +264,7 @@ export default function ContactForm() {
         />
       </div>
 
-      {/* Tjeneste-pills — vises bare når man har valgt fra enkelttjenester */}
+      {/* Tjeneste-pills, vises bare når man har valgt fra enkelttjenester */}
       {!valgtPakke && tjenester.length > 0 && (
         <div>
           <label className="mb-1.5 block text-xs font-medium text-white/50">

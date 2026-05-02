@@ -370,7 +370,7 @@ export default function PriceCalculator() {
                             {s.title.replace(/^\d+\.\s/, "")}
                           </span>
                           <span className="font-semibold text-white">
-                            {opt.label} — {formatPrice(opt.price)}/mnd
+                            {opt.label}, {formatPrice(opt.price)}/mnd
                           </span>
                         </div>
                       );

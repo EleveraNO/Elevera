@@ -9,7 +9,7 @@ export default function HomeCaseStudy() {
             <span className="overline">Case-studie · Drive Trafikkskule</span>
             <h2>1 000 nye følgere på syv dager. Uten annonser.</h2>
             <p className="lead">
-              Drive startet helt fra null — ny TikTok-konto, null følgere. Vi
+              Drive startet helt fra null, ny TikTok-konto, null følgere. Vi
               filmet kjøreskolens hverdag, klippet for plattformen og traff rett
               i målgruppen. Første uke ga 200 000 visninger og tusen nye
               følgere, uten en krone i annonsebudsjett.

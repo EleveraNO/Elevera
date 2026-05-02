@@ -19,7 +19,7 @@ export default function HomeHero() {
             <span className="home-hero-eyebrow">Vekstbyrå i Ålesund</span>
             <h1>Én partner for hele markedsføringen.</h1>
             <p className="lead">
-              Foto, sosialt, nettside, SEO og annonser — fra én person som
+              Foto, sosialt, nettside, SEO og annonser, fra én person som
               bygger alt sammen og måler hva som faktisk gir kunder.
             </p>
             <div className="home-hero-ctas">

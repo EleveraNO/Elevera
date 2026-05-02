@@ -412,7 +412,7 @@ export default function FloatingCards() {
       {/* ── Desktop: floating overlapping layout (hidden below lg) ── */}
       <div className="hidden lg:block" style={{ position: "relative", width: "100%", aspectRatio: "900 / 1080", overflow: "visible" }}>
 
-      {/* Card 2: Website — middle left (back layer) */}
+      {/* Card 2: Website, middle left (back layer) */}
       <div ref={card2Ref} style={{
         position: "absolute",
         left: "5%", top: "34%",
@@ -422,7 +422,7 @@ export default function FloatingCards() {
         <WebCard />
       </div>
 
-      {/* Card 3: Metrics — lower center (mid layer) */}
+      {/* Card 3: Metrics, lower center (mid layer) */}
       <div ref={card3Ref} style={{
         position: "absolute",
         left: "33%", top: "58%",
@@ -432,7 +432,7 @@ export default function FloatingCards() {
         <MetricsCard />
       </div>
 
-      {/* Card 1: Video — upper right (front layer) */}
+      {/* Card 1: Video, upper right (front layer) */}
       <div ref={card1Ref} style={{
         position: "absolute",
         left: "50%", top: "10%",

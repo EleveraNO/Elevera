@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Annonsering i Molde | Google & Meta Ads – Elevera",
   description:
-    "Digital annonsering for bedrifter i Molde. Vi kjører Google Ads og Meta-annonser som gir deg flere kunder — med full kontroll på budsjett og resultater.",
+    "Digital annonsering for bedrifter i Molde. Vi kjører Google Ads og Meta-annonser som gir deg flere kunder, med full kontroll på budsjett og resultater.",
   alternates: { canonical: "https://elevera.no/tjenester/annonsering-molde" },
   openGraph: {
     title: "Annonsering i Molde – Elevera",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Jobber dere med bedrifter i Molde?",
-    a: `Ja. Vi holder til i Ålesund (${molde.distance}), men samarbeider tett med bedrifter i hele Romsdal. Alt skjer digitalt — du får samme kvalitet uansett hvor du sitter.`,
+    a: `Ja. Vi holder til i Ålesund (${molde.distance}), men samarbeider tett med bedrifter i hele Romsdal. Alt skjer digitalt, du får samme kvalitet uansett hvor du sitter.`,
   },
   {
     q: "Hvor mye bør jeg bruke på annonser?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "Hvilke plattformer annonserer dere på?",
-    a: "Primært Google Ads (Søk, Display, YouTube) og Meta (Facebook og Instagram). Vi velger kanal basert på hvor kundene dine faktisk er — ikke hva som er trendy.",
+    a: "Primært Google Ads (Søk, Display, YouTube) og Meta (Facebook og Instagram). Vi velger kanal basert på hvor kundene dine faktisk er, ikke hva som er trendy.",
   },
   {
     q: "Når ser jeg resultater?",
@@ -82,26 +82,26 @@ export default function AnnonseringMoldePage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge={`Annonsering — ${molde.name}`}
+          badge={`Annonsering · ${molde.name}`}
           title="Digital"
           titleAccent="annonsering"
           titleSuffix={`i ${molde.name}`}
-          description={`${molde.marketNote} Med digital annonsering når du kundene dine akkurat når de leter — enten det er på Google eller i sosiale medier. Vi styrer kampanjene, du får henvendelsene.`}
+          description={`${molde.marketNote} Med digital annonsering når du kundene dine akkurat når de leter, enten det er på Google eller i sosiale medier. Vi styrer kampanjene, du får henvendelsene.`}
           includedLabel="Tjenester"
           includedHeading="Hva vi tilbyr"
           includedSubtext="Tilpasset dine behov og din bedrift."
           included={[
-            "Google Ads — søkeannonser som treffer folk med kjøpsintensjon",
-            "Meta Ads — målrettede annonser på Facebook og Instagram",
-            "Kampanjestrategi — vi velger riktig kanal for ditt mål",
-            "Annonsetekst og kreativ — vi lager det som konverterer",
-            "Landingssider — optimaliserte sider annonsene peker til",
-            "Konverteringssporing — du ser nøyaktig hva som virker",
-            "Månedlig rapportering — klare tall, ingen fluff",
+            "Google Ads, søkeannonser som treffer folk med kjøpsintensjon",
+            "Meta Ads, målrettede annonser på Facebook og Instagram",
+            "Kampanjestrategi, vi velger riktig kanal for ditt mål",
+            "Annonsetekst og kreativ, vi lager det som konverterer",
+            "Landingssider, optimaliserte sider annonsene peker til",
+            "Konverteringssporing, du ser nøyaktig hva som virker",
+            "Månedlig rapportering, klare tall, ingen fluff",
           ]}
           whyTitle="Hvorfor annonsere digitalt i Molde?"
           whyText={[
-            `Molde er en by med et aktivt næringsliv og kunder som søker på nett. Men mange bedrifter i Romsdal kaster penger på annonser som ikke er optimalisert — eller annonserer ikke i det hele tatt og overlater kundene til konkurrentene.`,
+            `Molde er en by med et aktivt næringsliv og kunder som søker på nett. Men mange bedrifter i Romsdal kaster penger på annonser som ikke er optimalisert, eller annonserer ikke i det hele tatt og overlater kundene til konkurrentene.`,
             `Med riktig oppsett og løpende optimalisering kan selv et moderat budsjett gi jevne, lønnsomme resultater. Vi har sett det gang på gang: bedrifter i Molde som går fra «prøvd det, fungerte ikke» til forutsigbar vekst.`,
           ]}
           stats={[

@@ -102,7 +102,7 @@ export default function MathildeTeigen() {
       <main className="min-h-screen bg-[var(--cream)]" style={{ overflowX: "clip" }}>
         <HomeNav />
 
-        {/* ── Hero: split layout — tekst venstre, screenshot høyre ── */}
+        {/* ── Hero: split layout, tekst venstre, screenshot høyre ── */}
         <section className="relative flex min-h-screen items-center overflow-hidden px-6 pb-16 pt-28">
 
           {/* Ambient glow bak screenshot (høyre side) */}

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Hvilke plattformer bør vi være på?",
-    a: "Instagram og Facebook fungerer for de fleste. TikTok treffer yngre målgrupper. LinkedIn er relevant for B2B. Vi hjelper deg å velge — og du slipper å være på alt selv.",
+    a: "Instagram og Facebook fungerer for de fleste. TikTok treffer yngre målgrupper. LinkedIn er relevant for B2B. Vi hjelper deg å velge, og du slipper å være på alt selv.",
   },
   {
     q: "Hvor ofte poster dere?",
@@ -80,33 +80,33 @@ export default function SosialeMedierPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge="Sosiale medier — Ålesund"
+          badge="Sosiale medier · Ålesund"
           title="Vi poster for deg."
           titleAccent="Hver uke."
-          description="Vi tar over Instagram, Facebook og TikTok. Du godkjenner innholdet — vi poster, svarer på meldinger og bygger følgerskaren. Du trenger ikke løfte en finger."
+          description="Vi tar over Instagram, Facebook og TikTok. Du godkjenner innholdet, vi poster, svarer på meldinger og bygger følgerskaren. Du trenger ikke løfte en finger."
           includedLabel="Tjenester"
           includedHeading="Hva vi tilbyr"
-          includedSubtext="Fra idé til publisering — vi tar hele jobben."
+          includedSubtext="Fra idé til publisering, vi tar hele jobben."
           included={[
             "Strategi og redaksjonsplan for din bedrift",
-            "Vi lager alt innholdet — foto, video og grafikk",
+            "Vi lager alt innholdet, foto, video og grafikk",
             "Publisering 3–5x per uke på Instagram, Facebook og TikTok",
             "Vi svarer på kommentarer og meldinger for deg",
             "Stories og Reels som faktisk engasjerer",
-            "Månedlig rapport — du ser hva som virker og hvorfor",
+            "Månedlig rapport, du ser hva som virker og hvorfor",
             "Vi finner riktig målgruppe og riktig tidspunkt",
             "Vi holder øye med hva konkurrentene gjør",
           ]}
           whyTitle="Kundene dine scroller akkurat nå"
           whyText={[
-            "4 millioner nordmenn er på sosiale medier — hver dag. Når de scroller forbi en tom eller utdatert profil, tenker de: er denne bedriften fortsatt aktiv? Første inntrykk skjer online, lenge før noen ringer deg.",
-            "Du vet du burde poste oftere. Men mellom kunder, drift og alt annet, blir det aldri tid. Vi tar den jobben — og gjør den bedre enn du ville gjort selv.",
+            "4 millioner nordmenn er på sosiale medier, hver dag. Når de scroller forbi en tom eller utdatert profil, tenker de: er denne bedriften fortsatt aktiv? Første inntrykk skjer online, lenge før noen ringer deg.",
+            "Du vet du burde poste oftere. Men mellom kunder, drift og alt annet, blir det aldri tid. Vi tar den jobben, og gjør den bedre enn du ville gjort selv.",
           ]}
           stats={[
             { stat: "4.1M", label: "Nordmenn er på sosiale medier daglig" },
-            { stat: "3x/uke", label: "Vi poster for deg — minimum" },
+            { stat: "3x/uke", label: "Vi poster for deg, minimum" },
             { stat: "80%", label: "Av forbrukere sjekker bedrifter på Instagram før de kjøper" },
-            { stat: "0 timer", label: "Tid du bruker — vi gjør alt" },
+            { stat: "0 timer", label: "Tid du bruker, vi gjør alt" },
           ]}
           faqs={faqs}
           ctaHeading="Klar for å bli synlig på sosiale medier?"

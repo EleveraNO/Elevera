@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Sosiale medier i Kristiansund | Strategi – Elevera",
   description:
-    "Vi poster for deg — hver uke. Sosiale medier for bedrifter i Kristiansund. Innhold, strategi og synlighet på Instagram, Facebook og LinkedIn.",
+    "Vi poster for deg, hver uke. Sosiale medier for bedrifter i Kristiansund. Innhold, strategi og synlighet på Instagram, Facebook og LinkedIn.",
   alternates: { canonical: "https://elevera.no/tjenester/sosiale-medier-kristiansund" },
   openGraph: {
     title: "Sosiale medier i Kristiansund – Elevera",
@@ -24,11 +24,11 @@ const faqs = [
   },
   {
     q: "Må vi lage innholdet selv?",
-    a: "Nei — det er hele poenget. Vi lager alt: tekst, grafikk og planlegging. Du trenger bare å godkjenne. Sender du oss bilder eller video fra hverdagen, bruker vi det gjerne som ekstra materiale.",
+    a: "Nei, det er hele poenget. Vi lager alt: tekst, grafikk og planlegging. Du trenger bare å godkjenne. Sender du oss bilder eller video fra hverdagen, bruker vi det gjerne som ekstra materiale.",
   },
   {
     q: "Hva om vi bare trenger hjelp med én plattform?",
-    a: "Det går fint. Mange starter med én kanal (f.eks. Instagram eller LinkedIn) og utvider etter hvert. Vi tilpasser pakken til ditt behov — ingen unødvendige tillegg.",
+    a: "Det går fint. Mange starter med én kanal (f.eks. Instagram eller LinkedIn) og utvider etter hvert. Vi tilpasser pakken til ditt behov, ingen unødvendige tillegg.",
   },
   {
     q: "Hvor raskt ser vi resultater?",
@@ -82,26 +82,26 @@ export default function SosialeMedierKristiansundPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge={`Sosiale medier — ${kristiansund.name}`}
+          badge={`Sosiale medier · ${kristiansund.name}`}
           title="Vi poster for deg."
           titleAccent="Hver uke."
-          description={`${kristiansund.localRef} har bedrifter som fortjener å synes. Men sosiale medier krever konsistens — og det tar tid ingen har. Vi tar over kontoen din og sørger for at bedriften din er synlig, relevant og top-of-mind i Kristiansund.`}
+          description={`${kristiansund.localRef} har bedrifter som fortjener å synes. Men sosiale medier krever konsistens, og det tar tid ingen har. Vi tar over kontoen din og sørger for at bedriften din er synlig, relevant og top-of-mind i Kristiansund.`}
           includedLabel="Tjenester"
           includedHeading="Hva vi tilbyr"
           includedSubtext="Tilpasset dine behov og din bedrift."
           included={[
-            "Innholdsstrategi — skreddersydd plan for din bransje og by",
-            "Visuelt innhold — design og grafikk som stopper scrollingen",
-            "Tekst og storytelling — autentiske tekster som bygger tillit",
-            "Fast publisering — 3–5 innlegg per uke på dine kanaler",
-            "Engasjement — vi svarer følgere og bygger relasjoner",
-            "Innholdskalender — full oversikt, godkjenning før publisering",
-            "Rapportering — månedlige tall på vekst og engasjement",
-            "Strategisk rådgivning — vi justerer basert på hva som fungerer",
+            "Innholdsstrategi, skreddersydd plan for din bransje og by",
+            "Visuelt innhold, design og grafikk som stopper scrollingen",
+            "Tekst og storytelling, autentiske tekster som bygger tillit",
+            "Fast publisering, 3–5 innlegg per uke på dine kanaler",
+            "Engasjement, vi svarer følgere og bygger relasjoner",
+            "Innholdskalender, full oversikt, godkjenning før publisering",
+            "Rapportering, månedlige tall på vekst og engasjement",
+            "Strategisk rådgivning, vi justerer basert på hva som fungerer",
           ]}
           whyTitle="Hvorfor sliter bedrifter i Kristiansund med sosiale medier?"
           whyText={[
-            `Det er ikke mangel på vilje — det er mangel på tid. Bedrifter i Kristiansund er opptatt med kunder, prosjekter og daglig drift. Sosiale medier havner nederst på listen, og profilen ser forlatt ut. Potensielle kunder legger merke til det.`,
+            `Det er ikke mangel på vilje, det er mangel på tid. Bedrifter i Kristiansund er opptatt med kunder, prosjekter og daglig drift. Sosiale medier havner nederst på listen, og profilen ser forlatt ut. Potensielle kunder legger merke til det.`,
             `Når du overlater det til oss, får du konsekvent synlighet uten å løfte en finger. I en by der mange konkurrenter poster sporadisk eller ikke i det hele tatt, gir jevn tilstedeværelse en overraskende stor effekt.`,
           ]}
           stats={[

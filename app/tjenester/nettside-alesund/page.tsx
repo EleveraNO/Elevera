@@ -44,7 +44,7 @@ export default function NettsidesPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge="Nettside — Ålesund"
+          badge="Nettside · Ålesund"
           title="Profesjonell"
           titleAccent="nettside"
           titleSuffix="i Ålesund"
@@ -75,7 +75,7 @@ export default function NettsidesPage() {
           ]}
           faqs={[
             { q: "Hvor lang tid tar det å lage en nettside?", a: "En standard bedriftsnettside tar 2–4 uker fra oppstart til lansering, avhengig av innhold og kompleksitet." },
-            { q: "Får jeg profesjonelt innhold til siden?", a: "Ja. Vi produserer foto og video til nettsiden din som en del av leveransen — slik at du får et helhetlig uttrykk som konverterer besøkende til kunder." },
+            { q: "Får jeg profesjonelt innhold til siden?", a: "Ja. Vi produserer foto og video til nettsiden din som en del av leveransen, slik at du får et helhetlig uttrykk som konverterer besøkende til kunder." },
             { q: "Hva koster en nettside?", a: "Nettside inngår i våre månedlige pakker fra 7 900 kr/mnd, eller som enkelttjeneste fra 990 kr/mnd. Ta kontakt for et tilbud." },
           ]}
           ctaHeading="Klar for en ny nettside?"

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Hvor lang tid tar det?",
-    a: "De første forbedringene ser du etter 4–8 uker. Varige resultater — der du konsekvent rangerer på side 1 — tar 3–6 måneder. Men i motsetning til annonser, forsvinner ikke trafikken når du pauser.",
+    a: "De første forbedringene ser du etter 4–8 uker. Varige resultater, der du konsekvent rangerer på side 1, tar 3–6 måneder. Men i motsetning til annonser, forsvinner ikke trafikken når du pauser.",
   },
   {
     q: "Hva er forskjellen på SEO og Google Ads?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "Hva er lokal SEO?",
-    a: "Det handler om å dukke opp når folk i nærheten søker — for eksempel «rørlegger Ålesund» eller «frisør i Volda». Vi setter opp Google Business-profilen din og sørger for at du vises i kartet.",
+    a: "Det handler om å dukke opp når folk i nærheten søker, for eksempel «rørlegger Ålesund» eller «frisør i Volda». Vi setter opp Google Business-profilen din og sørger for at du vises i kartet.",
   },
 ];
 
@@ -80,28 +80,28 @@ export default function SeoPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge="SEO — Ålesund"
+          badge="SEO · Ålesund"
           title="Bli funnet når kundene"
           titleAccent="søker"
           titleSuffix="etter deg"
-          description="Folk i Ålesund googler det du tilbyr — hver dag. Vi sørger for at det er din bedrift som dukker opp, ikke konkurrentens."
+          description="Folk i Ålesund googler det du tilbyr, hver dag. Vi sørger for at det er din bedrift som dukker opp, ikke konkurrentens."
           includedLabel="Tjenester"
           includedHeading="Hva vi tilbyr"
           includedSubtext="Alt som trengs for å klatre til toppen av Google."
           included={[
-            "Teknisk gjennomgang — vi finner og fikser det som holder deg nede",
-            "Søkeordanalyse — vi finner ordene kundene dine faktisk bruker",
-            "Innhold som rangerer — blogginnlegg og sider Google elsker",
-            "Lenkebygging — vi bygger autoriteten din hos Google",
-            "Lokal SEO og Google Business — bli synlig i kartet",
-            "Månedlig rapport — du ser nøyaktig hvor du rangerer",
-            "Hastighetsoptimalisering — raskere side, bedre rangering",
-            "Konkurrentanalyse — vi viser deg hva de gjør og hvordan du slår dem",
+            "Teknisk gjennomgang, vi finner og fikser det som holder deg nede",
+            "Søkeordanalyse, vi finner ordene kundene dine faktisk bruker",
+            "Innhold som rangerer, blogginnlegg og sider Google elsker",
+            "Lenkebygging, vi bygger autoriteten din hos Google",
+            "Lokal SEO og Google Business, bli synlig i kartet",
+            "Månedlig rapport, du ser nøyaktig hvor du rangerer",
+            "Hastighetsoptimalisering, raskere side, bedre rangering",
+            "Konkurrentanalyse, vi viser deg hva de gjør og hvordan du slår dem",
           ]}
           whyTitle="Hvorfor dukker konkurrentene opp før deg?"
           whyText={[
-            "Når noen i Ålesund søker etter det du tilbyr og finner konkurrenten din istedenfor deg — da taper du en kunde du aldri visste om. Det skjer hver eneste dag.",
-            "SEO fikser det. Og i motsetning til annonser, betaler du ikke per klikk. Når du først rangerer høyt, får du en jevn strøm av henvendelser — uten å øke budsjettet.",
+            "Når noen i Ålesund søker etter det du tilbyr og finner konkurrenten din istedenfor deg, da taper du en kunde du aldri visste om. Det skjer hver eneste dag.",
+            "SEO fikser det. Og i motsetning til annonser, betaler du ikke per klikk. Når du først rangerer høyt, får du en jevn strøm av henvendelser, uten å øke budsjettet.",
           ]}
           stats={[
             { stat: "93%", label: "Av alle nettopplevelser starter med et Google-søk" },

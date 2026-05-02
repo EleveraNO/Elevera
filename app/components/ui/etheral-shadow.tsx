@@ -56,7 +56,7 @@ export function EtheralShadow({
     const id = useId().replace(/:/g, '');
     const filterId = `shadowoverlay-${id}`;
     const isMobile = useIsMobile();
-    // Disable SVG filter on mobile — too heavy for mobile GPU
+    // Disable SVG filter on mobile, too heavy for mobile GPU
     const animationEnabled = !isMobile && animation && animation.scale > 0;
     const feColorMatrixRef = useRef<SVGFEColorMatrixElement>(null);
     const hueRotateMotionValue = useMotionValue(180);

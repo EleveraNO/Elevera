@@ -69,7 +69,7 @@ export default function AnnonseringPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge="Annonsering — Ålesund"
+          badge="Annonsering · Ålesund"
           title="Digital"
           titleAccent="annonsering"
           titleSuffix="i Ålesund"

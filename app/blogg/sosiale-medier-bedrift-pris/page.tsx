@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Kan jeg styre sosiale medier selv istedenfor å bruke et byrå?",
-    a: "Ja, men det tar mer tid enn de fleste forventer. Regn med 8–15 timer per uke for å gjøre det skikkelig — inkludert innholdsproduksjon, tekstskriving, publisering, svar på meldinger og analyse. For de fleste bedriftseiere er det mer lønnsomt å bruke den tiden på kundene sine.",
+    a: "Ja, men det tar mer tid enn de fleste forventer. Regn med 8–15 timer per uke for å gjøre det skikkelig, inkludert innholdsproduksjon, tekstskriving, publisering, svar på meldinger og analyse. For de fleste bedriftseiere er det mer lønnsomt å bruke den tiden på kundene sine.",
   },
   {
     q: "Hvilke plattformer bør bedriften min være på?",
@@ -133,13 +133,13 @@ export default function SosialeMedierPrisPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva prisene faktisk betyr i praksis</h2>
                 <p>
-                  Problemet med å bare se på månedsprisen er at det som er inkludert varierer enormt. Et byrå som tar 4 000 kr per måned gir deg kanskje 8 ferdige poster — men de har ikke tatt bildene, de har ikke skrevet tekstene for deg, og de svarer ikke på meldinger. Du ender opp med å gjøre halvparten av jobben selv.
+                  Problemet med å bare se på månedsprisen er at det som er inkludert varierer enormt. Et byrå som tar 4 000 kr per måned gir deg kanskje 8 ferdige poster, men de har ikke tatt bildene, de har ikke skrevet tekstene for deg, og de svarer ikke på meldinger. Du ender opp med å gjøre halvparten av jobben selv.
                 </p>
                 <p className="mt-4">
                   Et byrå som tar 10 000 kr per måned kommer kanskje til deg, tar bilder, lager videoer, skriver alle tekster, publiserer, svarer på kommentarer og sender deg en rapport i slutten av måneden. Du gjør ingenting.
                 </p>
                 <p className="mt-4">
-                  Forskjellen er ikke prisen — det er hva du faktisk slipper å gjøre.
+                  Forskjellen er ikke prisen, det er hva du faktisk slipper å gjøre.
                 </p>
                 <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--stone-300)]">
                   <table className="w-full text-sm">
@@ -192,10 +192,10 @@ export default function SosialeMedierPrisPage() {
                 <ul className="mt-4 space-y-3">
                   {[
                     { title: "Lager de innholdet selv?", desc: "Mange byråer forventer at du leverer bilder og tekst. Da betaler du egentlig bare for noen som trykker \"publiser\". Finn et byrå som tar bildene, skriver tekstene og lager videoene." },
-                    { title: "Poster de for deg, eller bare planlegger?", desc: "Strategi og innholdsplan er fint — men det som teller er at ting faktisk blir publisert. Hver uke. Uten at du trenger å gjøre noe." },
+                    { title: "Poster de for deg, eller bare planlegger?", desc: "Strategi og innholdsplan er fint, men det som teller er at ting faktisk blir publisert. Hver uke. Uten at du trenger å gjøre noe." },
                     { title: "Svarer de på meldinger?", desc: "Community management er halvparten av jobben. Hvis en potensiell kunde sender en DM og ingen svarer på to dager, har du tapt dem." },
-                    { title: "Får du se resultater?", desc: "Månedlig rapport med tall. Ikke bare \"det gikk bra denne måneden\" — men konkrete tall på rekkevidde, engasjement og følgervekst." },
-                    { title: "Kjenner de bransjen din?", desc: "Et byrå som har jobbet med lokale bedrifter forstår at du ikke trenger viralt innhold — du trenger innhold som treffer folk i nærområdet ditt." },
+                    { title: "Får du se resultater?", desc: "Månedlig rapport med tall. Ikke bare \"det gikk bra denne måneden\", men konkrete tall på rekkevidde, engasjement og følgervekst." },
+                    { title: "Kjenner de bransjen din?", desc: "Et byrå som har jobbet med lokale bedrifter forstår at du ikke trenger viralt innhold, du trenger innhold som treffer folk i nærområdet ditt." },
                   ].map((item, i) => (
                     <li key={i} className="rounded-2xl border border-[var(--stone-300)] bg-[var(--stone-50)] px-6 py-4">
                       <div className="mb-1 font-semibold text-[var(--black)]">{item.title}</div>
@@ -211,7 +211,7 @@ export default function SosialeMedierPrisPage() {
                   Det spørsmålet er egentlig feil stilt. Det riktige spørsmålet er: hva koster det å <em className="text-[var(--black)]">ikke</em> ha profesjonelle sosiale medier?
                 </p>
                 <p className="mt-4">
-                  80 prosent av forbrukere sjekker en bedrifts Instagram før de tar kontakt. Hvis de finner en konto som ikke har postet på tre uker, med bilder tatt i dårlig lys og ingen svar på kommentarer — hva tror du de gjør? De går videre. Til konkurrenten som ser mer profesjonell ut.
+                  80 prosent av forbrukere sjekker en bedrifts Instagram før de tar kontakt. Hvis de finner en konto som ikke har postet på tre uker, med bilder tatt i dårlig lys og ingen svar på kommentarer, hva tror du de gjør? De går videre. Til konkurrenten som ser mer profesjonell ut.
                 </p>
                 <p className="mt-4">
                   Du trenger ikke gå viralt. Du trenger bare å se aktiv, profesjonell og tilgjengelig ut. Det er det du betaler for.
@@ -221,10 +221,10 @@ export default function SosialeMedierPrisPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva vi tar for det</h2>
                 <p>
-                  Hos Elevera starter sosiale medier-styring fra 6 000 kr/mnd som enkelttjeneste. Da tar vi oss av innholdsproduksjon, tekster, publisering 3 ganger per uke og svar på meldinger. Du godkjenner innholdet — ellers gjør vi alt.
+                  Hos Elevera starter sosiale medier-styring fra 6 000 kr/mnd som enkelttjeneste. Da tar vi oss av innholdsproduksjon, tekster, publisering 3 ganger per uke og svar på meldinger. Du godkjenner innholdet, ellers gjør vi alt.
                 </p>
                 <p className="mt-4">
-                  Trenger du mer — for eksempel annonsering, fotoshoot eller flere plattformer — har vi pakker fra 7 900 til 22 900 kr/mnd der sosiale medier er en del av helheten.
+                  Trenger du mer, for eksempel annonsering, fotoshoot eller flere plattformer, har vi pakker fra 7 900 til 22 900 kr/mnd der sosiale medier er en del av helheten.
                 </p>
                 <p className="mt-4">
                   Vi er et lite byrå i Ålesund. Vi tar ikke inn hundre kunder. Men de vi tar inn, følger vi opp skikkelig.
@@ -249,7 +249,7 @@ export default function SosialeMedierPrisPage() {
             <div className="mt-16 rounded-3xl border border-[var(--forest)]/20 bg-[var(--forest)]/06 p-10 text-center">
               <h3 className="mb-3 text-2xl font-bold text-[var(--black)]">Vil du at noen tar over sosiale medier for deg?</h3>
               <p className="mb-6 text-[var(--stone-700)]">
-                Book et gratis møte. Vi ser på kontoen din og forteller deg hva vi ville gjort — uforpliktende.
+                Book et gratis møte. Vi ser på kontoen din og forteller deg hva vi ville gjort, uforpliktende.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                 <a

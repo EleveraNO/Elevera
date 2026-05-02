@@ -56,7 +56,7 @@ export default function Testimonials() {
                 className="mx-auto mb-10 max-w-md text-sm leading-relaxed"
                 style={{ color: "rgba(229,226,222,0.50)" }}
               >
-                Vi tar på oss et begrenset antall nye prosjekter om gangen —
+                Vi tar på oss et begrenset antall nye prosjekter om gangen,
                 slik at hvert samarbeid får den oppmerksomheten det fortjener.
                 Book et gratis møte og se hva vi kan gjøre for deg.
               </p>

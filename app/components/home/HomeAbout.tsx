@@ -8,7 +8,7 @@ export default function HomeAbout() {
           <div className="home-about-visual reveal">
             <Image
               src="/images/marius.jpg"
-              alt="Marius — daglig leder i Elevera"
+              alt="Marius, daglig leder i Elevera"
               fill
               sizes="(max-width: 900px) 360px, 420px"
               className="home-about-visual-img"

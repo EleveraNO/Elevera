@@ -22,5 +22,5 @@ export const kristiansund: Location = {
   region: "Nordmøre",
   distance: "ca. 1.5 time fra Ålesund",
   localRef: "Olje- og klippfiskbyen på Nordmøre",
-  marketNote: "Kristiansund har et sterkt næringsgrunnlag fra olje, fisk og maritim industri. Konkurransen om digitale kunder er lavere enn i større byer — det gir muligheter.",
+  marketNote: "Kristiansund har et sterkt næringsgrunnlag fra olje, fisk og maritim industri. Konkurransen om digitale kunder er lavere enn i større byer, det gir muligheter.",
 };

@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Kan jeg lage nettsiden selv?",
-    a: "Ja — verktøy som Wix, Squarespace og WordPress gjør det mulig uten teknisk bakgrunn. Det er et godt alternativ for bedrifter med veldig begrenset budsjett. Ulempen er at det tar tid, resultatet er sjelden like gjennomarbeidet som en skreddersydd løsning, og konverteringsraten er typisk lavere.",
+    a: "Ja, verktøy som Wix, Squarespace og WordPress gjør det mulig uten teknisk bakgrunn. Det er et godt alternativ for bedrifter med veldig begrenset budsjett. Ulempen er at det tar tid, resultatet er sjelden like gjennomarbeidet som en skreddersydd løsning, og konverteringsraten er typisk lavere.",
   },
   {
     q: "Hva er forskjellen på WordPress og Next.js?",
@@ -123,7 +123,7 @@ export default function NettsidePrisPage() {
             <div className="prose prose-invert max-w-none space-y-12 text-[var(--stone-700)] leading-relaxed">
 
               <section>
-                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Prisbildet — hva er hva?</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Prisbildet, hva er hva?</h2>
                 <p>
                   La oss starte med å rydde opp. En nettside er ikke bare én ting. Wix og en skreddersydd Next.js-løsning er begge «nettsider», akkurat som en brukt Dacia og en ny BMW begge er «biler». Prisen forteller deg hvilken kategori du er i.
                 </p>
@@ -161,7 +161,7 @@ export default function NettsidePrisPage() {
                   Sannheten er at 80 % av bedrifter i Ålesund og Norge for øvrig ikke trenger en avansert løsning. De trenger en nettside som ser profesjonell ut, laster raskt, er lett å finne i Google og gjør det enkelt for potensielle kunder å ta kontakt eller bestille.
                 </p>
                 <p className="mt-4">
-                  Det er fullt mulig å oppnå med en nettside i prisklassen 8 000–20 000 kr — hvis den er godt gjennomtenkt. Det vi ser dreper konverteringen er dårlige bilder, uklar struktur og tekst som er skrevet for Google, ikke for mennesker.
+                  Det er fullt mulig å oppnå med en nettside i prisklassen 8 000–20 000 kr, hvis den er godt gjennomtenkt. Det vi ser dreper konverteringen er dårlige bilder, uklar struktur og tekst som er skrevet for Google, ikke for mennesker.
                 </p>
                 <p className="mt-4">
                   En nettside som ser moderne og troverdig ut, har tydelig CTA (ta kontakt / bestill / ring oss) og laster på under 2 sekunder vil gjøre mer for de fleste bedrifter enn en avansert løsning til tre ganger prisen.
@@ -175,9 +175,9 @@ export default function NettsidePrisPage() {
                 </p>
                 <ul className="mt-4 space-y-3">
                   {[
-                    { punkt: "Design og struktur", forklaring: "Å bestemme layout, farger, typografi og brukervei tar tid. Et gjennomarbeidet design er ikke et valg fra en mal — det er tilpasset bedriftens tone og mål." },
+                    { punkt: "Design og struktur", forklaring: "Å bestemme layout, farger, typografi og brukervei tar tid. Et gjennomarbeidet design er ikke et valg fra en mal, det er tilpasset bedriftens tone og mål." },
                     { punkt: "Utvikling", forklaring: "Å bygge siden teknisk, sette opp responsivt design (fungerer på mobil), og integrere eventuelle skjemaer, kart eller booking." },
-                    { punkt: "Innholdsjobb", forklaring: "Tekst, bilder og struktur. Mange byråer inkluderer ikke dette i grunnprisen — spør alltid." },
+                    { punkt: "Innholdsjobb", forklaring: "Tekst, bilder og struktur. Mange byråer inkluderer ikke dette i grunnprisen, spør alltid." },
                     { punkt: "SEO-grunnoppsett", forklaring: "Sidetitler, metabeskrivelser, hastighetsoptimalisering og teknisk SEO slik at Google faktisk finner deg." },
                     { punkt: "Testing og lansering", forklaring: "Teste på ulike enheter og nettlesere, sette opp domene og hosting, og forsikre seg om at alt fungerer." },
                   ].map((item, i) => (
@@ -190,15 +190,15 @@ export default function NettsidePrisPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Løpende kostnader — det alle glemmer</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Løpende kostnader, det alle glemmer</h2>
                 <p>
                   Prisen for selve nettsiden er én ting. I tillegg kommer:
                 </p>
                 <ul className="mt-4 space-y-2 text-[var(--stone-700)]">
-                  <li className="flex gap-2"><span className="text-[var(--forest)]">—</span> <span><strong className="text-[var(--black)]">Domene:</strong> 200–400 kr/år. Nødvendig.</span></li>
-                  <li className="flex gap-2"><span className="text-[var(--forest)]">—</span> <span><strong className="text-[var(--black)]">Hosting:</strong> 100–500 kr/mnd avhengig av løsning. Nødvendig.</span></li>
-                  <li className="flex gap-2"><span className="text-[var(--forest)]">—</span> <span><strong className="text-[var(--black)]">Vedlikehold og oppdateringer:</strong> 0 kr (gjør det selv) til 2 000 kr/mnd (via byrå). Valgfritt.</span></li>
-                  <li className="flex gap-2"><span className="text-[var(--forest)]">—</span> <span><strong className="text-[var(--black)]">SSL-sertifikat:</strong> Gratis via de fleste hostingleverandører i dag.</span></li>
+                  <li className="flex gap-2"><span className="text-[var(--forest)]">·</span> <span><strong className="text-[var(--black)]">Domene:</strong> 200–400 kr/år. Nødvendig.</span></li>
+                  <li className="flex gap-2"><span className="text-[var(--forest)]">·</span> <span><strong className="text-[var(--black)]">Hosting:</strong> 100–500 kr/mnd avhengig av løsning. Nødvendig.</span></li>
+                  <li className="flex gap-2"><span className="text-[var(--forest)]">·</span> <span><strong className="text-[var(--black)]">Vedlikehold og oppdateringer:</strong> 0 kr (gjør det selv) til 2 000 kr/mnd (via byrå). Valgfritt.</span></li>
+                  <li className="flex gap-2"><span className="text-[var(--forest)]">·</span> <span><strong className="text-[var(--black)]">SSL-sertifikat:</strong> Gratis via de fleste hostingleverandører i dag.</span></li>
                 </ul>
                 <p className="mt-4">
                   Regn med 300–800 kr/mnd i løpende kostnader for en typisk bedriftsnettside etter lansering.
@@ -211,7 +211,7 @@ export default function NettsidePrisPage() {
                   Du betaler for mye hvis tilbudet ikke spesifiserer hva som er inkludert. «Nettside til 30 000 kr» uten detaljert beskrivelse er et dårlig tilbud, uansett om summen høres riktig ut.
                 </p>
                 <p className="mt-4">
-                  Du betaler også for mye hvis du betaler månedlig for noe du aldri trenger — for eksempel support på en statisk nettside som aldri endres. Og du betaler for mye hvis byrået locker deg inn i en plattform de eier, slik at du ikke kan ta med deg nettsiden hvis du vil bytte leverandør.
+                  Du betaler også for mye hvis du betaler månedlig for noe du aldri trenger, for eksempel support på en statisk nettside som aldri endres. Og du betaler for mye hvis byrået locker deg inn i en plattform de eier, slik at du ikke kan ta med deg nettsiden hvis du vil bytte leverandør.
                 </p>
                 <p className="mt-4">
                   En god leverandør gir deg full eierskap til koden, klart definerte leveranser og en pris du forstår.

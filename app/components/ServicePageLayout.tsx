@@ -161,7 +161,7 @@ export default function ServicePageLayout({
               <div className="svc-hero-fresh">
                 <span>Sist oppdatert: april 2026</span>
                 <span aria-hidden="true">·</span>
-                <span>Elevera — vekstbyrå i Ålesund</span>
+                <span>Elevera, vekstbyrå i Ålesund</span>
               </div>
             </div>
           </div>

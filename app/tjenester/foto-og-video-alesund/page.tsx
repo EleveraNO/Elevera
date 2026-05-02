@@ -73,7 +73,7 @@ export default function FotoOgVideoPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge="Foto & Video — Ålesund"
+          badge="Foto & Video · Ålesund"
           title="Profesjonell"
           titleAccent="foto & video"
           titleSuffix="i Ålesund"

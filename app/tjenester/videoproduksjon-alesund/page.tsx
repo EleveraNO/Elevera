@@ -69,7 +69,7 @@ export default function VideoProduksjonPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge="Videoproduksjon — Ålesund"
+          badge="Videoproduksjon · Ålesund"
           title="Profesjonell"
           titleAccent="videoproduksjon"
           titleSuffix="i Ålesund"

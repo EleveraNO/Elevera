@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Annonsering i Kristiansund | Google & Meta – Elevera",
   description:
-    "Lønnsom digital annonsering for bedrifter i Kristiansund. Google Ads og Meta-kampanjer som gir deg flere kunder — med målbar avkastning fra dag én.",
+    "Lønnsom digital annonsering for bedrifter i Kristiansund. Google Ads og Meta-kampanjer som gir deg flere kunder, med målbar avkastning fra dag én.",
   alternates: { canonical: "https://elevera.no/tjenester/annonsering-kristiansund" },
   openGraph: {
     title: "Annonsering i Kristiansund – Elevera",
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "Hva er forskjellen på Google Ads og Facebook-annonser?",
-    a: "Google Ads fanger folk som aktivt søker etter det du tilbyr — høy kjøpsintensjon. Meta (Facebook/Instagram) treffer folk basert på interesser og atferd — bra for synlighet og merkevarebygging. Vi anbefaler ofte en kombinasjon.",
+    a: "Google Ads fanger folk som aktivt søker etter det du tilbyr, høy kjøpsintensjon. Meta (Facebook/Instagram) treffer folk basert på interesser og atferd, bra for synlighet og merkevarebygging. Vi anbefaler ofte en kombinasjon.",
   },
   {
     q: "Trenger jeg en ny nettside for å annonsere?",
@@ -82,27 +82,27 @@ export default function AnnonseringKristiansundPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge={`Annonsering — ${kristiansund.name}`}
+          badge={`Annonsering · ${kristiansund.name}`}
           title="Digital"
           titleAccent="annonsering"
           titleSuffix={`i ${kristiansund.name}`}
-          description={`${kristiansund.localRef} har bedrifter som fortjener flere kunder. ${kristiansund.marketNote} Digital annonsering lar deg nå dem som aktivt leter — og de som ennå ikke vet at de trenger deg.`}
+          description={`${kristiansund.localRef} har bedrifter som fortjener flere kunder. ${kristiansund.marketNote} Digital annonsering lar deg nå dem som aktivt leter, og de som ennå ikke vet at de trenger deg.`}
           includedLabel="Tjenester"
           includedHeading="Hva vi tilbyr"
           includedSubtext="Tilpasset dine behov og din bedrift."
           included={[
-            "Google Ads — fang søkere med høy kjøpsintensjon",
-            "Meta Ads — nå kunder på Facebook og Instagram",
-            "Remarketing — følg opp folk som allerede har vist interesse",
-            "Annonsekreativ — tekst, bilder og video som konverterer",
-            "Kampanjeoptimalisering — kontinuerlig testing og forbedring",
-            "Konverteringssporing — full oversikt over hva som gir resultater",
-            "Rapportering — månedlig gjennomgang med klare tall",
+            "Google Ads, fang søkere med høy kjøpsintensjon",
+            "Meta Ads, nå kunder på Facebook og Instagram",
+            "Remarketing, følg opp folk som allerede har vist interesse",
+            "Annonsekreativ, tekst, bilder og video som konverterer",
+            "Kampanjeoptimalisering, kontinuerlig testing og forbedring",
+            "Konverteringssporing, full oversikt over hva som gir resultater",
+            "Rapportering, månedlig gjennomgang med klare tall",
           ]}
           whyTitle="Hvorfor fungerer digital annonsering så godt i Kristiansund?"
           whyText={[
             `Kristiansund har et solid næringsliv, men mange bedrifter på Nordmøre annonserer fortsatt kun i lokalaviser eller ikke i det hele tatt digitalt. Det betyr lavere konkurranse på Google og billigere klikk for deg.`,
-            `Med riktig strategi kan du dominere de lokale søkeresultatene i Kristiansund for en brøkdel av hva det koster i større byer. Vi setter opp kampanjer som gir målbar avkastning — ikke bare klikk, men faktiske henvendelser.`,
+            `Med riktig strategi kan du dominere de lokale søkeresultatene i Kristiansund for en brøkdel av hva det koster i større byer. Vi setter opp kampanjer som gir målbar avkastning, ikke bare klikk, men faktiske henvendelser.`,
           ]}
           stats={[
             { stat: "4–7×", label: "Typisk avkastning på annonsebudsjettet" },

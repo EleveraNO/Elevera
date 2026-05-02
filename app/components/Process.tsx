@@ -7,7 +7,7 @@ const steps = [
     number: "01",
     title: "Strategimøte",
     description:
-      "Vi starter med et gratis 30-minutters møte. Vi lærer din bedrift å kjenne, kartlegger markedet og lager en konkret plan — uten forpliktelser.",
+      "Vi starter med et gratis 30-minutters møte. Vi lærer din bedrift å kjenne, kartlegger markedet og lager en konkret plan, uten forpliktelser.",
     detail: "Gratis · 30 minutter · Ingen salgsmasi",
   },
   {
@@ -21,7 +21,7 @@ const steps = [
     number: "03",
     title: "Lansering & vekst",
     description:
-      "Vi lanserer, måler og optimaliserer kontinuerlig. Månedlige rapporter viser nøyaktig hva som virker — og vi skalerer det som gir resultater.",
+      "Vi lanserer, måler og optimaliserer kontinuerlig. Månedlige rapporter viser nøyaktig hva som virker, og vi skalerer det som gir resultater.",
     detail: "Månedlig rapport · Løpende optimalisering",
   },
 ];
@@ -48,7 +48,7 @@ export default function Process() {
               className="max-w-xs text-sm leading-relaxed sm:text-right"
               style={{ color: "rgba(229,226,222,0.45)" }}
             >
-              En enkel, forutsigbar prosess — slik at du alltid vet
+              En enkel, forutsigbar prosess, slik at du alltid vet
               hva som skjer og hva du betaler for.
             </p>
           </div>
@@ -131,7 +131,7 @@ export default function Process() {
               (e.currentTarget as HTMLAnchorElement).style.background = "#f2ca50";
             }}
           >
-            Start med steg 1 — gratis møte
+            Start med steg 1, gratis møte
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

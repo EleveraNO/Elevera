@@ -131,7 +131,7 @@ export default function HomePricing() {
 
         <p className="home-roi-fineprint">
           Indikative tall basert på dine egne forutsetninger. Faktisk resultat
-          avhenger av marked, sesong og tilbudet ditt. Ingen garantier — bare
+          avhenger av marked, sesong og tilbudet ditt. Ingen garantier, bare
           ærlig matte.
         </p>
 

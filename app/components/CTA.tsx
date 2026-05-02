@@ -54,7 +54,7 @@ export default function CTA() {
                 Lurer du på hva vi ville gjort for <em style={{ fontStyle: "italic", color: "#f2ca50" }}>din</em> bedrift?
               </h2>
               <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed" style={{ color: "#d0c5af" }}>
-                Book et gratis strategimøte på 30 minutter. Vi ser på nettsiden din, annonsene dine og konkurrentene dine — og forteller deg nøyaktig hva vi ville gjort annerledes.
+                Book et gratis strategimøte på 30 minutter. Vi ser på nettsiden din, annonsene dine og konkurrentene dine, og forteller deg nøyaktig hva vi ville gjort annerledes.
               </p>
 
               <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

@@ -119,7 +119,7 @@ function ReelsCarousel() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Pil venstre — alltid synlig på mobil */}
+        {/* Pil venstre, alltid synlig på mobil */}
         <button
           type="button"
           onClick={() => select(prevIdx)}
@@ -128,7 +128,7 @@ function ReelsCarousel() {
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
         </button>
 
-        {/* Pil høyre — alltid synlig på mobil */}
+        {/* Pil høyre, alltid synlig på mobil */}
         <button
           type="button"
           onClick={() => select(nextIdx)}
@@ -288,7 +288,7 @@ export default function DriveTrafikkskule() {
 
       {/* ── Hva vi lagde ── */}
       <section className="relative overflow-hidden px-6 py-16">
-        {/* Bakgrunnsatmosfære — red glow + filmstripe */}
+        {/* Bakgrunnsatmosfære, red glow + filmstripe */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute inset-0" style={{
             background: "radial-gradient(ellipse 65% 90% at 90% 50%, rgba(124,58,237,0.18) 0%, transparent 65%), radial-gradient(ellipse 40% 50% at 5% 80%, rgba(124,58,237,0.09) 0%, transparent 60%)"
@@ -301,7 +301,7 @@ export default function DriveTrafikkskule() {
         </div>
         <div className="relative z-10 mx-auto max-w-6xl">
 
-          {/* Header — stat + beskrivelse side om side */}
+          {/* Header, stat + beskrivelse side om side */}
           <FadeUp className="mb-10">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
@@ -359,7 +359,7 @@ export default function DriveTrafikkskule() {
 
       {/* ── Bilder ── */}
       <section className="relative overflow-hidden px-6 py-8">
-        {/* Bakgrunnsatmosfære — amber glow + dot matrix */}
+        {/* Bakgrunnsatmosfære, amber glow + dot matrix */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute inset-0" style={{
             background: "radial-gradient(ellipse 80% 60% at 50% 55%, rgba(251,191,36,0.09) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 90% 20%, rgba(251,191,36,0.06) 0%, transparent 60%)"
@@ -392,7 +392,7 @@ export default function DriveTrafikkskule() {
             </div>
           </FadeUp>
 
-          {/* Bilder — naturlig format */}
+          {/* Bilder, naturlig format */}
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {photos.map((foto, i) => (
               <FadeUp key={i}>

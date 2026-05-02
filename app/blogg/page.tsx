@@ -5,7 +5,7 @@ import HomeFooter from "../components/home/HomeFooter";
 import "../components/blog.css";
 
 export const metadata: Metadata = {
-  title: "Blogg — Tips og innsikt om digital markedsføring | Elevera",
+  title: "Blogg, Tips og innsikt om digital markedsføring | Elevera",
   description:
     "Artikler om foto, video, nettside og digital markedsføring for bedrifter i Ålesund og på Sunnmøre.",
   alternates: { canonical: "https://elevera.no/blogg" },
@@ -15,9 +15,9 @@ const innlegg = [
   {
     slug: "google-business-profile-guide",
     tittel:
-      "Google Business Profile for lokale bedrifter — komplett 2026-guide",
+      "Google Business Profile for lokale bedrifter, komplett 2026-guide",
     ingress:
-      "Den gratis Google-tjenesten som ofte gir mer trafikk enn nettsiden. De fleste lokale bedrifter har den satt opp halvveis — eller ikke i det hele tatt.",
+      "Den gratis Google-tjenesten som ofte gir mer trafikk enn nettsiden. De fleste lokale bedrifter har den satt opp halvveis, eller ikke i det hele tatt.",
     dato: "18. april 2026",
     kategori: "Lokal SEO",
     lesetid: "10 min",
@@ -26,14 +26,14 @@ const innlegg = [
     slug: "sosiale-medier-bedrift-pris",
     tittel: "Hva koster sosiale medier-styring for bedrifter?",
     ingress:
-      "Du vet du burde poste oftere. Men hva koster det å la noen andre gjøre det? Her er de ærlige prisene — og hva du bør passe på.",
+      "Du vet du burde poste oftere. Men hva koster det å la noen andre gjøre det? Her er de ærlige prisene, og hva du bør passe på.",
     dato: "12. april 2026",
     kategori: "Sosiale medier",
     lesetid: "9 min",
   },
   {
     slug: "markedsforingsbyraa-alesund",
-    tittel: "Markedsføringsbyrå i Ålesund — hva bør du se etter?",
+    tittel: "Markedsføringsbyrå i Ålesund, hva bør du se etter?",
     ingress:
       "Hva gjør et markedsføringsbyrå, hva koster det, og hva skiller et godt byrå fra resten? En praktisk guide for bedrifter i Ålesund.",
     dato: "24. mars 2026",
@@ -53,16 +53,16 @@ const innlegg = [
     slug: "nettside-bedrift-pris",
     tittel: "Hva koster en nettside til bedriften? Ærlige priser",
     ingress:
-      "Fra null kroner til 150 000 kr — prisen på en bedriftsnettside varierer enormt. Her er hva du faktisk trenger, og når du betaler for mye.",
+      "Fra null kroner til 150 000 kr, prisen på en bedriftsnettside varierer enormt. Her er hva du faktisk trenger, og når du betaler for mye.",
     dato: "31. mars 2026",
     kategori: "Nettside",
     lesetid: "9 min",
   },
   {
     slug: "facebook-annonser-tips",
-    tittel: "Facebook-annonser for småbedrifter — hva som faktisk fungerer",
+    tittel: "Facebook-annonser for småbedrifter, hva som faktisk fungerer",
     ingress:
-      "Mange lokale bedrifter kaster bort penger på Facebook-annonser. Her er de vanligste feilene — og hva du bør gjøre i stedet.",
+      "Mange lokale bedrifter kaster bort penger på Facebook-annonser. Her er de vanligste feilene, og hva du bør gjøre i stedet.",
     dato: "1. april 2026",
     kategori: "Annonsering",
     lesetid: "8 min",

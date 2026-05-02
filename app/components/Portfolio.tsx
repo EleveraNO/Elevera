@@ -197,7 +197,7 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        {/* ── Desktop bento grid — big card spans 2 rows, two small stacked ── */}
+        {/* ── Desktop bento grid, big card spans 2 rows, two small stacked ── */}
         <motion.div
           className="hidden md:grid gap-4"
           initial={{ opacity: 0, y: 30 }}
@@ -247,7 +247,7 @@ export default function Portfolio() {
                           animate={{ x: [0, -20, 15, 0], y: [0, 20, -30, 0] }}
                           transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 3 }} />
                       </div>
-                      {/* Laptop mockup — centered, pulsing */}
+                      {/* Laptop mockup, centered, pulsing */}
                       <motion.div
                         className="absolute inset-0 flex items-center justify-center p-8"
                         animate={{ scale: [1, 1.02, 1], y: [0, -4, 0] }}
@@ -291,7 +291,7 @@ export default function Portfolio() {
                   {String(i + 1).padStart(2, "0")}
                 </div>
 
-                {/* Tags — featured only */}
+                {/* Tags, featured only */}
                 <div className="absolute left-4 top-4 flex flex-wrap gap-1.5"
                   style={{ opacity: isExpanded ? 1 : 0, transition: "opacity 0.3s ease", transitionDelay: isExpanded ? "0.5s" : "0s" }}>
                   {project.tags.map((tag) => (
@@ -303,7 +303,7 @@ export default function Portfolio() {
                   ))}
                 </div>
 
-                {/* Result badge — featured only */}
+                {/* Result badge, featured only */}
                 {project.result && (
                   <div className="absolute right-4 top-4"
                     style={{ opacity: isExpanded ? 1 : 0, transition: "opacity 0.3s ease", transitionDelay: isExpanded ? "0.5s" : "0s" }}>
@@ -342,7 +342,7 @@ export default function Portfolio() {
                     {project.client}
                   </h3>
 
-                  {/* Summary + CTA — featured only */}
+                  {/* Summary + CTA, featured only */}
                   <AnimatePresence>
                     {isExpanded && textVisible && (
                       <motion.div
@@ -372,7 +372,7 @@ export default function Portfolio() {
           })}
         </motion.div>
 
-        {/* ── Mobile — stacked, all same size ── */}
+        {/* ── Mobile, stacked, all same size ── */}
         <div className="flex flex-col gap-3 md:hidden">
           {projects.map((project) => (
             <a

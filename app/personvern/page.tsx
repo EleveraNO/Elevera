@@ -47,8 +47,8 @@ export default function Personvern() {
           <section className="legal-section">
             <h2>3. Formål og rettslig grunnlag</h2>
             <ul>
-              <li>Besvare henvendelser — grunnlag: berettiget interesse</li>
-              <li>Analysere nettstedstrafikk — grunnlag: samtykke</li>
+              <li>Besvare henvendelser, grunnlag: berettiget interesse</li>
+              <li>Analysere nettstedstrafikk, grunnlag: samtykke</li>
             </ul>
           </section>
 

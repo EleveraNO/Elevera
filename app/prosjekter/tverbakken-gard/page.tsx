@@ -28,7 +28,7 @@ const deliverables = [
       </svg>
     ),
     title: "Responsiv nettside",
-    desc: "Fungerer like bra på mobil som desktop — kundene kan bestille uansett hvor de er.",
+    desc: "Fungerer like bra på mobil som desktop, kundene kan bestille uansett hvor de er.",
   },
   {
     icon: (
@@ -46,7 +46,7 @@ const deliverables = [
       </svg>
     ),
     title: "E-post bestilling",
-    desc: "Kunden fyller inn skjema — Roger får e-post. Ingen system å lære, ingen mellomledd.",
+    desc: "Kunden fyller inn skjema, Roger får e-post. Ingen system å lære, ingen mellomledd.",
   },
   {
     icon: (
@@ -55,7 +55,7 @@ const deliverables = [
       </svg>
     ),
     title: "\"Rå Nordisk\" design",
-    desc: "Naturbilder, klassiske fonter og jordfarger som matcher gårdens karakter — ikke et generisk nettsidetema.",
+    desc: "Naturbilder, klassiske fonter og jordfarger som matcher gårdens karakter, ikke et generisk nettsidetema.",
   },
 ];
 
@@ -110,7 +110,7 @@ export default function TverbakkenGard() {
       <main className="min-h-screen bg-[var(--cream)]" style={{ overflowX: "clip" }}>
         <HomeNav />
 
-        {/* ── Hero: split layout — tekst venstre, MacBook høyre ── */}
+        {/* ── Hero: split layout, tekst venstre, MacBook høyre ── */}
         <section className="relative flex min-h-screen items-center overflow-hidden px-6 pb-16 pt-28">
 
           {/* Ambient glow bak MacBook (høyre side) */}
@@ -330,16 +330,16 @@ export default function TverbakkenGard() {
                   style={{ borderLeft: "2px solid var(--stone-300)", paddingLeft: "1.5rem" }}
                 >
                   <p style={{ color: "var(--stone-700)" }}>
-                    Roger Tverbakk driver gård i Kjerringøy — et sted familien har holdt til siden 1755.
+                    Roger Tverbakk driver gård i Kjerringøy, et sted familien har holdt til siden 1755.
                     Han selger saueskinn med sjel, men manglet en nettside som fortalte den historien.
                   </p>
                   <p style={{ color: "var(--stone-600)" }}>
-                    Vi bygde «Rå Nordisk» — et designspråk som matcher gårdens karakter.
+                    Vi bygde «Rå Nordisk», et designspråk som matcher gårdens karakter.
                     Naturbilder, klassiske fonter og jordfarger. En bestillingsflyt som fungerer
                     uten at Roger trenger å løfte en finger.
                   </p>
                   <p style={{ color: "var(--stone-500)" }}>
-                    Resultatet er en nettside som ikke ser ut som en nettside — den ser ut som gården.
+                    Resultatet er en nettside som ikke ser ut som en nettside, den ser ut som gården.
                   </p>
                 </div>
               </FadeUp>
@@ -361,7 +361,7 @@ export default function TverbakkenGard() {
                   <span className="text-[var(--stone-500)]">Komplett.</span>
                 </h2>
                 <p className="max-w-xs text-sm leading-relaxed text-[var(--stone-500)] sm:text-right">
-                  Design, kode og bestillingssystem — alt på plass. Roger trengte ikke å gjøre noe.
+                  Design, kode og bestillingssystem, alt på plass. Roger trengte ikke å gjøre noe.
                 </p>
               </div>
             </FadeUp>
@@ -492,7 +492,7 @@ export default function TverbakkenGard() {
                   </h2>
                 </div>
                 <p className="max-w-xs text-sm leading-relaxed sm:text-right" style={{ color: "var(--stone-500)" }}>
-                  Kjerringøy, Nordland — et sted familien<br className="hidden sm:block" /> har holdt til siden 1755.
+                  Kjerringøy, Nordland, et sted familien<br className="hidden sm:block" /> har holdt til siden 1755.
                 </p>
               </div>
             </FadeUp>

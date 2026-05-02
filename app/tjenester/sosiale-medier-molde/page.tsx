@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Sosiale medier i Molde | Innhold & Strategi – Elevera",
   description:
-    "Vi poster for deg — hver uke. Profesjonell håndtering av sosiale medier for bedrifter i Molde. Innhold, strategi og vekst på Instagram, Facebook og LinkedIn.",
+    "Vi poster for deg, hver uke. Profesjonell håndtering av sosiale medier for bedrifter i Molde. Innhold, strategi og vekst på Instagram, Facebook og LinkedIn.",
   alternates: { canonical: "https://elevera.no/tjenester/sosiale-medier-molde" },
   openGraph: {
     title: "Sosiale medier i Molde – Elevera",
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Jobber dere med bedrifter i Molde?",
-    a: `Ja! Vi samarbeider med bedrifter i hele Møre og Romsdal. Vi sitter i Ålesund (${molde.distance}), men håndterer alt digitalt — innholdsplanlegging, publisering og rapportering.`,
+    a: `Ja! Vi samarbeider med bedrifter i hele Møre og Romsdal. Vi sitter i Ålesund (${molde.distance}), men håndterer alt digitalt, innholdsplanlegging, publisering og rapportering.`,
   },
   {
     q: "Hvilke plattformer dekker dere?",
-    a: "Vi jobber med Instagram, Facebook, LinkedIn og TikTok. Vi anbefaler plattformene som gir mest verdi for akkurat din bedrift og målgruppe — ikke alle trenger å være overalt.",
+    a: "Vi jobber med Instagram, Facebook, LinkedIn og TikTok. Vi anbefaler plattformene som gir mest verdi for akkurat din bedrift og målgruppe, ikke alle trenger å være overalt.",
   },
   {
     q: "Lager dere innholdet også?",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Hvor ofte publiserer dere?",
-    a: "Typisk 3–5 innlegg per uke, avhengig av pakke og plattform. Konsistens er viktigere enn volum — vi sørger for at du alltid er synlig og relevant.",
+    a: "Typisk 3–5 innlegg per uke, avhengig av pakke og plattform. Konsistens er viktigere enn volum, vi sørger for at du alltid er synlig og relevant.",
   },
 ];
 
@@ -82,26 +82,26 @@ export default function SosialeMedierMoldePage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge={`Sosiale medier — ${molde.name}`}
+          badge={`Sosiale medier · ${molde.name}`}
           title="Vi poster for deg."
           titleAccent="Hver uke."
-          description={`Bedrifter i ${molde.localRef} vet at synlighet betyr alt. Men hvem har tid til å poste konsekvent? Vi tar over — med innhold som bygger tillit, engasjerer følgere og tiltrekker kunder i Molde og Romsdal.`}
+          description={`Bedrifter i ${molde.localRef} vet at synlighet betyr alt. Men hvem har tid til å poste konsekvent? Vi tar over, med innhold som bygger tillit, engasjerer følgere og tiltrekker kunder i Molde og Romsdal.`}
           includedLabel="Tjenester"
           includedHeading="Hva vi tilbyr"
           includedSubtext="Tilpasset dine behov og din bedrift."
           included={[
-            "Innholdsstrategi — vi planlegger hva som skal postes og når",
-            "Grafisk design — profesjonelle innlegg som skiller seg ut",
-            "Copywriting — tekster som engasjerer og konverterer",
-            "Publisering — vi poster for deg på alle valgte plattformer",
-            "Community management — vi svarer på kommentarer og meldinger",
-            "Innholdskalender — du ser alt planlagt innhold på forhånd",
-            "Månedlig rapport — rekkevidde, engasjement og vekst",
-            "Strategimøte — månedlig gjennomgang og justering",
+            "Innholdsstrategi, vi planlegger hva som skal postes og når",
+            "Grafisk design, profesjonelle innlegg som skiller seg ut",
+            "Copywriting, tekster som engasjerer og konverterer",
+            "Publisering, vi poster for deg på alle valgte plattformer",
+            "Community management, vi svarer på kommentarer og meldinger",
+            "Innholdskalender, du ser alt planlagt innhold på forhånd",
+            "Månedlig rapport, rekkevidde, engasjement og vekst",
+            "Strategimøte, månedlig gjennomgang og justering",
           ]}
           whyTitle="Hvorfor henger mange bedrifter i Molde etter på sosiale medier?"
           whyText={[
-            `De fleste vet at sosiale medier er viktig. Men mellom kunder, drift og hundre andre ting blir det sjelden til at man poster konsekvent. Resultatet? En profil som ser forlatt ut — og potensielle kunder som scroller videre.`,
+            `De fleste vet at sosiale medier er viktig. Men mellom kunder, drift og hundre andre ting blir det sjelden til at man poster konsekvent. Resultatet? En profil som ser forlatt ut, og potensielle kunder som scroller videre.`,
             `Vi løser det for deg. Med fast innhold hver uke bygger du gradvis synlighet, tillit og en kanal som faktisk sender kunder din vei. Spesielt i Molde, der mange konkurrenter ikke poster aktivt, gir konsistens en stor fordel.`,
           ]}
           stats={[

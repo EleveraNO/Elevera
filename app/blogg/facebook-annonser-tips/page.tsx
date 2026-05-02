@@ -29,11 +29,11 @@ const faqs = [
   },
   {
     q: "Hva er Facebook Pixel og trenger jeg det?",
-    a: "Facebook Pixel er et lite kodesnippet du installerer på nettsiden din. Det lar Facebook spore hvem som besøker siden din og hva de gjør der — og bruke den informasjonen til å vise annonser til lignende mennesker. For alle som kjører konverteringsannonser er Pixel nødvendig for å optimalisere kampanjene.",
+    a: "Facebook Pixel er et lite kodesnippet du installerer på nettsiden din. Det lar Facebook spore hvem som besøker siden din og hva de gjør der, og bruke den informasjonen til å vise annonser til lignende mennesker. For alle som kjører konverteringsannonser er Pixel nødvendig for å optimalisere kampanjene.",
   },
   {
     q: "Hvor raskt ser man resultater fra Facebook-annonser?",
-    a: "De første signalene ser du gjerne innen 1–2 uker. Men algoritmen bruker 7–14 dager på å lære og optimalisere en ny annonsekampanje — dette kalles læringsfasen. Full effekt og pålitelige tall har du typisk etter 4–8 uker.",
+    a: "De første signalene ser du gjerne innen 1–2 uker. Men algoritmen bruker 7–14 dager på å lære og optimalisere en ny annonsekampanje, dette kalles læringsfasen. Full effekt og pålitelige tall har du typisk etter 4–8 uker.",
   },
 ];
 
@@ -106,10 +106,10 @@ export default function FacebookAnnonserPage() {
                 <span className="text-xs text-[var(--stone-500)]">8 min lesetid</span>
               </div>
               <h1 className="text-3xl font-bold leading-tight text-[var(--black)] sm:text-4xl md:text-5xl">
-                Facebook-annonser for småbedrifter — hva som faktisk fungerer
+                Facebook-annonser for småbedrifter, hva som faktisk fungerer
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
-                Vi ser det hele tiden: bedrifter som bruker tusenvis av kroner på Facebook-annonser uten å egentlig vite hva de får igjen. Ikke fordi Facebook Ads ikke virker — men fordi de vanligste feilene er enkle å unngå når du vet hva du ser etter.
+                Vi ser det hele tiden: bedrifter som bruker tusenvis av kroner på Facebook-annonser uten å egentlig vite hva de får igjen. Ikke fordi Facebook Ads ikke virker, men fordi de vanligste feilene er enkle å unngå når du vet hva du ser etter.
               </p>
               <p className="mt-3 text-sm text-[var(--stone-500)]">
                 Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 1. april 2026
@@ -127,7 +127,7 @@ export default function FacebookAnnonserPage() {
                   Facebook har enorme mengder data om brukerne sine. Bruk det. En rørlegger i Ålesund bør ikke annonsere til 20-åringer uten bolig. En barneklinikk trenger ikke nå folk uten barn. Jo mer presis målgruppen er, jo lavere blir kostnaden per relevant klikk.
                 </p>
                 <p className="mt-4">
-                  Et godt utgangspunkt: definer hvem den ideelle kunden din er. Alder, sted, interesser, livssituasjon. Deretter bygger du en målgruppe rundt det — ikke rundt «alle».
+                  Et godt utgangspunkt: definer hvem den ideelle kunden din er. Alder, sted, interesser, livssituasjon. Deretter bygger du en målgruppe rundt det, ikke rundt «alle».
                 </p>
               </section>
 
@@ -137,23 +137,23 @@ export default function FacebookAnnonserPage() {
                   Folk scroller med tommelen. Du har under to sekunder på å stoppe dem. Et uskarpt telefonfoto med generisk tekst gjør ikke jobben.
                 </p>
                 <p className="mt-4">
-                  Det som stopper scrollingen er som regel én av tre ting: et sterkt bilde av noe gjenkjennelig eller overraskende, en video som starter med noe uventet, eller en tekst som treffer akkurat det folk tenker på uten å si det direkte — «Lei av å ikke få nok kunder?» er sterkere enn «Vi er eksperter på markedsføring».
+                  Det som stopper scrollingen er som regel én av tre ting: et sterkt bilde av noe gjenkjennelig eller overraskende, en video som starter med noe uventet, eller en tekst som treffer akkurat det folk tenker på uten å si det direkte, «Lei av å ikke få nok kunder?» er sterkere enn «Vi er eksperter på markedsføring».
                 </p>
                 <p className="mt-4">
-                  Video fungerer spesielt godt for lokale bedrifter. En 15–30 sekunders video der du eller teamet ditt snakker direkte til kamera skaper mer tillit enn det meste annet. Det behøver ikke å se produsert ut — autentisitet slår polert innhold på Facebook nesten hver gang.
+                  Video fungerer spesielt godt for lokale bedrifter. En 15–30 sekunders video der du eller teamet ditt snakker direkte til kamera skaper mer tillit enn det meste annet. Det behøver ikke å se produsert ut, autentisitet slår polert innhold på Facebook nesten hver gang.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Feil nummer tre: Ingen klar handling</h2>
                 <p>
-                  Hva vil du at folk skal gjøre etter at de har sett annonsen? Ringe? Fylle ut et skjema? Bestille time? Klikke seg inn på nettsiden? Hvis ikke annonsen din har ett tydelig svar på det spørsmålet, er det for mange mulige utfall — og da skjer ingen av dem.
+                  Hva vil du at folk skal gjøre etter at de har sett annonsen? Ringe? Fylle ut et skjema? Bestille time? Klikke seg inn på nettsiden? Hvis ikke annonsen din har ett tydelig svar på det spørsmålet, er det for mange mulige utfall, og da skjer ingen av dem.
                 </p>
                 <p className="mt-4">
                   Én annonse, én handling. Alltid.
                 </p>
                 <p className="mt-4">
-                  For mange lokale bedrifter er «Book gratis konsultasjon» eller «Få et tilbud» bedre enn «Les mer» — fordi det er mer konkret og lavterskelig enn det kan virke. Folk vil ha hjelp. De vil ikke lete etter kontaktinfo på egen hånd.
+                  For mange lokale bedrifter er «Book gratis konsultasjon» eller «Få et tilbud» bedre enn «Les mer», fordi det er mer konkret og lavterskelig enn det kan virke. Folk vil ha hjelp. De vil ikke lete etter kontaktinfo på egen hånd.
                 </p>
               </section>
 
@@ -166,14 +166,14 @@ export default function FacebookAnnonserPage() {
                   Det er her mange gir opp. De ser at annonsen koster penger uten å gi mye, og skrur den av. Og så konkluderer de med at Facebook-annonser ikke virker. Men de slutter akkurat idet algoritmen begynner å forstå hva den holder på med.
                 </p>
                 <p className="mt-4">
-                  Gi det minimum fire til åtte uker før du evaluerer om noe fungerer eller ikke. Og ikke endre for mange ting på en gang — da nullstilles læringsfasen.
+                  Gi det minimum fire til åtte uker før du evaluerer om noe fungerer eller ikke. Og ikke endre for mange ting på en gang, da nullstilles læringsfasen.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva fungerer for lokale bedrifter i Ålesund?</h2>
                 <p>
-                  Vi administrerer annonser for bedrifter på Sunnmøre, og det vi ser igjen og igjen er at lokalt innhold vinner. En annonse med gjenkjennelige omgivelser, norsk tekst uten markedsfjong, og et ekte ansikt fra bedriften — det konverterer bedre enn generiske stockbilder og profesjonelt produsert reklame.
+                  Vi administrerer annonser for bedrifter på Sunnmøre, og det vi ser igjen og igjen er at lokalt innhold vinner. En annonse med gjenkjennelige omgivelser, norsk tekst uten markedsfjong, og et ekte ansikt fra bedriften, det konverterer bedre enn generiske stockbilder og profesjonelt produsert reklame.
                 </p>
                 <p className="mt-4">
                   Det gjelder spesielt retargeting: annonser som vises til folk som allerede har besøkt nettsiden din. De vet hvem du er. De trenger bare en påminnelse og et godt tilbud. Konverteringsraten her er gjerne fem til ti ganger høyere enn kalde annonser.
@@ -187,15 +187,15 @@ export default function FacebookAnnonserPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Facebook Ads vs. Google Ads — velg riktig verktøy</h2>
+                <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Facebook Ads vs. Google Ads, velg riktig verktøy</h2>
                 <p>
                   Facebook Ads og Google Ads løser ulike problemer. Google Ads viser annonsen din til folk som aktivt søker etter det du tilbyr. Facebook Ads viser deg til folk som passer målgruppen din, men ikke nødvendigvis tenker på deg akkurat nå.
                 </p>
                 <p className="mt-4">
-                  For de fleste lokale bedrifter er Google Ads bedre for å fange opp eksisterende etterspørsel — «rørlegger Ålesund», «tannlege time Sunnmøre», og lignende. Facebook er bedre for å skape etterspørsel og holde deg top-of-mind hos en lokal målgruppe som ikke vet de trenger deg ennå.
+                  For de fleste lokale bedrifter er Google Ads bedre for å fange opp eksisterende etterspørsel, «rørlegger Ålesund», «tannlege time Sunnmøre», og lignende. Facebook er bedre for å skape etterspørsel og holde deg top-of-mind hos en lokal målgruppe som ikke vet de trenger deg ennå.
                 </p>
                 <p className="mt-4">
-                  Begge er effektive. Kombinasjonen er gjerne det sterkeste — men start med det som matcher det umiddelbare behovet ditt.
+                  Begge er effektive. Kombinasjonen er gjerne det sterkeste, men start med det som matcher det umiddelbare behovet ditt.
                 </p>
               </section>
 

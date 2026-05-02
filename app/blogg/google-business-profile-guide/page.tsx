@@ -6,15 +6,15 @@ import HomeFooter from "../../components/home/HomeFooter";
 
 export const metadata: Metadata = {
   title:
-    "Google Business Profile for lokale bedrifter — komplett 2026-guide | Elevera",
+    "Google Business Profile for lokale bedrifter, komplett 2026-guide | Elevera",
   description:
-    "Den gratis Google-tjenesten de fleste lokale bedrifter glemmer — og som ofte gir mer trafikk enn nettsiden. Slik setter du opp Google Business Profile riktig i 2026.",
+    "Den gratis Google-tjenesten de fleste lokale bedrifter glemmer, og som ofte gir mer trafikk enn nettsiden. Slik setter du opp Google Business Profile riktig i 2026.",
   alternates: {
     canonical: "https://elevera.no/blogg/google-business-profile-guide",
   },
   openGraph: {
     title:
-      "Google Business Profile for lokale bedrifter — komplett 2026-guide",
+      "Google Business Profile for lokale bedrifter, komplett 2026-guide",
     description:
       "Den gratis Google-tjenesten som ofte gir mer trafikk enn nettsiden. Slik setter du den opp riktig.",
     url: "https://elevera.no/blogg/google-business-profile-guide",
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Trenger jeg en nettside for å ha Google Business Profile?",
-    a: "Nei. Du kan ha en profil uten nettside. Men hvis du har én, bør den være koblet til profilen — og profilen bør peke dit. De to jobber sammen.",
+    a: "Nei. Du kan ha en profil uten nettside. Men hvis du har én, bør den være koblet til profilen, og profilen bør peke dit. De to jobber sammen.",
   },
   {
     q: "Hvor ofte bør jeg oppdatere profilen?",
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Hva gjør jeg hvis noen skriver en dårlig anmeldelse?",
-    a: "Svar rolig, innen 48 timer. Takk for tilbakemeldingen, beklag det som ikke fungerte, og tilby en vei videre. Ikke bli defensiv. Folk leser svarene dine mer enn selve anmeldelsen — det sier mye om hvordan du faktisk driver bedriften.",
+    a: "Svar rolig, innen 48 timer. Takk for tilbakemeldingen, beklag det som ikke fungerte, og tilby en vei videre. Ikke bli defensiv. Folk leser svarene dine mer enn selve anmeldelsen, det sier mye om hvordan du faktisk driver bedriften.",
   },
 ];
 
@@ -49,9 +49,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "Google Business Profile for lokale bedrifter — komplett 2026-guide",
+    "Google Business Profile for lokale bedrifter, komplett 2026-guide",
   description:
-    "Den gratis Google-tjenesten de fleste lokale bedrifter glemmer — og som ofte gir mer trafikk enn nettsiden. Slik setter du opp profilen riktig.",
+    "Den gratis Google-tjenesten de fleste lokale bedrifter glemmer, og som ofte gir mer trafikk enn nettsiden. Slik setter du opp profilen riktig.",
   author: {
     "@type": "Person",
     name: "Marius Teigen Tverbakk",
@@ -147,7 +147,7 @@ export default function GoogleBusinessProfileGuidePage() {
                 </span>
               </div>
               <h1>
-                Google Business Profile for lokale bedrifter — komplett 2026-guide
+                Google Business Profile for lokale bedrifter, komplett 2026-guide
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
                 Det finnes et gratis Google-verktøy som ofte gir mer trafikk enn
@@ -170,7 +170,7 @@ export default function GoogleBusinessProfileGuidePage() {
                   gratis kortversjonen av bedriften din som dukker opp i Google
                   Maps og i søkeresultater. Når noen googler &quot;frisør
                   Ålesund&quot;, er det de tre profilene i det lokale
-                  Maps-kartet som får mesteparten av klikkene — ikke
+                  Maps-kartet som får mesteparten av klikkene, ikke
                   nettsidene under.
                 </p>
                 <p>
@@ -232,7 +232,7 @@ export default function GoogleBusinessProfileGuidePage() {
                       business.google.com
                     </a>{" "}
                     og logg inn med en Google-konto. Bruk en konto du faktisk
-                    eier langsiktig — ikke en ansatt som slutter neste år.
+                    eier langsiktig, ikke en ansatt som slutter neste år.
                   </li>
                   <li>
                     Søk opp bedriften din. Hvis Google har registrert den fra
@@ -241,7 +241,7 @@ export default function GoogleBusinessProfileGuidePage() {
                     registrerer den selv.
                   </li>
                   <li>
-                    Velg kategori. Dette er viktigere enn folk tror —
+                    Velg kategori. Dette er viktigere enn folk tror,
                     hovedkategorien din bestemmer hvilke søk du dukker opp på.
                     Velg den mest spesifikke som passer. &quot;Frisør&quot; er
                     bedre enn &quot;Skjønnhet og velvære&quot;.
@@ -249,7 +249,7 @@ export default function GoogleBusinessProfileGuidePage() {
                   <li>
                     Legg inn adresse hvis kundene kommer til deg. Hvis du
                     reiser til kundene (rørlegger, fotograf), velg
-                    &quot;tjenesteområde&quot; i stedet for adresse — da kan
+                    &quot;tjenesteområde&quot; i stedet for adresse, da kan
                     du dekke f.eks. hele Sunnmøre uten å eksponere
                     hjemmeadressen din.
                   </li>
@@ -259,7 +259,7 @@ export default function GoogleBusinessProfileGuidePage() {
                   <li>
                     Bekreft. Google sender enten en SMS, ringer deg, eller
                     sender et fysisk postkort med en kode. For de fleste små
-                    norske bedrifter blir det postkortet — kommer innen 5–7
+                    norske bedrifter blir det postkortet, kommer innen 5–7
                     virkedager. Tålmodighet.
                   </li>
                 </ol>
@@ -277,15 +277,15 @@ export default function GoogleBusinessProfileGuidePage() {
                   og en profil som fungerer.
                 </p>
 
-                <h3>1. Bedriftsnavn — skriv det som folk sier det</h3>
+                <h3>1. Bedriftsnavn, skriv det som folk sier det</h3>
                 <p>
                   Ikke legg til søkeord du ikke heter. &quot;Pettersen VVS
-                  AS&quot; er riktig. &quot;Pettersen VVS Ålesund — Rørlegger og
+                  AS&quot; er riktig. &quot;Pettersen VVS Ålesund, Rørlegger og
                   Baderomsservice&quot; er både imot Googles retningslinjer og
                   skurrer for kundene.
                 </p>
 
-                <h3>2. Kategori — det mest avgjørende ene valget</h3>
+                <h3>2. Kategori, det mest avgjørende ene valget</h3>
                 <p>
                   Du kan velge én hovedkategori og flere underkategorier. Bruk
                   underkategoriene. En frisørsalong kan ha &quot;Frisør&quot; som
@@ -295,24 +295,24 @@ export default function GoogleBusinessProfileGuidePage() {
                   kan dukke opp på.
                 </p>
 
-                <h3>3. Beskrivelse — 750 tegn, bruk alle</h3>
+                <h3>3. Beskrivelse, 750 tegn, bruk alle</h3>
                 <p>
                   Skriv konkret om hva du gjør, hvem du gjør det for, og hvor.
                   Nevn byen/kommunen minst to ganger. Ingen floskler. Folk
-                  leser dette mens de bestemmer seg — ikke skriv som en
+                  leser dette mens de bestemmer seg, ikke skriv som en
                   pressemelding.
                 </p>
 
-                <h3>4. Tjenester — legg inn alt du tilbyr</h3>
+                <h3>4. Tjenester, legg inn alt du tilbyr</h3>
                 <p>
                   Hver tjeneste du legger inn er et ekstra søk du kan dukke
                   opp på. Hvis du er tømrer, legg inn &quot;Påbygg&quot;,
                   &quot;Garasje&quot;, &quot;Terrasse&quot;, &quot;Kjøkken&quot;
                   som separate oppføringer. Prisen kan du oppgi som &quot;fra X
-                  kr&quot; eller &quot;på forespørsel&quot; — ingen tvang.
+                  kr&quot; eller &quot;på forespørsel&quot;, ingen tvang.
                 </p>
 
-                <h3>5. Bilder — det første folk ser</h3>
+                <h3>5. Bilder, det første folk ser</h3>
                 <p>
                   Profiler med minst 10 gode bilder får dobbelt så mange klikk
                   som profiler uten. Legg til:
@@ -329,14 +329,14 @@ export default function GoogleBusinessProfileGuidePage() {
                   Ærlige mobilbilder er bedre enn fine stock-bilder.
                 </p>
 
-                <h3>6. Åpningstider — inkluder helligdager</h3>
+                <h3>6. Åpningstider, inkluder helligdager</h3>
                 <p>
                   Feil åpningstider er en av de største klagene i Google-anmeldelser.
                   Gå inn i påsken, julen og 17. mai og oppdater.
-                  Google spør deg før helligdager — bruk 10 sekunder på å svare.
+                  Google spør deg før helligdager, bruk 10 sekunder på å svare.
                 </p>
 
-                <h3>7. Anmeldelser — start i dag</h3>
+                <h3>7. Anmeldelser, start i dag</h3>
                 <p>
                   Dette er det viktigste feltet etter kategorien. En profil med
                   20+ anmeldelser og gjennomsnitt over 4.5 stjerner gjør det
@@ -398,7 +398,7 @@ export default function GoogleBusinessProfileGuidePage() {
                 <blockquote>
                   &quot;Hei [navn], takk for at du valgte oss. Hvis du ble
                   fornøyd, setter jeg stor pris på en kort anmeldelse på Google
-                  — det hjelper oss å nå flere folk i nærområdet. Her er
+                 , det hjelper oss å nå flere folk i nærområdet. Her er
                   lenken: [direkte lenke]. Tusen takk.&quot;
                 </blockquote>
                 <p>
@@ -418,7 +418,7 @@ export default function GoogleBusinessProfileGuidePage() {
                 <h2>Posts-funksjonen ingen bruker</h2>
                 <p>
                   GBP lar deg publisere små &quot;posts&quot; direkte på
-                  profilen din — litt som Facebook, bare at det dukker opp i
+                  profilen din, litt som Facebook, bare at det dukker opp i
                   søkeresultatene. De fleste norske bedrifter har aldri lagt ut
                   én.
                 </p>
@@ -496,7 +496,7 @@ export default function GoogleBusinessProfileGuidePage() {
                   </li>
                   <li>
                     Annonsering. Hvis du vil betale for ekstra synlighet i
-                    Maps, må du gjøre det via Google Ads — GBP er den gratis
+                    Maps, må du gjøre det via Google Ads, GBP er den gratis
                     delen.
                   </li>
                 </ul>
@@ -533,7 +533,7 @@ export default function GoogleBusinessProfileGuidePage() {
               </h3>
               <p className="mb-6 text-[var(--stone-700)]">
                 GBP-oppsett er en del av alle pakkene våre. Book et gratis
-                møte, så viser vi deg hvordan profilen din ser ut i dag — og
+                møte, så viser vi deg hvordan profilen din ser ut i dag, og
                 hva som mangler.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">

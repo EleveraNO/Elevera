@@ -181,7 +181,7 @@ function FloatingOrbs() {
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      {/* Gold orb — large, slow */}
+      {/* Gold orb, large, slow */}
       <motion.div
         className="absolute rounded-full"
         style={{
@@ -198,7 +198,7 @@ function FloatingOrbs() {
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
-      {/* Warm orb — medium, offset */}
+      {/* Warm orb, medium, offset */}
       <motion.div
         className="absolute rounded-full"
         style={{
@@ -215,7 +215,7 @@ function FloatingOrbs() {
         }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 3 }}
       />
-      {/* Subtle dim orb — bottom */}
+      {/* Subtle dim orb, bottom */}
       <motion.div
         className="absolute rounded-full"
         style={{

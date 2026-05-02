@@ -36,7 +36,7 @@ export default function OGImage() {
           }}
         />
 
-        {/* Second subtle glow — offset */}
+        {/* Second subtle glow, offset */}
         <div
           style={{
             position: "absolute",

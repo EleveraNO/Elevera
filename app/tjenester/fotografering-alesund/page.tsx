@@ -69,7 +69,7 @@ export default function FotograferingPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge="Fotografering — Ålesund"
+          badge="Fotografering · Ålesund"
           title="Profesjonell"
           titleAccent="fotografering"
           titleSuffix="i Ålesund"

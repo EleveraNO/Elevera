@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Nettside i Molde | Webdesign & Utvikling – Elevera",
   description:
-    "Profesjonell nettside for bedrifter i Molde. Vi designer og utvikler nettsider som konverterer besøkende til kunder — tilpasset ditt marked i Romsdal.",
+    "Profesjonell nettside for bedrifter i Molde. Vi designer og utvikler nettsider som konverterer besøkende til kunder, tilpasset ditt marked i Romsdal.",
   alternates: { canonical: "https://elevera.no/tjenester/nettside-molde" },
   openGraph: {
     title: "Nettside i Molde – Elevera",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Kan dere lage nettside for bedrifter i Molde?",
-    a: `Absolutt. Vi jobber med bedrifter i hele Møre og Romsdal, inkludert Molde. Selv om vi sitter i Ålesund (${molde.distance}), gjør vi alt digitalt — med videomøter, delte skisser og tett dialog hele veien.`,
+    a: `Absolutt. Vi jobber med bedrifter i hele Møre og Romsdal, inkludert Molde. Selv om vi sitter i Ålesund (${molde.distance}), gjør vi alt digitalt, med videomøter, delte skisser og tett dialog hele veien.`,
   },
   {
     q: "Hvor lang tid tar det å lage en nettside?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "Hva koster en nettside?",
-    a: "Det avhenger av omfanget. En enkel, profesjonell nettside starter fra 15 000 kr. Vi gir alltid et fast pristilbud etter en gratis samtale — ingen overraskelser.",
+    a: "Det avhenger av omfanget. En enkel, profesjonell nettside starter fra 15 000 kr. Vi gir alltid et fast pristilbud etter en gratis samtale, ingen overraskelser.",
   },
   {
     q: "Kan dere hjelpe med drift og oppdateringer etterpå?",
@@ -82,28 +82,28 @@ export default function NettsideMoldePage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge={`Nettside — ${molde.name}`}
+          badge={`Nettside · ${molde.name}`}
           title="Profesjonell"
           titleAccent="nettside"
           titleSuffix={`i ${molde.name}`}
-          description={`${molde.localRef} fortjener nettsider som gjør inntrykk. ${molde.marketNote} Vi bygger nettsider som gir deg et forsprang — uansett bransje.`}
+          description={`${molde.localRef} fortjener nettsider som gjør inntrykk. ${molde.marketNote} Vi bygger nettsider som gir deg et forsprang, uansett bransje.`}
           includedLabel="Tjenester"
           includedHeading="Hva vi tilbyr"
           includedSubtext="Tilpasset dine behov og din bedrift."
           included={[
-            "Skreddersydd design — tilpasset din merkevare og ditt marked i Romsdal",
-            "Mobilvennlig og responsivt — ser bra ut på alle enheter",
-            "Rask lasting — optimalisert ytelse som Google belønner",
-            "SEO-grunnlag — bygget for å bli funnet i lokale søk",
-            "Innholdsstrategi — vi hjelper deg skrive tekst som selger",
-            "Kontaktskjema og CTA — gjør besøkende til henvendelser",
-            "Analyse og sporing — Google Analytics ferdig oppsatt",
-            "Løpende support — vi er tilgjengelige etter lansering",
+            "Skreddersydd design, tilpasset din merkevare og ditt marked i Romsdal",
+            "Mobilvennlig og responsivt, ser bra ut på alle enheter",
+            "Rask lasting, optimalisert ytelse som Google belønner",
+            "SEO-grunnlag, bygget for å bli funnet i lokale søk",
+            "Innholdsstrategi, vi hjelper deg skrive tekst som selger",
+            "Kontaktskjema og CTA, gjør besøkende til henvendelser",
+            "Analyse og sporing, Google Analytics ferdig oppsatt",
+            "Løpende support, vi er tilgjengelige etter lansering",
           ]}
           whyTitle="Hvorfor trenger bedrifter i Molde en bedre nettside?"
           whyText={[
-            `${molde.marketNote} Men mange bedrifter i Molde har fortsatt nettsider som ble laget for fem år siden — trege, umoderne og vanskelige å finne på Google.`,
-            `En profesjonell nettside er ikke bare et visittkort. Den er din beste selger — tilgjengelig 24/7, også for kunder som søker «tjeneste + Molde» på mobilen. Vi lager nettsider som faktisk konverterer.`,
+            `${molde.marketNote} Men mange bedrifter i Molde har fortsatt nettsider som ble laget for fem år siden, trege, umoderne og vanskelige å finne på Google.`,
+            `En profesjonell nettside er ikke bare et visittkort. Den er din beste selger, tilgjengelig 24/7, også for kunder som søker «tjeneste + Molde» på mobilen. Vi lager nettsider som faktisk konverterer.`,
           ]}
           stats={[
             { stat: "75%", label: "Dømmer troverdigheten din basert på nettsiden" },

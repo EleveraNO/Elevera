@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 /**
- * Robots policy — explicitly welcomes AI crawlers (ChatGPT, Perplexity,
+ * Robots policy, explicitly welcomes AI crawlers (ChatGPT, Perplexity,
  * Claude, Gemini, etc.) and surfaces both the XML sitemap and the
  * llms.txt directory for LLM-oriented discovery.
  */

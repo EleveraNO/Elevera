@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Kan dere lage nettside for bedrifter i Kristiansund?",
-    a: `Ja! Vi samarbeider med bedrifter i hele Nordmøre. Vi holder til i Ålesund (${kristiansund.distance}), men alt foregår digitalt — videomøter, delt designskisse og rask kommunikasjon.`,
+    a: `Ja! Vi samarbeider med bedrifter i hele Nordmøre. Vi holder til i Ålesund (${kristiansund.distance}), men alt foregår digitalt, videomøter, delt designskisse og rask kommunikasjon.`,
   },
   {
     q: "Hva slags nettsider lager dere?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "Får jeg eierskap over nettsiden?",
-    a: "Selvfølgelig. Du eier alt — design, kode og innhold. Vi låser deg aldri inne i en plattform du ikke kan ta med deg videre.",
+    a: "Selvfølgelig. Du eier alt, design, kode og innhold. Vi låser deg aldri inne i en plattform du ikke kan ta med deg videre.",
   },
   {
     q: "Hjelper dere med tekst og bilder også?",
@@ -82,27 +82,27 @@ export default function NettsideKristiansundPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
-          badge={`Nettside — ${kristiansund.name}`}
+          badge={`Nettside · ${kristiansund.name}`}
           title="Profesjonell"
           titleAccent="nettside"
           titleSuffix={`i ${kristiansund.name}`}
-          description={`${kristiansund.localRef} har et næringsliv som fortjener digital synlighet. ${kristiansund.marketNote} Vi bygger nettsider som hjelper deg å skille deg ut — og bli funnet.`}
+          description={`${kristiansund.localRef} har et næringsliv som fortjener digital synlighet. ${kristiansund.marketNote} Vi bygger nettsider som hjelper deg å skille deg ut, og bli funnet.`}
           includedLabel="Tjenester"
           includedHeading="Hva vi tilbyr"
           includedSubtext="Tilpasset dine behov og din bedrift."
           included={[
-            "Skreddersydd design — reflekterer din merkevare og appellerer til kundene dine",
-            "Mobiltilpasset — perfekt på telefon, nettbrett og desktop",
-            "Ytelsesoptimalisert — rask lasting som holder besøkende på siden",
-            "Søkemotoroptimalisert grunnlag — klar til å rangere lokalt",
-            "Konverteringsfokusert struktur — CTA-er som driver handling",
-            "Innholdsstøtte — vi hjelper med tekst som treffer din målgruppe",
-            "Integrasjoner — booking, skjema, chat eller det du trenger",
-            "Driftsavtale — trygg hosting, backup og oppdateringer",
+            "Skreddersydd design, reflekterer din merkevare og appellerer til kundene dine",
+            "Mobiltilpasset, perfekt på telefon, nettbrett og desktop",
+            "Ytelsesoptimalisert, rask lasting som holder besøkende på siden",
+            "Søkemotoroptimalisert grunnlag, klar til å rangere lokalt",
+            "Konverteringsfokusert struktur, CTA-er som driver handling",
+            "Innholdsstøtte, vi hjelper med tekst som treffer din målgruppe",
+            "Integrasjoner, booking, skjema, chat eller det du trenger",
+            "Driftsavtale, trygg hosting, backup og oppdateringer",
           ]}
           whyTitle="Hvorfor trenger din bedrift i Kristiansund en ny nettside?"
           whyText={[
-            `${kristiansund.marketNote} Men mange bedrifter på Nordmøre har utdaterte nettsider som verken imponerer besøkende eller Google. Det betyr tapte kunder — hver eneste dag.`,
+            `${kristiansund.marketNote} Men mange bedrifter på Nordmøre har utdaterte nettsider som verken imponerer besøkende eller Google. Det betyr tapte kunder, hver eneste dag.`,
             `En moderne nettside bygget for konvertering gir deg en konkret fordel. Spesielt i Kristiansund, der konkurransen digitalt fortsatt er overkommelig, kan en god nettside alene gi deg et stort forsprang.`,
           ]}
           stats={[

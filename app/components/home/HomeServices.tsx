@@ -156,7 +156,7 @@ export default function HomeServices() {
           ))}
         </div>
 
-        {/* Mobile fallback — simple stacked list */}
+        {/* Mobile fallback, simple stacked list */}
         <div className="svc-stage-stack">
           {services.map((s) => (
             <a

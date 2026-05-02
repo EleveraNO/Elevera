@@ -1,7 +1,7 @@
 import { BLOG_POSTS_BY_SLUG, BLOG_POSTS } from "../../../../lib/blog-content";
 
 /**
- * /blogg/{slug}/md — individual blog post as markdown, for AI crawlers
+ * /blogg/{slug}/md, individual blog post as markdown, for AI crawlers
  * and readers who want the raw content.
  */
 

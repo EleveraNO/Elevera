@@ -11,7 +11,7 @@ const problems = [
       </svg>
     ),
     title: "Ingen finner deg på nett",
-    description: "Du har en nettside, men den dukker ikke opp på Google. Konkurrentene dine tar kundene dine — hver eneste dag.",
+    description: "Du har en nettside, men den dukker ikke opp på Google. Konkurrentene dine tar kundene dine, hver eneste dag.",
   },
   {
     number: "02",

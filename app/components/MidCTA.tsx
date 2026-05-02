@@ -21,7 +21,7 @@ export default function MidCTA() {
               Klar til å se hva Elevera kan gjøre for deg?
             </p>
             <p className="text-sm" style={{ color: "rgba(229,226,222,0.45)" }}>
-              Book et gratis strategimøte — ingen forpliktelser, ingen salgsmasi.
+              Book et gratis strategimøte, ingen forpliktelser, ingen salgsmasi.
             </p>
           </div>
           <div className="flex flex-shrink-0 items-center gap-3">

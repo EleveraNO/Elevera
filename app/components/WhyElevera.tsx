@@ -123,7 +123,7 @@ export default function WhyElevera() {
                     Ingen resultater? Ingen kostnad.
                   </h3>
                   <p className="text-sm leading-relaxed max-w-lg" style={{ color: "rgba(229,226,222,0.5)" }}>
-                    Vi avtaler hva suksess ser ut som før vi starter. Trafikk, leads, klikk — noe konkret. Treffer vi ikke det, betaler du ikke for den måneden. Ingen unntak.
+                    Vi avtaler hva suksess ser ut som før vi starter. Trafikk, leads, klikk, noe konkret. Treffer vi ikke det, betaler du ikke for den måneden. Ingen unntak.
                   </p>
                 </div>
               </div>

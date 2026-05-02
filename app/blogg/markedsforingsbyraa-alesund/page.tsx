@@ -118,7 +118,7 @@ export default function MarkedsforingsByraaPage() {
                 Markedsføringsbyrå i Ålesund – hva bør du se etter?
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
-                Et godt markedsføringsbyrå i Ålesund hjelper bedriften din å bli synlig på nett — gjennom nettside, annonsering, foto og video. Her er hva du bør vite før du velger.
+                Et godt markedsføringsbyrå i Ålesund hjelper bedriften din å bli synlig på nett, gjennom nettside, annonsering, foto og video. Her er hva du bør vite før du velger.
               </p>
               <p className="mt-3 text-sm text-[var(--stone-500)]">
                 Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 24. mars 2026
@@ -130,7 +130,7 @@ export default function MarkedsforingsByraaPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva gjør et markedsføringsbyrå?</h2>
                 <p>
-                  Et markedsføringsbyrå — også kalt digitalbyrå — er en bedrift som hjelper andre bedrifter å nå ut til kunder på nett. De vanligste tjenestene er nettside, digital annonsering (Facebook Ads og Google Ads), foto og video, og søkemotoroptimalisering (SEO).
+                  Et markedsføringsbyrå, også kalt digitalbyrå, er en bedrift som hjelper andre bedrifter å nå ut til kunder på nett. De vanligste tjenestene er nettside, digital annonsering (Facebook Ads og Google Ads), foto og video, og søkemotoroptimalisering (SEO).
                 </p>
                 <p className="mt-4">
                   For bedrifter i Ålesund og på Sunnmøre betyr det å ha et lokalt byrå tilgang til noen som kjenner markedet, kan stille opp for produksjonsdager, og forstår hva som treffer kunder i regionen.
@@ -175,7 +175,7 @@ export default function MarkedsforingsByraaPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva skiller et godt byrå fra et dårlig?</h2>
                 <p>
-                  Det er enkelt å love resultater. Det som faktisk teller er om de kan vise til dokumenterte resultater fra tidligere kunder — ikke bare flotte tall, men konkrete eksempler med kontekst.
+                  Det er enkelt å love resultater. Det som faktisk teller er om de kan vise til dokumenterte resultater fra tidligere kunder, ikke bare flotte tall, men konkrete eksempler med kontekst.
                 </p>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   {[
@@ -200,10 +200,10 @@ export default function MarkedsforingsByraaPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Annonsering eller SEO – hva lønner seg?</h2>
                 <p>
-                  Betalt annonsering (Facebook Ads, Google Ads) gir resultater raskt — typisk innen 1–2 uker — men koster penger løpende og stopper å virke når du slutter å betale. Ifølge Google opplever annonsører i gjennomsnitt 2 kr i omsetning per krone brukt på Google Ads.
+                  Betalt annonsering (Facebook Ads, Google Ads) gir resultater raskt, typisk innen 1–2 uker, men koster penger løpende og stopper å virke når du slutter å betale. Ifølge Google opplever annonsører i gjennomsnitt 2 kr i omsetning per krone brukt på Google Ads.
                 </p>
                 <p className="mt-4">
-                  SEO tar lengre tid (3–6 måneder for å se resultater) men gir langsiktig synlighet som ikke krever løpende annonseutgifter. For lokale bedrifter i Ålesund er Google Business Profile (tidl. Google My Business) det første stedet å optimalisere — det er gratis og svært effektivt for lokale søk.
+                  SEO tar lengre tid (3–6 måneder for å se resultater) men gir langsiktig synlighet som ikke krever løpende annonseutgifter. For lokale bedrifter i Ålesund er Google Business Profile (tidl. Google My Business) det første stedet å optimalisere, det er gratis og svært effektivt for lokale søk.
                 </p>
                 <p className="mt-4">
                   De fleste bedrifter i Ålesund og på Sunnmøre tjener på å kombinere begge: annonsering for å komme i gang raskt, og SEO for langsiktig vekst.
@@ -213,10 +213,10 @@ export default function MarkedsforingsByraaPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Foto og video – hvorfor det er viktigere enn noen gang</h2>
                 <p>
-                  Ifølge HubSpot (2024) konverterer sider med profesjonelle bilder 94 % bedre enn sider med kun tekst. Video øker sjansen for at besøkende tar kontakt med 80 %. For lokale bedrifter i Ålesund er profesjonelt bildemateriale avgjørende for å skille seg ut — spesielt i bransjer som reiseliv, håndverk, restaurant og faghandel.
+                  Ifølge HubSpot (2024) konverterer sider med profesjonelle bilder 94 % bedre enn sider med kun tekst. Video øker sjansen for at besøkende tar kontakt med 80 %. For lokale bedrifter i Ålesund er profesjonelt bildemateriale avgjørende for å skille seg ut, spesielt i bransjer som reiseliv, håndverk, restaurant og faghandel.
                 </p>
                 <p className="mt-4">
-                  Dronevideo er særlig effektivt for bedrifter i Ålesund, der de spektakulære omgivelsene — fjord, åser og by — gir et unikt visuelt uttrykk som ikke kan gjenskapes fra bakkenivå.
+                  Dronevideo er særlig effektivt for bedrifter i Ålesund, der de spektakulære omgivelsene, fjord, åser og by, gir et unikt visuelt uttrykk som ikke kan gjenskapes fra bakkenivå.
                 </p>
               </section>
 
@@ -235,7 +235,7 @@ export default function MarkedsforingsByraaPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Om Elevera – lokalt digitalbyrå i Ålesund</h2>
                 <p>
-                  Elevera er et digitalbyrå i Ålesund som tilbyr nettside, digital annonsering, foto og video, og dronevideo til bedrifter i Ålesund og på Sunnmøre. Vi spesialiserer oss på å hjelpe lokale bedrifter å bli synlige og konvertere besøkende til kunder — med enkle pakkepriser og tydelig kommunikasjon.
+                  Elevera er et digitalbyrå i Ålesund som tilbyr nettside, digital annonsering, foto og video, og dronevideo til bedrifter i Ålesund og på Sunnmøre. Vi spesialiserer oss på å hjelpe lokale bedrifter å bli synlige og konvertere besøkende til kunder, med enkle pakkepriser og tydelig kommunikasjon.
                 </p>
                 <p className="mt-4">
                   Vi har jobbet med bedrifter innen trafikkskole, matproduksjon, gårdsturisme og håndverk. Se gjerne prosjektene våre for eksempler på hva vi har levert.
