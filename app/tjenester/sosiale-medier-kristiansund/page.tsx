@@ -102,7 +102,7 @@ export default function SosialeMedierKristiansundPage() {
           whyTitle="Hvorfor sliter bedrifter i Kristiansund med sosiale medier?"
           whyText={[
             `Det er ikke mangel på vilje, det er mangel på tid. Bedrifter i Kristiansund er opptatt med kunder, prosjekter og daglig drift. Sosiale medier havner nederst på listen, og profilen ser forlatt ut. Potensielle kunder legger merke til det.`,
-            `Når du overlater det til oss, får du konsekvent synlighet uten å løfte en finger. I en by der mange konkurrenter poster sporadisk eller ikke i det hele tatt, gir jevn tilstedeværelse en overraskende stor effekt.`,
+            `Når du overlater det til oss, får du konsekvent synlighet uten at du trenger å gjøre noe selv. I en by der mange konkurrenter poster sporadisk eller ikke i det hele tatt, gir jevn tilstedeværelse en overraskende stor effekt.`,
           ]}
           stats={[
             { stat: "4.9t", label: "Daglig tid på sosiale medier for norske voksne" },

@@ -146,7 +146,7 @@ export default function BloggInnlegg() {
             <div className="mt-16 rounded-3xl border border-[var(--forest)]/20 bg-[var(--forest)]/06 p-10 text-center">
               <h3 className="mb-3 text-2xl font-bold text-[var(--black)]">Vil du ha innhold som faktisk fungerer?</h3>
               <p className="mb-6 text-[var(--stone-700)]">
-                Vi hjelper bedrifter i Ålesund og på Sunnmøre med foto og video som gir resultater på Instagram og andre kanaler.
+                Vi hjelper bedrifter i Ålesund og på Sunnmøre med foto og video som folk faktisk svarer på, både på Instagram og andre kanaler.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                 <a

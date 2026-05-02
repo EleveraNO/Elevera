@@ -336,7 +336,7 @@ export default function TverbakkenGard() {
                   <p style={{ color: "var(--stone-600)" }}>
                     Vi bygde «Rå Nordisk», et designspråk som matcher gårdens karakter.
                     Naturbilder, klassiske fonter og jordfarger. En bestillingsflyt som fungerer
-                    uten at Roger trenger å løfte en finger.
+                    uten at Roger trenger å gjøre noe selv.
                   </p>
                   <p style={{ color: "var(--stone-500)" }}>
                     Resultatet er en nettside som ikke ser ut som en nettside, den ser ut som gården.

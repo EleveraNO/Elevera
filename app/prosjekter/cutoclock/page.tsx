@@ -93,7 +93,7 @@ export default function CutOClockPage() {
           </h1>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[var(--black)]">
             Hvordan Elevera hjalp en lokal frisørsalong i Ålesund med å bygge et
-            profesjonelt visuelt uttrykk og en innholdsstrategi som engasjerer på Instagram.
+            profesjonelt visuelt uttrykk og en innholdsstrategi som folk legger merke til på Instagram.
           </p>
         </div>
       </section>

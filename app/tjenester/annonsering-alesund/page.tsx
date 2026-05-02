@@ -44,7 +44,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Digital annonsering Ålesund",
-  description: "Facebook-annonsering, Instagram-annonsering og Google Ads for bedrifter i Ålesund. Målrettet markedsføring som gir resultater.",
+  description: "Facebook-annonsering, Instagram-annonsering og Google Ads for bedrifter i Ålesund. Målrettet markedsføring som henter inn kunder.",
   provider: { "@type": "LocalBusiness", name: "Elevera", url: "https://elevera.no" },
   areaServed: { "@type": "City", name: "Ålesund" },
   url: "https://elevera.no/tjenester/annonsering-alesund",

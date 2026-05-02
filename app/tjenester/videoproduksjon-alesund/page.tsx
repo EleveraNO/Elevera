@@ -90,7 +90,7 @@ export default function VideoProduksjonPage() {
           whyTitle="Hvorfor investere i videoproduksjon?"
           whyText={[
             "Video er det mest engasjerende innholdsformatet på nett. Bedrifter som bruker profesjonell video i markedsføringen sin opplever høyere engasjement, flere leads og sterkere merkevaregjenkjenning.",
-            "Som lokalt byrå i Ålesund kjenner vi markedet og vet hva som resonerer med målgruppen din i regionen. Vi produserer innhold som faktisk fungerer – ikke bare ser bra ut. Vi tilbyr også dronevideo og luftopptak for spektakulære bilder av Ålesund og omegn.",
+            "Som lokalt byrå i Ålesund kjenner vi markedet og vet hva som treffer målgruppen din i regionen. Vi produserer innhold som virker, ikke bare innhold som ser bra ut. Vi tilbyr også dronevideo og luftopptak for ekstra perspektiv på Ålesund og omegn.",
           ]}
           stats={[
             { stat: "80%", label: "Høyere konvertering med video på landingssider" },

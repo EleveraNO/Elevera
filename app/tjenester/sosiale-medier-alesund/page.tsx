@@ -83,7 +83,7 @@ export default function SosialeMedierPage() {
           badge="Sosiale medier · Ålesund"
           title="Vi poster for deg."
           titleAccent="Hver uke."
-          description="Vi tar over Instagram, Facebook og TikTok. Du godkjenner innholdet, vi poster, svarer på meldinger og bygger følgerskaren. Du trenger ikke løfte en finger."
+          description="Vi tar over Instagram, Facebook og TikTok. Du godkjenner innholdet, vi poster, svarer på meldinger og bygger følgerskaren. Vi gjør hele jobben."
           includedLabel="Tjenester"
           includedHeading="Hva vi tilbyr"
           includedSubtext="Fra idé til publisering, vi tar hele jobben."

@@ -92,7 +92,7 @@ export default function SosialeMedierMoldePage() {
           included={[
             "Innholdsstrategi, vi planlegger hva som skal postes og når",
             "Grafisk design, profesjonelle innlegg som skiller seg ut",
-            "Copywriting, tekster som engasjerer og konverterer",
+            "Copywriting, tekster som leses og fører til handling",
             "Publisering, vi poster for deg på alle valgte plattformer",
             "Community management, vi svarer på kommentarer og meldinger",
             "Innholdskalender, du ser alt planlagt innhold på forhånd",
