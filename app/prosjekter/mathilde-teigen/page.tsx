@@ -171,6 +171,95 @@ export default function MathildeTeigen() {
           </div>
         </section>
 
+        {/* ── Stats-stripe ── */}
+        <section className="border-y border-[var(--stone-200)]" style={{ background: "var(--cream)" }}>
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="grid grid-cols-3 divide-x divide-[var(--stone-200)]">
+              {[
+                { val: "6", label: "Tjenester" },
+                { val: "1", label: "Hjemmeside" },
+                { val: "Live", label: "Status", dot: true },
+              ].map(({ val, label, dot }) => (
+                <div key={label} className="px-6 py-7 text-center sm:px-10">
+                  <div className="flex items-center justify-center gap-2">
+                    {dot && (
+                      <span
+                        className="inline-block h-1.5 w-1.5 rounded-full"
+                        style={{ background: "#4ade80" }}
+                      />
+                    )}
+                    <p
+                      className="text-2xl font-black leading-none tracking-tight"
+                      style={{ color: dot ? "var(--black)" : ACCENT }}
+                    >
+                      {val}
+                    </p>
+                  </div>
+                  <p className="mt-1.5 text-[11px] uppercase tracking-widest" style={{ color: "var(--stone-500)" }}>
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Om prosjektet ── */}
+        <section className="px-6 py-24">
+          <div className="mx-auto max-w-5xl">
+            <FadeUp>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
+                  Om prosjektet
+                </span>
+                <div className="h-px flex-1" style={{ background: "var(--stone-300)" }} />
+              </div>
+            </FadeUp>
+
+            <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:gap-16 md:items-start">
+              <FadeUp>
+                <h2
+                  className="leading-[1.05] text-[var(--black)]"
+                  style={{ fontSize: "clamp(2.4rem, 4.5vw, 3.8rem)", fontWeight: 800 }}
+                >
+                  En artist trengte
+                  <br />
+                  <em
+                    style={{
+                      fontFamily: "var(--font-fraunces), Georgia, serif",
+                      fontStyle: "italic",
+                      fontWeight: 400,
+                      color: ACCENT,
+                      fontSize: "0.9em",
+                    }}
+                  >
+                    en hjemmeside som matchet uttrykket.
+                  </em>
+                </h2>
+              </FadeUp>
+
+              <FadeUp delay={0.1}>
+                <div
+                  className="space-y-5 text-base leading-relaxed"
+                  style={{ borderLeft: "2px solid var(--stone-300)", paddingLeft: "1.5rem" }}
+                >
+                  <p style={{ color: "var(--stone-700)" }}>
+                    Mathilde er artist, låtskriver og dirigent — med et sterkt bånd til natur, stemmer og det organiske.
+                    Men hjemmesiden hennes manglet helt det visuelle uttrykket som musikken bærer.
+                  </p>
+                  <p style={{ color: "var(--stone-600)" }}>
+                    Vi bygde en mørk, taktil hjemmeside som lar bilder og typografi bære stemningen.
+                    Cormorant i italic, gylden accent mot dyp blågrønn, og store fotografier som puster med teksten.
+                  </p>
+                  <p style={{ color: "var(--stone-500)" }}>
+                    Resultatet er en side som ikke bare lister hva hun gjør — den ligner på henne.
+                  </p>
+                </div>
+              </FadeUp>
+            </div>
+          </div>
+        </section>
+
         <PageCTA heading="Vil du også ha et nettsted som ligner deg?" />
         <HomeFooter />
       </main>
