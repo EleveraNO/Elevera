@@ -67,21 +67,36 @@ export default function MathildeTeigen() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const VIEWPORT_H = 580;
-  const [travel, setTravel] = useState(4800);
+  const [travel, setTravel] = useState(4500);
 
   useEffect(() => {
     const measure = () => {
-      if (imgRef.current) {
-        setTravel(Math.max(0, imgRef.current.offsetHeight - VIEWPORT_H));
-      }
+      const img = imgRef.current;
+      if (!img) return;
+      const parent = img.parentElement;
+      if (!parent) return;
+      const containerWidth = parent.offsetWidth;
+      if (containerWidth === 0 || !img.naturalWidth || !img.naturalHeight) return;
+      const renderedHeight = containerWidth * (img.naturalHeight / img.naturalWidth);
+      setTravel(Math.max(0, renderedHeight - VIEWPORT_H));
     };
+
     const img = imgRef.current;
-    if (img?.complete) measure();
-    else img?.addEventListener("load", measure);
-    window.addEventListener("resize", measure);
+    if (img?.complete && img.naturalHeight > 0) measure();
+    img?.addEventListener("load", measure);
+
+    let ro: ResizeObserver | null = null;
+    if (img?.parentElement && typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver(measure);
+      ro.observe(img.parentElement);
+    }
+
+    const retry = setTimeout(measure, 250);
+
     return () => {
       img?.removeEventListener("load", measure);
-      window.removeEventListener("resize", measure);
+      ro?.disconnect();
+      clearTimeout(retry);
     };
   }, []);
 
