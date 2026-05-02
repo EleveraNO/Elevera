@@ -91,7 +91,7 @@ export default function NettsideKristiansundPage() {
           includedHeading="Hva vi tilbyr"
           includedSubtext="Tilpasset dine behov og din bedrift."
           included={[
-            "Skreddersydd design, reflekterer din merkevare og appellerer til kundene dine",
+            "Eget design som reflekterer din merkevare og appellerer til kundene dine",
             "Mobiltilpasset, perfekt på telefon, nettbrett og desktop",
             "Ytelsesoptimalisert, rask lasting som holder besøkende på siden",
             "Søkemotoroptimalisert grunnlag, klar til å rangere lokalt",

@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     question: "Hva skjer etter jeg bestiller?",
-    answer: "Innen 24 timer tar vi kontakt for et onboarding-møte der vi kartlegger din bedrift, dine mål og ditt marked. Deretter utarbeider vi en skreddersydd plan og setter i gang produksjon og oppsett.",
+    answer: "Innen 24 timer tar vi kontakt for et onboarding-møte der vi kartlegger din bedrift, dine mål og ditt marked. Deretter utarbeider vi en tilpasset plan og setter i gang produksjon og oppsett.",
   },
   {
     question: "Inkluderer pakkene annonsekostnader?",

@@ -91,7 +91,7 @@ export default function NettsideMoldePage() {
           includedHeading="Hva vi tilbyr"
           includedSubtext="Tilpasset dine behov og din bedrift."
           included={[
-            "Skreddersydd design, tilpasset din merkevare og ditt marked i Romsdal",
+            "Eget design tilpasset din merkevare og ditt marked i Romsdal",
             "Mobilvennlig og responsivt, ser bra ut på alle enheter",
             "Rask lasting, optimalisert ytelse som Google belønner",
             "SEO-grunnlag, bygget for å bli funnet i lokale søk",

@@ -27,7 +27,7 @@ const sections: Section[] = [
       { label: "Ingen nettside", price: 0, setup: 0 },
       { label: "Landingsside", note: "1 side", price: 0, setup: 10990 },
       { label: "Profesjonell nettside", note: "opptil 5 sider", price: 0, setup: 16990 },
-      { label: "Skreddersydd nettside", note: "ubegrenset sider", price: 0, setup: 24990 },
+      { label: "Egen nettside", note: "ubegrenset sider", price: 0, setup: 24990 },
     ],
   },
   {

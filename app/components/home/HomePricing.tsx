@@ -100,7 +100,7 @@ export default function HomePricing() {
             </div>
             <div className="home-tier-features-label">Alt i Vekst, pluss</div>
             <ul className="home-tier-features">
-              <li>Skreddersydd nettside uten sidebegrensning</li>
+              <li>Egen nettside uten sidebegrensning</li>
               <li>6 videoer + 12 bilder per måned</li>
               <li>Publisering 5x per uke</li>
               <li>Annonsering på Meta og Google</li>

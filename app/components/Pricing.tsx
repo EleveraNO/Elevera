@@ -60,7 +60,7 @@ const packages = [
     highlight: false,
     inheritFrom: "Alt i Vekst, pluss:",
     includes: [
-      "Skreddersydd nettside uten sidebegrensning",
+      "Egen nettside uten sidebegrensning",
       "6 videoer + 12 bilder per måned",
       "Publisering 5x per uke",
       "Annonsering på Meta og Google",

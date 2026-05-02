@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Kan jeg lage nettsiden selv?",
-    a: "Ja, verktøy som Wix, Squarespace og WordPress gjør det mulig uten teknisk bakgrunn. Det er et godt alternativ for bedrifter med veldig begrenset budsjett. Ulempen er at det tar tid, resultatet er sjelden like gjennomarbeidet som en skreddersydd løsning, og konverteringsraten er typisk lavere.",
+    a: "Ja, verktøy som Wix, Squarespace og WordPress gjør det mulig uten teknisk bakgrunn. Det er et godt alternativ for bedrifter med veldig begrenset budsjett. Ulempen er at det tar tid, resultatet er sjelden like gjennomarbeidet som en egenutviklet løsning, og konverteringsraten er typisk lavere.",
   },
   {
     q: "Hva er forskjellen på WordPress og Next.js?",
@@ -125,7 +125,7 @@ export default function NettsidePrisPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Prisbildet, hva er hva?</h2>
                 <p>
-                  La oss starte med å rydde opp. En nettside er ikke bare én ting. Wix og en skreddersydd Next.js-løsning er begge «nettsider», akkurat som en brukt Dacia og en ny BMW begge er «biler». Prisen forteller deg hvilken kategori du er i.
+                  La oss starte med å rydde opp. En nettside er ikke bare én ting. Wix og en egenutviklet Next.js-løsning er begge «nettsider», akkurat som en brukt Dacia og en ny BMW begge er «biler». Prisen forteller deg hvilken kategori du er i.
                 </p>
                 <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--stone-300)]">
                   <table className="w-full text-sm">
@@ -140,7 +140,7 @@ export default function NettsidePrisPage() {
                       {[
                         { type: "Wix / Squarespace (selv)", pris: "0–400 kr/mnd", hvem: "Soloselbedrift, minimal nettilstedeværelse" },
                         { type: "WordPress-mal via byrå", pris: "5 000–15 000 kr", hvem: "Bedrift med enkle behov og begrenset budsjett" },
-                        { type: "Skreddersydd WordPress", pris: "15 000–40 000 kr", hvem: "Bedrifter som vil oppdatere innhold selv" },
+                        { type: "Tilpasset WordPress", pris: "15 000–40 000 kr", hvem: "Bedrifter som vil oppdatere innhold selv" },
                         { type: "Next.js / moderne rammeverk", pris: "10 000–30 000 kr", hvem: "Bedrifter som vil ha rask, moderne nettside" },
                         { type: "Enterprise-løsning", pris: "50 000–150 000+ kr", hvem: "Nettbutikk, kompleks logikk, stor integrasjon" },
                       ].map((row, i) => (

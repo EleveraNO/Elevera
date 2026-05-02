@@ -6,7 +6,7 @@ import ServicePageLayout from "../../components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Videoproduksjon i Ålesund | Reklamevideo & Innhold – Elevera",
   description:
-    "Profesjonell videoproduksjon i Ålesund. Vi produserer reklamefilmer, produktvideoer og innhold til sosiale medier som stopper scrollingen og skaper resultater.",
+    "Profesjonell videoproduksjon i Ålesund. Reklamefilmer, produktvideoer og innhold til sosiale medier som folk faktisk stopper opp ved.",
   alternates: { canonical: "https://elevera.no/tjenester/videoproduksjon-alesund" },
   openGraph: {
     title: "Videoproduksjon i Ålesund – Elevera",

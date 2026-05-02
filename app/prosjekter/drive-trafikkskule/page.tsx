@@ -254,7 +254,7 @@ export default function DriveTrafikkskule() {
                   Drive Trafikkskule ville nå flere folk som vurderer å ta BE-lappen, og overbevise dem om at Drive er det rette valget. Utfordringen var å skape innhold som både stopper scrollingen og bygger tillit.
                 </p>
                 <p className="text-base leading-relaxed text-[var(--stone-500)]">
-                  Elevera tok på seg å produsere en innholdspakke skreddersydd for sosiale medier, med videoer designet for å gi folk troen på at de faktisk kan kjøre, og lyst til å melde seg på kurs.
+                  Elevera tok på seg å produsere en innholdspakke tilpasset sosiale medier, med videoer designet for å gi folk troen på at de faktisk kan kjøre, og lyst til å melde seg på kurs.
                 </p>
               </div>
               {/* Hurtige fakta */}

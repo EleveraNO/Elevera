@@ -90,7 +90,7 @@ export default function SosialeMedierKristiansundPage() {
           includedHeading="Hva vi tilbyr"
           includedSubtext="Tilpasset dine behov og din bedrift."
           included={[
-            "Innholdsstrategi, skreddersydd plan for din bransje og by",
+            "Innholdsstrategi, egen plan for din bransje og by",
             "Visuelt innhold, design og grafikk som stopper scrollingen",
             "Tekst og storytelling, autentiske tekster som bygger tillit",
             "Fast publisering, 3–5 innlegg per uke på dine kanaler",

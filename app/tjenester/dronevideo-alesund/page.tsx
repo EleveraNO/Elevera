@@ -88,7 +88,7 @@ export default function DronevideoPage() {
           ]}
           whyTitle="Hvorfor dronevideo for bedriften din?"
           whyText={[
-            "Luftopptak gir et unikt perspektiv som skiller seg ut i mengden. Enten du vil vise frem bedriftslokaler, en eiendom eller de spektakulære omgivelsene på Sunnmøre, dronevideo leverer innhold ingen kan ignorere.",
+            "Luftopptak gir et perspektiv ingen bakkefoto kan matche. Enten du vil vise frem bedriftslokaler, en eiendom eller omgivelsene på Sunnmøre, dronevideo løfter både stedet og bedriften.",
             "Vi kombinerer gjerne dronevideo med bakkeopptakene for å gi deg en komplett videoproduksjon som forteller hele historien om bedriften din.",
           ]}
           stats={[
