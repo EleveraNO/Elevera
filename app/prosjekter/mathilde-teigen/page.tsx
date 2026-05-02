@@ -64,6 +64,38 @@ const jsonLdBreadcrumb = {
 };
 
 export default function MathildeTeigen() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const VIEWPORT_H = 580;
+  const [travel, setTravel] = useState(4800);
+
+  useEffect(() => {
+    const measure = () => {
+      if (imgRef.current) {
+        setTravel(Math.max(0, imgRef.current.offsetHeight - VIEWPORT_H));
+      }
+    };
+    const img = imgRef.current;
+    if (img?.complete) measure();
+    else img?.addEventListener("load", measure);
+    window.addEventListener("resize", measure);
+    return () => {
+      img?.removeEventListener("load", measure);
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["start start", "end end"],
+  });
+  const imgY = useTransform(scrollYProgress, [0.03, 0.97], [0, -travel]);
+  const progressWidth = useTransform(scrollYProgress, [0.03, 0.97], ["0%", "100%"]);
+  const hintOpacity = useTransform(scrollYProgress, [0, 0.07], [1, 0]);
+  const headerY = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const topMaskOpacity = useTransform(scrollYProgress, [0.03, 0.12], [0, 1]);
+  const bottomMaskOpacity = useTransform(scrollYProgress, [0.88, 0.97], [1, 0]);
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
@@ -343,6 +375,88 @@ export default function MathildeTeigen() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── Nettside scroll-visning ── */}
+        <section
+          ref={scrollRef}
+          className="relative px-6"
+          style={{ height: `calc(100vh + ${travel + 320}px)` }}
+        >
+          <div className="sticky top-20 mx-auto max-w-5xl pt-6 pb-12">
+
+            <motion.div className="mb-10" style={{ y: headerY }}>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest" style={{ color: ACCENT }}>
+                Nettsiden
+              </p>
+              <h2 className="text-4xl font-extrabold text-[var(--black)]">
+                Se den i sin helhet
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="relative overflow-hidden rounded-2xl"
+              style={{
+                height: VIEWPORT_H,
+                border: "1px solid var(--stone-200)",
+                boxShadow: "0 40px 100px rgba(15,15,14,0.18), 0 0 0 0.5px var(--stone-200)",
+              }}
+            >
+              <motion.div
+                className="pointer-events-none absolute inset-x-0 top-0 z-10 h-20"
+                style={{
+                  opacity: topMaskOpacity,
+                  background: "linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, transparent 100%)",
+                }}
+              />
+              <motion.div
+                className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-20"
+                style={{
+                  opacity: bottomMaskOpacity,
+                  background: "linear-gradient(to top, rgba(10,10,10,0.7) 0%, transparent 100%)",
+                }}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <motion.img
+                ref={imgRef}
+                src="/images/mathilde-teigen/fullpage.png"
+                alt="Mathilde Teigen nettside (full lengde)"
+                className="block w-full"
+                style={{ y: imgY }}
+              />
+            </motion.div>
+
+            <div
+              className="mt-3 h-[2px] overflow-hidden rounded-full"
+              style={{ background: "var(--stone-200)" }}
+            >
+              <motion.div
+                className="h-full rounded-full"
+                style={{ width: progressWidth, background: ACCENT }}
+              />
+            </div>
+
+            <motion.div
+              className="mt-4 flex items-center justify-center gap-2"
+              style={{ opacity: hintOpacity }}
+            >
+              <p className="text-xs" style={{ color: "var(--stone-500)" }}>
+                Scroll for å se hele nettsiden
+              </p>
+              <motion.svg
+                width="10" height="10" viewBox="0 0 24 24"
+                fill="none" stroke="var(--stone-500)" strokeWidth="2"
+                animate={{ y: [0, 3, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <path d="M6 10l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+              </motion.svg>
+            </motion.div>
           </div>
         </section>
 
