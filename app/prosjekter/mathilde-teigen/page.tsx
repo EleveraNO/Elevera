@@ -121,7 +121,7 @@ export default function MathildeTeigen() {
             <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-8">
 
               {/* ── Venstre: tekst ── */}
-              <div className="w-full lg:w-[46%]">
+              <div className="w-full lg:w-[42%]">
 
                 <motion.div
                   className="mb-6 inline-flex items-center gap-2.5"
@@ -207,7 +207,7 @@ export default function MathildeTeigen() {
 
               {/* ── Høyre: screenshot med floating ── */}
               <motion.div
-                className="relative w-full lg:w-[54%]"
+                className="relative w-full lg:w-[58%]"
                 initial={{ opacity: 0, x: 24 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.9, delay: 0.12, ease }}
@@ -226,8 +226,8 @@ export default function MathildeTeigen() {
                   <Image
                     src="/images/mathilde-teigen/mockup.png"
                     alt="Mathilde Teigen nettside"
-                    width={1280}
-                    height={714}
+                    width={762}
+                    height={623}
                     className="relative w-full h-auto"
                     style={{
                       filter: "drop-shadow(0 48px 80px rgba(15,15,14,0.25)) drop-shadow(0 0 50px rgba(47,95,63,0.18))",
