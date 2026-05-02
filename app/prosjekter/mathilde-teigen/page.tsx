@@ -224,7 +224,7 @@ export default function MathildeTeigen() {
                   transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
                 >
                   <Image
-                    src="/images/mathilde-teigen/mockup.webp"
+                    src="/images/mathilde-teigen/mockup.png"
                     alt="Mathilde Teigen nettside"
                     width={1280}
                     height={714}
