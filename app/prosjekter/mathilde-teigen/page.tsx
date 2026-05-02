@@ -460,6 +460,33 @@ export default function MathildeTeigen() {
           </div>
         </section>
 
+        {/* ── Stack & tech ── */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-6xl">
+            <FadeUp>
+              <div
+                className="rounded-2xl px-8 py-10"
+                style={{ background: "var(--stone-50)", border: "1px solid var(--stone-200)" }}
+              >
+                <div className="grid gap-8 md:grid-cols-3">
+                  <div>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[var(--stone-500)]">Stack</p>
+                    <p className="font-semibold text-[var(--black)]">Next.js · TypeScript · Tailwind v4</p>
+                  </div>
+                  <div>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[var(--stone-500)]">Integrasjoner</p>
+                    <p className="font-semibold text-[var(--black)]">Vercel · Resend</p>
+                  </div>
+                  <div>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[var(--stone-500)]">Design</p>
+                    <p className="font-semibold text-[var(--black)]">Cormorant · DM Sans · Mørk editorial</p>
+                  </div>
+                </div>
+              </div>
+            </FadeUp>
+          </div>
+        </section>
+
         <PageCTA heading="Vil du også ha et nettsted som ligner deg?" />
         <HomeFooter />
       </main>
