@@ -12,6 +12,45 @@ const ACCENT = "#2F5F3F";
 const ACCENT_DIM = "rgba(47,95,63,0.10)";
 const ACCENT_BORDER = "rgba(47,95,63,0.28)";
 
+const deliverables = [
+  {
+    icon: (
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke={ACCENT} strokeWidth="1.8">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+      </svg>
+    ),
+    title: "Visuelt designspråk",
+    desc: "Mørk, taktil, filmaktig stemning som matcher musikken. Cormorant Garamond, gylden accent mot dyp blågrønn — typografi som puster.",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke={ACCENT} strokeWidth="1.8">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    title: "Responsiv hjemmeside",
+    desc: "Fungerer like bra på mobil som desktop. Optimalisert for delinger, sosial preview og rask innlasting.",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke={ACCENT} strokeWidth="1.8">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    title: "Kontaktskjema",
+    desc: "Bookingforespørsler kommer rett i innboksen — ingen skjemaverktøy, ingen mellomledd.",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke={ACCENT} strokeWidth="1.8">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+      </svg>
+    ),
+    title: "Sosiale plattformer integrert",
+    desc: "Spotify, YouTube, Instagram og Facebook samlet på ett sted, der publikum lett finner musikken.",
+  },
+];
+
 const ease = [0.21, 0.47, 0.32, 0.98] as const;
 
 const jsonLdBreadcrumb = {
@@ -256,6 +295,53 @@ export default function MathildeTeigen() {
                   </p>
                 </div>
               </FadeUp>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Leveransen ── */}
+        <section className="relative px-6 py-20">
+          <div className="relative z-10 mx-auto max-w-6xl">
+
+            <FadeUp className="mb-14">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest" style={{ color: ACCENT }}>
+                Leveransen
+              </p>
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+                <h2 className="text-5xl font-extrabold text-[var(--black)]">
+                  Én visuell hjemmeside.<br />
+                  <span className="text-[var(--stone-500)]">Komplett.</span>
+                </h2>
+                <p className="max-w-xs text-sm leading-relaxed text-[var(--stone-500)] sm:text-right">
+                  Design, kode og kontaktflyt — alt på plass.
+                </p>
+              </div>
+            </FadeUp>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {deliverables.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+                  className="rounded-2xl p-6"
+                  style={{
+                    background: "var(--stone-50)",
+                    border: "1px solid var(--stone-200)",
+                  }}
+                >
+                  <div
+                    className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl"
+                    style={{ background: ACCENT_DIM, border: `1px solid ${ACCENT_BORDER}` }}
+                  >
+                    {item.icon}
+                  </div>
+                  <h3 className="mb-2 font-bold text-[var(--black)]">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-[var(--stone-500)]">{item.desc}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
