@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     q: "Hvor lang er bindingstiden?",
-    a: "Vi har ingen bindingstid. Du kan si opp med én måneds varsel. Vi beholder kunder fordi vi leverer resultater, ikke fordi vi låser dem inne.",
+    a: "Vi har ingen bindingstid. Du kan si opp med én måneds varsel. Vi beholder kunder fordi vi gjør jobben ordentlig, ikke fordi vi låser dem inne.",
   },
   {
     q: "Kan jeg starte med én tjeneste og oppgradere senere?",

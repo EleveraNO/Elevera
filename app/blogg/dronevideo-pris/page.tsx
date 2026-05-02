@@ -169,7 +169,7 @@ export default function DroneVideoPrisPage() {
                   Jeg sier ikke dette bare fordi vi holder til her. Ålesund og Sunnmøre er objektivt sett blant de mest fotogene stedene i landet for luftopptak. Du har fjord, øyer, åser og by i nær kombinasjon, og lyset her er noe annet enn i flatbygdene.
                 </p>
                 <p className="mt-4">
-                  Vi har gjort dronevideo for alt fra gårdsbruk i Kjerringøy til bedrifter i Ålesund sentrum. Felles for dem er at omgivelsene løfter innholdet på en måte som er umulig å gjenskape fra bakken. En bedrift som er fin på bakkenivå blir imponerende fra lufta, spesielt her på Vestlandet.
+                  Vi har gjort dronevideo for alt fra gårdsbruk i Kjerringøy til bedrifter i Ålesund sentrum. Felles for dem er at omgivelsene gir innholdet en helt annen tyngde enn bakkeopptak klarer. En bedrift som ser fin ut på bakkenivå får et nytt uttrykk fra lufta, spesielt her på Vestlandet.
                 </p>
               </section>
 
