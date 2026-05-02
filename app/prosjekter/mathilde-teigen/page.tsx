@@ -424,7 +424,7 @@ export default function MathildeTeigen() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <motion.img
                 ref={imgRef}
-                src="/images/mathilde-teigen/fullpage.png"
+                src="/images/mathilde-teigen/fullpage.webp"
                 alt="Mathilde Teigen nettside (full lengde)"
                 className="block w-full"
                 style={{ y: imgY }}
