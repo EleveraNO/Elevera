@@ -273,7 +273,7 @@ export default function ServicePageLayout({
             <h2>Denne tjenesten inngår i alle pakkene</h2>
             <p>
               Du kan kjøpe tjenesten enkeltvis, eller få den som en del av en
-              fast månedspakke der vi tar hånd om alt.
+              månedspakke der vi tar hånd om alt.
             </p>
           </div>
 
@@ -307,6 +307,7 @@ export default function ServicePageLayout({
                   <span className="svc-pkg-badge">Mest populær</span>
                 )}
                 <div className="svc-pkg-price">
+                  <span className="svc-pkg-from">Fra</span>
                   <span className="svc-pkg-amount">{pkg.price} kr</span>
                   <span className="svc-pkg-period">/mnd</span>
                 </div>

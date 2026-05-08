@@ -16,6 +16,14 @@ const TJENESTER = [
   "Logo og profil",
 ];
 
+const BUDSJETT_OPSJONER = [
+  "Under 10 000 kr/mnd",
+  "10 000 – 20 000 kr/mnd",
+  "20 000 – 35 000 kr/mnd",
+  "Over 35 000 kr/mnd",
+  "Usikker, hjelp meg å vurdere",
+];
+
 const BOOKING_URL =
   "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY";
 
@@ -26,6 +34,7 @@ export default function HomeContact() {
   const [epost, setEpost] = useState("");
   const [pakke, setPakke] = useState<Pakke>(null);
   const [tjenester, setTjenester] = useState<string[]>([]);
+  const [budsjett, setBudsjett] = useState<string | null>(null);
   const [melding, setMelding] = useState("");
   const [showTjenester, setShowTjenester] = useState(false);
 
@@ -61,6 +70,7 @@ export default function HomeContact() {
           epost,
           pakke: pakke ?? "Enkelttjenester",
           tjenester: tjenester.join(", "),
+          budsjett: budsjett ?? "Ikke oppgitt",
           melding,
         }),
       });
@@ -229,6 +239,29 @@ export default function HomeContact() {
                       })}
                     </div>
                   )}
+                </div>
+
+                <div className="home-contact-field-group">
+                  <span className="home-contact-field-label">
+                    Omtrentlig budsjett (valgfritt)
+                  </span>
+                  <div className="home-contact-pills home-contact-budsjett">
+                    {BUDSJETT_OPSJONER.map((b) => {
+                      const active = budsjett === b;
+                      return (
+                        <button
+                          key={b}
+                          type="button"
+                          aria-pressed={active}
+                          className={`home-contact-pill${active ? " active" : ""}`}
+                          onClick={() => setBudsjett(active ? null : b)}
+                        >
+                          {active && <span aria-hidden="true">✓ </span>}
+                          {b}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 <div className="home-contact-row">

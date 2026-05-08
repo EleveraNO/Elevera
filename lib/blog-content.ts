@@ -281,7 +281,7 @@ Dronevideo er spesielt effektivt når du vil vise omgivelser, størrelse eller b
 
 ## Hva vi tar for det
 
-Hos Elevera er dronevideo inkludert i Partner-pakken (22 900 kr/mnd) eller bestilles som enkeltstående oppdrag fra 4 000 kr.`,
+Hos Elevera er dronevideo inkludert i Partner-pakken (fra 22 900 kr/mnd) eller bestilles som enkeltstående oppdrag fra 4 000 kr.`,
   },
   {
     slug: "nettside-bedrift-pris",
@@ -380,7 +380,7 @@ Minimum 3 000 kr/mnd for å få meningsfulle data. Under det er det bare testing
 
 ## Hva vi tar for det
 
-Hos Elevera er Meta-annonsering inkludert i Partner-pakken (22 900 kr/mnd). Mediabudsjett (det du betaler til Meta) kommer i tillegg.`,
+Hos Elevera er Meta-annonsering inkludert i Partner-pakken (fra 22 900 kr/mnd). Mediabudsjett (det du betaler til Meta) kommer i tillegg.`,
   },
   {
     slug: "instagram-lokale-kunder",

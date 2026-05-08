@@ -391,6 +391,15 @@
   gap: 6px;
   margin-bottom: 14px;
 }
+.svc-pkg-from {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--stone-600);
+  margin-right: 1px;
+}
+.svc-pkg.featured .svc-pkg-from { color: var(--stone-400); }
 .svc-pkg-amount {
   font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
   font-size: 30px;

@@ -10,10 +10,10 @@ export default function HomePricing() {
       <div className="wrap">
         <div className="home-section-head reveal">
           <span className="section-label">Priser</span>
-          <h2>Tre pakker. Én for hvert stadium av vekst.</h2>
+          <h2>Pakker tilpasset din bedrift.</h2>
           <p>
-            Faste månedspriser, ingen bindingstid. Du kan alltid bytte pakke
-            når behovet endrer seg.
+            Hver bedrift er forskjellig. Vi tar utgangspunkt i pakken som
+            passer best, og tilpasser etter ditt behov. Ingen bindingstid.
           </p>
         </div>
 
@@ -23,6 +23,7 @@ export default function HomePricing() {
             <div className="home-tier-name">Start</div>
             <p className="home-tier-desc">For deg som trenger et solid fundament.</p>
             <div className="home-tier-price">
+              <span className="home-tier-price-from">Fra</span>
               <span className="home-tier-price-amount">7 900 kr</span>
               <span className="home-tier-price-period">/mnd</span>
             </div>
@@ -60,6 +61,7 @@ export default function HomePricing() {
             <div className="home-tier-name">Vekst</div>
             <p className="home-tier-desc">For deg som vil bli sett og vokse.</p>
             <div className="home-tier-price">
+              <span className="home-tier-price-from">Fra</span>
               <span className="home-tier-price-amount">14 900 kr</span>
               <span className="home-tier-price-period">/mnd</span>
             </div>
@@ -95,6 +97,7 @@ export default function HomePricing() {
               For deg som vil ha en dedikert digital partner.
             </p>
             <div className="home-tier-price">
+              <span className="home-tier-price-from">Fra</span>
               <span className="home-tier-price-amount">22 900 kr</span>
               <span className="home-tier-price-period">/mnd</span>
             </div>
@@ -127,6 +130,20 @@ export default function HomePricing() {
           </div>
         </div>
 
+        <div className="home-tier-custom reveal">
+          <div className="home-tier-custom-text">
+            <h3 className="home-tier-custom-title">Skreddersøm</h3>
+            <p className="home-tier-custom-desc">
+              Større omfang, flere lokasjoner eller spesielle behov? Vi
+              setter sammen et tilbud som passer akkurat deg.
+            </p>
+          </div>
+          <a href="#kontakt" className="btn btn-ghost home-tier-custom-cta">
+            Få et tilbud
+            <Arrow />
+          </a>
+        </div>
+
         <HomeROICalculator />
 
         <p className="home-roi-fineprint">
@@ -136,8 +153,9 @@ export default function HomePricing() {
         </p>
 
         <p className="home-pricing-footnote reveal">
-          Alle priser er eks. mva. Oppstart faktureres separat. Trenger du noe
-          annet? <a href="#kontakt">Ta kontakt, så lager vi noe som passer.</a>
+          Prisene er utgangspunkt og tilpasses behovet ditt. Alle priser er
+          eks. mva. Oppstart faktureres separat. Trenger du noe annet?{" "}
+          <a href="#kontakt">Ta kontakt, så lager vi noe som passer.</a>
         </p>
       </div>
     </section>
