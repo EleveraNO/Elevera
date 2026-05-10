@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Elevera – Digitalbyrå i Ålesund";
+export const alt = "Elevera – Vekstbyrå i Ålesund";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -10,121 +10,25 @@ export default function OGImage() {
     (
       <div
         style={{
-          background: "#131312",
+          background: "#2F5F3F",
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          fontFamily: "Georgia, serif",
-          position: "relative",
         }}
       >
-        {/* Gold glow */}
-        <div
-          style={{
-            position: "absolute",
-            width: 700,
-            height: 700,
-            borderRadius: "50%",
-            background: "rgba(212, 175, 55, 0.12)",
-            filter: "blur(120px)",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        />
-
-        {/* Second subtle glow, offset */}
-        <div
-          style={{
-            position: "absolute",
-            width: 400,
-            height: 400,
-            borderRadius: "50%",
-            background: "rgba(242, 202, 80, 0.08)",
-            filter: "blur(80px)",
-            top: "30%",
-            left: "60%",
-            transform: "translate(-50%, -50%)",
-          }}
-        />
-
-        {/* Logo */}
-        <div
-          style={{
-            fontSize: 88,
-            fontWeight: 700,
-            letterSpacing: "0.06em",
-            color: "#e5e2de",
-            marginBottom: 20,
-          }}
+        <svg
+          width="900"
+          height="220"
+          viewBox="89 15 488.14 117.38"
+          preserveAspectRatio="xMidYMid meet"
         >
-          ELEVERA
-        </div>
-
-        {/* Gold divider */}
-        <div
-          style={{
-            width: 60,
-            height: 3,
-            background: "linear-gradient(90deg, transparent, #f2ca50, transparent)",
-            borderRadius: 2,
-            marginBottom: 28,
-          }}
-        />
-
-        {/* Tagline */}
-        <div
-          style={{
-            fontSize: 30,
-            color: "#d0c5af",
-            textAlign: "center",
-          }}
-        >
-          Digitalbyrå i Ålesund
-        </div>
-
-        {/* Services */}
-        <div
-          style={{
-            fontSize: 18,
-            color: "rgba(153, 144, 124, 0.7)",
-            marginTop: 14,
-            textAlign: "center",
-            letterSpacing: "0.05em",
-          }}
-        >
-          Nettside · Foto & Video · Annonsering · SEO · Sosiale medier
-        </div>
-
-        {/* Badge bottom */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 44,
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-            background: "rgba(242, 202, 80, 0.08)",
-            border: "1px solid rgba(242, 202, 80, 0.2)",
-            borderRadius: 999,
-            padding: "8px 22px",
-          }}
-        >
-          <div
-            style={{
-              width: 8,
-              height: 8,
-              borderRadius: "50%",
-              background: "#f2ca50",
-            }}
+          <polygon
+            fill="#F7F4EC"
+            points="437.63 36.42 409.07 55.8 349.36 15.05 264.49 72.98 241.99 60.93 89.02 132.38 196.45 107.22 243.83 130.01 218.76 100.22 233.36 93.71 251.31 109.57 283.36 89.15 322.59 105.44 305.01 75.35 343.45 50.86 396.05 78.63 437.89 64.26 577.14 132.38 437.63 36.42"
           />
-          <span style={{ color: "#f2ca50", fontSize: 16, fontFamily: "sans-serif" }}>
-            elevera.no
-          </span>
-        </div>
+        </svg>
       </div>
     ),
     { ...size }
