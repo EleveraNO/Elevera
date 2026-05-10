@@ -2,7 +2,7 @@
 
 import "./service.css";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Arrow from "./home/Arrow";
 
 const ease = [0.21, 0.47, 0.32, 0.98] as const;
@@ -36,6 +36,7 @@ interface ServicePageProps {
   faqs: FAQ[];
   ctaHeading: string;
   aiSummary?: string;
+  children?: ReactNode;
 }
 
 function FAQItem({
@@ -96,6 +97,7 @@ export default function ServicePageLayout({
   includedHeading,
   includedSubtext,
   aiSummary,
+  children,
 }: ServicePageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -244,6 +246,8 @@ export default function ServicePageLayout({
           </div>
         </div>
       </section>
+
+      {children}
 
       {/* FAQ */}
       <section className="svc-section svc-faq">
