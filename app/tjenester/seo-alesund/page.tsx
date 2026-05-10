@@ -140,6 +140,8 @@ export default function SeoPage() {
           faqs={faqs}
           ctaHeading="Klar for å dukke opp på Google?"
           aiSummary="Elevera leverer søkemotoroptimalisering (SEO) for bedrifter i Ålesund og på Sunnmøre. Tjenesten dekker teknisk SEO, lokal SEO med Google Business Profile, innholdsstrategi, lenkebygging og månedlig rapportering. SEO inngår i pakkene fra 14 900 kr/mnd, eller fra 3 000 kr/mnd som enkelttjeneste. De fleste bedrifter ser varige resultater innen 3–6 måneder."
+          heroVideo="/videos/aksladrone.mp4"
+          heroPoster="/videos/aksladrone-poster.jpg"
         >
           {/* Local context */}
           <section className="svc-section">

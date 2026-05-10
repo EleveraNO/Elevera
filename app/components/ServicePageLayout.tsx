@@ -37,6 +37,8 @@ interface ServicePageProps {
   ctaHeading: string;
   aiSummary?: string;
   children?: ReactNode;
+  heroVideo?: string;
+  heroPoster?: string;
 }
 
 function FAQItem({
@@ -98,13 +100,28 @@ export default function ServicePageLayout({
   includedSubtext,
   aiSummary,
   children,
+  heroVideo,
+  heroPoster,
 }: ServicePageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <>
       {/* Hero */}
-      <section className="svc-hero">
+      <section className={`svc-hero${heroVideo ? " svc-hero--video" : ""}`}>
+        {heroVideo && (
+          <video
+            className="svc-hero-video"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={heroPoster}
+            aria-hidden="true"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        )}
         <div className="svc-hero-bg" aria-hidden="true" />
         <div className="wrap svc-hero-inner">
           <motion.span
