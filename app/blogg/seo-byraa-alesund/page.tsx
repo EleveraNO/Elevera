@@ -143,7 +143,7 @@ export default function SeoByraaAlesundPage() {
                   <li className="flex gap-3"><span className="text-[var(--forest)] font-semibold">·</span> <span><strong className="text-[var(--black)]">Lenkebygging:</strong> få andre relevante nettsteder til å lenke til deg, slik at Google ser deg som en autoritet.</span></li>
                 </ul>
                 <p className="mt-4">
-                  Ulike byråer har ulik vekt på disse fire. For en lokal bedrift i Ålesund vil typisk lokal SEO og innhold være viktigst, mens en nettbutikk med nasjonalt nedslagsfelt har mer nytte av teknisk SEO og lenkebygging.
+                  Ulike byråer har ulik vekt på disse fire. For en lokal bedrift i Ålesund vil typisk lokal SEO og innhold være viktigst, mens en nettbutikk med nasjonalt nedslagsfelt har mer nytte av teknisk SEO og lenkebygging. For bransje-spesifikke vinklinger har vi en egen guide til <Link href="/blogg/lokal-seo-trafikkskole-alesund" className="underline">lokal SEO for trafikkskoler i Ålesund</Link>.
                 </p>
               </section>
 
@@ -252,7 +252,9 @@ export default function SeoByraaAlesundPage() {
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Slik kommer du i gang</h2>
-                <p>Tre steg for å finne riktig SEO-byrå:</p>
+                <p>
+                  Tre steg for å finne riktig SEO-byrå. Før du går i gang, er det også nyttig å sjekke om du allerede gjør noen av <Link href="/blogg/seo-feil-bedrifter-alesund" className="underline">de vanligste SEO-feilene bedrifter i Ålesund gjør</Link>. Mange av dem kan du fikse på en ettermiddag, før du i det hele tatt henter inn et byrå.
+                </p>
                 <ol className="mt-4 space-y-3 list-decimal list-inside">
                   <li><strong className="text-[var(--black)]">Bestem målet.</strong> Vil du flere telefoner? Mer trafikk til en spesifikk tjeneste? Bedre konvertering? Et tydelig mål gjør det lettere for byrået å lage en konkret plan.</li>
                   <li><strong className="text-[var(--black)]">Hent inn 2–3 tilbud.</strong> Sammenlign hva som inngår, tidshorisont, pris og tilbakemeldinger fra tidligere kunder. Spør de samme spørsmålene til alle.</li>

@@ -282,6 +282,9 @@ export default function TrafikkskoleSeoPage() {
                 <p>
                   Vi har jobbet med trafikkskoler på Sunnmøre og kjenner bransjens særtrekk. En typisk leveranse inkluderer GBP-oppsett, anmeldelses-rutiner, klasse- og lokasjons-sider, og månedlig rapportering på posisjon og henvendelser. Les mer om <Link href="/tjenester/seo-alesund" className="underline">vår SEO-tjeneste i Ålesund</Link> eller book et kort møte for å høre hva som kan gjøres for din skole.
                 </p>
+                <p className="mt-4">
+                  Før du henter byrå er det verdt å sjekke om dere allerede gjør noen av <Link href="/blogg/seo-feil-bedrifter-alesund" className="underline">de vanligste SEO-feilene</Link>, mange kan løses internt. Og hvis dere er i tilbudsfasen, har vi også en guide til <Link href="/blogg/seo-byraa-alesund" className="underline">hvordan dere velger SEO-byrå i Ålesund</Link>.
+                </p>
               </section>
 
             </div>

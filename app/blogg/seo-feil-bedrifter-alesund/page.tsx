@@ -232,6 +232,9 @@ export default function SeoFeilPage() {
                 <p>
                   Vi har gjort SEO-gjennomganger for bedrifter på Sunnmøre i flere år, og finner stadig de samme feilene. En gjennomgang fra oss inkluderer hva som er feil, hva som bør prioriteres, og en konkret plan du kan kjøre selv eller la oss kjøre for deg. Les mer om <Link href="/tjenester/seo-alesund" className="underline">vår SEO-tjeneste for bedrifter i Ålesund</Link>.
                 </p>
+                <p className="mt-4">
+                  Hvis du vurderer å hente inn et byrå, har vi en egen guide til <Link href="/blogg/seo-byraa-alesund" className="underline">hvordan du velger SEO-byrå i Ålesund</Link>. Driver du i en spesifikk bransje, kan også <Link href="/blogg/lokal-seo-trafikkskole-alesund" className="underline">vår bransje-guide for trafikkskoler</Link> være verdt å lese, prinsippene gjelder for de fleste lokale tjeneste-bedrifter.
+                </p>
               </section>
 
             </div>
