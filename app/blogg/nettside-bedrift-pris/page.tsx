@@ -214,7 +214,7 @@ export default function NettsidePrisPage() {
                   Du betaler også for mye hvis du betaler månedlig for noe du aldri trenger, for eksempel support på en statisk nettside som aldri endres. Og du betaler for mye hvis byrået locker deg inn i en plattform de eier, slik at du ikke kan ta med deg nettsiden hvis du vil bytte leverandør.
                 </p>
                 <p className="mt-4">
-                  En god leverandør gir deg full eierskap til koden, klart definerte leveranser og en pris du forstår.
+                  En god leverandør gir deg full eierskap til koden, klart definerte leveranser og en pris du forstår. Det er også verdt å spørre om <Link href="/tjenester/seo-alesund" className="underline">lokal SEO for bedrifter i Ålesund</Link> inngår, siden en flott nettside har lite verdi hvis ingen finner den i Google.
                 </p>
               </section>
 

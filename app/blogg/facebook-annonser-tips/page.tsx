@@ -195,7 +195,7 @@ export default function FacebookAnnonserPage() {
                   For de fleste lokale bedrifter er Google Ads bedre for å fange opp eksisterende etterspørsel, «rørlegger Ålesund», «tannlege time Sunnmøre», og lignende. Facebook er bedre for å skape etterspørsel og holde deg top-of-mind hos en lokal målgruppe som ikke vet de trenger deg ennå.
                 </p>
                 <p className="mt-4">
-                  Begge er effektive. Kombinasjonen er gjerne det sterkeste, men start med det som matcher det umiddelbare behovet ditt.
+                  Begge er effektive. Kombinasjonen er gjerne det sterkeste, men start med det som matcher det umiddelbare behovet ditt. Et tredje, ofte oversett alternativ er <Link href="/tjenester/seo-alesund" className="underline">søkemotoroptimalisering i Ålesund</Link>, som over tid gir gratis trafikk fra Google uten at du må betale per klikk.
                 </p>
               </section>
 

@@ -184,7 +184,7 @@ export default function GoogleBusinessProfileGuidePage() {
               <section>
                 <h2>Hvorfor GBP er det første du bør fikse</h2>
                 <p>
-                  Før du bruker penger på annonser, SEO eller ny nettside, bør
+                  Før du bruker penger på annonser, <Link href="/tjenester/seo-alesund" className="underline">SEO</Link> eller ny nettside, bør
                   profilen være ryddig. Her er hvorfor:
                 </p>
                 <ul>
