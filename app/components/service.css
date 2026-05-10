@@ -631,8 +631,8 @@
 }
 .svc-hero--video {
   background: #0f1a14;
-  margin-top: -76px;
-  padding-top: clamp(196px, 18vw, 256px);
+  min-height: 100vh;
+  padding-top: clamp(160px, 16vw, 220px);
 }
 .svc-hero--video .svc-hero-bg {
   background:
@@ -640,34 +640,39 @@
   z-index: 1;
 }
 
-/* Transparent navbar over video hero */
+/* Take navbar out of flow so video can start at viewport top */
 body:has(.svc-hero--video) .home-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Transparent only at top — once scrolled, default cream/blur kicks in */
+body:has(.svc-hero--video) .home-nav:not(.scrolled) {
   background: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-bottom-color: transparent;
 }
-body:has(.svc-hero--video) .home-nav.scrolled {
-  background: rgba(15, 26, 20, .82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-body:has(.svc-hero--video) .home-nav .home-logo,
-body:has(.svc-hero--video) .home-nav .home-logo-mark,
-body:has(.svc-hero--video) .home-nav-links > a {
+body:has(.svc-hero--video) .home-nav:not(.scrolled) .home-logo,
+body:has(.svc-hero--video) .home-nav:not(.scrolled) .home-logo-mark,
+body:has(.svc-hero--video) .home-nav:not(.scrolled) .home-nav-links > a {
   color: var(--cream);
 }
-body:has(.svc-hero--video) .home-nav-links > a:hover { color: #fff; }
-body:has(.svc-hero--video) .home-nav-cta {
+body:has(.svc-hero--video) .home-nav:not(.scrolled) .home-nav-links > a:hover { color: #fff; }
+body:has(.svc-hero--video) .home-nav:not(.scrolled) .home-nav-cta {
   color: var(--cream);
   border-color: rgba(255, 255, 255, .4);
 }
-body:has(.svc-hero--video) .home-nav-cta:hover {
+body:has(.svc-hero--video) .home-nav:not(.scrolled) .home-nav-cta:hover {
   background: var(--cream);
   color: var(--black);
   border-color: var(--cream);
 }
-body:has(.svc-hero--video) .home-nav-toggle span { background: var(--cream); }
+body:has(.svc-hero--video) .home-nav:not(.scrolled) .home-nav-toggle span {
+  background: var(--cream);
+}
 .svc-hero--video .svc-hero-bg::after { display: none; }
 .svc-hero--video .svc-hero-badge {
   color: var(--cream);
