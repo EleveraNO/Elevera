@@ -144,45 +144,33 @@ export default function ServicePageLayout({
             {titleSuffix && <> {titleSuffix}</>}
           </motion.h1>
 
-          <div className="svc-hero-grid">
-            <div>
-              <motion.p
-                className="svc-hero-desc"
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2, ease }}
-              >
-                {description}
-              </motion.p>
-              <motion.div
-                className="svc-hero-ctas"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3, ease }}
-              >
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                >
-                  Book møte
-                  <Arrow />
-                </a>
-                <a href="/#priser" className="btn btn-ghost">
-                  Se priser
-                </a>
-              </motion.div>
-            </div>
-
-            <div className="svc-hero-meta">
-              <div className="svc-hero-fresh">
-                <span>Sist oppdatert: april 2026</span>
-                <span aria-hidden="true">·</span>
-                <span>Elevera, vekstbyrå i Ålesund</span>
-              </div>
-            </div>
-          </div>
+          <motion.p
+            className="svc-hero-desc"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease }}
+          >
+            {description}
+          </motion.p>
+          <motion.div
+            className="svc-hero-ctas"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease }}
+          >
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              Book møte
+              <Arrow />
+            </a>
+            <a href="/#priser" className="btn btn-ghost">
+              Se priser
+            </a>
+          </motion.div>
         </div>
       </section>
 
