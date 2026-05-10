@@ -188,9 +188,12 @@ export default function TrafikkskoleSeoPage() {
                 <ol className="mt-4 space-y-3 list-decimal list-inside">
                   <li>Spør hver elev som består førerprøven, samme dag mens følelsen er fersk.</li>
                   <li>Send en SMS med direkte link til anmeldelses-skjema (lag en kort link via business.google.com).</li>
-                  <li>Tilby en liten ekstra: en time gratis vasking, en t-skjorte, en sjokoladeplate. Aldri penger eller rabatt på prøven.</li>
+                  <li>La instruktøren som har kjørt med eleven spørre personlig. Det øker svarprosenten betydelig sammenlignet med en automatisk SMS fra adminkontoen.</li>
                   <li>Svar på alle anmeldelser, både gode og dårlige. Det viser at du tar det seriøst.</li>
                 </ol>
+                <p className="mt-4">
+                  Viktig: Google forbyr å tilby penger, rabatter eller gaver i bytte for anmeldelser. Brudd kan føre til at anmeldelsene fjernes eller at profilen blir suspendert. Hold deg til personlig oppfølging og god timing.
+                </p>
                 <p className="mt-4">
                   En instruktør som spør konsekvent kan generere 1–2 anmeldelser per uke. Over et år blir det 50–100 nye anmeldelser, noe som flytter deg klart oppover i kart-pakken.
                 </p>
