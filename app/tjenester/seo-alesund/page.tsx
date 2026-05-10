@@ -4,13 +4,14 @@ import HomeFooter from "../../components/home/HomeFooter";
 import ServicePageLayout from "../../components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "SEO i Ålesund | Søkemotoroptimalisering – Elevera",
+  title: "SEO Ålesund · Søkemotoroptimalisering som gir kunder",
   description:
-    "Profesjonell SEO i Ålesund. Vi hjelper bedriften din å bli funnet på Google gjennom teknisk SEO, innholdsstrategi og lokal søkemotoroptimalisering.",
+    "Lokalt SEO-byrå i Ålesund. Vi hjelper bedrifter på Sunnmøre å rangere høyere på Google og få flere henvendelser, uten å betale per klikk.",
   alternates: { canonical: "https://elevera.no/tjenester/seo-alesund" },
   openGraph: {
-    title: "SEO i Ålesund – Elevera",
-    description: "Søkemotoroptimalisering for bedrifter i Ålesund og omegn. Bli funnet av kundene dine på Google.",
+    title: "SEO Ålesund · Søkemotoroptimalisering som gir kunder",
+    description:
+      "Lokalt SEO-byrå i Ålesund. Vi hjelper bedrifter på Sunnmøre å rangere høyere på Google og få flere henvendelser, uten å betale per klikk.",
     url: "https://elevera.no/tjenester/seo-alesund",
   },
 };
@@ -81,10 +82,9 @@ export default function SeoPage() {
       <main>
         <ServicePageLayout
           badge="SEO · Ålesund"
-          title="Bli funnet når kundene"
-          titleAccent="søker"
-          titleSuffix="etter deg"
-          description="Folk i Ålesund googler det du tilbyr, hver dag. Vi sørger for at det er din bedrift som dukker opp, ikke konkurrentens."
+          title="Søkemotoroptimalisering i"
+          titleAccent="Ålesund"
+          description="Bedrifter på Sunnmøre googler det du tilbyr, hver dag. Vi sørger for at det er din bedrift som dukker opp på Google, ikke konkurrentens."
           includedLabel="Tjenester"
           includedHeading="Hva vi tilbyr"
           includedSubtext="Alt som trengs for å klatre til toppen av Google."

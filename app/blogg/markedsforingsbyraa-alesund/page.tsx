@@ -206,7 +206,7 @@ export default function MarkedsforingsByraaPage() {
                   SEO tar lengre tid (3–6 måneder for å se resultater) men gir langsiktig synlighet som ikke krever løpende annonseutgifter. For lokale bedrifter i Ålesund er Google Business Profile (tidl. Google My Business) det første stedet å optimalisere, det er gratis og svært effektivt for lokale søk.
                 </p>
                 <p className="mt-4">
-                  De fleste bedrifter i Ålesund og på Sunnmøre tjener på å kombinere begge: annonsering for å komme i gang raskt, og SEO for langsiktig vekst.
+                  De fleste bedrifter i Ålesund og på Sunnmøre tjener på å kombinere begge: annonsering for å komme i gang raskt, og SEO for langsiktig vekst. Les mer om hvordan vi jobber med <Link href="/tjenester/seo-alesund" className="underline">søkemotoroptimalisering i Ålesund</Link>.
                 </p>
               </section>
 
