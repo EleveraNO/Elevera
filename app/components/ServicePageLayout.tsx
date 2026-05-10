@@ -176,7 +176,6 @@ export default function ServicePageLayout({
             </div>
 
             <div className="svc-hero-meta">
-              {aiSummary && <p className="svc-hero-summary">{aiSummary}</p>}
               <div className="svc-hero-fresh">
                 <span>Sist oppdatert: april 2026</span>
                 <span aria-hidden="true">·</span>
@@ -347,6 +346,18 @@ export default function ServicePageLayout({
           </p>
         </div>
       </section>
+
+      {/* AI summary (kort fortalt) */}
+      {aiSummary && (
+        <section className="svc-section svc-summary">
+          <div className="wrap">
+            <div className="svc-summary-card">
+              <span className="section-label">Kort fortalt</span>
+              <p>{aiSummary}</p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="svc-section svc-cta">

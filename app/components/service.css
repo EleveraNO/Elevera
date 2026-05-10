@@ -702,3 +702,24 @@ body:has(.svc-hero--video) .home-nav:not(.scrolled) .home-nav-toggle span {
 @media (prefers-reduced-motion: reduce) {
   .svc-hero-video { display: none; }
 }
+
+/* Kort fortalt (AI summary block, plassert før CTA) */
+.svc-summary { padding-top: 0; }
+.svc-summary-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--stone-50);
+  border: 1px solid var(--stone-200);
+  border-radius: 14px;
+  padding: 28px 32px;
+}
+.svc-summary-card .section-label { margin-bottom: 10px; }
+.svc-summary-card p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--stone-700);
+  margin: 0;
+}
+@media (max-width: 540px) {
+  .svc-summary-card { padding: 24px 22px; border-radius: 12px; }
+}
