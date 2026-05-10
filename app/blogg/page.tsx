@@ -22,6 +22,15 @@ const innlegg = [
     lesetid: "10 min",
   },
   {
+    slug: "seo-feil-bedrifter-alesund",
+    tittel: "5 vanligste SEO-feil bedrifter i Ålesund gjør (2026)",
+    ingress:
+      "GBP som ikke er satt opp. Generiske sidetitler. Ingen lokalt innhold. Trege sider. Vi har sett gjennom hundrevis av sider på Sunnmøre, og det er alltid de samme fem feilene.",
+    dato: "10. mai 2026",
+    kategori: "SEO",
+    lesetid: "8 min",
+  },
+  {
     slug: "google-business-profile-guide",
     tittel:
       "Google Business Profile for lokale bedrifter, komplett 2026-guide",
