@@ -13,6 +13,15 @@ export const metadata: Metadata = {
 
 const innlegg = [
   {
+    slug: "seo-byraa-alesund",
+    tittel: "Slik velger du SEO-byrå i Ålesund (2026)",
+    ingress:
+      "Mange byråer lover topplassering og garantert ROI. De fleste leverer ingen av delene. Slik finner du et SEO-byrå i Ålesund som faktisk kan flytte bedriften din opp på Google.",
+    dato: "10. mai 2026",
+    kategori: "SEO",
+    lesetid: "10 min",
+  },
+  {
     slug: "google-business-profile-guide",
     tittel:
       "Google Business Profile for lokale bedrifter, komplett 2026-guide",
