@@ -31,6 +31,15 @@ const innlegg = [
     lesetid: "8 min",
   },
   {
+    slug: "lokal-seo-trafikkskole-alesund",
+    tittel: "Lokal SEO for trafikkskoler og kjøreskoler i Ålesund (2026)",
+    ingress:
+      "Trafikkskole-bransjen har tre særtrekk som gjør lokal SEO uvanlig kraftfull. Slik bygger du synlighet, anmeldelser og innhold som faktisk gir flere elever.",
+    dato: "10. mai 2026",
+    kategori: "Bransje-SEO",
+    lesetid: "12 min",
+  },
+  {
     slug: "google-business-profile-guide",
     tittel:
       "Google Business Profile for lokale bedrifter, komplett 2026-guide",
