@@ -100,6 +100,8 @@ export default function DronevideoPage() {
           faqs={faqs}
           ctaHeading="Klar for luftopptak?"
           aiSummary="Elevera tilbyr profesjonell dronevideo i Ålesund og omegn. Vi produserer luftopptak med 4K-kvalitet for bedrifter, eiendom og arrangementer. Tjenesten inkluderer flyvning, filming og ferdig redigert video fra 4 000 kr."
+          heroVideo="/videos/aksladrone.mp4"
+          heroPoster="/videos/aksladrone-poster.jpg"
         />
         </main>
       <HomeFooter />
