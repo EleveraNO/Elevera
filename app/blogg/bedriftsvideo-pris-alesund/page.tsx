@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import HomeNav from "../../components/home/HomeNav";
 import "../../components/blog.css";
 import HomeFooter from "../../components/home/HomeFooter";
@@ -120,15 +121,46 @@ export default function BedriftsvideoPrisAlesundPage() {
               <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
                 Du vet at video gjør mer inntrykk enn tekst og bilder. Men «bedriftsvideo» kan koste alt fra 8 000 til over 100 000 kr, så hva er rett for deg? Her er prisnivåene for de vanligste typene, og hva som faktisk styrer prisen.
               </p>
-              <p className="mt-3 text-sm text-[var(--stone-500)]">
-                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 16. mai 2026
-              </p>
+              <div className="mt-5 flex items-center gap-3">
+                <Image
+                  src="/images/marius.jpg"
+                  alt="Marius Teigen Tverbakk, daglig leder i Elevera"
+                  width={1200}
+                  height={1607}
+                  className="h-11 w-11 rounded-full object-cover object-top"
+                  sizes="44px"
+                />
+                <span className="text-sm text-[var(--stone-500)]">
+                  Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 16. mai 2026
+                </span>
+              </div>
             </div>
 
             <div className="prose prose-invert max-w-none space-y-12 text-[var(--stone-700)] leading-relaxed">
 
+              <figure className="not-prose overflow-hidden rounded-3xl border border-[var(--stone-300)]">
+                <Image
+                  src="/videos/aksladrone-poster.jpg"
+                  alt="Dronebilde av Ålesund i solnedgang, stillbilde fra en videoproduksjon Elevera har laget"
+                  width={1920}
+                  height={1080}
+                  className="h-auto w-full"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  priority
+                />
+                <figcaption className="bg-[var(--stone-50)] px-5 py-3 text-sm text-[var(--stone-500)]">
+                  Stillbilde fra en dronevideo vi produserte over Ålesund.
+                </figcaption>
+              </figure>
+
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva brukes en bedriftsvideo til?</h2>
+                <img
+                  src="https://images.unsplash.com/photo-1635360381874-edd74cbd57f3?q=80&w=1100&auto=format&fit=crop"
+                  alt="Videofotograf som filmer med kamera"
+                  loading="lazy"
+                  className="not-prose mb-5 w-full rounded-2xl border border-[var(--stone-300)] object-cover aspect-[16/10] md:float-right md:ml-7 md:mb-3 md:w-[42%]"
+                />
                 <p>
                   «Bedriftsvideo» er ikke én ting. Det er en samlebetegnelse for video du bruker til å selge, forklare eller bygge tillit. De vanligste i Ålesund er:
                 </p>
@@ -157,6 +189,12 @@ export default function BedriftsvideoPrisAlesundPage() {
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva påvirker prisen?</h2>
+                <img
+                  src="https://images.unsplash.com/photo-1598704066184-80bde4152af4?q=80&w=1100&auto=format&fit=crop"
+                  alt="Kameraoperatør med profesjonelt videokamera"
+                  loading="lazy"
+                  className="not-prose mb-5 w-full rounded-2xl border border-[var(--stone-300)] object-cover aspect-[16/10] md:float-left md:mr-7 md:mb-3 md:w-[42%]"
+                />
                 <p>
                   To videoer som ser like lange ut kan koste svært forskjellig. Det er disse postene som styrer:
                 </p>

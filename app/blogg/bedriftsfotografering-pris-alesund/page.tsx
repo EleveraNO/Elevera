@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import HomeNav from "../../components/home/HomeNav";
 import "../../components/blog.css";
 import HomeFooter from "../../components/home/HomeFooter";
@@ -120,12 +121,37 @@ export default function BedriftsfotograferingPrisAlesundPage() {
               <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
                 Bildene dine er ofte det første en kunde ser, på nettsiden, på LinkedIn og i Google. Likevel er det få som vet hva bedriftsfoto koster, eller hva de egentlig trenger. Her er prisene, og en enkel oversikt over hvilke bilder du faktisk bør bestille.
               </p>
-              <p className="mt-3 text-sm text-[var(--stone-500)]">
-                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 16. mai 2026
-              </p>
+              <div className="mt-5 flex items-center gap-3">
+                <Image
+                  src="/images/marius.jpg"
+                  alt="Marius Teigen Tverbakk, daglig leder i Elevera"
+                  width={1200}
+                  height={1607}
+                  className="h-11 w-11 rounded-full object-cover object-top"
+                  sizes="44px"
+                />
+                <span className="text-sm text-[var(--stone-500)]">
+                  Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 16. mai 2026
+                </span>
+              </div>
             </div>
 
             <div className="prose prose-invert max-w-none space-y-12 text-[var(--stone-700)] leading-relaxed">
+
+              <figure className="not-prose mx-auto max-w-md overflow-hidden rounded-3xl border border-[var(--stone-300)]">
+                <Image
+                  src="/images/tverbakken-gard/sau-med-landskap.jpg"
+                  alt="Sau på vei ned en vei med Nordlands-fjell i bakgrunnen, bedriftsfoto Elevera laget for Tverbakken Gård"
+                  width={1536}
+                  height={2048}
+                  className="h-auto w-full"
+                  sizes="(max-width: 768px) 100vw, 448px"
+                  priority
+                />
+                <figcaption className="bg-[var(--stone-50)] px-5 py-3 text-sm text-[var(--stone-500)]">
+                  Bedriftsfoto vi laget for Tverbakken Gård.
+                </figcaption>
+              </figure>
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hvorfor bildene betyr mer enn du tror</h2>
@@ -133,6 +159,20 @@ export default function BedriftsfotograferingPrisAlesundPage() {
                   En kunde danner seg et inntrykk av bedriften på sekunder. Skarpe, ekte bilder av folka og lokalene signaliserer at dere er seriøse. Slitne mobilbilder eller gratis arkivbilder gjør det motsatte, uansett hvor god tjenesten egentlig er. Vi har skrevet mer om <Link href="/blogg/profesjonelle-bilder-bedrift" className="underline">hvorfor bedriften din trenger profesjonelle bilder</Link>. Dette innlegget handler om hva det koster og hva du bør bestille.
                 </p>
               </section>
+
+              <figure className="not-prose mx-auto max-w-md overflow-hidden rounded-3xl border border-[var(--stone-300)]">
+                <Image
+                  src="/images/cut-o-clock/Photo 2.jpg"
+                  alt="Nærbilde av frisør som klipper skjegg med saks, miljøbilde Elevera laget for Cut o' Clock"
+                  width={1536}
+                  height={1920}
+                  className="h-auto w-full"
+                  sizes="(max-width: 768px) 100vw, 448px"
+                />
+                <figcaption className="bg-[var(--stone-50)] px-5 py-3 text-sm text-[var(--stone-500)]">
+                  Miljøbilde vi laget for Cut o&apos; Clock.
+                </figcaption>
+              </figure>
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva er inkludert i en bedriftsfotografering?</h2>
@@ -166,6 +206,12 @@ export default function BedriftsfotograferingPrisAlesundPage() {
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hvilke bilder trenger du, og hvor?</h2>
+                <img
+                  src="https://images.unsplash.com/photo-1574717025058-2f8737d2e2b7?q=80&w=1100&auto=format&fit=crop"
+                  alt="Profesjonelt kameraoppsett med studiobelysning"
+                  loading="lazy"
+                  className="not-prose mb-5 w-full rounded-2xl border border-[var(--stone-300)] object-cover aspect-[16/10] md:float-right md:ml-7 md:mb-3 md:w-[42%]"
+                />
                 <p>
                   Tenk på hvor bildene skal brukes før du bestiller. Da unngår du å betale for bilder du ikke får brukt:
                 </p>
@@ -186,6 +232,12 @@ export default function BedriftsfotograferingPrisAlesundPage() {
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Slik gjør du bildene klare til bruk</h2>
+                <img
+                  src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1100&auto=format&fit=crop"
+                  alt="Bildebehandling av bedriftsbilder på en laptop"
+                  loading="lazy"
+                  className="not-prose mb-5 w-full rounded-2xl border border-[var(--stone-300)] object-cover aspect-[16/10] md:float-left md:mr-7 md:mb-3 md:w-[42%]"
+                />
                 <p>
                   Når bildene er levert, er det tre ting du bør sjekke:
                 </p>

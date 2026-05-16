@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import HomeNav from "../../components/home/HomeNav";
 import "../../components/blog.css";
 import HomeFooter from "../../components/home/HomeFooter";
@@ -120,9 +121,19 @@ export default function SeoPrisAlesundPage() {
               <p className="mt-6 text-lg leading-relaxed text-[var(--stone-700)]">
                 Du vet at bedriften bør være synlig når folk googler tjenesten din. Men hva koster det egentlig å jobbe med SEO, og hva betaler du faktisk for? Her er reelle prisnivåer for lokale bedrifter på Sunnmøre, uten tåkeprat.
               </p>
-              <p className="mt-3 text-sm text-[var(--stone-500)]">
-                Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 16. mai 2026
-              </p>
+              <div className="mt-5 flex items-center gap-3">
+                <Image
+                  src="/images/marius.jpg"
+                  alt="Marius Teigen Tverbakk, daglig leder i Elevera"
+                  width={1200}
+                  height={1607}
+                  className="h-11 w-11 rounded-full object-cover object-top"
+                  sizes="44px"
+                />
+                <span className="text-sm text-[var(--stone-500)]">
+                  Skrevet av Marius Teigen Tverbakk, daglig leder i Elevera · 16. mai 2026
+                </span>
+              </div>
             </div>
 
             <div className="prose prose-invert max-w-none space-y-12 text-[var(--stone-700)] leading-relaxed">
@@ -139,6 +150,12 @@ export default function SeoPrisAlesundPage() {
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva påvirker prisen?</h2>
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1100&auto=format&fit=crop"
+                  alt="Analyseverktøy med søkedata på en skjerm"
+                  loading="lazy"
+                  className="not-prose mb-5 w-full rounded-2xl border border-[var(--stone-300)] object-cover aspect-[16/10] md:float-right md:ml-7 md:mb-3 md:w-[42%]"
+                />
                 <p>
                   SEO koster ikke det samme for to bedrifter, fordi arbeidsmengden er forskjellig. Fire ting avgjør hvor mange timer som trengs:
                 </p>
@@ -169,6 +186,12 @@ export default function SeoPrisAlesundPage() {
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva er inkludert i en SEO-pakke?</h2>
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1100&auto=format&fit=crop"
+                  alt="Digitalt dashboard med SEO- og trafikkstatistikk"
+                  loading="lazy"
+                  className="not-prose mb-5 w-full rounded-2xl border border-[var(--stone-300)] object-cover aspect-[16/10] md:float-left md:mr-7 md:mb-3 md:w-[42%]"
+                />
                 <p>
                   En seriøs månedlig leveranse består som regel av fire deler. Be om å få spesifisert hvor mye tid som går til hver:
                 </p>
@@ -182,6 +205,12 @@ export default function SeoPrisAlesundPage() {
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva du bør kreve av resultater og rapportering</h2>
+                <img
+                  src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1100&auto=format&fit=crop"
+                  alt="Person som ser på en SEO-rapport på en laptop"
+                  loading="lazy"
+                  className="not-prose mb-5 w-full rounded-2xl border border-[var(--stone-300)] object-cover aspect-[16/10] md:float-right md:ml-7 md:mb-3 md:w-[42%]"
+                />
                 <p>
                   Du betaler for arbeid du ikke ser direkte, derfor er rapportering ikke et tillegg, men en del av leveransen. Et seriøst byrå gir deg hver måned:
                 </p>
