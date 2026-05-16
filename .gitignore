@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .superpowers/
+
+# uncompressed hero source (35MB) — only the optimized hero.jpg / hero-mobile.jpg are deployed
+public/Hero.png

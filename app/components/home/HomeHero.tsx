@@ -1,4 +1,3 @@
-import HeroTopography from "./HeroTopography";
 import Arrow from "./Arrow";
 
 const BOOKING_URL =
@@ -8,7 +7,10 @@ export default function HomeHero() {
   return (
     <section className="home-hero">
       <div className="home-hero-bg" aria-hidden="true">
-        <HeroTopography />
+        <picture>
+          <source media="(max-width: 767px)" srcSet="/hero-mobile.jpg" />
+          <img src="/hero.jpg" alt="" className="home-hero-img" />
+        </picture>
       </div>
 
       <div className="home-hero-vignette" aria-hidden="true" />
@@ -30,16 +32,15 @@ export default function HomeHero() {
               <a href="#caser" className="btn btn-ghost">Se casene</a>
             </div>
             <div className="home-hero-meta">
-              <span><strong>Basert i</strong> Ålesund</span>
-              <span><strong>Jobber med</strong> lokale bedrifter på Sunnmøre</span>
-              <span><strong>Åpen for</strong> nye prosjekter</span>
+              <span><strong>Ålesund · hele Norge</strong></span>
+              <span><strong>Én kontaktperson</strong></span>
+              <span><strong>Gratis første møte</strong></span>
             </div>
           </div>
         </div>
       </div>
 
       <div className="home-hero-scroll" aria-hidden="true">
-        <span>Scroll</span>
         <div className="home-hero-scroll-line" />
       </div>
     </section>
