@@ -13,6 +13,33 @@ export const metadata: Metadata = {
 
 const innlegg = [
   {
+    slug: "seo-pris-alesund",
+    tittel: "Hva koster lokal SEO i Ålesund? Ærlig prisguide for 2026",
+    ingress:
+      "Du vet at bedriften bør være synlig på Google. Men hva koster SEO egentlig, og hva betaler du for? Reelle prisnivåer for lokale bedrifter på Sunnmøre.",
+    dato: "16. mai 2026",
+    kategori: "SEO",
+    lesetid: "9 min",
+  },
+  {
+    slug: "bedriftsvideo-pris-alesund",
+    tittel: "Hva koster en bedriftsvideo i Ålesund?",
+    ingress:
+      "Bedriftsvideo kan koste alt fra 8 000 til over 100 000 kr. Her er prisnivåene for de vanligste typene, og hva som faktisk styrer prisen.",
+    dato: "16. mai 2026",
+    kategori: "Video",
+    lesetid: "8 min",
+  },
+  {
+    slug: "bedriftsfotografering-pris-alesund",
+    tittel: "Bedriftsfotografering i Ålesund: Hva koster det?",
+    ingress:
+      "Bildene er ofte det første kundene ser. Her er prisene på bedriftsfoto i Ålesund, og en enkel oversikt over hvilke bilder du faktisk bør bestille.",
+    dato: "16. mai 2026",
+    kategori: "Foto",
+    lesetid: "8 min",
+  },
+  {
     slug: "seo-byraa-alesund",
     tittel: "Slik velger du SEO-byrå i Ålesund (2026)",
     ingress:

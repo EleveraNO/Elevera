@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const today = new Date("2026-04-12");
+const blogToday = new Date("2026-05-16");
 
 // Programmatic location pages
 const locationPages = [
@@ -91,8 +92,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://elevera.no/blogg",
-      lastModified: today,
+      lastModified: blogToday,
       changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: "https://elevera.no/blogg/seo-pris-alesund",
+      lastModified: blogToday,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://elevera.no/blogg/bedriftsvideo-pris-alesund",
+      lastModified: blogToday,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://elevera.no/blogg/bedriftsfotografering-pris-alesund",
+      lastModified: blogToday,
+      changeFrequency: "monthly",
       priority: 0.7,
     },
     {
