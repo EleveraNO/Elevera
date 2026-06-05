@@ -30,6 +30,9 @@ export default function HomeNav() {
           <a href="/#caser">Caser</a>
           <a href="/#priser">Priser</a>
           <a href="/#om">Om</a>
+          <a href="https://app.elevera.no" target="_blank" rel="noopener noreferrer">
+            Kundeportal
+          </a>
           <a
             href={BOOKING_URL}
             target="_blank"
@@ -63,6 +66,14 @@ export default function HomeNav() {
         </a>
         <a href="/#om" onClick={() => setOpen(false)}>
           Om
+        </a>
+        <a
+          href="https://app.elevera.no"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setOpen(false)}
+        >
+          Kundeportal
         </a>
         <a
           href={BOOKING_URL}
