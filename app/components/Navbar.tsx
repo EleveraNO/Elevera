@@ -127,6 +127,18 @@ export default function Navbar() {
               </div>
             )}
           </div>
+
+          <a
+            href="https://app.elevera.no"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium transition-colors duration-200"
+            style={{ color: "#d0c5af", fontFamily: "var(--font-noto-serif), serif" }}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#f2ca50")}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#d0c5af")}
+          >
+            Kundeportal
+          </a>
         </div>
 
         {/* Desktop CTA */}
@@ -192,6 +204,7 @@ export default function Navbar() {
                 ))}
               </div>
               <a href="/#kontakt" className="text-sm" style={{ color: "#d0c5af" }} onClick={() => setMenuOpen(false)}>Kontakt</a>
+              <a href="https://app.elevera.no" target="_blank" rel="noopener noreferrer" className="text-sm" style={{ color: "#d0c5af" }} onClick={() => setMenuOpen(false)}>Kundeportal</a>
               <a
                 href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY"
                 target="_blank" rel="noopener noreferrer"
