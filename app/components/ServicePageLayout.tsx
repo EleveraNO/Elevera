@@ -289,19 +289,19 @@ export default function ServicePageLayout({
             {[
               {
                 name: "Start",
-                price: "7 900",
+                price: "9 900",
                 desc: "Nettside, bilder og grunnleggende synlighet",
                 featured: false,
               },
               {
                 name: "Vekst",
-                price: "14 900",
+                price: "18 900",
                 desc: "Alt i Start, pluss innhold, publisering og SEO",
                 featured: true,
               },
               {
                 name: "Partner",
-                price: "22 900",
+                price: "27 900",
                 desc: "Alt i Vekst, pluss annonser, drone og strategi",
                 featured: false,
               },

@@ -23,7 +23,7 @@ const jsonLd = {
   provider: { "@type": "LocalBusiness", name: "Elevera", url: "https://elevera.no" },
   areaServed: { "@type": "City", name: "Ålesund" },
   url: "https://elevera.no/tjenester/nettside-alesund",
-  offers: { "@type": "AggregateOffer", priceCurrency: "NOK", lowPrice: "990", highPrice: "22900", offerCount: "3" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "NOK", lowPrice: "990", highPrice: "27900", offerCount: "3" },
 };
 
 const jsonLdBreadcrumb = {
@@ -76,10 +76,10 @@ export default function NettsidesPage() {
           faqs={[
             { q: "Hvor lang tid tar det å lage en nettside?", a: "En standard bedriftsnettside tar 2–4 uker fra oppstart til lansering, avhengig av innhold og kompleksitet." },
             { q: "Får jeg profesjonelt innhold til siden?", a: "Ja. Vi produserer foto og video til nettsiden din som en del av leveransen, slik at hele siden henger sammen og faktisk får folk til å ta kontakt." },
-            { q: "Hva koster en nettside?", a: "Nettside inngår i våre månedlige pakker fra 7 900 kr/mnd, eller som enkelttjeneste fra 990 kr/mnd. Ta kontakt for et tilbud." },
+            { q: "Hva koster en nettside?", a: "Nettside inngår i våre månedlige pakker fra 9 900 kr/mnd, eller som enkelttjeneste fra 990 kr/mnd. Ta kontakt for et tilbud." },
           ]}
           ctaHeading="Klar for en ny nettside?"
-          aiSummary="Elevera er et digitalbyrå i Ålesund som designer og utvikler nettsider for lokale bedrifter. Tjenesten inkluderer webdesign, SEO-optimalisering, profesjonelle bilder og løpende vedlikehold. Priser starter fra 990 kr/mnd for enkelttjeneste eller fra 7 900 kr/mnd som del av en fast pakke."
+          aiSummary="Elevera er et digitalbyrå i Ålesund som designer og utvikler nettsider for lokale bedrifter. Tjenesten inkluderer webdesign, SEO-optimalisering, profesjonelle bilder og løpende vedlikehold. Priser starter fra 990 kr/mnd for enkelttjeneste eller fra 9 900 kr/mnd som del av en fast pakke."
         />
         </main>
       <HomeFooter />

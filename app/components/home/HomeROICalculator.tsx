@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 
 type Tier = "start" | "vekst" | "partner";
 
-const TIER_PRICES: Record<Tier, number> = { start: 7900, vekst: 14900, partner: 22900 };
+const TIER_PRICES: Record<Tier, number> = { start: 9900, vekst: 18900, partner: 27900 };
 const TIER_NAMES: Record<Tier, string> = { start: "Start", vekst: "Vekst", partner: "Partner" };
 /**
  * Tier-defaults bruker konservative antakelser for lokale bedrifter på Sunnmøre:

@@ -29,7 +29,7 @@ Kontakt: tverbakk@elevera.no · +47 949 74 165 · ${SITE}
 ## Hovedsider
 
 - [Forside](${SITE}): Vekstbyrå i Ålesund, hele markedsføringen fra én partner
-- [Priser og pakker](${SITE}/#priser): Tre pakker fra 7 900 til 22 900 kr/mnd
+- [Priser og pakker](${SITE}/#priser): Tre pakker fra 9 900 til 27 900 kr/mnd
 - [Om Elevera](${SITE}/#om): Én person, hele jobben, Marius i Ålesund
 - [Kontakt](${SITE}/#kontakt): Book møte eller send melding
 - [Blogg](${SITE}/blogg): Artikler om digital markedsføring for lokale bedrifter

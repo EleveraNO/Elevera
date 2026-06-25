@@ -24,7 +24,7 @@ export default function HomePricing() {
             <p className="home-tier-desc">For deg som trenger et solid fundament.</p>
             <div className="home-tier-price">
               <span className="home-tier-price-from">Fra</span>
-              <span className="home-tier-price-amount">7 900 kr</span>
+              <span className="home-tier-price-amount">9 900 kr</span>
               <span className="home-tier-price-period">/mnd</span>
             </div>
             <div className="home-tier-features-label">Inkludert</div>
@@ -62,7 +62,7 @@ export default function HomePricing() {
             <p className="home-tier-desc">For deg som vil bli sett og vokse.</p>
             <div className="home-tier-price">
               <span className="home-tier-price-from">Fra</span>
-              <span className="home-tier-price-amount">14 900 kr</span>
+              <span className="home-tier-price-amount">18 900 kr</span>
               <span className="home-tier-price-period">/mnd</span>
             </div>
             <div className="home-tier-features-label">Alt i Start, pluss</div>
@@ -98,7 +98,7 @@ export default function HomePricing() {
             </p>
             <div className="home-tier-price">
               <span className="home-tier-price-from">Fra</span>
-              <span className="home-tier-price-amount">22 900 kr</span>
+              <span className="home-tier-price-amount">27 900 kr</span>
               <span className="home-tier-price-period">/mnd</span>
             </div>
             <div className="home-tier-features-label">Alt i Vekst, pluss</div>

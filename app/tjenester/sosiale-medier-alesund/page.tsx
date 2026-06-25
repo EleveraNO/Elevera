@@ -110,7 +110,7 @@ export default function SosialeMedierPage() {
           ]}
           faqs={faqs}
           ctaHeading="Klar for å bli synlig på sosiale medier?"
-          aiSummary="Elevera styrer sosiale medier for bedrifter i Ålesund. Vi lager innhold, publiserer 3–5 ganger per uke på Instagram, Facebook og TikTok, og svarer på meldinger. Tjenesten starter fra 6 000 kr/mnd som enkelttjeneste."
+          aiSummary="Elevera styrer sosiale medier for bedrifter i Ålesund. Vi lager innhold, publiserer 3–5 ganger per uke på Instagram, Facebook og TikTok, og svarer på meldinger. Tjenesten starter fra 7 900 kr/mnd som enkelttjeneste."
         />
         </main>
       <HomeFooter />

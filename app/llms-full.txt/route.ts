@@ -38,9 +38,9 @@ Vi bygger hele markedsføringen fra én partner, så alle kanaler snakker samme 
 
 ## Pakker og priser
 
-- **Start**, fra 7 900 kr/mnd. Nettside (inntil 5 sider), bilder, grunnleggende SEO, Google Business Profile.
-- **Vekst**, fra 14 900 kr/mnd. Alt i Start + 4 videoer + 8 bilder per måned, publisering 3x/uke, innholdsstrategi, aktiv SEO. *Mest populær.*
-- **Partner**, fra 22 900 kr/mnd. Alt i Vekst + 6 videoer + 12 bilder per måned, publisering 5x/uke, annonsering på Meta og Google, dronevideo, strategi.
+- **Start**, fra 9 900 kr/mnd. Nettside (inntil 5 sider), bilder, grunnleggende SEO, Google Business Profile.
+- **Vekst**, fra 18 900 kr/mnd. Alt i Start + 4 videoer + 8 bilder per måned, publisering 3x/uke, innholdsstrategi, aktiv SEO. *Mest populær.*
+- **Partner**, fra 27 900 kr/mnd. Alt i Vekst + 6 videoer + 12 bilder per måned, publisering 5x/uke, annonsering på Meta og Google, dronevideo, strategi.
 
 Prisene er utgangspunkt og tilpasses behovet. Alle priser eks. mva. Ingen bindingstid. Oppstart faktureres separat.
 

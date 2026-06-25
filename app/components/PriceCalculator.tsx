@@ -39,19 +39,19 @@ const sections: Section[] = [
       {
         label: "Synlighet",
         bullets: ["2 plattformer (Instagram + Facebook)", "8 ferdigproduserte innlegg/mnd", "Månedlig statusoppdatering"],
-        price: 6900,
+        price: 7900,
         setup: 0,
       },
       {
-        label: "Vekst",
+        label: "Aktiv",
         bullets: ["3 plattformer (inkl. TikTok)", "12 ferdigproduserte innlegg/mnd", "Meta Ads inkludert", "Månedlig rapport"],
-        price: 12900,
+        price: 13900,
         setup: 0,
       },
       {
         label: "Premium",
         bullets: ["3 plattformer (inkl. TikTok)", "16 ferdigproduserte innlegg/mnd", "Månedlig foto/video-shoot", "Meta Ads + Google Ads", "SEO-optimalisering", "Dedikert kontaktperson"],
-        price: 19900,
+        price: 21900,
         setup: 0,
       },
     ],

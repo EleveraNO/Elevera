@@ -16,7 +16,7 @@ const packages = [
   {
     name: "Start",
     tagline: "For deg som trenger et solid fundament",
-    price: 7900,
+    price: 9900,
     period: "/mnd",
     highlight: false,
     inheritFrom: null,
@@ -36,7 +36,7 @@ const packages = [
   {
     name: "Vekst",
     tagline: "For deg som vil synes og vokse",
-    price: 14900,
+    price: 18900,
     period: "/mnd",
     highlight: true,
     badge: "Mest populær",
@@ -55,7 +55,7 @@ const packages = [
   {
     name: "Partner",
     tagline: "For deg som vil ha en dedikert digital partner",
-    price: 22900,
+    price: 27900,
     period: "/mnd",
     highlight: false,
     inheritFrom: "Alt i Vekst, pluss:",
@@ -111,7 +111,7 @@ const services = [
   {
     name: "Sosiale medier",
     desc: "Strategi, innhold og publisering",
-    from: "6 000",
+    from: "7 900",
     unit: "kr/mnd",
   },
   {
