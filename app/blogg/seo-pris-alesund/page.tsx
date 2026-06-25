@@ -180,7 +180,7 @@ export default function SeoPrisAlesundPage() {
                   <li className="flex gap-3"><span className="text-[var(--forest)] font-semibold">·</span> <span><strong className="text-[var(--black)]">Stor satsing:</strong> 15 000 kr/mnd og oppover. Aktuelt ved stort søkevolum, mange tjenester eller flere lokasjoner.</span></li>
                 </ul>
                 <p className="mt-4">
-                  Ligger tilbudet under 2 000 kr/mnd, får du sannsynligvis svært lite reelt arbeid. Ligger det over 20 000 kr/mnd uten en tydelig forklaring på hva timene går til, betaler du trolig for mye. Hos oss inngår <Link href="/tjenester/seo-alesund" className="underline">søkemotoroptimalisering for Ålesund-bedrifter</Link> i pakkene fra 14 900 kr/mnd, eller fra 3 000 kr/mnd som enkelttjeneste.
+                  Ligger tilbudet under 2 000 kr/mnd, får du sannsynligvis svært lite reelt arbeid. Ligger det over 20 000 kr/mnd uten en tydelig forklaring på hva timene går til, betaler du trolig for mye. Hos oss inngår <Link href="/tjenester/seo-alesund" className="underline">søkemotoroptimalisering for Ålesund-bedrifter</Link> i pakkene fra 18 900 kr/mnd, eller fra 3 000 kr/mnd som enkelttjeneste.
                 </p>
               </section>
 

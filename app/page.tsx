@@ -21,7 +21,7 @@ const jsonLd = {
   image: "https://elevera.no/opengraph-image",
   telephone: "+4794974165",
   email: "tverbakk@elevera.no",
-  priceRange: "NOK 7900–22900",
+  priceRange: "NOK 9900–27900",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

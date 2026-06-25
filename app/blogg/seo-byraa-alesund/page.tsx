@@ -202,7 +202,7 @@ export default function SeoByraaAlesundPage() {
                   Hvis tilbudet ditt ligger under 2 000 kr/mnd, er sjansene store for at du får svært lite. SEO krever faktisk arbeidsinnsats, og det går ikke å levere noe meningsfylt under en viss timepris. Hvis tilbudet ligger over 20 000 kr/mnd uten en tydelig forklaring, betaler du sannsynligvis for mye.
                 </p>
                 <p className="mt-4">
-                  Hos oss inngår <Link href="/tjenester/seo-alesund" className="underline">søkemotoroptimalisering for Ålesund-bedrifter</Link> i pakkene fra 14 900 kr/mnd, eller fra 3 000 kr/mnd som enkelttjeneste.
+                  Hos oss inngår <Link href="/tjenester/seo-alesund" className="underline">søkemotoroptimalisering for Ålesund-bedrifter</Link> i pakkene fra 18 900 kr/mnd, eller fra 3 000 kr/mnd som enkelttjeneste.
                 </p>
               </section>
 

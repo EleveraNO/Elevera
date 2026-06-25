@@ -30,7 +30,7 @@ const TJENESTE_PRISER: Record<string, { from: number; unit: string; oppstart?: n
   "Foto og video": { from: 5000, unit: "kr" },
   "Dronevideo": { from: 4000, unit: "kr" },
   "Annonsering": { from: 3500, unit: "kr/mnd" },
-  "Sosiale medier": { from: 6000, unit: "kr/mnd" },
+  "Sosiale medier": { from: 7900, unit: "kr/mnd" },
   "Logo og profil": { from: 8000, unit: "kr" },
 };
 

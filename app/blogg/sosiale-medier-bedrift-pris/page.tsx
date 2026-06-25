@@ -126,7 +126,7 @@ export default function SosialeMedierPrisPage() {
                   Regn med 5 000 til 15 000 kr per måned hos et norsk byrå. Det er spennet de fleste opererer i. Under 5 000 kr er det sjelden nok timer til å gjøre en skikkelig jobb. Over 15 000 kr er du inn i pakker der annonsering, fotoshoots og strategi er inkludert.
                 </p>
                 <p className="mt-4">
-                  Hos oss starter enkelttjenesten på 6 000 kr/mnd. Da poster vi for deg 3 ganger i uken, lager innholdet og svarer på meldinger. Trenger du mer, har vi pakker fra 7 900 kr/mnd der sosiale medier er en del av en større helhet.
+                  Hos oss starter enkelttjenesten på 7 900 kr/mnd. Da poster vi for deg 3 ganger i uken, lager innholdet og svarer på meldinger. Trenger du mer, har vi pakker fra 9 900 kr/mnd der sosiale medier er en del av en større helhet.
                 </p>
               </section>
 
@@ -221,10 +221,10 @@ export default function SosialeMedierPrisPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[var(--black)] mb-4">Hva vi tar for det</h2>
                 <p>
-                  Hos Elevera starter sosiale medier-styring fra 6 000 kr/mnd som enkelttjeneste. Da tar vi oss av innholdsproduksjon, tekster, publisering 3 ganger per uke og svar på meldinger. Du godkjenner innholdet, ellers gjør vi alt.
+                  Hos Elevera starter sosiale medier-styring fra 7 900 kr/mnd som enkelttjeneste. Da tar vi oss av innholdsproduksjon, tekster, publisering 3 ganger per uke og svar på meldinger. Du godkjenner innholdet, ellers gjør vi alt.
                 </p>
                 <p className="mt-4">
-                  Trenger du mer, for eksempel annonsering, fotoshoot eller flere plattformer, har vi pakker fra 7 900 til 22 900 kr/mnd der sosiale medier er en del av helheten.
+                  Trenger du mer, for eksempel annonsering, fotoshoot eller flere plattformer, har vi pakker fra 9 900 til 27 900 kr/mnd der sosiale medier er en del av helheten.
                 </p>
                 <p className="mt-4">
                   Vi er et lite byrå i Ålesund. Vi tar ikke inn hundre kunder. Men de vi tar inn, følger vi opp skikkelig.
