@@ -7,7 +7,7 @@ export default function HomeCaseStudy() {
         <div className="home-case reveal">
           <div className="home-case-body">
             <span className="overline">Case-studie · Drive Trafikkskule</span>
-            <h2>1 000 nye følgere på syv dager. Uten annonser.</h2>
+            <h2>1 000 nye følgere på syv dager. <em>Uten annonser.</em></h2>
             <p className="lead">
               Drive startet helt fra null, ny TikTok-konto, null følgere. Vi
               filmet kjøreskolens hverdag, klippet for plattformen og traff rett

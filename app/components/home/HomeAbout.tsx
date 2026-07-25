@@ -17,7 +17,7 @@ export default function HomeAbout() {
           </div>
           <div className="reveal">
             <span className="section-label">Om</span>
-            <h2>Én person. Hele jobben.</h2>
+            <h2>Én person. <em>Hele jobben.</em></h2>
             <p>
               Jeg er Marius. Jeg driver Elevera fra Ålesund og hjelper lokale
               bedrifter bli funnet, valgt og kontaktet.

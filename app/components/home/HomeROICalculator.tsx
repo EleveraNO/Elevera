@@ -13,9 +13,9 @@ const TIER_NAMES: Record<Tier, string> = { start: "Start", vekst: "Vekst", partn
  * - order: snittverdi per kunde over kundens levetid
  */
 const TIER_DEFAULTS: Record<Tier, { leads: number; conv: number; order: number }> = {
-  start:   { leads: 12, conv: 12, order: 6500 },
-  vekst:   { leads: 22, conv: 11, order: 7500 },
-  partner: { leads: 38, conv: 12, order: 9000 },
+  start:   { leads: 14, conv: 12, order: 7500 },
+  vekst:   { leads: 25, conv: 12, order: 8500 },
+  partner: { leads: 40, conv: 12, order: 9500 },
 };
 
 const fmtKr = (n: number) =>
@@ -131,7 +131,7 @@ export default function HomeROICalculator() {
           <div className="home-roi-range-track">
             <div
               className="fill"
-              style={{ width: `${fillPct(months, 3, 36)}%` }}
+              style={{ transform: `scaleX(${fillPct(months, 3, 36) / 100})` }}
             />
           </div>
           <div className="home-roi-slider-ticks">
@@ -166,7 +166,7 @@ export default function HomeROICalculator() {
           <div className="home-roi-range-track">
             <div
               className="fill"
-              style={{ width: `${fillPct(leads, 5, 120)}%` }}
+              style={{ transform: `scaleX(${fillPct(leads, 5, 120) / 100})` }}
             />
           </div>
           <div className="home-roi-slider-ticks">
@@ -201,7 +201,7 @@ export default function HomeROICalculator() {
           <div className="home-roi-range-track">
             <div
               className="fill"
-              style={{ width: `${fillPct(conv, 2, 30)}%` }}
+              style={{ transform: `scaleX(${fillPct(conv, 2, 30) / 100})` }}
             />
           </div>
           <div className="home-roi-slider-ticks">
@@ -236,7 +236,7 @@ export default function HomeROICalculator() {
           <div className="home-roi-range-track">
             <div
               className="fill"
-              style={{ width: `${fillPct(order, 1000, 50000)}%` }}
+              style={{ transform: `scaleX(${fillPct(order, 1000, 50000) / 100})` }}
             />
           </div>
           <div className="home-roi-slider-ticks">
@@ -279,17 +279,29 @@ export default function HomeROICalculator() {
           </div>
         </div>
 
-        <div className="home-roi-breakeven">
+        <div className={`home-roi-breakeven${results.breakevenReached ? "" : " warn"}`}>
           <span className="home-roi-breakeven-icon" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path
-                d="M2 7l3.5 3.5L12 3.5"
-                stroke="#F7F4EC"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            {results.breakevenReached ? (
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M2 7l3.5 3.5L12 3.5"
+                  stroke="#F7F4EC"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            ) : (
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M7 2.5v6"
+                  stroke="#F7F4EC"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <circle cx="7" cy="11.25" r="1.1" fill="#F7F4EC" />
+              </svg>
+            )}
           </span>
           <div>
             {results.breakevenReached ? (

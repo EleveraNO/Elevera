@@ -6,6 +6,11 @@
 /* Section base */
 .home-section { padding: clamp(64px, 9vw, 112px) 0; }
 
+/* Tighter handoff between services and the case study — the connector band
+   already provides the visual pause, so the stacked paddings can shrink. */
+#tjenester.home-section { padding-bottom: clamp(40px, 5vw, 64px); }
+#caser.home-section { padding-top: clamp(40px, 5vw, 64px); }
+
 /* Transparent navbar over the image hero (homepage only) */
 body:has(.home-hero) .home-nav {
   position: fixed;
@@ -106,11 +111,11 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 }
 
 .home-hero h1 {
-  font-size: clamp(36px, 5.2vw, 64px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-size: clamp(38px, 5.4vw, 70px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
   max-width: 14ch;
-  font-weight: 500;
+  font-weight: 560;
   color: var(--cream);
   text-shadow: 0 1px 24px rgba(0, 0, 0, .35);
 }
@@ -218,9 +223,9 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 }
 .home-section-head h2 {
   max-width: 20ch;
-  font-size: clamp(28px, 3.6vw, 44px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: clamp(30px, 3.8vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
 }
 .home-section-head .lead { max-width: 42ch; }
 
@@ -231,6 +236,14 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
   max-width: 1500px;
   margin: 0 auto 64px;
   aspect-ratio: 2 / 1;
+}
+/* Ambient forest glow behind the 3D stage — carries the hero's light into the page */
+.svc-stage::before {
+  content: "";
+  position: absolute;
+  inset: -6%;
+  background: radial-gradient(48% 44% at 50% 52%, rgba(47, 95, 63, .08), transparent 72%);
+  pointer-events: none;
 }
 
 .svc-stage-video-wrap {
@@ -277,7 +290,7 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 .svc-stage-label-right { text-align: left; }
 
 .svc-stage[data-active]:not([data-active=""]) .svc-stage-label:not(.active) {
-  opacity: 0.4;
+  opacity: 0.5;
 }
 .svc-stage-label.active { transform: translateY(-2px); }
 
@@ -297,11 +310,11 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
   justify-content: flex-end;
 }
 .svc-stage-head h3 {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
-  font-size: clamp(18px, 1.6vw, 24px);
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: clamp(19px, 1.7vw, 25px);
   line-height: 1.15;
-  letter-spacing: -0.01em;
-  font-weight: 500;
+  letter-spacing: -0.005em;
+  font-weight: 540;
   color: var(--black);
 }
 .svc-stage-num {
@@ -314,7 +327,7 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 .svc-stage-label.active .svc-stage-num { color: var(--forest); }
 
 .svc-stage-label p {
-  font-size: clamp(12px, 0.9vw, 14px);
+  font-size: clamp(13px, 1vw, 15px);
   line-height: 1.55;
   color: var(--stone-700);
 }
@@ -347,15 +360,15 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
   .svc-stage-stack { display: flex; }
 }
 
-/* Connector */
+/* Connector — editorial statement band, not a card */
 .home-connector {
   margin-top: 48px;
-  padding: 40px;
-  background: var(--stone-100);
-  border-radius: 12px;
+  padding: 44px 0;
+  border-top: 1px solid var(--stone-300);
+  border-bottom: 1px solid var(--stone-300);
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 32px;
+  gap: 40px;
   align-items: start;
 }
 .home-connector-glyph { width: 56px; display: flex; flex-direction: column; gap: 6px; }
@@ -378,14 +391,14 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 
 .home-connector h3 {
   margin-bottom: 12px;
-  font-size: 22px;
-  line-height: 1.2;
-  font-weight: 500;
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.15;
+  font-weight: 540;
 }
 .home-connector p { font-size: 16px; color: var(--stone-700); max-width: 56ch; }
 
 @media (max-width: 640px) {
-  .home-connector { grid-template-columns: 1fr; padding: 28px; }
+  .home-connector { grid-template-columns: 1fr; padding: 32px 0; gap: 20px; }
 }
 
 /* Case study */
@@ -419,18 +432,18 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
   border-bottom: 1px solid var(--stone-300);
 }
 .home-case-stat .num {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
-  font-size: clamp(26px, 3vw, 36px);
-  font-weight: 500;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 540;
   color: var(--forest);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   line-height: 1;
   margin-bottom: 6px;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity .6s, transform .6s;
   white-space: nowrap;
-  font-variant-numeric: tabular-nums;
 }
 .home-case-stats.in .home-case-stat .num { opacity: 1; transform: none; }
 .home-case-stats.in .home-case-stat:nth-child(1) .num { transition-delay: .1s; }
@@ -868,7 +881,7 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 /* Pricing */
 .home-pricing {
   background: var(--cream);
-  padding: clamp(80px, 10vw, 140px) 0;
+  padding: clamp(72px, 9vw, 112px) 0;
 }
 .home-pricing .home-section-head {
   justify-content: flex-start;
@@ -928,12 +941,13 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 }
 
 .home-tier-name {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
   font-size: 32px;
   line-height: 1.1;
-  font-weight: 500;
+  font-weight: 540;
   margin-bottom: 10px;
-  letter-spacing: -.01em;
+  letter-spacing: -.005em;
 }
 .home-tier-desc {
   font-size: 14px;
@@ -963,11 +977,12 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 }
 .home-tier-featured .home-tier-price-from { color: var(--stone-400); }
 .home-tier-price-amount {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
   font-size: 40px;
   line-height: 1;
-  font-weight: 500;
-  letter-spacing: -.02em;
+  font-weight: 540;
+  letter-spacing: -.01em;
 }
 .home-tier-featured .home-tier-price-amount { color: #7FA88A; }
 .home-tier-price-period { font-size: 14px; color: var(--stone-600); }
@@ -1110,12 +1125,9 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 .home-roi-head { margin-bottom: 32px; position: relative; }
 .home-roi-head .section-label { margin-bottom: 16px; }
 .home-roi-head h3 {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
   font-size: clamp(28px, 3vw, 36px);
   line-height: 1.15;
-  font-weight: 500;
   margin-bottom: 12px;
-  letter-spacing: -.015em;
   max-width: 22ch;
 }
 .home-roi-head p { font-size: 15px; color: var(--stone-600); line-height: 1.6; max-width: 44ch; }
@@ -1232,10 +1244,12 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
   height: 100%;
   background: var(--forest);
   border-radius: 999px;
-  transition: width .2s cubic-bezier(.2, .7, .2, 1);
+  transform-origin: left;
+  transition: transform .2s cubic-bezier(.2, .7, .2, 1);
 }
 .home-roi-slider-ticks {
   display: flex;
@@ -1253,6 +1267,7 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
   padding: clamp(28px, 3vw, 40px);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 28px;
   position: relative;
   overflow: hidden;
@@ -1289,7 +1304,7 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 }
 .home-roi-result-primary .home-roi-result-value {
   font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
-  font-size: clamp(44px, 5.5vw, 64px);
+  font-size: clamp(48px, 5.5vw, 72px);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -.025em;
@@ -1316,7 +1331,6 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
 .home-roi-result-cell.neg .home-roi-result-value { color: #E8D3A8; }
 
 .home-roi-breakeven {
-  margin-top: auto;
   padding-top: 24px;
   border-top: 1px solid var(--stone-700);
   display: flex;
@@ -1336,6 +1350,7 @@ body:has(.home-hero) .home-nav:not(.scrolled) .home-nav-toggle span {
   align-items: center;
   justify-content: center;
 }
+.home-roi-breakeven.warn .home-roi-breakeven-icon { background: var(--warning); }
 .home-roi-breakeven strong { color: var(--cream); font-weight: 500; }
 
 .home-roi-fineprint {

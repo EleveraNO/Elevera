@@ -51,7 +51,7 @@
   --color-stone-800: var(--stone-800);
   --color-stone-900: var(--stone-900);
   --font-sans: var(--font-inter);
-  --font-display: var(--font-inter-tight);
+  --font-display: var(--font-fraunces);
   --font-mono: var(--font-jetbrains-mono);
 }
 
@@ -70,9 +70,19 @@ html, body {
 body { overflow-x: hidden; }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
-  font-weight: 500;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 540;
+  letter-spacing: -0.01em;
   color: var(--black);
+  text-wrap: balance;
+}
+
+/* Editorial accent — a single italic phrase inside a heading */
+h1 em, h2 em, h3 em {
+  font-style: italic;
+  font-weight: 470;
+  letter-spacing: 0;
 }
 
 html { scroll-behavior: smooth; }
@@ -250,6 +260,19 @@ html { scroll-behavior: smooth; }
 /* Stagger children via inline --i */
 .stagger > .reveal { transition-delay: calc(var(--i, 0) * 80ms); }
 
+/* ==== Film grain — breaks the flat digital surface, matches the photo-led brand ==== */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 160px 160px;
+  opacity: 0.045;
+}
+
 /* ==== Site chrome (nav + footer) — shared across all pages ==== */
 
 /* Nav */
@@ -298,6 +321,13 @@ html { scroll-behavior: smooth; }
 .home-nav-links { display: flex; gap: 32px; align-items: center; }
 .home-nav-links a { font-size: 14px; color: var(--stone-700); transition: color .15s; }
 .home-nav-links a:hover { color: var(--black); }
+.home-nav-links a.active {
+  color: var(--black);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 7px;
+  text-decoration-color: color-mix(in srgb, currentColor 60%, transparent);
+}
 .home-nav-cta {
   display: inline-flex;
   align-items: center;

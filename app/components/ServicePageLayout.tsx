@@ -2,8 +2,10 @@
 
 import "./service.css";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useState, type ReactNode } from "react";
 import Arrow from "./home/Arrow";
+import HeroTopography from "./home/HeroTopography";
 
 const ease = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -39,6 +41,10 @@ interface ServicePageProps {
   children?: ReactNode;
   heroVideo?: string;
   heroPoster?: string;
+  /** Light 3D still in the brand universe — full-bleed with cream scrims (see svc-hero--image) */
+  heroImage?: string;
+  /** Interactive animated contour-line canvas (HeroTopography) behind the hero */
+  heroTopo?: boolean;
 }
 
 function FAQItem({
@@ -102,13 +108,20 @@ export default function ServicePageLayout({
   children,
   heroVideo,
   heroPoster,
+  heroImage,
+  heroTopo,
 }: ServicePageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <>
       {/* Hero */}
-      <section className={`svc-hero${heroVideo ? " svc-hero--video" : ""}`}>
+      <section className={`svc-hero${heroVideo ? " svc-hero--video" : ""}${heroImage || heroTopo ? " svc-hero--image" : ""}`}>
+        {heroTopo && !heroVideo && (
+          <div className="svc-hero-image" aria-hidden="true">
+            <HeroTopography />
+          </div>
+        )}
         {heroVideo && (
           <video
             className="svc-hero-video"
@@ -121,6 +134,16 @@ export default function ServicePageLayout({
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
+        )}
+        {heroImage && !heroVideo && (
+          <Image
+            src={heroImage}
+            alt=""
+            fill
+            sizes="100vw"
+            priority
+            className="svc-hero-image"
+          />
         )}
         <div className="svc-hero-bg" aria-hidden="true" />
         <div className="wrap svc-hero-inner">

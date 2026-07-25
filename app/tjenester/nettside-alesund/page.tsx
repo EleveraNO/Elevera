@@ -44,6 +44,7 @@ export default function NettsidesPage() {
       <HomeNav />
       <main>
         <ServicePageLayout
+          heroTopo
           badge="Nettside · Ålesund"
           title="Profesjonell"
           titleAccent="nettside"

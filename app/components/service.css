@@ -23,19 +23,34 @@
     radial-gradient(40% 40% at 20% 85%, rgba(47, 95, 63, .08), transparent 65%),
     linear-gradient(180deg, var(--cream) 0%, var(--stone-50) 100%);
 }
-.svc-hero-bg::after {
-  content: "";
+.svc-hero-inner { position: relative; z-index: 2; width: 100%; }
+
+/* Light image hero — soft 3D still in the brand's stone/moss universe.
+   Image lies full-bleed; cream scrims keep the left text column calm. */
+.svc-hero-image {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(var(--stone-200) 1px, transparent 1px),
-    linear-gradient(90deg, var(--stone-200) 1px, transparent 1px);
-  background-size: 56px 56px;
-  opacity: .25;
-  mix-blend-mode: multiply;
-  mask-image: radial-gradient(80% 60% at 50% 30%, black 40%, transparent 85%);
-  -webkit-mask-image: radial-gradient(80% 60% at 50% 30%, black 40%, transparent 85%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  z-index: 0;
+  pointer-events: none;
 }
-.svc-hero-inner { position: relative; z-index: 2; width: 100%; }
+.svc-hero--image .svc-hero-bg {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, var(--cream) 8%, color-mix(in srgb, var(--cream) 82%, transparent) 36%, transparent 58%),
+    linear-gradient(180deg, transparent 78%, var(--cream) 100%);
+}
+@media (max-width: 900px) {
+  .svc-hero--image .svc-hero-image { opacity: .35; object-position: 70% center; }
+  .svc-hero--image .svc-hero-bg {
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--cream) 70%, transparent) 0%, transparent 100%),
+      linear-gradient(180deg, transparent 70%, var(--cream) 100%);
+  }
+}
 
 .svc-hero-badge {
   display: inline-flex;
@@ -57,11 +72,12 @@
 }
 
 .svc-hero-title {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
-  font-weight: 500;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 540;
   font-size: clamp(32px, 5vw, 60px);
   line-height: 1.06;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   max-width: 18ch;
   margin-bottom: 40px;
   color: var(--black);
@@ -234,14 +250,14 @@
   transform: translateY(-2px);
 }
 .svc-stat-num {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
   font-size: clamp(28px, 3.6vw, 40px);
-  font-weight: 500;
+  font-weight: 540;
   color: var(--forest);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin-bottom: 6px;
-  font-variant-numeric: tabular-nums;
 }
 .svc-stat-label {
   font-size: 12px;
@@ -401,10 +417,11 @@
 }
 .svc-pkg.featured .svc-pkg-from { color: var(--stone-400); }
 .svc-pkg-amount {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
   font-size: 30px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-weight: 540;
+  letter-spacing: -0.01em;
   color: var(--black);
 }
 .svc-pkg.featured .svc-pkg-amount { color: #7FA88A; }
@@ -414,10 +431,11 @@
 }
 .svc-pkg.featured .svc-pkg-period { color: var(--stone-400); }
 .svc-pkg-name {
-  font-family: var(--font-inter-tight), var(--font-inter), sans-serif;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
   font-size: 22px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 540;
+  letter-spacing: -0.005em;
   margin-bottom: 8px;
 }
 .svc-pkg.featured .svc-pkg-name { color: var(--cream); }
@@ -673,7 +691,6 @@ body:has(.svc-hero--video) .home-nav:not(.scrolled) .home-nav-cta:hover {
 body:has(.svc-hero--video) .home-nav:not(.scrolled) .home-nav-toggle span {
   background: var(--cream);
 }
-.svc-hero--video .svc-hero-bg::after { display: none; }
 .svc-hero--video .svc-hero-badge {
   color: var(--cream);
   background: rgba(255, 255, 255, .08);

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import CookieBanner from "./components/CookieBanner";
@@ -15,6 +15,14 @@ const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
   weight: ["500", "700"],
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
   display: "swap",
 });
 
@@ -73,7 +81,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no">
-      <body className={`${inter.variable} ${interTight.variable} ${jetbrainsMono.variable} antialiased`}>
+      <body className={`${inter.variable} ${interTight.variable} ${fraunces.variable} ${jetbrainsMono.variable} antialiased`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5S67ZX9GY1"
           strategy="afterInteractive"

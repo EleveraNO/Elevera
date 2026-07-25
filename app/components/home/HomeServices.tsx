@@ -182,7 +182,7 @@ export default function HomeServices() {
             <span />
           </div>
           <div>
-            <h3>En kanal alene fungerer sjelden.</h3>
+            <h3>En kanal alene fungerer <em>sjelden</em>.</h3>
             <p>
               De fleste kommer til oss med ett behov. Som regel viser det seg at
               to eller tre tjenester sammen gir mye sterkere resultater enn én

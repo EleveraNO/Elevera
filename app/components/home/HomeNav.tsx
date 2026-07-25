@@ -7,15 +7,35 @@ import Arrow from "./Arrow";
 const BOOKING_URL =
   "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HY3t28agc1uq8sE2kofQvPHGvms01uI7Lf-i-YV0iD0VIyWS2JwTBKZJwsMTmV-F_0jVbiEWY";
 
+const SPY_SECTIONS = ["tjenester", "caser", "priser", "om"];
+
 export default function HomeNav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 4);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = SPY_SECTIONS.map((id) => document.getElementById(id)).filter(
+      (el): el is HTMLElement => el !== null
+    );
+    if (!sections.length) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        }
+      },
+      { rootMargin: "-35% 0px -60% 0px" }
+    );
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -26,10 +46,10 @@ export default function HomeNav() {
           Elevera
         </a>
         <div className="home-nav-links">
-          <a href="/#tjenester">Tjenester</a>
-          <a href="/#caser">Caser</a>
-          <a href="/#priser">Priser</a>
-          <a href="/#om">Om</a>
+          <a href="/#tjenester" className={active === "tjenester" ? "active" : undefined}>Tjenester</a>
+          <a href="/#caser" className={active === "caser" ? "active" : undefined}>Caser</a>
+          <a href="/#priser" className={active === "priser" ? "active" : undefined}>Priser</a>
+          <a href="/#om" className={active === "om" ? "active" : undefined}>Om</a>
           <a href="https://app.elevera.no" target="_blank" rel="noopener noreferrer">
             Kundeportal
           </a>

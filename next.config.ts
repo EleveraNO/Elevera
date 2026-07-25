@@ -42,7 +42,9 @@ const cspDirectives = {
   "connect-src": [
     "'self'",
     "https://formspree.io",
-    "https://www.google-analytics.com",
+    // GA4 sender EU-trafikk til regionale endepunkt (region1.google-analytics.com
+    // m.fl.) — wildcard dekker alle regioner.
+    "https://*.google-analytics.com",
     "https://analytics.google.com",
     "https://stats.g.doubleclick.net",
   ],
